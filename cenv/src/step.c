@@ -531,6 +531,23 @@ static double flat_mean(const cenv_fused *f, const double *temp) {
   return cenv_pairwise_sum(temp, (int64_t)f->n_full) / (double)f->n_full;
 }
 
+/* One VAV's sensing temperature from a zone-mean array: the area-weighted mean
+ * of the zones it serves, which is what the Python reward path builds per VAV
+ * (`_get_air_handler_reward_infos`: ``sum(avg_temps[z] * room_areas[z]) /
+ * v_area`` over `get_zones_for_vav` order). Taking `avg` as an argument, not
+ * `f->vav_vtemp`, is the point: the prelude needs the *pre-step* field and the
+ * epilogue needs the *post-step* one, and `vav_vtemp` only ever holds the
+ * prelude's. */
+static double vav_sensing_temp(const cenv_fused *f, const double *avg,
+                               int32_t v) {
+  const fused_vav *s = &f->vav[v];
+  double sum = 0.0;
+  for (int32_t i = s->zoff; i < s->zoff + s->zn; ++i) {
+    sum += avg[f->vav_zone[i]] * (double)f->zone_area[f->vav_zone[i]];
+  }
+  return sum / (double)s->area;
+}
+
 /* simulator_flexible_floor_plan's area-weighted recirculation temperature (the
  * shipped tree): every VAV counts with the floor area of its zones. */
 static void recirc_area(cenv_fused *f, const double *avg, const double *temp,
@@ -541,23 +558,23 @@ static void recirc_area(cenv_fused *f, const double *avg, const double *temp,
   }
   for (int32_t v = 0; v < f->n_vav; ++v) {
     const fused_vav *s = &f->vav[v];
-    if (s->zn <= 0) {
+    if (s->zn <= 0 || s->area <= 0) {
       continue;
     }
     const double v_area = (double)s->area;
-    f->ahu_sum[s->ahu] += f->vav_vtemp[v] * v_area;
+    f->ahu_sum[s->ahu] += vav_sensing_temp(f, avg, v) * v_area;
     f->ahu_area[s->ahu] += v_area;
   }
   const double mean_all = flat_mean(f, temp);
   for (int32_t a = 0; a < f->n_ahu; ++a) {
     out[a] = (f->ahu_area[a] > 0.0) ? f->ahu_sum[a] / f->ahu_area[a] : mean_all;
   }
-  (void)avg;
 }
 
 /* The corrected tree's _recirculation_temps: each VAV counts with the air it
  * actually moves, and falls back to area when no air moves at all. */
-static void recirc_flow(cenv_fused *f, const double *temp, double *out) {
+static void recirc_flow(cenv_fused *f, const double *avg, const double *temp,
+                        double *out) {
   for (int32_t a = 0; a < f->n_ahu; ++a) {
     f->rc_fsum[a] = 0.0;
     f->rc_ftotal[a] = 0.0;
@@ -570,7 +587,7 @@ static void recirc_flow(cenv_fused *f, const double *temp, double *out) {
       continue;
     }
     const double v_area = (double)s->area;
-    const double v_temp = f->vav_vtemp[v];
+    const double v_temp = vav_sensing_temp(f, avg, v);
     const double v_flow =
         (s->damper > 0.0 && s->max_flow > 0.0) ? vav_unrestricted_flow(f, v)
                                                : 0.0;
@@ -1109,7 +1126,7 @@ static int32_t fused_prelude(cenv_fused *f, int32_t step, const double *temp,
 
   /* -- 3. recirculation temperature per air handler ---------------------- */
   if (f->hws.energy_balance) {
-    recirc_flow(f, temp, f->recirc);
+    recirc_flow(f, f->avg, temp, f->recirc);
   } else {
     recirc_area(f, f->avg, temp, f->recirc);
   }
@@ -1466,7 +1483,7 @@ static int32_t fused_epilogue(cenv_fused *f, int32_t step, double *temp,
     }
   }
   if (f->hws.energy_balance) {
-    recirc_flow(f, temp, f->recirc);
+    recirc_flow(f, f->avg, temp, f->recirc);
   } else {
     recirc_area(f, f->avg, temp, f->recirc);
   }

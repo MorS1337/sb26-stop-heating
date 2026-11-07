@@ -15,6 +15,18 @@ per-function gate is :mod:`cenv.shadow` and the per-call cost is
     # compare the two traces
     python -m cenv.verify.gate compare /tmp/cenv_gate/t8_py.npz /tmp/cenv_gate/t8_c.npz
 
+    # the whole regression matrix (both trees, both start offsets, a generated
+    # building), each case in its own pair of processes
+    python -m cenv.verify.gate suite
+
+``--start-offset-days`` shifts ``start_timestamp`` exactly as ``sbx.evalrun``
+does (``_shifted_config``); a nonzero offset is a distinct regression axis, not
+a cosmetic one. An episode that starts *inside* the occupancy model's
+arrival/departure draw windows (06:00-19:00 local on a work day) is the only
+one in which the occupant chain's first interval is ticked, so a reward path
+that skips that tick agrees at offset 0 and disagrees from the second interval
+on. That is what the suite's offset cases exist to catch.
+
 Both sides are ``--sim shipped`` unless told otherwise, because the gate is about
 reproducing the official simulator.
 """
@@ -23,12 +35,29 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 
 import numpy as np
 
 WORKSPACE = Path(__file__).resolve().parents[2]
+
+# (sim, scenario, start_offset_days, steps). The last four are the regression
+# this list exists for: offsets 1 and 2 start the episode at 06:00 on a Monday
+# and a Tuesday, inside the arrival window on a work day.
+SUITE = (
+    ("shipped", "building_train_8/atlanta_1", 0, 600),
+    ("corrected", "building_train_8/atlanta_1", 0, 600),
+    ("shipped", "building_train_2/phoenix_6", 0, 600),
+    ("corrected", "building_train_2/phoenix_6", 0, 600),
+    ("shipped", "building_train_8/fairbanks_8", 1, 600),
+    ("shipped", "building_train_8/fairbanks_8", 2, 600),
+    ("corrected", "building_train_8/fairbanks_8", 1, 600),
+    ("corrected", "building_train_8/fairbanks_8", 2, 600),
+    ("shipped", "building_gen_001/singapore_g2", 1, 600),
+    ("corrected", "building_gen_001/singapore_g2", 1, 600),
+)
 
 def trace(sim: str, scenario: str, steps: int, policy_spec: str,
           cenv_spec: str | None, out: Path, start_offset_days: int = 0,
@@ -57,6 +86,17 @@ def trace(sim: str, scenario: str, steps: int, policy_spec: str,
         WORKSPACE / "sims" / sim / "smart_buildings" / "training_scenarios"
         / scenario / "config.gin"
     )
+    # The scenario directory (building meta data, relative data paths) is the
+    # *original* one: ``_shifted_config`` only rewrites ``start_timestamp`` into
+    # a private copy, exactly as ``sbx.evalrun._run_scenario`` does it (it takes
+    # ``scenario_dir`` before shifting too).
+    scenario_dir = config.parent
+    if start_offset_days:
+        from sbx.evalrun import _shifted_config  # noqa: PLC0415
+
+        config = _shifted_config(config, int(start_offset_days),
+                                 Path(out).resolve().parent / "_gin")
+        print(f"[gate] start offset {start_offset_days} d -> {config}", flush=True)
     policy_cls, _label = _resolve_policy(policy_spec, evaluate)
     if params:
         policy_cls.PARAMS = {**(getattr(policy_cls, "PARAMS", None) or {}), **params}
@@ -67,7 +107,7 @@ def trace(sim: str, scenario: str, steps: int, policy_spec: str,
     env.metrics_path = None
     env._occupancy_normalization_constant = 125.0
 
-    meta = evaluate.create_building_meta_data(env, config.parent)
+    meta = evaluate.create_building_meta_data(env, scenario_dir)
     spec = env.action_spec()
     policy = evaluate.initialize_policy(policy_cls, meta, spec)
     recorder = _StepRecorder(env, meta, mode=components)
@@ -77,6 +117,7 @@ def trace(sim: str, scenario: str, steps: int, policy_spec: str,
     rewards = np.zeros(n, dtype=np.float64)
     zone_names = None
     zone_temps = None
+    obs_trace = None
     step_cpu = 0.0
     done = 0
     for i in range(n):
@@ -92,7 +133,9 @@ def trace(sim: str, scenario: str, steps: int, policy_spec: str,
         if zone_names is None:
             zone_names = list(averages)
             zone_temps = np.zeros((n, len(zone_names)), dtype=np.float64)
+            obs_trace = np.zeros((n, int(np.asarray(obs).size)), dtype=np.float64)
         zone_temps[i] = [averages[name] for name in zone_names]
+        obs_trace[i] = np.asarray(obs, dtype=np.float64)
         done = i + 1
         if terminated or truncated:
             break
@@ -104,6 +147,7 @@ def trace(sim: str, scenario: str, steps: int, policy_spec: str,
         out,
         rewards=rewards[:done],
         zone_temps=zone_temps[:done] if zone_temps is not None else np.zeros(0),
+        obs=obs_trace[:done] if obs_trace is not None else np.zeros(0),
         zone_names=np.array(zone_names or [], dtype=object),
         meta=json.dumps(
             {
@@ -196,6 +240,45 @@ def compare(path_a: str | Path, path_b: str | Path,
     return result
 
 
+def run_suite(out_dir: str | Path, cases=SUITE, policy_spec: str = "policies.ctrl_w:CtrlW",
+              rel_tol: float = 1e-9, temp_tol: float = 1e-8,
+              verbose: bool = True) -> list[dict]:
+    """Run every (sim, scenario, offset, steps) case in its own two processes."""
+    import os
+
+    out_dir = Path(out_dir).resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    results = []
+    for sim, scenario, offset, steps in cases:
+        tag = f"{sim}__{scenario.replace('/', '__')}__off{offset}"
+        plain = out_dir / f"{tag}__plain.npz"
+        cenv = out_dir / f"{tag}__cenv.npz"
+        for side, extra in (("plain", []), ("cenv", ["--cenv", "fused"])):
+            dest = plain if side == "plain" else cenv
+            cmd = [sys.executable, "-m", "cenv.verify.gate", "trace",
+                   "--sim", sim, "--scenario", scenario, "--steps", str(steps),
+                   "--start-offset-days", str(offset), "--policy", policy_spec,
+                   "--out", str(dest), "--log-every", "0", *extra]
+            proc = subprocess.run(cmd, cwd=str(WORKSPACE), env={**os.environ},
+                                  capture_output=True, text=True)
+            if proc.returncode != 0:
+                raise RuntimeError(
+                    f"gate trace {side} {tag} failed ({proc.returncode}):\n"
+                    f"{proc.stdout[-2000:]}\n{proc.stderr[-2000:]}")
+        result = compare(plain, cenv, rel_tol=rel_tol, temp_tol=temp_tol)
+        result["case"] = dict(sim=sim, scenario=scenario,
+                              start_offset_days=offset, steps=steps)
+        result["json"] = str(out_dir / f"{tag}__cmp.json")
+        (out_dir / f"{tag}__cmp.json").write_text(json.dumps(result, indent=2))
+        results.append(result)
+        if verbose:
+            print(f"GATE {'PASS' if result['passed'] else 'FAIL'} "
+                  f"{sim} {scenario} off={offset} steps={steps} "
+                  f"rel={result['total_reward_rel_diff']:.3e} "
+                  f"dT={result['max_zone_temp_abs_K']:.3e} K", flush=True)
+    return results
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -218,6 +301,15 @@ def main(argv=None) -> int:
     c.add_argument("--rel-tol", type=float, default=1e-9)
     c.add_argument("--temp-tol", type=float, default=1e-8)
     c.add_argument("--json", default=None)
+    s = sub.add_parser("suite")
+    s.add_argument("--out", default="scratch/cenv_gate_suite")
+    s.add_argument("--policy", default="policies.ctrl_w:CtrlW")
+    s.add_argument("--rel-tol", type=float, default=1e-9)
+    s.add_argument("--temp-tol", type=float, default=1e-8)
+    s.add_argument("--only", default=None,
+                   help="substring filter on '<sim> <scenario> off<N>', so the "
+                        "matrix can be run in chunks (one chunk per process on "
+                        "a machine with a wall-clock budget)")
     args = ap.parse_args(argv)
 
     if args.cmd == "trace":
@@ -230,6 +322,19 @@ def main(argv=None) -> int:
             log_every=args.log_every,
         )
         return 0
+    if args.cmd == "suite":
+        cases = [c for c in SUITE
+                 if args.only is None
+                 or args.only in f"{c[0]} {c[1]} off{c[2]}"]
+        if not cases:
+            print(f"gate suite: --only {args.only!r} matched no case")
+            return 2
+        results = run_suite(args.out, cases=cases, policy_spec=args.policy,
+                            rel_tol=args.rel_tol, temp_tol=args.temp_tol)
+        failed = [r for r in results if not r["passed"]]
+        print(f"\nGATE SUITE {'PASS' if not failed else 'FAIL'} "
+              f"({len(results) - len(failed)}/{len(results)} cases)")
+        return 0 if not failed else 1
     result = compare(args.a, args.b, rel_tol=args.rel_tol, temp_tol=args.temp_tol)
     if args.json:
         Path(args.json).write_text(json.dumps(result, indent=2))

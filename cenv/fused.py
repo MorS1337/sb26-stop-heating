@@ -1371,18 +1371,57 @@ def _fused_get_observation(self):
     return _ORIG["observation"](self)
 
 
+def _original_reward_info(sim):
+    """The unpatched ``reward_info`` for this simulator instance.
+
+    ``_ORIG["reward_info"]`` holds ``(class, original)`` for every patched
+    class; the nearest one in the instance's MRO is what the instance would
+    have called before install.
+    """
+    originals = {cls: fn for cls, fn in _ORIG["reward_info"]}
+    for cls in type(sim).__mro__:
+        if cls in originals:
+            return originals[cls]
+    raise RuntimeError("cenv fused: no original reward_info was recorded")
+
+
 def _fused_reward_info(self, occupancy_function):
     state = self.__dict__.get(_MARK)
     if state is not None and state.reward_ts is not None:
         if state.reward_ts == self._current_timestamp:
             return state.build_reward_info(occupancy_function)
-    return _ORIG["reward_info"](self, occupancy_function)
+    return _original_reward_info(self)(self, occupancy_function)
 
 
 def _fused_reset(self, *, seed=None, options=None):
     out = _ORIG["reset"](self, seed=seed, options=options)
     ensure_state(self)
     return out
+
+
+def _simulator_classes(simulator):
+    """``Simulator`` plus every subclass that overrides ``reward_info``.
+
+    The environment's simulator is not always ``Simulator``: the flexible-geometry
+    free-form buildings -- every scenario the fused step supports -- run
+    ``SimulatorFlexibleGeometries``, which defines its own ``reward_info``.
+    Patching only the base class therefore left that override in place, the
+    kernel's reward-info numbers unused, and the reward's per-zone occupancy on
+    the Python chain: the kernel ticks *its* copy of the occupant chain once per
+    interval (internal gains, then the observation, then the reward) exactly as
+    the plain path does, while the Python chain was then only touched by the
+    reward query and so started one interval late. Invisible whenever the
+    episode ticks no arrival/departure draw (a weekend, or a start outside
+    06:00-19:00 local), which is why it survived the offset-0 gates.
+    """
+    classes = [simulator.Simulator]
+    stack = list(simulator.Simulator.__subclasses__())
+    while stack:
+        cls = stack.pop()
+        stack.extend(cls.__subclasses__())
+        if "reward_info" in cls.__dict__ and cls not in classes:
+            classes.append(cls)
+    return classes
 
 
 def _patch_classes():
@@ -1393,19 +1432,28 @@ def _patch_classes():
     from smart_buildings.smart_control.simulator import simulator_building
 
     env_cls = environment.Environment
-    sim_cls = simulator.Simulator
+    sim_classes = _simulator_classes(simulator)
     bld_cls = simulator_building.SimulatorBuilding
     if not _patched:
         _ORIG["wait_time"] = bld_cls.wait_time
         _ORIG["observation"] = env_cls._get_observation
-        _ORIG["reward_info"] = sim_cls.reward_info
+        _ORIG["reward_info"] = [(cls, cls.reward_info) for cls in sim_classes]
         _ORIG["reset"] = env_cls.reset
         _patched = True
+    else:
+        # A simulator subclass may only be imported later (a second tree, a
+        # scenario built after install): pick up any new ones and remember their
+        # originals before overwriting them.
+        known = {cls for cls, _ in _ORIG["reward_info"]}
+        for cls in sim_classes:
+            if cls not in known:
+                _ORIG["reward_info"].append((cls, cls.reward_info))
     # Always rewrite, so a component installed after this one cannot take the
     # methods back: fused is the step, and its fallbacks are the originals.
     bld_cls.wait_time = _fused_wait_time
     env_cls._get_observation = _fused_get_observation
-    sim_cls.reward_info = _fused_reward_info
+    for cls, _original in _ORIG["reward_info"]:
+        cls.reward_info = _fused_reward_info
     env_cls.reset = _fused_reset
 
 
@@ -1454,14 +1502,15 @@ def install(sim_root=None, verbose: bool = False):
             "SimulatorBuilding.wait_time",
             "Environment._get_observation",
             "Environment.reset",
-            "Simulator.reward_info",
+            *[f"{cls.__name__}.reward_info" for cls, _o in _ORIG["reward_info"]],
         ],
         "restore": [
             (simulator_building.SimulatorBuilding, "wait_time",
              _ORIG["wait_time"]),
             (environment.Environment, "_get_observation", _ORIG["observation"]),
             (environment.Environment, "reset", _ORIG["reset"]),
-            (simulator.Simulator, "reward_info", _ORIG["reward_info"]),
+            *[(cls, "reward_info", original)
+              for cls, original in _ORIG["reward_info"]],
         ],
         "supersedes": ["observation"],
     }

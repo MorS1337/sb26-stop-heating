@@ -87,9 +87,9 @@ $PY -m cenv.verify.gate compare /tmp/t8_py.npz /tmp/t8_c.npz
 $PY kaggle/build_notebook.py --policy policies/ctrl_w5.py:CtrlW5 --param standby_minimum=278.0 --slug sbx-ctrl-w5f
 ```
 
-On one machine, `--cenv fused --fast` gives the same totals as plain Python at the scenarios'
-default start. With `--start-offset-days` other than 0, leave `--cenv` off: this is a known issue
-in the fused step, and a fix is in progress.
+On one machine, `--cenv fused --fast` gives the same per-step rewards as plain Python, including
+with `--start-offset-days`; `python -m cenv.verify.gate suite` runs the regression matrix
+(offsets 0, 1 and 2, a generated building, both simulator trees).
 
 Across machines (arm64 with Accelerate against x86-64 with OpenBLAS), 30-day totals differ by up
 to a few 1e-5 relative: BLAS round-off is amplified by the closed loop. Compare runs from one
