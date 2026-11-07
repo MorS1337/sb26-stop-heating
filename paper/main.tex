@@ -105,7 +105,8 @@ the night release---its decomposition, a search over the same 16-knob family and
 sweep that agree on it, and the frost-floor cost curve that prices the limit we ship; \textbf{C4}~an evaluation on 30 shipped
 scenarios, 49 holdouts, the corrected tree, reseeded occupancy and the leaderboard; \textbf{C5}~a
 measured value of information; \textbf{C6}~an audit of the two seams plus the exact fused
-simulator step ($2.1\times$) these studies ran on.
+simulator step ($2.1\times$) these studies ran on. Code, per-scenario results and the study
+reports are public.\footnote{\url{https://github.com/MorS1337/sb26-stop-heating}}
 
 \section{The benchmark, and related work}
 \label{sec:setting}
@@ -738,8 +739,8 @@ Appendix~\ref{app:weather}. Occupancy runs on the kit's seed 17321, and the rese
 $\sigma_0=0.05$, population 12, seed 7, for 150 evaluations, starting from the best of 40 random
 points, with the default point injected in every population.
 
-\paragraph{Commands.} With \texttt{PY=starter-kit/.venv/bin/python} in the repository root
-(\pending{URL, with the code release}):
+\paragraph{Commands.} With \texttt{PY=starter-kit/.venv/bin/python} in the root of the repository
+(\url{https://github.com/MorS1337/sb26-stop-heating}; its README gives the setup):
 {\footnotesize
 \begin{verbatim}
 $PY -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --params '{"standby_minimum": 278.0}' \
