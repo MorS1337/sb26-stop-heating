@@ -1,0 +1,107 @@
+{
+  "tag": "ia_smoke_ctrl",
+  "policy": "policies.ctrl_w:CtrlW",
+  "params": {},
+  "sim": "shipped",
+  "steps": 400,
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ia_smoke_ctrl",
+  "wall_seconds": 12.14895224571228,
+  "mean_total_reward": -4.951023667475965,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "error": null,
+      "total_reward": -4.951023667475965,
+      "b2": {
+        "imbalance_kwh_net": 4.499614204967567,
+        "imbalance_kwh_heat": 4.499614204967567,
+        "imbalance_kwh_cool": 0.0,
+        "imbalance_kw_mean": 0.134988426149027,
+        "imbalance_kw_max": 4.3368676911459785,
+        "imbalance_kw_min": 0.0,
+        "supply_gap_kwh_heat": 4.499614204967474,
+        "supply_gap_kwh_cool": 0.0,
+        "steps_negative_entropy": 0,
+        "step_fraction_negative_entropy": 0.0,
+        "reheat_kwh": 1310.468679176717,
+        "share_of_reheat": 0.0034335915664877887,
+        "passthru_share_of_reheat": 0.003433591566487718,
+        "recirculation_mean": 0.699999988079071,
+        "flow_mean": 1.5554784030463509,
+        "per_ahu": {
+          "ahu_1": {
+            "imbalance_kw_mean": 0.05103584885868259,
+            "imbalance_kwh_net": 1.7011949619560864,
+            "imbalance_kwh_heat": 1.7011949619560864,
+            "imbalance_kwh_cool": 0.0,
+            "imbalance_kw_max": 1.2148247404643675,
+            "imbalance_kw_min": 0.0,
+            "supply_gap_kwh_heat": 1.7011949619561477,
+            "supply_gap_kwh_cool": 0.0,
+            "t_area_mean": 293.01911361350255,
+            "t_flow_mean": 292.7098577688276,
+            "delta_t_mean": 0.3092558446749426,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 0.35882359126334173,
+            "steps_negative_entropy": 0
+          },
+          "ahu_2": {
+            "imbalance_kw_mean": 0.017504334129833623,
+            "imbalance_kwh_net": 0.5834778043277874,
+            "imbalance_kwh_heat": 0.5950603420865326,
+            "imbalance_kwh_cool": 0.01158253775874517,
+            "imbalance_kw_max": 1.2881025369754353,
+            "imbalance_kw_min": -0.01702074850088355,
+            "supply_gap_kwh_heat": 0.5950603420864866,
+            "supply_gap_kwh_cool": 0.011582537758737783,
+            "t_area_mean": 292.4023944054233,
+            "t_flow_mean": 292.22419052106716,
+            "delta_t_mean": 0.17820388435620602,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 0.4448190396331338,
+            "steps_negative_entropy": 0
+          },
+          "ahu_3": {
+            "imbalance_kw_mean": 0.02552348063672148,
+            "imbalance_kwh_net": 0.850782687890716,
+            "imbalance_kwh_heat": 0.8767545648758165,
+            "imbalance_kwh_cool": 0.025971876985100638,
+            "imbalance_kw_max": 1.5651891322105167,
+            "imbalance_kw_min": -0.03788134969697828,
+            "supply_gap_kwh_heat": 0.8767545648757537,
+            "supply_gap_kwh_cool": 0.02597187698508751,
+            "t_area_mean": 292.7522770205605,
+            "t_flow_mean": 292.4060194895248,
+            "delta_t_mean": 0.34625753103572765,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 0.3485911055929197,
+            "steps_negative_entropy": 0
+          },
+          "ahu_4": {
+            "imbalance_kw_mean": 0.040924762523789314,
+            "imbalance_kwh_net": 1.364158750792977,
+            "imbalance_kwh_heat": 1.3642319241462042,
+            "imbalance_kwh_cool": 7.317335322716343e-05,
+            "imbalance_kw_max": 0.32095265941080536,
+            "imbalance_kw_min": -6.288125546467524e-06,
+            "supply_gap_kwh_heat": 1.364231924146139,
+            "supply_gap_kwh_cool": 7.31733532271667e-05,
+            "t_area_mean": 292.90906964754225,
+            "t_flow_mean": 292.9032345321294,
+            "delta_t_mean": 0.005835115412943708,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 0.40324466655695557,
+            "steps_negative_entropy": 0
+          }
+        }
+      },
+      "b1": {
+        "gas_billed_kwh": 1426.082113907655,
+        "gas_drawn_kwh": 1355.6906182604562,
+        "billed_over_drawn": 1.0519229791067826,
+        "reheat_kwh": 1310.468679176717
+      }
+    }
+  ]
+}

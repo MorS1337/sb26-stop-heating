@@ -1,0 +1,1208 @@
+{
+ "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+ "payload_sources": {
+  "policies/__init__.py": "387be4421984be3d020e7bad6b815902334999189a432583b8168092e91ad62a",
+  "policies/ctrl_mpc.py": "cd5d42fc044bb70dfb069038120b218c38145c441a0ddd13998d7d16961bd0db",
+  "policies/ctrl_mpc2.py": "b1024c6465aabf59e116a43cdc63dc9a60320c099da60edea8e41a22329b40b8",
+  "policies/ctrl_v1.py": "758577488330c4307f7a72b66cea08a4ed023db36880ea4a315405e77e20715f",
+  "policies/ctrl_v2.py": "2f81d31a9e92a01dbd5f23ed832a8faf16908e9296357068689d55b1c324641a",
+  "policies/ctrl_w.py": "6bfecc6d934e0c899b7a87cf414f7fe2a35cbf5204d82e5165265f943c58ed37",
+  "policies/ctrl_w2.py": "496e6d72287af2f0f6ab2dcbd79c79fe754211fd5a2361321c77141bec86d5f6",
+  "policies/ctrl_w3.py": "898378eb9adab1836431cfe9f3fdfe15702d99c5df24e8998f4dfc6122327c85",
+  "policies/ctrl_w4.py": "14755afccceb60149075797b71eb673d45791bc61ec1ad4ea81c3330b60cc47e",
+  "policies/ctrl_w5.py": "fee124e1100454355293b25d4d0827051f119695db60a7fea3a7bacb09df5b90",
+  "policies/ctrl_w6.py": "43f88baef6b59e14692f0f4a67acced34d5ee1a3e45cac87d530ca888afd0bdb",
+  "policies/ctrl_w7.py": "9a09784ced9aba120fd8e886d76aa1855b84f6a0f4c3c49674bd19234f4b54fb",
+  "policies/exploit_b1.py": "c8849bbc1890755f0665b4e5a3f83903ea0999b4fbfe270eb3ea2f597110e321",
+  "policies/exploit_b2.py": "02cce3e489b4bf663f9907e7ba67e8e81ad842346c98130db183f6d69f42d6ca",
+  "policies/oracle_forecast.py": "e20aafeda1db89afbf8b5aa541194278a1433a35d15d13c4fc01569d34640ff9",
+  "policies/oracle_foresight.py": "d45a16a1c93e95ba1ecac1c3a658f3fb7b2ca16a2cc572d7f7ba5a3015eab8c8",
+  "policies/oracle_noop.py": "533fc4dfc01d681d52bf6f8e627f4837dd725df427b7d87ac16d259d16e281c6",
+  "policies/oracle_occupancy.py": "52c9c52fe03c11a069622689ba138c096c6f57ae40baea7151e8fd13166fcad4",
+  "policies/oracle_util.py": "b2dd654f56a437b5b30886d2117fe772c7a3e7b1e533ef752263fa3bf6e325f7",
+  "policies/ref_wu.py": "234d3beac1c0591467f215f2004fbcaf9016f1cbefe4788943594a6951d6b64b",
+  "policies/ref_ztbest.py": "85614b73198cc03574e2b27b16fcfa9fc5872421b634de7908a29cf267b5fca4",
+  "policies/ref_ztoff.py": "c75ac4923fbe924c498220c4e4ab19c5bfdfa455ed64fab0d9365717e3697d94",
+  "policies/wu_core.py": "2d9847212986335571401dde00db42aeedc4bf964584d13ea0d504348255ed20",
+  "policies/wu_weights.py": "af676b5a7d7ae48dcccbeac6c7f734fdfc276c1fff05d782dbb4fc11761bd412",
+  "sbx/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sbx/evalrun.py": "fff169f9a4d73efa59868bb3412034bd571ea16861dc55f65802015bd4a1d93d",
+  "sbx/fastpatch.py": "536a0a383c742981cf5fa8ef51b8b069f8a1d2888ebe18559d8ac929524bcf60",
+  "sbx/pools/manifest.json": "6e72f52502724481ab9e58eea9218adb1ef940a318d843ec3260307c65cdfd5e",
+  "sbx/scenarios.py": "5a3701c725b22675111195524213173c94180b95d586892d6ceb21aef6b9a380",
+  "sbx/simload.py": "afba764eca75f22c13e23931be8ad8c5e133aca3d92cae0536b3e928f2d8b834"
+ },
+ "dataset": "mors1337/sbx-payload",
+ "dataset_version": 11,
+ "out_dir": "/Users/mors1337/Code/DL/doma/results/q8",
+ "created_utc": "2026-11-07T10:24:41Z",
+ "kernels": [
+  {
+   "slug": "sbx-remote-ctrw-dev30-shipped-kg-0",
+   "id": "mors1337/sbx-remote-ctrw-dev30-shipped-kg-0",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctrw-dev30-shipped-kg-0",
+   "job_tag": "ctrw_dev30_shipped_kg",
+   "shard": 0,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/fairbanks_1",
+    "building_train_2/atlanta_3",
+    "building_train_2/singapore_1",
+    "building_train_4/denver_2",
+    "building_train_4/phoenix_8",
+    "building_train_7/denver_5",
+    "building_train_8/atlanta_1",
+    "building_train_8/phoenix_4"
+   ],
+   "job": {
+    "tag": "ctrw_dev30_shipped_kg",
+    "policy": "policies.ctrl_w:CtrlW",
+    "params": {},
+    "scenarios": [
+     "building_train_1/fairbanks_1",
+     "building_train_2/atlanta_3",
+     "building_train_2/singapore_1",
+     "building_train_4/denver_2",
+     "building_train_4/phoenix_8",
+     "building_train_7/denver_5",
+     "building_train_8/atlanta_1",
+     "building_train_8/phoenix_4"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctrw-dev30-shipped-kg-0",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:24:44Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctrw-dev30-shipped-kg-1",
+   "id": "mors1337/sbx-remote-ctrw-dev30-shipped-kg-1",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctrw-dev30-shipped-kg-1",
+   "job_tag": "ctrw_dev30_shipped_kg",
+   "shard": 1,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/singapore_8",
+    "building_train_2/denver_8",
+    "building_train_4/singapore_3",
+    "building_train_5/atlanta_6",
+    "building_train_5/phoenix_1",
+    "building_train_7/phoenix_3",
+    "building_train_8/fairbanks_8"
+   ],
+   "job": {
+    "tag": "ctrw_dev30_shipped_kg",
+    "policy": "policies.ctrl_w:CtrlW",
+    "params": {},
+    "scenarios": [
+     "building_train_1/singapore_8",
+     "building_train_2/denver_8",
+     "building_train_4/singapore_3",
+     "building_train_5/atlanta_6",
+     "building_train_5/phoenix_1",
+     "building_train_7/phoenix_3",
+     "building_train_8/fairbanks_8"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 1,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctrw-dev30-shipped-kg-1",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:24:46Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctrw-dev30-shipped-kg-2",
+   "id": "mors1337/sbx-remote-ctrw-dev30-shipped-kg-2",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctrw-dev30-shipped-kg-2",
+   "job_tag": "ctrw_dev30_shipped_kg",
+   "shard": 2,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/atlanta_2",
+    "building_train_1/phoenix_5",
+    "building_train_2/fairbanks_2",
+    "building_train_5/denver_3",
+    "building_train_5/singapore_4",
+    "building_train_7/fairbanks_7",
+    "building_train_8/denver_6"
+   ],
+   "job": {
+    "tag": "ctrw_dev30_shipped_kg",
+    "policy": "policies.ctrl_w:CtrlW",
+    "params": {},
+    "scenarios": [
+     "building_train_1/atlanta_2",
+     "building_train_1/phoenix_5",
+     "building_train_2/fairbanks_2",
+     "building_train_5/denver_3",
+     "building_train_5/singapore_4",
+     "building_train_7/fairbanks_7",
+     "building_train_8/denver_6"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 2,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctrw-dev30-shipped-kg-2",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:24:49Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctrw-dev30-shipped-kg-3",
+   "id": "mors1337/sbx-remote-ctrw-dev30-shipped-kg-3",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctrw-dev30-shipped-kg-3",
+   "job_tag": "ctrw_dev30_shipped_kg",
+   "shard": 3,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/denver_7",
+    "building_train_2/phoenix_6",
+    "building_train_4/atlanta_5",
+    "building_train_4/fairbanks_4",
+    "building_train_5/fairbanks_5",
+    "building_train_7/atlanta_8",
+    "building_train_7/singapore_6",
+    "building_train_8/singapore_7"
+   ],
+   "job": {
+    "tag": "ctrw_dev30_shipped_kg",
+    "policy": "policies.ctrl_w:CtrlW",
+    "params": {},
+    "scenarios": [
+     "building_train_1/denver_7",
+     "building_train_2/phoenix_6",
+     "building_train_4/atlanta_5",
+     "building_train_4/fairbanks_4",
+     "building_train_5/fairbanks_5",
+     "building_train_7/atlanta_8",
+     "building_train_7/singapore_6",
+     "building_train_8/singapore_7"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 3,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctrw-dev30-shipped-kg-3",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:24:51Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw2-v4-dev30-kg-0",
+   "id": "mors1337/sbx-remote-ctw2-v4-dev30-kg-0",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctw2-v4-dev30-kg-0",
+   "job_tag": "ctw2_v4_dev30_kg",
+   "shard": 0,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/fairbanks_1",
+    "building_train_2/atlanta_3",
+    "building_train_2/singapore_1",
+    "building_train_4/denver_2",
+    "building_train_4/phoenix_8",
+    "building_train_7/denver_5",
+    "building_train_8/atlanta_1",
+    "building_train_8/phoenix_4"
+   ],
+   "job": {
+    "tag": "ctw2_v4_dev30_kg",
+    "policy": "policies.ctrl_w2:CtrlW2",
+    "params": {
+     "preheat_min_hours": 1.0,
+     "preheat_max_hours": 3.0,
+     "preheat_gate_k": 2.0,
+     "preheat_safety": 1.0,
+     "preheat_slack_hours": 0.25
+    },
+    "scenarios": [
+     "building_train_1/fairbanks_1",
+     "building_train_2/atlanta_3",
+     "building_train_2/singapore_1",
+     "building_train_4/denver_2",
+     "building_train_4/phoenix_8",
+     "building_train_7/denver_5",
+     "building_train_8/atlanta_1",
+     "building_train_8/phoenix_4"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw2-v4-dev30-kg-0",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:52:13Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw2-v4-dev30-kg-1",
+   "id": "mors1337/sbx-remote-ctw2-v4-dev30-kg-1",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctw2-v4-dev30-kg-1",
+   "job_tag": "ctw2_v4_dev30_kg",
+   "shard": 1,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/singapore_8",
+    "building_train_2/denver_8",
+    "building_train_4/singapore_3",
+    "building_train_5/atlanta_6",
+    "building_train_5/phoenix_1",
+    "building_train_7/phoenix_3",
+    "building_train_8/fairbanks_8"
+   ],
+   "job": {
+    "tag": "ctw2_v4_dev30_kg",
+    "policy": "policies.ctrl_w2:CtrlW2",
+    "params": {
+     "preheat_min_hours": 1.0,
+     "preheat_max_hours": 3.0,
+     "preheat_gate_k": 2.0,
+     "preheat_safety": 1.0,
+     "preheat_slack_hours": 0.25
+    },
+    "scenarios": [
+     "building_train_1/singapore_8",
+     "building_train_2/denver_8",
+     "building_train_4/singapore_3",
+     "building_train_5/atlanta_6",
+     "building_train_5/phoenix_1",
+     "building_train_7/phoenix_3",
+     "building_train_8/fairbanks_8"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 1,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw2-v4-dev30-kg-1",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:52:16Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw2-v4-dev30-kg-2",
+   "id": "mors1337/sbx-remote-ctw2-v4-dev30-kg-2",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctw2-v4-dev30-kg-2",
+   "job_tag": "ctw2_v4_dev30_kg",
+   "shard": 2,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/atlanta_2",
+    "building_train_1/phoenix_5",
+    "building_train_2/fairbanks_2",
+    "building_train_5/denver_3",
+    "building_train_5/singapore_4",
+    "building_train_7/fairbanks_7",
+    "building_train_8/denver_6"
+   ],
+   "job": {
+    "tag": "ctw2_v4_dev30_kg",
+    "policy": "policies.ctrl_w2:CtrlW2",
+    "params": {
+     "preheat_min_hours": 1.0,
+     "preheat_max_hours": 3.0,
+     "preheat_gate_k": 2.0,
+     "preheat_safety": 1.0,
+     "preheat_slack_hours": 0.25
+    },
+    "scenarios": [
+     "building_train_1/atlanta_2",
+     "building_train_1/phoenix_5",
+     "building_train_2/fairbanks_2",
+     "building_train_5/denver_3",
+     "building_train_5/singapore_4",
+     "building_train_7/fairbanks_7",
+     "building_train_8/denver_6"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 2,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw2-v4-dev30-kg-2",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:52:18Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw2-v4-dev30-kg-3",
+   "id": "mors1337/sbx-remote-ctw2-v4-dev30-kg-3",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-ctw2-v4-dev30-kg-3",
+   "job_tag": "ctw2_v4_dev30_kg",
+   "shard": 3,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/denver_7",
+    "building_train_2/phoenix_6",
+    "building_train_4/atlanta_5",
+    "building_train_4/fairbanks_4",
+    "building_train_5/fairbanks_5",
+    "building_train_7/atlanta_8",
+    "building_train_7/singapore_6",
+    "building_train_8/singapore_7"
+   ],
+   "job": {
+    "tag": "ctw2_v4_dev30_kg",
+    "policy": "policies.ctrl_w2:CtrlW2",
+    "params": {
+     "preheat_min_hours": 1.0,
+     "preheat_max_hours": 3.0,
+     "preheat_gate_k": 2.0,
+     "preheat_safety": 1.0,
+     "preheat_slack_hours": 0.25
+    },
+    "scenarios": [
+     "building_train_1/denver_7",
+     "building_train_2/phoenix_6",
+     "building_train_4/atlanta_5",
+     "building_train_4/fairbanks_4",
+     "building_train_5/fairbanks_5",
+     "building_train_7/atlanta_8",
+     "building_train_7/singapore_6",
+     "building_train_8/singapore_7"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "cenv": "fused",
+    "fast": true,
+    "gate": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "460084a54a6071f4f8cc06bfac6f751a",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 3,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw2-v4-dev30-kg-3",
+    "created_utc": "2026-11-07T10:24:41Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-07T10:52:45Z",
+   "status": "COMPLETE",
+   "done": true
+  }
+ ],
+ "max_concurrency": 4,
+ "poll": {
+  "samples": [
+   {
+    "elapsed": 3.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 27.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 50.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 74.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 98.1,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 121.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 145.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 168.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 192.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 215.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 239.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 263.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 286.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 310.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 334.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 358.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 381.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 405.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 428.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 452.4,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 475.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 499.4,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 523.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 547.0,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 570.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 594.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 618.4,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 641.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 665.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 689.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 713.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 737.1,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 760.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 784.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 807.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 831.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 855.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 879.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 903.0,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 926.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 950.5,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 974.1,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 998.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1021.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1045.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1069.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1093.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1117.1,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1141.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1164.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1188.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1211.8,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1235.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1258.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1282.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1306.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1330.4,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1354.0,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1378.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1401.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1425.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1449.1,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1472.7,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1496.4,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1520.2,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1544.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1568.6,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1592.3,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1615.9,
+    "RUNNING": 4,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1639.5,
+    "COMPLETE": 3,
+    "RUNNING": 1,
+    "NOT_PUSHED": 4
+   },
+   {
+    "elapsed": 1670.7,
+    "COMPLETE": 4,
+    "RUNNING": 3,
+    "NOT_PUSHED": 1
+   },
+   {
+    "elapsed": 1697.1,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1721.3,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1745.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1768.6,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1792.8,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1816.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1840.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1864.3,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1888.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1911.8,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1936.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1960.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1984.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2007.9,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2031.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2055.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2079.3,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2103.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2127.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2151.6,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2175.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2200.3,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2224.0,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2248.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2272.5,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2296.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2319.6,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2344.1,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2368.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2392.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2416.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2439.9,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2464.3,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2488.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2511.6,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2535.9,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2559.6,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2583.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2607.2,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2631.1,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2654.7,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2678.7,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2703.4,
+    "COMPLETE": 4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2727.2,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2750.3,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2773.2,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2796.0,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2818.8,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2842.1,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2865.5,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2888.6,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2912.1,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2935.4,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2958.2,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 2980.9,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 3003.8,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 3026.8,
+    "COMPLETE": 5,
+    "RUNNING": 3
+   },
+   {
+    "elapsed": 3049.5,
+    "COMPLETE": 6,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 3071.5,
+    "COMPLETE": 6,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 3093.4,
+    "COMPLETE": 6,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 3115.3,
+    "COMPLETE": 6,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 3137.1,
+    "COMPLETE": 7,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 3157.9,
+    "COMPLETE": 7,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 3179.3,
+    "COMPLETE": 7,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 3200.6,
+    "COMPLETE": 7,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 3222.1,
+    "COMPLETE": 8
+   }
+  ],
+  "started_at": 1794047091.712053,
+  "max_concurrent_running": 4,
+  "wall_seconds": 3222.1,
+  "queue_observed": false
+ }
+}

@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim shipped --workers 4 --tag wu_dev30_seed12345 --out /kaggle/working/results/wu_dev30_seed12345 --components hook --start-offset-days 0 --scenario building_train_1/singapore_8 building_train_2/denver_8 building_train_4/singapore_3 building_train_5/atlanta_6 building_train_5/phoenix_1 building_train_7/phoenix_3 building_train_8/fairbanks_8 --params {"early_preheat_enabled": false, "holiday_guard_enabled": false, "precondition_hours": 1.0, "release_enabled": false, "reward_weights_enabled": false} --occupancy-seed 12345
+
+STDOUT
+[evalrun] tag=wu_dev30_seed12345 sim=shipped policy=policies.ctrl_w:CtrlW scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/wu_dev30_seed12345
+[evalrun] 1/7 building_train_1/singapore_8           total=    -56.5117 mean=-0.006540 steps=8641 cpu=764.7s
+[evalrun] 2/7 building_train_4/singapore_3           total=    -60.1327 mean=-0.006959 steps=8641 cpu=1034.1s
+[evalrun] 3/7 building_train_5/atlanta_6             total=    -35.8130 mean=-0.004145 steps=8641 cpu=1089.5s
+[evalrun] 4/7 building_train_2/denver_8              total=    -39.3240 mean=-0.004551 steps=8641 cpu=1394.9s
+[evalrun] 5/7 building_train_7/phoenix_3             total=    -47.2126 mean=-0.005464 steps=8641 cpu=487.5s
+[evalrun] 6/7 building_train_8/fairbanks_8           total=   -212.4346 mean=-0.024584 steps=8641 cpu=447.7s
+[evalrun] 7/7 building_train_5/phoenix_1             total=    -22.0089 mean=-0.002547 steps=8641 cpu=948.7s
+[evalrun] score=0.007827 scenarios=7 failed=0 wall=1728s -> /kaggle/working/results/wu_dev30_seed12345/summary.json
+
+STDERR

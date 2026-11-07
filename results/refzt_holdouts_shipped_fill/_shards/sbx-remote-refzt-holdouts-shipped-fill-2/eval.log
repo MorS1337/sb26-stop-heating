@@ -1,0 +1,12 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ref_ztbest:RefZtBest --steps 8641 --sim shipped --workers 4 --tag refzt_holdouts_shipped_fill --out /kaggle/working/results/refzt_holdouts_shipped_fill --components hook --start-offset-days 0 --scenario building_hold_000/minneapolis_g1 building_hold_003/reykjavik_2 building_hold_006/denver_g1 building_hold_006/phoenix_g5 building_train_8/london_1
+
+STDOUT
+[evalrun] tag=refzt_holdouts_shipped_fill sim=shipped policy=policies.ref_ztbest:RefZtBest scenarios=5 steps=8641 workers=4 out=/kaggle/working/results/refzt_holdouts_shipped_fill
+[evalrun] 1/5 building_hold_000/minneapolis_g1       total=   -109.7727 mean=-0.012704 steps=8641 cpu=1264.1s
+[evalrun] 2/5 building_hold_006/phoenix_g5           total=    -44.2843 mean=-0.005125 steps=8641 cpu=1465.5s
+[evalrun] 3/5 building_hold_006/denver_g1            total=    -49.6665 mean=-0.005748 steps=8641 cpu=1475.7s
+[evalrun] 4/5 building_hold_003/reykjavik_2          total=    -63.5860 mean=-0.007359 steps=8641 cpu=1503.8s
+[evalrun] 5/5 building_train_8/london_1              total=   -108.8721 mean=-0.012599 steps=8641 cpu=501.3s
+[evalrun] score=0.008707 scenarios=5 failed=0 wall=1790s -> /kaggle/working/results/refzt_holdouts_shipped_fill/summary.json
+
+STDERR

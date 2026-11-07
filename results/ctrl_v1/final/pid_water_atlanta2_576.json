@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_1/atlanta_2",
+  "policy": "pid_water",
+  "tag": "",
+  "steps": 576,
+  "mean_reward": -0.004374715516459244,
+  "total_reward": -2.5198361374805245,
+  "last200_mean": -0.010330820265880902,
+  "wall_s": 37.4,
+  "s_per_step": 0.0649,
+  "prod_mean": -0.006953354757368086,
+  "energy_mean": 0.000322034635941135,
+  "carbon_mean": 0.0006914787303079114,
+  "tmin": 292.4843444824219,
+  "tmax": 298.70953369140625,
+  "frac_run": 0.01171875,
+  "frac_water": 0.03125
+}

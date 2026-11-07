@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+scenario & $\bar T_\mathrm{out}$ & comfort & energy+carbon & \multicolumn{2}{c}{heating} & \multicolumn{2}{c}{cooling} & fans \\
+ & (°C) & & & vent. & other & vent. & other & + pump \\
+\midrule
+Fairbanks, 41z & -21.4 & 2.61 & 392.55 & 69.65 & 311.77 & -0.00 & 0.00 & 11.13 \\
+Fairbanks, 87z & -8.2 & 0.57 & 106.69 & 9.29 & 92.67 & -0.00 & 0.00 & 4.72 \\
+Denver, 38z & 24.2 & 0.58 & 37.39 & 0.00 & 1.73 & 4.89 & 27.81 & 2.97 \\
+Atlanta, 87z & 20.8 & 0.22 & 24.58 & 0.01 & 1.29 & 1.24 & 18.20 & 3.83 \\
+Phoenix, 32z & 34.4 & -0.00 & 83.00 & -0.00 & 0.07 & 17.43 & 60.63 & 4.87 \\
+Singapore, 56z & 28.6 & 0.42 & 58.65 & -0.00 & 0.08 & 6.72 & 48.33 & 3.51 \\
+\bottomrule
+\end{tabular}
+\caption{Where CtrlW's energy+carbon loss goes (reward units, positive = loss; 8{,}641-step episodes, shipped simulator). \emph{vent.} is the outside-air share, evaluated as the marginal effect of the mixing box -- the same step with 100\% recirculation, everything else held. \emph{other} heating is the coil duty that survives that counterfactual (envelope, internal gains and the coil's water-side limit); \emph{other} cooling is internal, solar and envelope gain. Boiler standby is under 3\% everywhere and folded into \emph{other} heating here.}
+\label{tab:energyflow}
+\end{table}

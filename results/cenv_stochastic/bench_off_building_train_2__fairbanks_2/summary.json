@@ -1,0 +1,63 @@
+{
+  "tag": "bench_off_building_train_2__fairbanks_2",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {},
+  "sim": "corrected",
+  "steps": 800,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "components_mode": "parity",
+  "cenv_components": [],
+  "fast": false,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cenv_stochastic/bench_off_building_train_2__fairbanks_2",
+  "leaderboard_score": 0.02160357486995963,
+  "mean_abs_total_reward_per_step": 0.02160357486995963,
+  "mean_total_reward": -17.282859895967704,
+  "mean_per_step_reward": -0.02160357486995963,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.2242806466174175,
+  "sum_energy_all": -4.796707583795484,
+  "sum_carbon_all": -12.261871967909343,
+  "by_weather": {
+    "fairbanks_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02160357486995963,
+      "mean_total_reward": -17.282859895967704,
+      "mean_per_step_reward": -0.02160357486995963
+    }
+  },
+  "by_building": {
+    "building_train_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02160357486995963,
+      "mean_total_reward": -17.282859895967704,
+      "mean_per_step_reward": -0.02160357486995963
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 98.95351696014404,
+    "cpu_seconds_total": 95.70552500000001,
+    "wall_seconds_sum_scenarios": 98.87330102920532,
+    "mean_cpu_seconds_per_scenario": 95.70552500000001,
+    "steps_per_second_cpu": 8.358974050871147,
+    "steps_per_second_step_cpu": 10.951570607862669
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "steps": 800,
+      "total_reward": -17.282859895967704,
+      "mean_per_step_reward": -0.02160357486995963,
+      "cpu_seconds": 95.70552500000001,
+      "wall_seconds": 98.87330102920532,
+      "steps_per_second_cpu": 8.358974050871147
+    }
+  ],
+  "failures": []
+}

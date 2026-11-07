@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ref_ztbest:RefZtBest --steps 8641 --sim shipped --workers 4 --tag refzt_dev30_shipped --out /kaggle/working/results/refzt_dev30_shipped --components parity --start-offset-days 0 --scenario building_train_1/fairbanks_1 building_train_2/fairbanks_2 building_train_4/fairbanks_4 building_train_5/fairbanks_5 building_train_7/fairbanks_7 building_train_8/fairbanks_8
+
+STDOUT
+[evalrun] tag=refzt_dev30_shipped sim=shipped policy=policies.ref_ztbest:RefZtBest scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/refzt_dev30_shipped
+[evalrun] 1/6 building_train_1/fairbanks_1           total=   -477.8651 mean=-0.055302 steps=8641 cpu=983.1s
+[evalrun] 2/6 building_train_4/fairbanks_4           total=    -38.2991 mean=-0.004432 steps=8641 cpu=1333.8s
+[evalrun] 3/6 building_train_5/fairbanks_5           total=    -30.1848 mean=-0.003493 steps=8641 cpu=1391.4s
+[evalrun] 4/6 building_train_7/fairbanks_7           total=    -97.7402 mean=-0.011311 steps=8641 cpu=629.1s
+[evalrun] 5/6 building_train_2/fairbanks_2           total=   -139.6880 mean=-0.016166 steps=8641 cpu=1671.6s
+[evalrun] 6/6 building_train_8/fairbanks_8           total=   -281.7555 mean=-0.032607 steps=8641 cpu=446.0s
+[evalrun] score=0.020552 scenarios=6 failed=0 wall=1825s -> /kaggle/working/results/refzt_dev30_shipped/summary.json
+
+STDERR

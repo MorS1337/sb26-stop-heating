@@ -1,0 +1,78 @@
+{
+  "tag": "tune_local_check2",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {
+    "comfort_margin": 0.040531,
+    "precondition_hours": 1.465616,
+    "recovery_steps": 1.577619,
+    "comfort_cost": 28926.950405,
+    "gas_cost_ratio": 0.371746,
+    "hot_water_target": 340.309495,
+    "standby_minimum": 279.441513,
+    "standby_maximum": 307.901941,
+    "observation_delay": 1,
+    "response_scale": 0.994155,
+    "disturbance_rate": 0.411062,
+    "residual_alpha": 0.394207,
+    "correction_limit": 0.338961,
+    "disagreement_limit": 0.325022,
+    "release_hour": 9.960948,
+    "release_empty_steps": 5,
+    "gas_ratio_scale": 0.824174,
+    "early_preheat_hours": 2.499928
+  },
+  "sim": "shipped",
+  "steps": 288,
+  "start_offset_days": 1,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/tune_local_check2",
+  "leaderboard_score": 0.004470636099161614,
+  "mean_abs_total_reward_per_step": 0.004470636099161614,
+  "mean_total_reward": -1.2875431965585449,
+  "mean_per_step_reward": -0.004470636099161614,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.03640908752453219,
+  "sum_energy_all": -1.0150391492014033,
+  "sum_carbon_all": -0.2360949775154768,
+  "by_weather": {
+    "singapore_g2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004470636099161614,
+      "mean_total_reward": -1.2875431965585449,
+      "mean_per_step_reward": -0.004470636099161614
+    }
+  },
+  "by_building": {
+    "building_gen_001": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004470636099161614,
+      "mean_total_reward": -1.2875431965585449,
+      "mean_per_step_reward": -0.004470636099161614
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 25.784104108810425,
+    "cpu_seconds_total": 22.683213000000002,
+    "wall_seconds_sum_scenarios": 25.78242301940918,
+    "mean_cpu_seconds_per_scenario": 22.683213000000002,
+    "steps_per_second_cpu": 12.696614011427744,
+    "steps_per_second_step_cpu": 20.7359804252345
+  },
+  "scenarios": [
+    {
+      "scenario": "building_gen_001/singapore_g2",
+      "steps": 288,
+      "total_reward": -1.2875431965585449,
+      "mean_per_step_reward": -0.004470636099161614,
+      "cpu_seconds": 22.683213000000002,
+      "wall_seconds": 25.78242301940918,
+      "steps_per_second_cpu": 12.696614011427744
+    }
+  ],
+  "failures": []
+}

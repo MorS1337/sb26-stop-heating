@@ -1,0 +1,62 @@
+[{"stream_name":"stdout","time":1.204579244,"data":"[sbx-remote      0.0s] job: {\"cenv\": \"fused\", \"components\": \"parity\", \"created_utc\": \"2026-11-07T10:24:41Z\", \"dataset_dir\": \"/kaggle/input/sbx-payload\", \"fast\": true, \"gate\": null, \"job_timeout\": 1800.0, \"keep_trees\": false, \"kernel_slug\": \"sbx-remote-ctrw-dev30-shipped-kg-2\", \"mount\": \"/kaggle/input/competitions/neurips-2026-smart-buildings\", \"n_shards\": 4, \"occupancy_seed\": null, \"oracle\": [], \"oracle_horizon\": null, \"params\": {}, \"payload_hash\": \"460084a54a6071f4f8cc06bfac6f751a\", \"policy\": \"policies.ctrl_w:CtrlW\", \"scenarios\": [\"building_train_1/atlanta_2\", \"building_train_1/phoenix_5\", \"building_train_2/fairbanks_2\", \"building_train_5/denver_3\", \"building_train_5/singapore_4\", \"building_train_7/fairbanks_7\", \"building_train_8/denver_6\"], \"shard\": 2, \"sim\": \"shipped\", \"start_offset_days\": 0, \"steps\": 8641, \"tag\": \"ctrw_dev30_shipped_kg\", \"tasks\": null, \"workers\": 4}\n"}
+,{"stream_name":"stdout","time":1.408744185,"data":"[sbx-remote      0.2s] payload source: dir /kaggle/input/datasets/mors1337/sbx-payload\n"}
+,{"stream_name":"stdout","time":23.023723674,"data":"[sbx-remote     21.8s] payload verified: 148 files, hash 460084a54a6071f4f8cc06bfac6f751a\n"}
+,{"stream_name":"stdout","time":24.007286887,"data":"[sbx-remote     22.8s] mount vs local sims/shipped: 96 files, 23 differ, 0 extra -\u003e match=False\n"}
+,{"stream_name":"stdout","time":26.407335802,"data":"[sbx-remote     25.2s] sims/shipped built from the mount in 2.4s\n"}
+,{"stream_name":"stdout","time":26.521131051,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 30 applied at 30\n"}
+,{"stream_name":"stdout","time":26.521173767,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 45 applied at 49\n"}
+,{"stream_name":"stdout","time":26.521180304,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 89 applied at 94\n"}
+,{"stream_name":"stdout","time":26.521184816999998,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 103 applied at 111\n"}
+,{"stream_name":"stdout","time":26.521189443,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 122 applied at 131\n"}
+,{"stream_name":"stdout","time":26.521194154,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 205 applied at 258\n"}
+,{"stream_name":"stdout","time":26.521198471,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/boiler_energy_balance_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":26.521202931,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 54 applied at 54\n"}
+,{"stream_name":"stdout","time":26.52120709,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 291 applied at 292\n"}
+,{"stream_name":"stdout","time":26.521211367,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 190 applied at 190\n"}
+,{"stream_name":"stdout","time":26.521215369,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 211 applied at 222\n"}
+,{"stream_name":"stdout","time":26.521221766,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 520 applied at 520\n"}
+,{"stream_name":"stdout","time":26.521231131,"data":"[sbx-remote     25.3s] patch: smart_buildings/check_return_air.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":26.521268011,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/return_air_mixing_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":26.521273434,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 7 applied at 7\n"}
+,{"stream_name":"stdout","time":26.521278127,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 289 applied at 289\n"}
+,{"stream_name":"stdout","time":26.521284522,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 315 applied at 312\n"}
+,{"stream_name":"stdout","time":26.521312636,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 704 applied at 690\n"}
+,{"stream_name":"stdout","time":26.521316967,"data":"[sbx-remote     25.3s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 720 applied at 771\n"}
+,{"stream_name":"stdout","time":26.522206403,"data":"[sbx-remote     25.3s] sims/corrected: 6 patched files byte-identical to sims/corrected, 1 differ outside the patched hunks: ['smart_buildings/smart_control/simulator/hot_water_system.py']\n"}
+,{"stream_name":"stdout","time":66.610676249,"data":"[sbx-remote     65.4s] pool scenarios verified: 452 files (226 by digest, 226 by size)\n"}
+,{"stream_name":"stdout","time":72.24946521,"data":"/kaggle/working/payload/cenv/_build/libcenv.so\n"}
+,{"stream_name":"stdout","time":72.249539987,"data":"cenv: gcc -O3 -std=c11 -fPIC -ffp-contract=off -fno-fast-math -Wall -Wextra -Wno-unused-parameter -D_GNU_SOURCE -I/kaggle/working/payload/cenv/include -I/usr/local/lib/python3.13/dist-packages/numpy/_core/include /kaggle/working/payload/cenv/src/batch.c /kaggle/working/payload/cenv/src/bookkeeping.c /kaggle/working/payload/cenv/src/convection.c /kaggle/working/payload/cenv/src/core.c /kaggle/working/payload/cenv/src/hvac.c /kaggle/working/payload/cenv/src/occupancy.c /kaggle/working/payload/cenv/src/rng.c /kaggle/working/payload/cenv/src/solver_chol.c /kaggle/working/payload/cenv/src/step.c /kaggle/working/payload/cenv/src/thermal.c /kaggle/working/payload/cenv/src/thermal_batch.c /kaggle/working/payload/cenv/src/weather.c -shared -lm -o /kaggle/working/payload/cenv/_build/libcenv.so\n"}
+,{"stream_name":"stdout","time":72.249549772,"data":"In function ‘xcalloc’,\n"}
+,{"stream_name":"stdout","time":72.249556532,"data":"    inlined from ‘build_transpose’ at /kaggle/working/payload/cenv/src/solver_chol.c:429:15,\n"}
+,{"stream_name":"stdout","time":72.249561649,"data":"    inlined from ‘cenv_chol_create’ at /kaggle/working/payload/cenv/src/solver_chol.c:699:7:\n"}
+,{"stream_name":"stdout","time":72.249566504,"data":"/kaggle/working/payload/cenv/src/solver_chol.c:73:10: warning: argument 1 value ‘18446744073709551615’ exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]\n"}
+,{"stream_name":"stdout","time":72.249571861,"data":"   73 |   return calloc(count, size);\n"}
+,{"stream_name":"stdout","time":72.249577249,"data":"      |          ^~~~~~~~~~~~~~~~~~~\n"}
+,{"stream_name":"stdout","time":72.249583333,"data":"In file included from /kaggle/working/payload/cenv/src/solver_chol.c:5:\n"}
+,{"stream_name":"stdout","time":72.249589025,"data":"/usr/include/stdlib.h: In function ‘cenv_chol_create’:\n"}
+,{"stream_name":"stdout","time":72.249594829,"data":"/usr/include/stdlib.h:675:14: note: in a call to allocation function ‘calloc’ declared here\n"}
+,{"stream_name":"stdout","time":72.249599715,"data":"  675 | extern void *calloc (size_t __nmemb, size_t __size)\n"}
+,{"stream_name":"stdout","time":72.249625878,"data":"      |              ^~~~~~\n"}
+,{"stream_name":"stdout","time":72.252164988,"data":"[sbx-remote     71.0s] cenv built in 5.6s with gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0 -\u003e libcenv.so (116728 bytes)\n"}
+,{"stream_name":"stdout","time":72.2522046,"data":"[sbx-remote     71.0s] setup complete in 65.4s; starting the evaluation\n"}
+,{"stream_name":"stdout","time":72.252466022,"data":"[sbx-remote     71.0s] exec /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim shipped --workers 4 --tag ctrw_dev30_shipped_kg --out /kaggle/working/results/ctrw_dev30_shipped_kg --components parity --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_1/phoenix_5 building_train_2/fairbanks_2 building_train_5/denver_3 building_train_5/singapore_4 building_train_7/fairbanks_7 building_train_8/denver_6 --cenv fused --fast\n"}
+,{"stream_name":"stdout","time":1602.865446657,"data":"[evalrun] tag=ctrw_dev30_shipped_kg sim=shipped policy=policies.ctrl_w:CtrlW scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/ctrw_dev30_shipped_kg cenv=fused fast=on\n"}
+,{"stream_name":"stdout","time":1602.865640208,"data":"[evalrun] 1/7 building_train_1/phoenix_5             total=   -123.0441 mean=-0.014240 steps=8641 cpu=716.4s\n"}
+,{"stream_name":"stdout","time":1602.865650403,"data":"[evalrun] 2/7 building_train_1/atlanta_2             total=    -27.7312 mean=-0.003209 steps=8641 cpu=718.4s\n"}
+,{"stream_name":"stdout","time":1602.865691371,"data":"[evalrun] 3/7 building_train_5/denver_3              total=    -33.4774 mean=-0.003874 steps=8641 cpu=935.1s\n"}
+,{"stream_name":"stdout","time":1602.865696258,"data":"[evalrun] 4/7 building_train_7/fairbanks_7           total=    -73.0136 mean=-0.008450 steps=8641 cpu=475.9s\n"}
+,{"stream_name":"stdout","time":1602.865716933,"data":"[evalrun] 5/7 building_train_8/denver_6              total=    -27.9220 mean=-0.003231 steps=8641 cpu=347.8s\n"}
+,{"stream_name":"stdout","time":1602.865723137,"data":"[evalrun] 6/7 building_train_2/fairbanks_2           total=   -107.2553 mean=-0.012412 steps=8641 cpu=1355.1s\n"}
+,{"stream_name":"stdout","time":1602.865729343,"data":"[evalrun] 7/7 building_train_5/singapore_4           total=    -46.5978 mean=-0.005393 steps=8641 cpu=790.5s\n"}
+,{"stream_name":"stdout","time":1602.865735721,"data":"[evalrun] score=0.007258 scenarios=7 failed=0 wall=1530s -\u003e /kaggle/working/results/ctrw_dev30_shipped_kg/summary.json\n"}
+,{"stream_name":"stdout","time":1602.865743023,"data":"[sbx-remote   1601.7s] evalrun exit=0 wall=1530.6s\n"}
+,{"stream_name":"stdout","time":1602.869872835,"data":"[sbx-remote   1601.7s] shard.json written: 7 records, exit=0\n"}
+,{"stream_name":"stdout","time":1604.209266891,"data":"[sbx-remote   1603.0s] removed /kaggle/working/payload (1203 MB) so the kernel output is just the results; pass keep_trees to keep the sim trees\n"}
+,{"stream_name":"stdout","time":1604.209315184,"data":"[sbx-remote   1603.0s] SHARD COMPLETE\n"}
+,{"stream_name":"stderr","time":1607.325282928,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1607.32532508,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1607.733544995,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1607.733605004,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1608.959397338,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1609.837214207,"data":"[NbConvertApp] Writing 414862 bytes to __results__.html\n"}
+]

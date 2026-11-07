@@ -1,0 +1,36 @@
+{
+ "job": {
+  "components": "hook",
+  "created_utc": "2026-11-05T20:08:13Z",
+  "dataset_dir": "/kaggle/input/sbx-payload",
+  "job_timeout": 1800.0,
+  "keep_trees": false,
+  "kernel_slug": "sbx-remote-refzt-holdouts-shipped-1",
+  "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+  "n_shards": 5,
+  "occupancy_seed": null,
+  "params": {},
+  "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+  "policy": "policies.ref_ztbest:RefZtBest",
+  "scenarios": [
+   "building_hold_000/minneapolis_g1",
+   "building_hold_001/denver_g5",
+   "building_hold_002/atlanta_g1",
+   "building_hold_002/singapore_g5",
+   "building_hold_003/reykjavik_2",
+   "building_hold_004/minneapolis_g1",
+   "building_hold_006/denver_g1",
+   "building_hold_006/phoenix_g5",
+   "building_hold_007/singapore_g1",
+   "building_train_8/london_1"
+  ],
+  "shard": 1,
+  "sim": "shipped",
+  "start_offset_days": 0,
+  "steps": 8641,
+  "tag": "refzt_holdouts_shipped",
+  "tasks": null,
+  "workers": 4
+ },
+ "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 563, in <module>\n    code = main()\n  File \"/kaggle/src/script.py\", line 544, in main\n    trees = build_trees(info)\n  File \"/kaggle/src/script.py\", line 341, in build_trees\n    raise RuntimeError(f\"scenarios missing from the {JOB['sim']} tree: {missing}\")\nRuntimeError: scenarios missing from the shipped tree: ['building_train_8/london_1']\n"
+}

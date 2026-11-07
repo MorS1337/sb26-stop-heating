@@ -1,0 +1,7 @@
+building_train_1/fairbanks_1       CtrlW5_standby_minimum278 total   -86.6810  min    4.66 C (room_1)  <5C  26.42 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW5_standby_minimum278.json
+building_train_1/fairbanks_1       CtrlW5                 total   -80.3056  min   -8.58 C (room_25)  <5C  26.42 h-any <0C  19.08 h-any  -> frost_building_train_1_fairbanks_1_CtrlW5.json
+building_train_1/fairbanks_1       CtrlW7_frost_band_K0   total   -87.0036  min    2.19 C (room_1)  <5C  26.42 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW7_frost_band_K0.json
+building_train_1/fairbanks_1       CtrlW7_frost_band_K1   total   -87.9699  min    1.05 C (room_1)  <5C  26.00 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW7_frost_band_K1.json
+building_train_1/fairbanks_1       CtrlW7_frost_band_K2   total   -89.1087  min    1.79 C (room_1)  <5C  25.83 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW7_frost_band_K2.json
+building_train_1/fairbanks_1       CtrlW7_frost_band_K3   total   -90.0610  min    2.54 C (room_1)  <5C  25.17 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW7_frost_band_K3.json
+building_train_1/fairbanks_1       CtrlW7_frost_band_K4   total   -90.9961  min    3.27 C (room_1)  <5C  24.92 h-any <0C   0.00 h-any  -> frost_building_train_1_fairbanks_1_CtrlW7_frost_band_K4.json

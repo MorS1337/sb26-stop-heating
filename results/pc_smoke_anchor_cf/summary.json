@@ -1,0 +1,67 @@
+{
+  "tag": "pc_smoke_anchor_cf",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 2016,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "oracle_file": null,
+  "oracle_record": null,
+  "components_mode": "parity",
+  "cenv_components": [
+    "fused"
+  ],
+  "fast": true,
+  "out_dir": "/home/mors1337/sb26/results/pc_smoke_anchor_cf",
+  "leaderboard_score": 0.04619214594699842,
+  "mean_abs_total_reward_per_step": 0.04619214594699842,
+  "mean_total_reward": -93.12336622914881,
+  "mean_per_step_reward": -0.04619214594699842,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.5405423847244094,
+  "sum_energy_all": -26.229278847729166,
+  "sum_carbon_all": -66.35354631827839,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04619214594699842,
+      "mean_total_reward": -93.12336622914881,
+      "mean_per_step_reward": -0.04619214594699842
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04619214594699842,
+      "mean_total_reward": -93.12336622914881,
+      "mean_per_step_reward": -0.04619214594699842
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 75.09831857681274,
+    "cpu_seconds_total": 74.746061018,
+    "wall_seconds_sum_scenarios": 75.09721541404724,
+    "mean_cpu_seconds_per_scenario": 74.746061018,
+    "steps_per_second_cpu": 26.97132093040349,
+    "steps_per_second_step_cpu": 33.732611301756194
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2016,
+      "total_reward": -93.12336622914881,
+      "mean_per_step_reward": -0.04619214594699842,
+      "cpu_seconds": 74.746061018,
+      "wall_seconds": 75.09721541404724,
+      "steps_per_second_cpu": 26.97132093040349
+    }
+  ],
+  "failures": []
+}

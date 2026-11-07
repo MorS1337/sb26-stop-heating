@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ref_ztbest:RefZtBest --steps 8641 --sim corrected --workers 4 --tag refzt_dev30_corrected --out /kaggle/working/results/refzt_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/denver_7 building_train_2/denver_8 building_train_4/denver_2 building_train_5/denver_3 building_train_7/denver_5 building_train_8/denver_6
+
+STDOUT
+[evalrun] tag=refzt_dev30_corrected sim=corrected policy=policies.ref_ztbest:RefZtBest scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/refzt_dev30_corrected
+[evalrun] 1/6 building_train_1/denver_7              total=    -43.7170 mean=-0.005059 steps=8641 cpu=1202.4s
+[evalrun] 2/6 building_train_4/denver_2              total=    -73.6147 mean=-0.008519 steps=8641 cpu=1619.4s
+[evalrun] 3/6 building_train_5/denver_3              total=    -58.5802 mean=-0.006779 steps=8641 cpu=1691.3s
+[evalrun] 4/6 building_train_7/denver_5              total=    -57.9520 mean=-0.006707 steps=8641 cpu=748.2s
+[evalrun] 5/6 building_train_2/denver_8              total=    -59.8532 mean=-0.006927 steps=8641 cpu=2065.0s
+[evalrun] 6/6 building_train_8/denver_6              total=    -43.8303 mean=-0.005072 steps=8641 cpu=546.0s
+[evalrun] score=0.006511 scenarios=6 failed=0 wall=2195s -> /kaggle/working/results/refzt_dev30_corrected/summary.json
+
+STDERR

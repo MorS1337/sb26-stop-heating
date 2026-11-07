@@ -1,0 +1,84 @@
+{
+  "tag": "cg_sweep_sb254",
+  "policy": "policies.ctrl_w4:CtrlW4",
+  "policy_labels": [
+    "policies.ctrl_w4:CtrlW4"
+  ],
+  "params": {
+    "comfort_margin": 0.034826070484780265,
+    "precondition_hours": 1.7414429534050144,
+    "recovery_steps": 1.0668184340280682,
+    "comfort_cost": 72821.45950670268,
+    "gas_cost_ratio": 0.30504739503281575,
+    "hot_water_target": 336.3203264355294,
+    "standby_minimum": 254.0,
+    "standby_maximum": 306.66940594815054,
+    "response_scale": 0.7818660469093199,
+    "gas_ratio_scale": 0.8591598024853808,
+    "early_preheat_hours": 2.247217360592483,
+    "preheat_safety": 0.9830257201773569,
+    "preheat_slack_hours": 0.14948364406956324,
+    "preheat_max_hours": 2.8802617423094024,
+    "night_lift_K": 2.4043805949304726,
+    "night_lift_lead_hours": 3.3682377454381545
+  },
+  "sim": "shipped",
+  "steps": 2016,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "oracle_file": null,
+  "oracle_record": null,
+  "components_mode": "parity",
+  "cenv_components": [
+    "fused"
+  ],
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cg_sweep_sb254",
+  "leaderboard_score": 0.039830535132361025,
+  "mean_abs_total_reward_per_step": 0.039830535132361025,
+  "mean_total_reward": -80.29835882683983,
+  "mean_per_step_reward": -0.039830535132361025,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -1.3488485747822472,
+  "sum_energy_all": -22.32878968729463,
+  "sum_carbon_all": -56.62072180649874,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.039830535132361025,
+      "mean_total_reward": -80.29835882683983,
+      "mean_per_step_reward": -0.039830535132361025
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.039830535132361025,
+      "mean_total_reward": -80.29835882683983,
+      "mean_per_step_reward": -0.039830535132361025
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 37.978020668029785,
+    "cpu_seconds_total": 37.856681,
+    "wall_seconds_sum_scenarios": 37.97688293457031,
+    "mean_cpu_seconds_per_scenario": 37.856681,
+    "steps_per_second_cpu": 53.25347988113379,
+    "steps_per_second_step_cpu": 70.11504954501197
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2016,
+      "total_reward": -80.29835882683983,
+      "mean_per_step_reward": -0.039830535132361025,
+      "cpu_seconds": 37.856681,
+      "wall_seconds": 37.97688293457031,
+      "steps_per_second_cpu": 53.25347988113379
+    }
+  ],
+  "failures": []
+}

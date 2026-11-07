@@ -1,0 +1,20 @@
+{
+  "tag": "ia_b2lin_corrected",
+  "policy": "policies.exploit_b2:ExploitB2",
+  "params": {},
+  "sim": "corrected",
+  "steps": 2016,
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ia_b2lin_corrected",
+  "wall_seconds": 4.906623125076294,
+  "mean_total_reward": null,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 588, in _worker\n    return _run_one(task)\n           ^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 517, in _run_one\n    recorder = IntegrityRecorder(\n               ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 137, in __init__\n    self.b2 = bool(b2) and hook\n                           ^^^^\nNameError: name 'hook' is not defined. Did you mean: 'hooks'?\n",
+      "total_reward": null,
+      "b2": null,
+      "b1": null
+    }
+  ]
+}

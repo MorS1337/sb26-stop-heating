@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.oracle_forecast:OracleFcstCtrlW --steps 8641 --sim corrected --workers 4 --tag nightlift_dev30_corrected --out /kaggle/working/results/nightlift_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/singapore_8 building_train_2/denver_8 building_train_4/singapore_3 building_train_5/atlanta_6 building_train_5/phoenix_1 building_train_7/phoenix_3 building_train_8/fairbanks_8 --params {"fcst_night_fixed_share": 1.0, "fcst_preheat_enabled": false}
+
+STDOUT
+[evalrun] tag=nightlift_dev30_corrected sim=corrected policy=policies.oracle_forecast:OracleFcstCtrlW scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/nightlift_dev30_corrected
+[evalrun] 1/7 building_train_1/singapore_8           total=    -55.3195 mean=-0.006402 steps=8641 cpu=1198.8s
+[evalrun] 2/7 building_train_4/singapore_3           total=    -59.0193 mean=-0.006830 steps=8641 cpu=1614.4s
+[evalrun] 3/7 building_train_5/atlanta_6             total=    -35.2794 mean=-0.004083 steps=8641 cpu=1653.8s
+[evalrun] 4/7 building_train_2/denver_8              total=    -34.6705 mean=-0.004012 steps=8641 cpu=2155.9s
+[evalrun] 5/7 building_train_8/fairbanks_8           total=   -202.5544 mean=-0.023441 steps=8641 cpu=694.3s
+[evalrun] 6/7 building_train_7/phoenix_3             total=    -47.0876 mean=-0.005449 steps=8641 cpu=746.7s
+[evalrun] 7/7 building_train_5/phoenix_1             total=    -18.7767 mean=-0.002173 steps=8641 cpu=1429.9s
+[evalrun] score=0.007484 scenarios=7 failed=0 wall=2668s -> /kaggle/working/results/nightlift_dev30_corrected/summary.json
+
+STDERR

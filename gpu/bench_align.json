@@ -1,0 +1,47 @@
+[
+ {
+  "C": 128,
+  "nx": 600,
+  "ny": 400,
+  "dtype": "float32",
+  "ms": 6.823,
+  "env_sweeps_per_s": 18760,
+  "gbps": 108.1
+ },
+ {
+  "C": 128,
+  "nx": 640,
+  "ny": 400,
+  "dtype": "float32",
+  "ms": 7.501,
+  "env_sweeps_per_s": 17065,
+  "gbps": 104.8
+ },
+ {
+  "C": 128,
+  "nx": 608,
+  "ny": 400,
+  "dtype": "float32",
+  "ms": 6.983,
+  "env_sweeps_per_s": 18330,
+  "gbps": 107.0
+ },
+ {
+  "C": 128,
+  "nx": 400,
+  "ny": 600,
+  "dtype": "float32",
+  "ms": 6.867,
+  "env_sweeps_per_s": 18639,
+  "gbps": 107.4
+ },
+ {
+  "C": 128,
+  "nx": 600,
+  "ny": 400,
+  "dtype": "float16",
+  "ms": 3.426,
+  "env_sweeps_per_s": 37358,
+  "gbps": 215.2
+ }
+]

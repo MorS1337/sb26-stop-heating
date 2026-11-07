@@ -1,0 +1,76 @@
+% ---------------------------------------------------------------------------
+% Section draft: the reward's structure (comfort mean + ventilation-bound bill).
+% Standalone: guarded macros, so it compiles inside paper/main.tex and inside
+% paper/sections_preview.tex.
+% ---------------------------------------------------------------------------
+\providecommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
+\providecommand{\e}[1]{\times10^{-#1}}
+
+\section{The reward has a structure}
+\label{sec:anatomy}
+
+\paragraph{Comfort regret is a per-occupant mean, so arrival dominates.} For zone $v$
+with live band $[T^{\text{lo}}_v,T^{\text{hi}}_v]$ and shortfall $s_{v,t}$ (linear to
+$5$\,K, quadratic beyond), the productivity term of the reward is
+\begin{equation}
+\frac{P-P^{\min}}{P^{\max}-P^{\min}}-1
+\;=\;-\,\frac{\sum_v o_{v,t}\,s_{v,t}}{\sum_v o_{v,t}},
+\label{eq:mean}
+\end{equation}
+the occupancy-weighted \emph{mean} shortfall over the occupants present
+\citep{goldfeder2026smart}. The headcount cancels: a zone out of band with two people
+costs as much per kelvin as the same zone failing with sixty. Occupancy is
+exogenous---two occupants per zone, arrivals 06:00--12:00, departures
+13:00--19:00---so the ramp runs from 0 to $2V$ people across the morning ($74$ on the anchor) and a reactive
+controller pays a fixed price at every mode change. % src: docs/sim_analysis.md L192-198, L341-343
+The measurement is one horizon change: the public base controller's preheat gain is
+multiplied by a parameter that lives inside a 60\,min look-ahead flag, so its ramps never
+exceeded one hour. Moving the ramp outside the flag at a $2$\,h horizon cuts mean hour-06
+comfort regret from $46.2\e{4}$ to $9.2\e{4}$ per step and the score from 0.0075040 to
+0.0074263; the remaining $0.0074263\to0.0073694$ comes from applying the reward-consistent
+weights on top of it, an interaction the one-at-a-time ablation does not capture. Longer
+horizons keep improving the arrival hour while the score rises (0.0074906 at 3\,h, 0.0075614
+at 4\,h): readiness saturates once every zone is in band; the gas does not. % src: results/{refwu_dev30_shipped,ctrw_all,ctrw_d3,ctrw_d4}
+
+\paragraph{The bill is envelope heat times a ventilation multiplier.} On the public
+forum's comparison episode (\texttt{building\_train\_1/fairbanks\_1}, 2\,016 steps,
+mean outside $-26.3\,^\circ$C) the same controller loses $93.12$ units: comfort $0.54$
+(0.6\,\%), energy $26.23$ (28.2\,\%), carbon $66.35$ (71.3\,\%), carbon being $2.5$
+times energy. % src: results/houssem_anchor_ctrlw; docs/opt_gap.md §3
+Instrumenting the trajectory at the model call partitions the bill: $73.3\,\%$
+envelope reheat at the band bottom, $22.9\,\%$ the outside-air share of the same
+reheat, $1.9\,\%$ fans, $1.3\,\%$ boiler standing loss, $0.6\,\%$ pump, no
+chiller. % src: results/ef_shipped/building_train_1__fairbanks_1.npz (2016 steps)
+That outside-air share is not a modelling choice but the action space's floor:
+recirculation is capped at $r\le0.7$, so at least $30\,\%$ of the supply air is
+outdoor air, and the coil must lift it from
+$T_{\text{mix}}=0.7\,T_{\text{ret}}+0.3\,T_{\text{out}}$ to the discharge cap
+$T_{\text{dis}}=308.15$\,K while the zone only receives the drop from
+$T_{\text{dis}}$ to $T_{\text{zone}}$. With $T_{\text{ret}}\approx T_{\text{zone}}$
+the plant's own air-side law is
+\begin{equation}
+\frac{\text{gas billed}}{\text{net zone heat}}\;=\;
+1+\frac{0.3\,\big(T_{\text{zone}}-T_{\text{out}}\big)}{T_{\text{dis}}-T_{\text{zone}}},
+\label{eq:mult}
+\end{equation}
+so at the anchor's ambient the multiplier is $2.00$ for a zone held at $294$\,K and
+$1.18$ for one at $270$\,K (Figure~\ref{fig:mult}a). \emph{Heat delivered into a
+colder building is cheaper per delivered watt.} What a controller cannot change is the
+$0.3$; what it can is the temperature at which it delivers the recovery.
+% src: docs/control_gap.md §0.2, §2 (eff.py: gas/Q_net exact identity)
+Measured over the episode, gas per net zone watt is $1.975$ for CtrlW and $2.061$ for CtrlW5
+against a cap-limited $1.949$ and $2.045$: the air side has about one unit of slack in total
+($1.15$ units, $1.2\,\%$), so \emph{airflow is not where the money is}. The ventilation share is large in the counterfactual sense (coil heat against
+non-ventilation load, a factor $2.24$) but that is a partition of the bill, not a lever.
+% src: docs/control_gap.md §2; docs/opt_gap.md §2-3
+
+\paragraph{What the anatomy rules out.} The exchange rate between the two terms forbids
+trading the occupied band: on the anchor $624$ of the $2{,}016$ steps have at least one
+occupant, and a uniform $1$\,K shortfall there costs $0.6\times(1/5)\times624\approx75$ reward
+units (the comfort term is a mean over present occupants, so it is counted per occupied step,
+not per occupied zone-hour), while one kelvin of building temperature is $0.29$\,MWh of net
+heat $=0.57$\,MWh of gas $\approx1.9$ units---an $\approx\!39{:}1$ ratio. Measured: holding the schedule's own setpoint instead of $0.12$\,K above it costs $1.53$
+units, and hours 04--08 carry $41.5\,\%$ of the anchor's energy-plus-carbon loss in $21\,\%$ of
+the hours. What is left is the band nobody occupies: the reward charges comfort only to present
+occupants, so the night is free---and CtrlW, like the family it comes from, heats it anyway.
+% src: docs/control_gap.md §3; docs/opt_gap.md §6; docs/energy_flow.md "By time bucket"

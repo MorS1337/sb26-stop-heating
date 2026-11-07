@@ -1,0 +1,61 @@
+{
+  "tag": "pc_runtest",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 60,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "components_mode": "hook",
+  "out_dir": "/home/mors1337/sb26/results/pc_runtest",
+  "leaderboard_score": 0.0,
+  "mean_abs_total_reward_per_step": 0.0,
+  "mean_total_reward": 0.0,
+  "mean_per_step_reward": 0.0,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": 0.0,
+  "sum_energy_all": 0.0,
+  "sum_carbon_all": 0.0,
+  "by_weather": {
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0,
+      "mean_total_reward": 0.0,
+      "mean_per_step_reward": 0.0
+    }
+  },
+  "by_building": {
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0,
+      "mean_total_reward": 0.0,
+      "mean_per_step_reward": 0.0
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 3.303342819213867,
+    "cpu_seconds_total": 5.677035187,
+    "wall_seconds_sum_scenarios": 3.3028244972229004,
+    "mean_cpu_seconds_per_scenario": 5.677035187,
+    "steps_per_second_cpu": 10.568896972383694,
+    "steps_per_second_step_cpu": 32.71939036437879
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 60,
+      "total_reward": 0.0,
+      "mean_per_step_reward": 0.0,
+      "cpu_seconds": 5.677035187,
+      "wall_seconds": 3.3028244972229004,
+      "steps_per_second_cpu": 10.568896972383694
+    }
+  ],
+  "failures": []
+}

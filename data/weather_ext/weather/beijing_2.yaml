@@ -1,0 +1,4 @@
+name: beijing_2
+weather_csv: csv/beijing.csv
+convection_coefficient: 15.3
+start_timestamp: 2023-07-09 06:00

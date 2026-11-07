@@ -1,0 +1,59 @@
+{
+  "tag": "dst_gap",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+    "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 288,
+  "start_offset_days": 7,
+  "occupancy_seed": null,
+  "components_mode": "parity",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/dst_gap",
+  "leaderboard_score": 0.0003302245232185265,
+  "mean_abs_total_reward_per_step": 0.0003302245232185265,
+  "mean_total_reward": -0.09510466268693563,
+  "mean_per_step_reward": -0.0003302245232185265,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.08245362072998752,
+  "sum_energy_all": -0.0033359865442042086,
+  "sum_carbon_all": -0.009315064906530116,
+  "by_weather": {
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0003302245232185265,
+      "mean_total_reward": -0.09510466268693563,
+      "mean_per_step_reward": -0.0003302245232185265
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0003302245232185265,
+      "mean_total_reward": -0.09510466268693563,
+      "mean_per_step_reward": -0.0003302245232185265
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 14.691251039505005,
+    "cpu_seconds_total": 14.64039,
+    "wall_seconds_sum_scenarios": 14.666738271713257,
+    "mean_cpu_seconds_per_scenario": 14.64039,
+    "steps_per_second_cpu": 19.67160710882702,
+    "steps_per_second_step_cpu": 32.63215370741491
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 288,
+      "total_reward": -0.09510466268693563,
+      "mean_per_step_reward": -0.0003302245232185265,
+      "cpu_seconds": 14.64039,
+      "wall_seconds": 14.666738271713257,
+      "steps_per_second_cpu": 19.67160710882702
+    }
+  ],
+  "failures": []
+}

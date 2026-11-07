@@ -1,0 +1,1181 @@
+{
+ "payload_hash": "cd3a276dc391f66184fb8a03bb592997",
+ "payload_sources": {
+  "policies/__init__.py": "387be4421984be3d020e7bad6b815902334999189a432583b8168092e91ad62a",
+  "policies/ctrl_mpc.py": "3245a768b5ca5e14ab2570fce0495aa12e95c2a4a4998ee1c93f516c4cffb1e3",
+  "policies/ctrl_v1.py": "758577488330c4307f7a72b66cea08a4ed023db36880ea4a315405e77e20715f",
+  "policies/ctrl_v2.py": "2f81d31a9e92a01dbd5f23ed832a8faf16908e9296357068689d55b1c324641a",
+  "policies/ctrl_w.py": "6bfecc6d934e0c899b7a87cf414f7fe2a35cbf5204d82e5165265f943c58ed37",
+  "policies/ctrl_w2.py": "496e6d72287af2f0f6ab2dcbd79c79fe754211fd5a2361321c77141bec86d5f6",
+  "policies/ctrl_w3.py": "898378eb9adab1836431cfe9f3fdfe15702d99c5df24e8998f4dfc6122327c85",
+  "policies/ctrl_w4.py": "14755afccceb60149075797b71eb673d45791bc61ec1ad4ea81c3330b60cc47e",
+  "policies/ctrl_w5.py": "fee124e1100454355293b25d4d0827051f119695db60a7fea3a7bacb09df5b90",
+  "policies/oracle_forecast.py": "65a5dd48ad967e37c616aa50f36b8f7201cb19e06b037e335a7f85078ad84e38",
+  "policies/oracle_noop.py": "533fc4dfc01d681d52bf6f8e627f4837dd725df427b7d87ac16d259d16e281c6",
+  "policies/oracle_occupancy.py": "52c9c52fe03c11a069622689ba138c096c6f57ae40baea7151e8fd13166fcad4",
+  "policies/oracle_util.py": "b2dd654f56a437b5b30886d2117fe772c7a3e7b1e533ef752263fa3bf6e325f7",
+  "policies/ref_wu.py": "234d3beac1c0591467f215f2004fbcaf9016f1cbefe4788943594a6951d6b64b",
+  "policies/ref_ztbest.py": "85614b73198cc03574e2b27b16fcfa9fc5872421b634de7908a29cf267b5fca4",
+  "policies/ref_ztoff.py": "c75ac4923fbe924c498220c4e4ab19c5bfdfa455ed64fab0d9365717e3697d94",
+  "policies/wu_core.py": "2d9847212986335571401dde00db42aeedc4bf964584d13ea0d504348255ed20",
+  "policies/wu_weights.py": "af676b5a7d7ae48dcccbeac6c7f734fdfc276c1fff05d782dbb4fc11761bd412",
+  "sbx/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sbx/evalrun.py": "fff169f9a4d73efa59868bb3412034bd571ea16861dc55f65802015bd4a1d93d",
+  "sbx/pools/manifest.json": "6e72f52502724481ab9e58eea9218adb1ef940a318d843ec3260307c65cdfd5e",
+  "sbx/scenarios.py": "5a3701c725b22675111195524213173c94180b95d586892d6ceb21aef6b9a380",
+  "sbx/simload.py": "afba764eca75f22c13e23931be8ad8c5e133aca3d92cae0536b3e928f2d8b834"
+ },
+ "dataset": "mors1337/sbx-payload",
+ "dataset_version": 5,
+ "out_dir": "/Users/mors1337/Code/DL/doma/results/ctw4_holdouts_shipped",
+ "created_utc": "2026-11-06T15:21:56Z",
+ "kernels": [
+  {
+   "slug": "sbx-remote-ctw4-holdouts-shipped-0",
+   "id": "mors1337/sbx-remote-ctw4-holdouts-shipped-0",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-holdouts-shipped-0",
+   "job_tag": "ctw4_holdouts_shipped",
+   "shard": 0,
+   "n_shards": 4,
+   "scenarios": [
+    "building_hold_000/minneapolis_g1",
+    "building_hold_001/auckland_2",
+    "building_hold_001/montreal_3",
+    "building_hold_002/atlanta_g1",
+    "building_hold_002/moscow_1",
+    "building_hold_003/minneapolis_g1",
+    "building_hold_004/denver_g5",
+    "building_hold_004/minneapolis_g5",
+    "building_hold_005/fairbanks_g5",
+    "building_hold_006/phoenix_g5",
+    "building_hold_007/atlanta_g5",
+    "building_hold_007/singapore_g1"
+   ],
+   "job": {
+    "tag": "ctw4_holdouts_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/minneapolis_g1",
+     "building_hold_001/auckland_2",
+     "building_hold_001/montreal_3",
+     "building_hold_002/atlanta_g1",
+     "building_hold_002/moscow_1",
+     "building_hold_003/minneapolis_g1",
+     "building_hold_004/denver_g5",
+     "building_hold_004/minneapolis_g5",
+     "building_hold_005/fairbanks_g5",
+     "building_hold_006/phoenix_g5",
+     "building_hold_007/atlanta_g5",
+     "building_hold_007/singapore_g1"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "cd3a276dc391f66184fb8a03bb592997",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-holdouts-shipped-0",
+    "created_utc": "2026-11-06T15:21:56Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T15:21:58Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-holdouts-shipped-1",
+   "id": "mors1337/sbx-remote-ctw4-holdouts-shipped-1",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-holdouts-shipped-1",
+   "job_tag": "ctw4_holdouts_shipped",
+   "shard": 1,
+   "n_shards": 4,
+   "scenarios": [
+    "building_hold_000/anchorage_1",
+    "building_hold_000/atlanta_g5",
+    "building_hold_000/minneapolis_g5",
+    "building_hold_001/denver_g5",
+    "building_hold_001/phoenix_g1",
+    "building_hold_002/bangkok_3",
+    "building_hold_002/singapore_g5",
+    "building_hold_003/minneapolis_g5",
+    "building_hold_004/singapore_g1",
+    "building_hold_005/minneapolis_g1",
+    "building_hold_006/tokyo_2",
+    "building_hold_007/houston_2"
+   ],
+   "job": {
+    "tag": "ctw4_holdouts_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/anchorage_1",
+     "building_hold_000/atlanta_g5",
+     "building_hold_000/minneapolis_g5",
+     "building_hold_001/denver_g5",
+     "building_hold_001/phoenix_g1",
+     "building_hold_002/bangkok_3",
+     "building_hold_002/singapore_g5",
+     "building_hold_003/minneapolis_g5",
+     "building_hold_004/singapore_g1",
+     "building_hold_005/minneapolis_g1",
+     "building_hold_006/tokyo_2",
+     "building_hold_007/houston_2"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "cd3a276dc391f66184fb8a03bb592997",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 1,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-holdouts-shipped-1",
+    "created_utc": "2026-11-06T15:21:56Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T15:22:01Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-holdouts-shipped-2",
+   "id": "mors1337/sbx-remote-ctw4-holdouts-shipped-2",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-holdouts-shipped-2",
+   "job_tag": "ctw4_holdouts_shipped",
+   "shard": 2,
+   "n_shards": 4,
+   "scenarios": [
+    "building_hold_000/fairbanks_g1",
+    "building_hold_001/minneapolis_g1",
+    "building_hold_002/minneapolis_g1",
+    "building_hold_003/beijing_1",
+    "building_hold_003/phoenix_g5",
+    "building_hold_004/sanfrancisco_3",
+    "building_hold_005/atlanta_g1",
+    "building_hold_005/minneapolis_g5",
+    "building_hold_006/denver_g1",
+    "building_hold_006/minneapolis_g1",
+    "building_hold_007/minneapolis_g1",
+    "building_train_1/lasvegas_3"
+   ],
+   "job": {
+    "tag": "ctw4_holdouts_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/fairbanks_g1",
+     "building_hold_001/minneapolis_g1",
+     "building_hold_002/minneapolis_g1",
+     "building_hold_003/beijing_1",
+     "building_hold_003/phoenix_g5",
+     "building_hold_004/sanfrancisco_3",
+     "building_hold_005/atlanta_g1",
+     "building_hold_005/minneapolis_g5",
+     "building_hold_006/denver_g1",
+     "building_hold_006/minneapolis_g1",
+     "building_hold_007/minneapolis_g1",
+     "building_train_1/lasvegas_3"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "cd3a276dc391f66184fb8a03bb592997",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 2,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-holdouts-shipped-2",
+    "created_utc": "2026-11-06T15:21:56Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T15:22:04Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-holdouts-shipped-3",
+   "id": "mors1337/sbx-remote-ctw4-holdouts-shipped-3",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-holdouts-shipped-3",
+   "job_tag": "ctw4_holdouts_shipped",
+   "shard": 3,
+   "n_shards": 4,
+   "scenarios": [
+    "building_hold_000/miami_2",
+    "building_hold_001/minneapolis_g5",
+    "building_hold_002/minneapolis_g5",
+    "building_hold_003/fairbanks_g1",
+    "building_hold_003/reykjavik_2",
+    "building_hold_004/chicago_2",
+    "building_hold_004/minneapolis_g1",
+    "building_hold_005/dubai_3",
+    "building_hold_005/seattle_1",
+    "building_hold_006/helsinki_1",
+    "building_hold_006/minneapolis_g5",
+    "building_hold_007/minneapolis_g5",
+    "building_train_8/london_1"
+   ],
+   "job": {
+    "tag": "ctw4_holdouts_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/miami_2",
+     "building_hold_001/minneapolis_g5",
+     "building_hold_002/minneapolis_g5",
+     "building_hold_003/fairbanks_g1",
+     "building_hold_003/reykjavik_2",
+     "building_hold_004/chicago_2",
+     "building_hold_004/minneapolis_g1",
+     "building_hold_005/dubai_3",
+     "building_hold_005/seattle_1",
+     "building_hold_006/helsinki_1",
+     "building_hold_006/minneapolis_g5",
+     "building_hold_007/minneapolis_g5",
+     "building_train_8/london_1"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "cd3a276dc391f66184fb8a03bb592997",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 3,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-holdouts-shipped-3",
+    "created_utc": "2026-11-06T15:21:56Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T15:22:07Z",
+   "status": "COMPLETE",
+   "done": true
+  }
+ ],
+ "max_concurrency": 4,
+ "poll": {
+  "samples": [
+   {
+    "elapsed": 3.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 27.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 51.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 75.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 99.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 123.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 147.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 171.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 195.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 219.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 243.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 266.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 291.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 315.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 339.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 363.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 387.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 411.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 435.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 458.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 482.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 506.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 530.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 554.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 578.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 602.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 626.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 650.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 674.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 698.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 722.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 746.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 770.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 794.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 818.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 841.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 865.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 889.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 913.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 937.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 961.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 985.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1009.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1033.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1058.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1082.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1107.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1130.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1155.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1179.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1203.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1227.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1251.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1275.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1299.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1322.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1346.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1369.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1393.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1417.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1441.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1466.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1489.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1513.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1537.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1560.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1584.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1608.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1632.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1656.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1680.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1703.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1728.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1752.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1776.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1801.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1824.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1848.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1873.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1897.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1921.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1945.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1968.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1993.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2016.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2040.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2065.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2089.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2113.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2138.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2162.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2186.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2210.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2234.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2258.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2282.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2307.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2332.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2356.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2380.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2405.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2429.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2453.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2477.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2501.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2525.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2549.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2573.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2597.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2621.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2646.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2669.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2693.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2718.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2742.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2766.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2790.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2813.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2838.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2862.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2886.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2910.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2935.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2959.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2983.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3007.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3031.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3055.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3080.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3104.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3128.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3152.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3176.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3201.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3225.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3249.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 3273.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3296.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3319.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3342.4,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3365.4,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3388.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3411.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3435.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3458.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3481.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3504.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3527.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3549.9,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3572.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3595.7,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3618.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3641.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3664.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3698.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3721.7,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3745.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3768.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3791.4,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3814.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3837.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3860.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3883.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3905.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3929.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3952.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3975.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3997.9,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4021.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4044.7,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4067.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4091.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4114.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4137.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4161.7,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4185.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4208.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4231.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4254.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4277.9,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4300.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4324.4,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4347.7,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4370.6,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4394.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4417.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4440.8,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4465.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4488.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4511.4,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4534.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4557.5,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4580.3,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 4603.5,
+    "RUNNING": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4625.5,
+    "RUNNING": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4647.7,
+    "RUNNING": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4669.7,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4690.6,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4711.6,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4733.2,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4754.6,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4775.6,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4796.6,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4817.5,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 4839.6,
+    "COMPLETE": 4
+   }
+  ],
+  "started_at": 1793978527.2449322,
+  "max_concurrent_running": 4,
+  "wall_seconds": 4839.6,
+  "queue_observed": false
+ }
+}

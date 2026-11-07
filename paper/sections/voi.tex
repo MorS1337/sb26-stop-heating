@@ -1,0 +1,50 @@
+% ---------------------------------------------------------------------------
+% Section draft: value of information (main-text version). The ladder table is
+% Table~\ref{tab:voi} in Appendix~\ref{app:voi}.
+% ---------------------------------------------------------------------------
+\providecommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
+\providecommand{\e}[1]{\times10^{-#1}}
+
+\section{What information is worth}
+\label{sec:voi}
+
+The observation space exposes one occupant count for the whole building, no per-zone
+occupancy and no weather forecast, while comfort is charged per zone. We hand the same
+controller each missing channel in turn---a per-zone occupancy sensor, a perfect weather
+forecast, the realised schedule, Table~\ref{tab:voi}---and never submit any of them, so the
+deltas bound the value of sensing rather than propose an entry. An oracle is an instrument only if it is transparent, and these are: a policy that receives the
+payload and drops it reproduces an ordinary run to the last digit on two full episodes, so the
+channel perturbs neither the occupancy draw nor the clock, and the forecast is exact rather than
+noisy (it equals the sensor reading $h$ hours later to $1.4\e{5}$\,K, the float32 quantisation of
+the observation). % src: docs/voi_oracle.md §1 "Non-perturbation proof", "Forecast alignment"
+
+\emph{Zonal occupancy pays $2.9\,\%$.} Dropping each zone to standby 15\,min after its own
+occupants leave, rather than waiting for the whole building to empty as CtrlW's
+occupancy release does, improves full dev30 from
+0.0073694 to 0.0071585 and the corrected tree from 0.0071449 to 0.0069403 (both
+$-2.86\,\%$); on the ten-scenario subset it is $-2.30\,\%$, better on 10 of 10, recovering
+$23.9$ reward units of energy plus carbon for $0.16$ units of extra comfort regret. Raising the
+release floor from 282 to 289\,K moves the subset score by $0.09\,\%$ and keeps 10/10, so the
+result is about \emph{which} zones are empty, not how cold they get.
+% src: results/{voi_occ_dev30_shipped,voi_occ_dev30_corrected,voi_occ_mild,voi_occ_dev10_pc}; docs/voi_oracle.md §3
+
+\emph{A perfect forecast is worth nothing on top of a clock rule.} A fixed 2\,K pre-dawn lift,
+gated only on the clock, the comfort-day predicate and the zone sitting on its standby floor,
+scores 0.0073463 on dev30 ($-0.31\,\%$), and 0.0071582 against CtrlW's 0.0071449 on the
+corrected tree---a wash there (the same lift shipped inside CtrlW4 scores 0.0073445, the
+difference being the adaptive horizon underneath). Driving that lift and the preheat horizon
+from a perfect 12\,h forecast scores 0.0073572: $0.15\,\%$ \emph{worse} than the constant lift
+on dev30 and $0.01\,\%$ better on the subset, so the information is worth zero to within our
+resolution and can have either sign. The mechanism is gated on the zone's own state and on a comfort day
+coming, and the horizon response is flat-topped around 2\,h; on both cooling stations the forecast
+variant is bit-identical to the no-information one.
+% src: results/{nightlift_dev30_shipped,nightlift_dev30_corrected,voi_fcst_dev30_shipped,voi_fcst_dev10_pc}; docs/voi_oracle.md §3-4
+
+\emph{The schedule is worth twice the sensor, and the difference is the lag.} Per-zone
+foreknowledge of the episode's own occupancy, used to give each zone its own window with a
+5\,h preheat lead, scores 0.0112001 on the subset ($-6.04\,\%$, 10/10) and $-90.52$ on the
+anchor ($+2.60$ units, $+2.79\,\%$), with $+0.48$ to $+2.76\,\%$ at leads of 2--8\,h; the same information delivered
+five minutes late and without a calendar loses $3.7$ percentage points. Relaxing the band by 1\,K in zones nobody has
+entered yet is the asymmetric bet against it: $-0.44\,\%$ of score, but only 5 of 10 scenarios
+and comfort regret multiplied from $5.33$ to $39.64$.
+% src: results/{foi_foresight10,foi_anchor_lead5,voi_occ_morning}; docs/voi_oracle.md §3, §9.3-9.4

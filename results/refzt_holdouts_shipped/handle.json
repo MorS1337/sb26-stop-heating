@@ -1,0 +1,1233 @@
+{
+ "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+ "payload_sources": {
+  "policies/__init__.py": "387be4421984be3d020e7bad6b815902334999189a432583b8168092e91ad62a",
+  "policies/ctrl_v1.py": "758577488330c4307f7a72b66cea08a4ed023db36880ea4a315405e77e20715f",
+  "policies/ctrl_v2.py": "2f81d31a9e92a01dbd5f23ed832a8faf16908e9296357068689d55b1c324641a",
+  "policies/ctrl_w.py": "6bfecc6d934e0c899b7a87cf414f7fe2a35cbf5204d82e5165265f943c58ed37",
+  "policies/ref_wu.py": "234d3beac1c0591467f215f2004fbcaf9016f1cbefe4788943594a6951d6b64b",
+  "policies/ref_ztbest.py": "85614b73198cc03574e2b27b16fcfa9fc5872421b634de7908a29cf267b5fca4",
+  "policies/ref_ztoff.py": "c75ac4923fbe924c498220c4e4ab19c5bfdfa455ed64fab0d9365717e3697d94",
+  "policies/wu_core.py": "2d9847212986335571401dde00db42aeedc4bf964584d13ea0d504348255ed20",
+  "policies/wu_weights.py": "af676b5a7d7ae48dcccbeac6c7f734fdfc276c1fff05d782dbb4fc11761bd412",
+  "sbx/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sbx/evalrun.py": "014d6405b969b6778c866de643a8da48b7e5fdbdb33df01ab9f5062803bf0dcc",
+  "sbx/pools/manifest.json": "6e72f52502724481ab9e58eea9218adb1ef940a318d843ec3260307c65cdfd5e",
+  "sbx/scenarios.py": "5a3701c725b22675111195524213173c94180b95d586892d6ceb21aef6b9a380",
+  "sbx/simload.py": "afba764eca75f22c13e23931be8ad8c5e133aca3d92cae0536b3e928f2d8b834"
+ },
+ "dataset": "mors1337/sbx-payload",
+ "dataset_version": 1,
+ "out_dir": "/Users/mors1337/Code/DL/doma/results/refzt_holdouts_shipped",
+ "created_utc": "2026-11-05T20:08:13Z",
+ "kernels": [
+  {
+   "slug": "sbx-remote-refzt-holdouts-shipped-0",
+   "id": "mors1337/sbx-remote-refzt-holdouts-shipped-0",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-refzt-holdouts-shipped-0",
+   "job_tag": "refzt_holdouts_shipped",
+   "shard": 0,
+   "n_shards": 5,
+   "scenarios": [
+    "building_hold_000/fairbanks_g1",
+    "building_hold_001/auckland_2",
+    "building_hold_001/phoenix_g1",
+    "building_hold_002/moscow_1",
+    "building_hold_003/minneapolis_g5",
+    "building_hold_004/chicago_2",
+    "building_hold_004/minneapolis_g5",
+    "building_hold_005/fairbanks_g5",
+    "building_hold_005/seattle_1",
+    "building_hold_007/minneapolis_g1"
+   ],
+   "job": {
+    "tag": "refzt_holdouts_shipped",
+    "policy": "policies.ref_ztbest:RefZtBest",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/fairbanks_g1",
+     "building_hold_001/auckland_2",
+     "building_hold_001/phoenix_g1",
+     "building_hold_002/moscow_1",
+     "building_hold_003/minneapolis_g5",
+     "building_hold_004/chicago_2",
+     "building_hold_004/minneapolis_g5",
+     "building_hold_005/fairbanks_g5",
+     "building_hold_005/seattle_1",
+     "building_hold_007/minneapolis_g1"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 5,
+    "kernel_slug": "sbx-remote-refzt-holdouts-shipped-0",
+    "created_utc": "2026-11-05T20:08:13Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-05T20:08:16Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-refzt-holdouts-shipped-1",
+   "id": "mors1337/sbx-remote-refzt-holdouts-shipped-1",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-refzt-holdouts-shipped-1",
+   "job_tag": "refzt_holdouts_shipped",
+   "shard": 1,
+   "n_shards": 5,
+   "scenarios": [
+    "building_hold_000/minneapolis_g1",
+    "building_hold_001/denver_g5",
+    "building_hold_002/atlanta_g1",
+    "building_hold_002/singapore_g5",
+    "building_hold_003/reykjavik_2",
+    "building_hold_004/minneapolis_g1",
+    "building_hold_006/denver_g1",
+    "building_hold_006/phoenix_g5",
+    "building_hold_007/singapore_g1",
+    "building_train_8/london_1"
+   ],
+   "job": {
+    "tag": "refzt_holdouts_shipped",
+    "policy": "policies.ref_ztbest:RefZtBest",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/minneapolis_g1",
+     "building_hold_001/denver_g5",
+     "building_hold_002/atlanta_g1",
+     "building_hold_002/singapore_g5",
+     "building_hold_003/reykjavik_2",
+     "building_hold_004/minneapolis_g1",
+     "building_hold_006/denver_g1",
+     "building_hold_006/phoenix_g5",
+     "building_hold_007/singapore_g1",
+     "building_train_8/london_1"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 1,
+    "n_shards": 5,
+    "kernel_slug": "sbx-remote-refzt-holdouts-shipped-1",
+    "created_utc": "2026-11-05T20:08:13Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-05T21:20:54Z",
+   "status": "ERROR",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-refzt-holdouts-shipped-2",
+   "id": "mors1337/sbx-remote-refzt-holdouts-shipped-2",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-refzt-holdouts-shipped-2",
+   "job_tag": "refzt_holdouts_shipped",
+   "shard": 2,
+   "n_shards": 5,
+   "scenarios": [
+    "building_hold_000/miami_2",
+    "building_hold_001/minneapolis_g1",
+    "building_hold_002/bangkok_3",
+    "building_hold_003/beijing_1",
+    "building_hold_003/phoenix_g5",
+    "building_hold_004/denver_g5",
+    "building_hold_004/sanfrancisco_3",
+    "building_hold_006/helsinki_1",
+    "building_hold_006/tokyo_2",
+    "building_hold_007/minneapolis_g5"
+   ],
+   "job": {
+    "tag": "refzt_holdouts_shipped",
+    "policy": "policies.ref_ztbest:RefZtBest",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/miami_2",
+     "building_hold_001/minneapolis_g1",
+     "building_hold_002/bangkok_3",
+     "building_hold_003/beijing_1",
+     "building_hold_003/phoenix_g5",
+     "building_hold_004/denver_g5",
+     "building_hold_004/sanfrancisco_3",
+     "building_hold_006/helsinki_1",
+     "building_hold_006/tokyo_2",
+     "building_hold_007/minneapolis_g5"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 2,
+    "n_shards": 5,
+    "kernel_slug": "sbx-remote-refzt-holdouts-shipped-2",
+    "created_utc": "2026-11-05T20:08:13Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-05T20:08:23Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-refzt-holdouts-shipped-3",
+   "id": "mors1337/sbx-remote-refzt-holdouts-shipped-3",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-refzt-holdouts-shipped-3",
+   "job_tag": "refzt_holdouts_shipped",
+   "shard": 3,
+   "n_shards": 5,
+   "scenarios": [
+    "building_hold_000/anchorage_1",
+    "building_hold_000/minneapolis_g5",
+    "building_hold_001/minneapolis_g5",
+    "building_hold_002/minneapolis_g1",
+    "building_hold_003/fairbanks_g1",
+    "building_hold_005/atlanta_g1",
+    "building_hold_005/minneapolis_g1",
+    "building_hold_006/minneapolis_g1",
+    "building_hold_007/atlanta_g5"
+   ],
+   "job": {
+    "tag": "refzt_holdouts_shipped",
+    "policy": "policies.ref_ztbest:RefZtBest",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/anchorage_1",
+     "building_hold_000/minneapolis_g5",
+     "building_hold_001/minneapolis_g5",
+     "building_hold_002/minneapolis_g1",
+     "building_hold_003/fairbanks_g1",
+     "building_hold_005/atlanta_g1",
+     "building_hold_005/minneapolis_g1",
+     "building_hold_006/minneapolis_g1",
+     "building_hold_007/atlanta_g5"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 3,
+    "n_shards": 5,
+    "kernel_slug": "sbx-remote-refzt-holdouts-shipped-3",
+    "created_utc": "2026-11-05T20:08:13Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-05T20:08:26Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-refzt-holdouts-shipped-4",
+   "id": "mors1337/sbx-remote-refzt-holdouts-shipped-4",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-refzt-holdouts-shipped-4",
+   "job_tag": "refzt_holdouts_shipped",
+   "shard": 4,
+   "n_shards": 5,
+   "scenarios": [
+    "building_hold_000/atlanta_g5",
+    "building_hold_001/montreal_3",
+    "building_hold_002/minneapolis_g5",
+    "building_hold_003/minneapolis_g1",
+    "building_hold_004/singapore_g1",
+    "building_hold_005/dubai_3",
+    "building_hold_005/minneapolis_g5",
+    "building_hold_006/minneapolis_g5",
+    "building_hold_007/houston_2",
+    "building_train_1/lasvegas_3"
+   ],
+   "job": {
+    "tag": "refzt_holdouts_shipped",
+    "policy": "policies.ref_ztbest:RefZtBest",
+    "params": {},
+    "scenarios": [
+     "building_hold_000/atlanta_g5",
+     "building_hold_001/montreal_3",
+     "building_hold_002/minneapolis_g5",
+     "building_hold_003/minneapolis_g1",
+     "building_hold_004/singapore_g1",
+     "building_hold_005/dubai_3",
+     "building_hold_005/minneapolis_g5",
+     "building_hold_006/minneapolis_g5",
+     "building_hold_007/houston_2",
+     "building_train_1/lasvegas_3"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "521c7278ad268609158a93fe39e4dd27",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 4,
+    "n_shards": 5,
+    "kernel_slug": "sbx-remote-refzt-holdouts-shipped-4",
+    "created_utc": "2026-11-05T20:08:13Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-05T21:20:57Z",
+   "status": "ERROR",
+   "done": true
+  }
+ ],
+ "max_concurrency": 5,
+ "poll": {
+  "samples": [
+   {
+    "elapsed": 8.4,
+    "RUNNING": 5
+   },
+   {
+    "elapsed": 35.9,
+    "RUNNING": 5
+   },
+   {
+    "elapsed": 63.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 87.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 112.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 137.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 161.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 185.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 210.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 234.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 257.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 281.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 306.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 330.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 354.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 379.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 402.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 427.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 450.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 474.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 498.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 521.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 545.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 570.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 594.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 618.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 642.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 666.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 690.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 715.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 740.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 764.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 789.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 812.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 836.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 859.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 883.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 907.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 930.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 955.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 979.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1002.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1027.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1051.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1075.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1099.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1123.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1147.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1171.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1195.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1219.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1243.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1267.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1292.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1316.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1340.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1364.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1389.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1413.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1438.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1462.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1486.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1510.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1534.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1559.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1583.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1607.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1631.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1654.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1679.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1703.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1727.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1751.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1774.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1798.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1822.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1846.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1871.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1895.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1919.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1943.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1967.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 1991.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2015.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2040.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2065.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2089.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2113.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2137.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2162.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2186.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2210.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2235.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2259.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2283.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2306.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2331.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2355.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2380.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2404.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2438.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2462.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2486.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2510.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2533.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2557.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2581.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2605.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2628.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2652.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2676.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2700.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2724.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2748.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2771.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2795.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2819.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2843.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2867.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2891.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2916.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2939.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2963.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 2987.7,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3011.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3035.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3059.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3083.3,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3107.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3131.0,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3154.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3178.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3202.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3225.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3249.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3273.1,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3296.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3320.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3345.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3368.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3392.4,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3416.5,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3440.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3463.8,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3487.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3511.2,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3534.9,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3558.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3582.6,
+    "RUNNING": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 3606.7,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3629.4,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3652.0,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3675.3,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3698.7,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3721.1,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3743.7,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3766.3,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3789.1,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3812.4,
+    "RUNNING": 2,
+    "ERROR": 2,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 3835.2,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3856.6,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3878.1,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3899.4,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3920.7,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3942.0,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3964.0,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 3985.2,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4006.6,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4027.8,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4049.1,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4070.5,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4091.9,
+    "RUNNING": 1,
+    "ERROR": 2,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 4113.6,
+    "COMPLETE": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 4209.2,
+    "COMPLETE": 3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 4231.6,
+    "COMPLETE": 3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 4254.2,
+    "COMPLETE": 3,
+    "ERROR": 2
+   },
+   {
+    "elapsed": 4349.6,
+    "COMPLETE": 3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 4372.2,
+    "COMPLETE": 3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 4394.8,
+    "COMPLETE": 3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 4417.5,
+    "COMPLETE": 3,
+    "ERROR": 2
+   }
+  ],
+  "started_at": 1793909310.1707368,
+  "max_concurrent_running": 5,
+  "wall_seconds": 4417.5,
+  "queue_observed": false
+ }
+}

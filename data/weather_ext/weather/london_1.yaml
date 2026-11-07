@@ -1,0 +1,4 @@
+name: london_1
+weather_csv: csv/london.csv
+convection_coefficient: 23.9
+start_timestamp: 2023-01-08 06:00

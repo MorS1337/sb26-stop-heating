@@ -1,0 +1,195 @@
+{
+  "rows": [
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "default",
+      "overrides": {},
+      "mode": "real",
+      "total_reward": -66.13828237170674,
+      "mean_per_step": -0.02296468137906484,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "default",
+      "overrides": {},
+      "mode": "rom",
+      "total_reward": -67.87992604928877,
+      "mean_per_step": -0.023569418767114155,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "margin0.0",
+      "overrides": {
+        "comfort_margin": 0.0
+      },
+      "mode": "real",
+      "total_reward": -65.88874830933491,
+      "mean_per_step": -0.022878037607407958,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "margin0.0",
+      "overrides": {
+        "comfort_margin": 0.0
+      },
+      "mode": "rom",
+      "total_reward": -67.62197553003352,
+      "mean_per_step": -0.023479852614594975,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "margin0.4",
+      "overrides": {
+        "comfort_margin": 0.4
+      },
+      "mode": "real",
+      "total_reward": -67.74062182040507,
+      "mean_per_step": -0.023521049243196205,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "margin0.4",
+      "overrides": {
+        "comfort_margin": 0.4
+      },
+      "mode": "rom",
+      "total_reward": -69.40316617403732,
+      "mean_per_step": -0.024098321588207405,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "preheat1h",
+      "overrides": {
+        "early_preheat_hours": 1.0
+      },
+      "mode": "real",
+      "total_reward": -66.47468438166834,
+      "mean_per_step": -0.02308148763252373,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "preheat1h",
+      "overrides": {
+        "early_preheat_hours": 1.0
+      },
+      "mode": "rom",
+      "total_reward": -68.23644643386069,
+      "mean_per_step": -0.02369321056731274,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "standby285",
+      "overrides": {
+        "standby_minimum": 285.0
+      },
+      "mode": "real",
+      "total_reward": -67.561468901833,
+      "mean_per_step": -0.02345884336869201,
+      "steps": 2880
+    },
+    {
+      "building": "building_train_8",
+      "scenario": "building_train_8/fairbanks_8",
+      "variant": "standby285",
+      "overrides": {
+        "standby_minimum": 285.0
+      },
+      "mode": "rom",
+      "total_reward": -69.32000987938227,
+      "mean_per_step": -0.02406944787478551,
+      "steps": 2880
+    }
+  ],
+  "summary": {
+    "building_train_8": {
+      "variants": [
+        "default",
+        "margin0.0",
+        "margin0.4",
+        "preheat1h",
+        "standby285"
+      ],
+      "real": [
+        -66.13828237170674,
+        -65.88874830933491,
+        -67.74062182040507,
+        -66.47468438166834,
+        -67.561468901833
+      ],
+      "rom": [
+        -67.87992604928877,
+        -67.62197553003352,
+        -69.40316617403732,
+        -68.23644643386069,
+        -69.32000987938227
+      ],
+      "delta": [
+        -1.741643677582033,
+        -1.733227220698609,
+        -1.6625443536322564,
+        -1.7617620521923527,
+        -1.7585409775492735
+      ],
+      "worst_abs_delta": 1.7617620521923527,
+      "real_spread": 1.8518735110701527,
+      "spearman": 0.9999999999999999,
+      "spearman_p": 1.4042654220543672e-24,
+      "kendall": 0.9999999999999999,
+      "kendall_p": 0.016666666666666666,
+      "top1": true,
+      "bottom1": true
+    },
+    "pooled": {
+      "n": 5,
+      "real": [
+        -66.13828237170674,
+        -65.88874830933491,
+        -67.74062182040507,
+        -66.47468438166834,
+        -67.561468901833
+      ],
+      "rom": [
+        -67.87992604928877,
+        -67.62197553003352,
+        -69.40316617403732,
+        -68.23644643386069,
+        -69.32000987938227
+      ],
+      "delta": [
+        -1.741643677582033,
+        -1.733227220698609,
+        -1.6625443536322564,
+        -1.7617620521923527,
+        -1.7585409775492735
+      ],
+      "worst_abs_delta": 1.7617620521923527,
+      "max_abs_rel": 0.026502751665236822,
+      "spearman": 0.9999999999999999,
+      "spearman_p": 1.4042654220543672e-24,
+      "kendall": 0.9999999999999999,
+      "kendall_p": 0.016666666666666666,
+      "top1": true,
+      "bottom1": true
+    }
+  },
+  "m": 200,
+  "lam": 0.0001,
+  "fit": false
+}

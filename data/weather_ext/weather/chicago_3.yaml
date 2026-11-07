@@ -1,0 +1,4 @@
+name: chicago_3
+weather_csv: csv/chicago.csv
+convection_coefficient: 23.3
+start_timestamp: 2023-10-08 06:00

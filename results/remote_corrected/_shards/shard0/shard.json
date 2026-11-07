@@ -1,0 +1,380 @@
+{
+ "job": {
+  "components": "parity",
+  "created_utc": "2026-11-05T03:21:16Z",
+  "dataset_dir": "/kaggle/input/sbx-payload",
+  "keep_trees": false,
+  "kernel_slug": "sbx-remote-remote-corrected-0",
+  "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+  "n_shards": 1,
+  "occupancy_seed": null,
+  "params": {},
+  "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+  "policy": "baseline:pid_water",
+  "scenarios": [
+   "building_gen_000/fairbanks_g0"
+  ],
+  "shard": 0,
+  "sim": "corrected",
+  "start_offset_days": 0,
+  "steps": 288,
+  "tag": "remote_corrected",
+  "workers": 4
+ },
+ "env": {
+  "python": "3.13.18",
+  "cpu_count": 4,
+  "versions": {
+   "numpy": "2.1.3",
+   "pandas": "2.3.3",
+   "numba": "0.61.2",
+   "gin-config": "0.5.0",
+   "protobuf": "7.36.2",
+   "scipy": "1.16.3"
+  },
+  "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+  "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+  "job": {
+   "components": "parity",
+   "created_utc": "2026-11-05T03:21:16Z",
+   "dataset_dir": "/kaggle/input/sbx-payload",
+   "keep_trees": false,
+   "kernel_slug": "sbx-remote-remote-corrected-0",
+   "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+   "n_shards": 1,
+   "occupancy_seed": null,
+   "params": {},
+   "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+   "policy": "baseline:pid_water",
+   "scenarios": [
+    "building_gen_000/fairbanks_g0"
+   ],
+   "shard": 0,
+   "sim": "corrected",
+   "start_offset_days": 0,
+   "steps": 288,
+   "tag": "remote_corrected",
+   "workers": 4
+  },
+  "mount_vs_local_shipped": {
+   "reference_files": 96,
+   "differing": [
+    "smart_buildings/baselines/pid_plus.py",
+    "smart_buildings/smart_control/environment/environment.py",
+    "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+    "smart_buildings/smart_control/simulator/building.py",
+    "smart_buildings/smart_control/simulator/building_utils.py",
+    "smart_buildings/smart_control/simulator/constants.py",
+    "smart_buildings/smart_control/simulator/hot_water_system.py",
+    "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+    "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+    "smart_buildings/smart_control/simulator/simulator_building.py",
+    "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+    "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+    "smart_buildings/smart_control/utils/building_image_generator.py",
+    "smart_buildings/smart_control/utils/constants.py",
+    "smart_buildings/smart_control/utils/conversion_utils.py",
+    "smart_buildings/smart_control/utils/environment_utils.py",
+    "smart_buildings/smart_control/utils/histogram_reducer.py",
+    "smart_buildings/smart_control/utils/plot_utils.py",
+    "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+    "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+    "smart_buildings/smart_control/utils/scenario_generator.py",
+    "smart_buildings/smart_control/utils/scenario_generator_test.py",
+    "smart_buildings/smart_control/utils/temperature_conversion.py"
+   ],
+   "extra": [],
+   "match": false
+  },
+  "setup_seconds": 17.4,
+  "tree_timings": {
+   "shipped_copy_seconds": 2.7,
+   "corrected_build_seconds": 0.1,
+   "pool_and_weather_seconds": 4.2,
+   "corrected_post_verified": [
+    "smart_buildings/check_return_air.py",
+    "smart_buildings/smart_control/simulator/boiler.py",
+    "smart_buildings/smart_control/simulator/boiler_energy_balance_test.py",
+    "smart_buildings/smart_control/simulator/return_air_mixing_test.py",
+    "smart_buildings/smart_control/simulator/simulator.py",
+    "smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py"
+   ],
+   "corrected_post_drifted": [
+    "smart_buildings/smart_control/simulator/hot_water_system.py"
+   ],
+   "shipped_pre_patch_drifted": [
+    "smart_buildings/smart_control/simulator/hot_water_system.py"
+   ]
+  },
+  "total_seconds": 93.6
+ },
+ "eval": {
+  "returncode": 0,
+  "wall_seconds": 76.17
+ },
+ "records": [
+  {
+   "scenario": "building_gen_000/fairbanks_g0",
+   "building": "building_gen_000",
+   "weather": "fairbanks_g0",
+   "policy": "baseline:pid_water",
+   "params": {},
+   "sim": "corrected",
+   "tag": "remote_corrected",
+   "steps": 288,
+   "requested_steps": 288,
+   "start_offset_days": 0,
+   "occupancy_seed": null,
+   "total_reward": -37.701378152589314,
+   "mean_per_step_reward": -0.130907563029824,
+   "wall_seconds": 75.08369946479797,
+   "cpu_seconds": 75.223872853,
+   "step_cpu_seconds": 51.681328125000086,
+   "steps_per_second_cpu": 3.8285718227084646,
+   "steps_per_second_step_cpu": 5.572612207322208,
+   "num_ahus": 9,
+   "num_zones": 84,
+   "config_path": "/kaggle/input/datasets/mors1337/sbx-payload/pool/scenarios/building_gen_000/fairbanks_g0/config.gin",
+   "components": {
+    "weights": {
+     "productivity": 0.6000000238418579,
+     "energy": 0.20000000298023224,
+     "carbon": 0.20000000298023224
+    },
+    "sum_reward_from_components": -37.701378882798544,
+    "sum_comfort": -0.9125301008435116,
+    "sum_energy": -14.197991399064529,
+    "sum_carbon": -22.590857382890505,
+    "per_step_comfort": -0.0031685072945955265,
+    "per_step_energy": -0.049298581246751835,
+    "per_step_carbon": -0.07844047702392537
+   },
+   "by_bucket": {
+    "weekday_occupied": {
+     "steps": 1,
+     "sum_reward": -1.1938380002975464,
+     "sum_comfort": -0.9125301008435116,
+     "sum_energy": -0.10436202443185483,
+     "sum_carbon": -0.17694591547468175
+    },
+    "weekday_unoccupied": {
+     "steps": 72,
+     "sum_reward": -18.86890059709549,
+     "sum_comfort": 0.0,
+     "sum_energy": -7.299478454880094,
+     "sum_carbon": -11.569422500869962
+    },
+    "weekend": {
+     "steps": 215,
+     "sum_reward": -17.638639555196278,
+     "sum_comfort": 0.0,
+     "sum_energy": -6.79415091975258,
+     "sum_carbon": -10.844488966545857
+    }
+   },
+   "by_hour": {
+    "steps": [
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12,
+     12
+    ],
+    "sum_reward": [
+     -2.99105766415596,
+     -3.136788070201874,
+     -3.100439876317978,
+     -3.1356762647628784,
+     -3.2189636528491974,
+     -3.285975068807602,
+     -1.1938380002975464,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     -0.006932079908438027,
+     -0.14229027181863785,
+     -0.19938278757035732,
+     -0.2723019439727068,
+     -0.41965758125297725,
+     -0.8091018870472908,
+     -1.0333196595311165,
+     -1.4301506504416466,
+     -2.348868817090988,
+     -2.6985639184713364,
+     -2.6188817769289017,
+     -2.7493708431720734,
+     -2.909817337989807
+    ],
+    "sum_comfort": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     -0.9125301008435116,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "sum_energy": [
+     -1.163873987851649,
+     -1.2125890197245628,
+     -1.2026476622022337,
+     -1.2180920067145227,
+     -1.2391421741119348,
+     -1.2631336042751906,
+     -0.10436202443185483,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     -0.005493951484470835,
+     -0.046861951751440034,
+     -0.06411786808249156,
+     -0.08758331891273435,
+     -0.13889704050715324,
+     -0.29969541430019453,
+     -0.3891864000139593,
+     -0.5366753151517407,
+     -0.9240523893244919,
+     -1.0596515276976155,
+     -1.036619899222551,
+     -1.0734528403498653,
+     -1.1318630029538719
+    ],
+    "sum_carbon": [
+     -1.827183738755937,
+     -1.9241990733772374,
+     -1.8977922722368277,
+     -1.9175843882200772,
+     -1.979821496901236,
+     -2.022841531378649,
+     -0.17694591547468175,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     -0.001438128410847908,
+     -0.09542832181495906,
+     -0.13526492935068796,
+     -0.184718633215407,
+     -0.28076054814007945,
+     -0.5094064818234216,
+     -0.6441332913060975,
+     -0.8934753521304628,
+     -1.4248164866092274,
+     -1.6389124399261537,
+     -1.5822619316318915,
+     -1.675918019949168,
+     -1.7779544022374507
+    ]
+   },
+   "comfort": {
+    "steps": 288,
+    "mean_occupancy": 0.027777777777777776,
+    "sum_occupancy": 8.0,
+    "min_zone_temp_occupied_hours_all_zones": 281.95086669921875,
+    "min_zone_temp_occupied_hours_occupied_zones": 282.5231628417969,
+    "steps_any_occupied_zone_over_5K_out_of_band": 244,
+    "max_zone_deviation_K": 12.04913330078125,
+    "n_steps_weekday_occupied": 1
+   },
+   "first_local_timestamp": "2023-02-05 06:05:00",
+   "last_local_timestamp": "2023-02-06 06:00:00"
+  }
+ ],
+ "summary": {
+  "tag": "remote_corrected",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+   "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "corrected",
+  "steps": 288,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "parity",
+  "out_dir": "/kaggle/working/results/remote_corrected",
+  "leaderboard_score": 0.130907563029824,
+  "mean_abs_total_reward_per_step": 0.130907563029824,
+  "mean_total_reward": -37.701378152589314,
+  "mean_per_step_reward": -0.130907563029824,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.9125301008435116,
+  "sum_energy_all": -14.197991399064529,
+  "sum_carbon_all": -22.590857382890505,
+  "by_weather": {
+   "fairbanks_g0": {
+    "n_scenarios": 1,
+    "leaderboard_score": 0.130907563029824,
+    "mean_total_reward": -37.701378152589314,
+    "mean_per_step_reward": -0.130907563029824
+   }
+  },
+  "by_building": {
+   "building_gen_000": {
+    "n_scenarios": 1,
+    "leaderboard_score": 0.130907563029824,
+    "mean_total_reward": -37.701378152589314,
+    "mean_per_step_reward": -0.130907563029824
+   }
+  },
+  "timing": {
+   "wall_seconds_total": 75.59238386154175,
+   "cpu_seconds_total": 75.223872853,
+   "wall_seconds_sum_scenarios": 75.08369946479797,
+   "mean_cpu_seconds_per_scenario": 75.223872853,
+   "steps_per_second_cpu": 3.8285718227084646,
+   "steps_per_second_step_cpu": 5.572612207322208
+  },
+  "scenarios": [
+   {
+    "scenario": "building_gen_000/fairbanks_g0",
+    "steps": 288,
+    "total_reward": -37.701378152589314,
+    "mean_per_step_reward": -0.130907563029824,
+    "cpu_seconds": 75.223872853,
+    "wall_seconds": 75.08369946479797,
+    "steps_per_second_cpu": 3.8285718227084646
+   }
+  ],
+  "failures": []
+ }
+}

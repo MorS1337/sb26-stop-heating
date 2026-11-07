@@ -1,0 +1,19 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --steps 8641 --sim shipped --workers 4 --tag ctw5_holdouts_shipped --out /kaggle/working/results/ctw5_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/fairbanks_g1 building_hold_001/minneapolis_g1 building_hold_002/minneapolis_g1 building_hold_003/beijing_1 building_hold_003/phoenix_g5 building_hold_004/sanfrancisco_3 building_hold_005/atlanta_g1 building_hold_005/minneapolis_g5 building_hold_006/denver_g1 building_hold_006/minneapolis_g1 building_hold_007/minneapolis_g1 building_train_1/lasvegas_3
+
+STDOUT
+[evalrun] tag=ctw5_holdouts_shipped sim=shipped policy=policies.ctrl_w5:CtrlW5 scenarios=12 steps=8641 workers=4 out=/kaggle/working/results/ctw5_holdouts_shipped
+[evalrun] 1/12 building_hold_002/minneapolis_g1       total=    -56.5282 mean=-0.006542 steps=8641 cpu=1262.3s
+[evalrun] 2/12 building_hold_000/fairbanks_g1         total=   -164.9469 mean=-0.019089 steps=8641 cpu=1287.1s
+[evalrun] 3/12 building_hold_003/beijing_1            total=   -196.6165 mean=-0.022754 steps=8641 cpu=1537.6s
+[evalrun] 4/12 building_hold_001/minneapolis_g1       total=    -21.7504 mean=-0.002517 steps=8641 cpu=1852.5s
+[evalrun] 5/12 building_hold_004/sanfrancisco_3       total=    -10.5051 mean=-0.001216 steps=8641 cpu=921.3s
+[evalrun] 6/12 building_hold_005/atlanta_g1           total=    -19.7755 mean=-0.002289 steps=8641 cpu=1209.8s
+[evalrun] 7/12 building_hold_003/phoenix_g5           total=    -56.4213 mean=-0.006529 steps=8641 cpu=1545.1s
+[evalrun] 8/12 building_hold_005/minneapolis_g5       total=    -18.0808 mean=-0.002092 steps=8641 cpu=1207.9s
+[evalrun] 9/12 building_hold_006/denver_g1            total=    -22.1809 mean=-0.002567 steps=8641 cpu=1489.7s
+[evalrun] 10/12 building_hold_007/minneapolis_g1       total=    -44.1957 mean=-0.005115 steps=8641 cpu=1230.1s
+[evalrun] 11/12 building_train_1/lasvegas_3            total=    -51.5049 mean=-0.005961 steps=8641 cpu=1032.2s
+[evalrun] 12/12 building_hold_006/minneapolis_g1       total=    -36.4330 mean=-0.004216 steps=8641 cpu=1380.8s
+[evalrun] score=0.006741 scenarios=12 failed=0 wall=4173s -> /kaggle/working/results/ctw5_holdouts_shipped/summary.json
+
+STDERR

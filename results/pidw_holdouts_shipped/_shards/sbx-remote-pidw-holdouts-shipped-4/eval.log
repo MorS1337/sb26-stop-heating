@@ -1,0 +1,17 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 8641 --sim shipped --workers 4 --tag pidw_holdouts_shipped --out /kaggle/working/results/pidw_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/atlanta_g5 building_hold_001/montreal_3 building_hold_002/minneapolis_g5 building_hold_003/minneapolis_g1 building_hold_004/singapore_g1 building_hold_005/dubai_3 building_hold_005/minneapolis_g5 building_hold_006/minneapolis_g5 building_hold_007/houston_2 building_train_1/lasvegas_3
+
+STDOUT
+[evalrun] tag=pidw_holdouts_shipped sim=shipped policy=baseline:pid_water scenarios=10 steps=8641 workers=4 out=/kaggle/working/results/pidw_holdouts_shipped
+[evalrun] 1/10 building_hold_002/minneapolis_g5       total=   -198.8673 mean=-0.023014 steps=8641 cpu=1290.8s
+[evalrun] 2/10 building_hold_000/atlanta_g5           total=   -211.7580 mean=-0.024506 steps=8641 cpu=1317.9s
+[evalrun] 3/10 building_hold_003/minneapolis_g1       total=   -526.0971 mean=-0.060884 steps=8641 cpu=1598.7s
+[evalrun] 4/10 building_hold_001/montreal_3           total=   -246.6963 mean=-0.028550 steps=8641 cpu=1875.0s
+[evalrun] 5/10 building_hold_004/singapore_g1         total=   -232.6578 mean=-0.026925 steps=8641 cpu=929.0s
+[evalrun] 6/10 building_hold_005/dubai_3              total=  -1098.1507 mean=-0.127086 steps=8641 cpu=1226.3s
+[evalrun] 7/10 building_hold_005/minneapolis_g5       total=   -207.7533 mean=-0.024043 steps=8641 cpu=1214.4s
+[evalrun] 8/10 building_hold_006/minneapolis_g5       total=   -200.8393 mean=-0.023243 steps=8641 cpu=1399.5s
+[evalrun] 9/10 building_hold_007/houston_2            total=   -282.8593 mean=-0.032735 steps=8641 cpu=1201.2s
+[evalrun] 10/10 building_train_1/lasvegas_3            total=   -241.2144 mean=-0.027915 steps=8641 cpu=937.8s
+[evalrun] score=0.039890 scenarios=10 failed=0 wall=3527s -> /kaggle/working/results/pidw_holdouts_shipped/summary.json
+
+STDERR

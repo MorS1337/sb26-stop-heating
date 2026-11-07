@@ -1,0 +1,37 @@
+{
+  "source": "/Users/mors1337/Code/DL/doma/sims/corrected/results/tune/tune_demo_wd/best.json",
+  "source_objective": 0.020368430987206112,
+  "source_subset": [
+    "building_gen_002/phoenix_g4",
+    "building_gen_014/singapore_g2"
+  ],
+  "policy": "policies.ctrl_v1:CtrlV1",
+  "sets": [
+    "building_hold_000/minneapolis_g1"
+  ],
+  "steps": 8640,
+  "sim": "corrected",
+  "components": "hook",
+  "leaderboard_score": 0.01482463923761804,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "params": {
+    "KP": 0.050731,
+    "KI": 0.228084,
+    "MARGIN_K": 0.959274,
+    "ZONE_SHIFT_MAX_K": 0.842562,
+    "DEMAND_FULL": 0.405799,
+    "SAT_MIN_K": 281.799257,
+    "SAT_MAX_K": 294.933901,
+    "ECON_MIN_ADV_K": 1.667442,
+    "WATER_MIN_K": 315.354582,
+    "WATER_MAX_K": 360.192997,
+    "WATER_RESET_FULL_K": 1.919119,
+    "FLOOR_TEMP_K": 285.745397,
+    "PRESTART_SAFETY": 1.046561,
+    "PRESTART_MAX_H": 8.961716,
+    "EARLY_STOP_H": 0.058199
+  },
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/tune/tune_demo_wd_hold/validate_building_hold_000__minneapolis_g1",
+  "validated": "2026-11-05T03:52:29"
+}

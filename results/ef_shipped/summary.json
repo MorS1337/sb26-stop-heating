@@ -1,0 +1,124 @@
+{
+  "tag": "ef_shipped",
+  "policy": "policies.ctrl_w:CtrlW",
+  "sim": "shipped",
+  "steps": 8641,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ef_shipped",
+  "wall_seconds": 5895.327265024185,
+  "scenarios": [
+    {
+      "scenario": "building_train_7/denver_5",
+      "error": null,
+      "mean_per_step_reward": -0.004393760452767923,
+      "total_reward": -37.96648407236762,
+      "reconciliation": {
+        "loss_from_components": -37.391128830671256,
+        "loss_from_reward_terms": -37.39112884655724,
+        "loss_recomputed_from_powers": -37.39112883067125,
+        "energy_from_powers": -29.331689825873877,
+        "energy_from_reward": -29.331689837398972,
+        "carbon_from_powers": -8.059439004797385,
+        "carbon_from_reward": -8.059439009158268,
+        "rel_error_vs_reward_terms": 4.2485961299082855e-10,
+        "rel_error_energy": 3.9292299927055543e-10,
+        "rel_error_carbon": 5.410901683283106e-10,
+        "rel_error_combined_powers_vs_reward": 4.2485980302059167e-10
+      }
+    },
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "error": null,
+      "mean_per_step_reward": -0.04573010600457461,
+      "total_reward": -395.1538459855292,
+      "reconciliation": {
+        "loss_from_components": -392.54704114316746,
+        "loss_from_reward_terms": -392.5470413369025,
+        "loss_recomputed_from_powers": -392.5470411431674,
+        "energy_from_powers": -112.24890872384914,
+        "energy_from_reward": -112.24890880967287,
+        "carbon_from_powers": -280.2981324193183,
+        "carbon_from_reward": -280.29813252722965,
+        "rel_error_vs_reward_terms": 4.935333276242097e-10,
+        "rel_error_energy": 7.645840790655549e-10,
+        "rel_error_carbon": 3.849878515498788e-10,
+        "rel_error_combined_powers_vs_reward": 4.935334724308516e-10
+      }
+    },
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "error": null,
+      "mean_per_step_reward": -0.009605768654701852,
+      "total_reward": -83.00344694527871,
+      "reconciliation": {
+        "loss_from_components": -83.00344697620062,
+        "loss_from_reward_terms": -83.00344701144411,
+        "loss_recomputed_from_powers": -83.00344697620062,
+        "energy_from_powers": -67.46347377280028,
+        "energy_from_reward": -67.46347379691815,
+        "carbon_from_powers": -15.539973203400333,
+        "carbon_from_reward": -15.539973214525968,
+        "rel_error_vs_reward_terms": 4.2460270503019444e-10,
+        "rel_error_energy": 3.574951815759973e-10,
+        "rel_error_carbon": 7.159365959246205e-10,
+        "rel_error_combined_powers_vs_reward": 4.2460270503019444e-10
+      }
+    },
+    {
+      "scenario": "building_train_2/atlanta_3",
+      "error": null,
+      "mean_per_step_reward": -0.002869926355719425,
+      "total_reward": -24.79903363977155,
+      "reconciliation": {
+        "loss_from_components": -24.575158429826597,
+        "loss_from_reward_terms": -24.575158417854617,
+        "loss_recomputed_from_powers": -24.575158429826597,
+        "energy_from_powers": -19.183081298521028,
+        "energy_from_reward": -19.1830812889395,
+        "carbon_from_powers": -5.392077131305566,
+        "carbon_from_reward": -5.392077128915116,
+        "rel_error_vs_reward_terms": 4.871578256603113e-10,
+        "rel_error_energy": 4.994779795205411e-10,
+        "rel_error_carbon": 4.433263024393741e-10,
+        "rel_error_combined_powers_vs_reward": 4.871578256603113e-10
+      }
+    },
+    {
+      "scenario": "building_train_4/singapore_3",
+      "error": null,
+      "mean_per_step_reward": -0.006835064816093006,
+      "total_reward": -59.06179507585966,
+      "reconciliation": {
+        "loss_from_components": -58.64611907314509,
+        "loss_from_reward_terms": -58.64611908724819,
+        "loss_recomputed_from_powers": -58.646119073145094,
+        "energy_from_powers": -47.658847806927504,
+        "energy_from_reward": -47.65884781937257,
+        "carbon_from_powers": -10.987271266217592,
+        "carbon_from_reward": -10.987271267875622,
+        "rel_error_vs_reward_terms": 2.404779911922682e-10,
+        "rel_error_energy": 2.6112808462028714e-10,
+        "rel_error_carbon": 1.5090463475329298e-10,
+        "rel_error_combined_powers_vs_reward": 2.404778700345946e-10
+      }
+    },
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "error": null,
+      "mean_per_step_reward": -0.012412378694348095,
+      "total_reward": -107.25536429786189,
+      "reconciliation": {
+        "loss_from_components": -106.68663632866884,
+        "loss_from_reward_terms": -106.68663637186327,
+        "loss_recomputed_from_powers": -106.68663632866885,
+        "energy_from_powers": -30.26860604188052,
+        "energy_from_reward": -30.268606061973696,
+        "carbon_from_powers": -76.41803028678834,
+        "carbon_from_reward": -76.41803030988959,
+        "rel_error_vs_reward_terms": 4.0487201010610776e-10,
+        "rel_error_energy": 6.638288886712428e-10,
+        "rel_error_carbon": 3.0230104854156437e-10,
+        "rel_error_combined_powers_vs_reward": 4.048718769042823e-10
+      }
+    }
+  ]
+}

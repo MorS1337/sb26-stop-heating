@@ -1,0 +1,4 @@
+name: houston_2
+weather_csv: csv/houston.csv
+convection_coefficient: 19.6
+start_timestamp: 2023-07-09 06:00

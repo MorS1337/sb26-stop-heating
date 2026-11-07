@@ -1,0 +1,32 @@
+{
+  "sigma0": 0.25,
+  "notes": [
+    "First CMA-ES search space for policies.ctrl_v1:CtrlV1 -- 15 knobs, chosen",
+    "for the mechanisms the module docstring calls decisive: the per-zone PI",
+    "gains, the comfort margin / economic shift, the demand -> supply-air",
+    "temperature pair, the economizer threshold, the hot-water reset, the",
+    "_floor_guard and the unoccupied-window start/stop. 'init' is deliberately",
+    "omitted everywhere: sbx.tune reads the live PARAMS of the policy class, so",
+    "a change to a default propagates without touching this file.",
+    "Ranges are the plausible operating envelope, not the default +-50%: a",
+    "linear scale maps [lo, hi] to [0, 1], log uses a geometric interpolation",
+    "(lo > 0), int rounds after the linear map, bool thresholds at x >= 0.5."
+  ],
+  "params": [
+    {"name": "KP",                 "lo": 0.01,  "hi": 0.40,   "scale": "lin"},
+    {"name": "KI",                 "lo": 0.00,  "hi": 0.40,   "scale": "lin"},
+    {"name": "MARGIN_K",           "lo": 0.05,  "hi": 1.50,   "scale": "lin"},
+    {"name": "ZONE_SHIFT_MAX_K",   "lo": 0.00,  "hi": 2.00,   "scale": "lin"},
+    {"name": "DEMAND_FULL",        "lo": 0.10,  "hi": 1.50,   "scale": "lin"},
+    {"name": "SAT_MIN_K",          "lo": 281.0, "hi": 290.0,  "scale": "lin"},
+    {"name": "SAT_MAX_K",          "lo": 293.0, "hi": 306.0,  "scale": "lin"},
+    {"name": "ECON_MIN_ADV_K",     "lo": 0.00,  "hi": 2.00,   "scale": "lin"},
+    {"name": "WATER_MIN_K",        "lo": 300.0, "hi": 322.0,  "scale": "lin"},
+    {"name": "WATER_MAX_K",        "lo": 327.0, "hi": 365.0,  "scale": "lin"},
+    {"name": "WATER_RESET_FULL_K", "lo": 0.50,  "hi": 16.00,  "scale": "log"},
+    {"name": "FLOOR_TEMP_K",       "lo": 279.0, "hi": 288.5,  "scale": "lin"},
+    {"name": "PRESTART_SAFETY",    "lo": 0.60,  "hi": 2.00,   "scale": "lin"},
+    {"name": "PRESTART_MAX_H",     "lo": 1.00,  "hi": 10.00,  "scale": "lin"},
+    {"name": "EARLY_STOP_H",       "lo": 0.00,  "hi": 3.00,   "scale": "lin"}
+  ]
+}

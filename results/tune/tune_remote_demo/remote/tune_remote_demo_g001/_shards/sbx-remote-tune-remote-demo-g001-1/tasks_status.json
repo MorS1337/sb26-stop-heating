@@ -1,0 +1,13 @@
+{
+ "n_tasks": 4,
+ "done": [
+  "g001_c001__building_gen_001__singapore_g2.json",
+  "g001_c001__building_gen_012__fairbanks_g4.json",
+  "g001_c003__building_gen_001__singapore_g2.json",
+  "g001_c003__building_gen_012__fairbanks_g4.json"
+ ],
+ "failed": {},
+ "timed_out": [],
+ "wall_seconds": 140.38,
+ "workers": 4
+}

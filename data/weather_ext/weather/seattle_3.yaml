@@ -1,0 +1,4 @@
+name: seattle_3
+weather_csv: csv/seattle.csv
+convection_coefficient: 19.5
+start_timestamp: 2023-10-08 06:00

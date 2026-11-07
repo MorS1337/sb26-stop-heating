@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim shipped --workers 4 --tag ctrw_dev30_seed777 --out /kaggle/working/results/ctrw_dev30_seed777 --components hook --start-offset-days 0 --scenario building_train_1/phoenix_5 building_train_2/phoenix_6 building_train_4/phoenix_8 building_train_5/phoenix_1 building_train_7/phoenix_3 building_train_8/phoenix_4 --occupancy-seed 777
+
+STDOUT
+[evalrun] tag=ctrw_dev30_seed777 sim=shipped policy=policies.ctrl_w:CtrlW scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/ctrw_dev30_seed777
+[evalrun] 1/6 building_train_1/phoenix_5             total=   -123.1312 mean=-0.014250 steps=8641 cpu=1238.9s
+[evalrun] 2/6 building_train_4/phoenix_8             total=    -14.2916 mean=-0.001654 steps=8641 cpu=1682.1s
+[evalrun] 3/6 building_train_5/phoenix_1             total=    -20.2652 mean=-0.002345 steps=8641 cpu=1718.7s
+[evalrun] 4/6 building_train_7/phoenix_3             total=    -47.1038 mean=-0.005451 steps=8641 cpu=787.1s
+[evalrun] 5/6 building_train_2/phoenix_6             total=    -62.2564 mean=-0.007205 steps=8641 cpu=2123.8s
+[evalrun] 6/6 building_train_8/phoenix_4             total=    -83.0816 mean=-0.009615 steps=8641 cpu=544.8s
+[evalrun] score=0.006753 scenarios=6 failed=0 wall=2254s -> /kaggle/working/results/ctrw_dev30_seed777/summary.json
+
+STDERR

@@ -1,0 +1,79 @@
+{
+  "tag": "parity_shipped_hook",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+    "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 288,
+  "start_offset_days": 0,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/parity_shipped_hook",
+  "leaderboard_score": 0.004494097841848719,
+  "mean_abs_total_reward_per_step": 0.004494097841848719,
+  "mean_total_reward": -1.2943001784524313,
+  "mean_per_step_reward": -0.004494097841848719,
+  "n_scenarios": 2,
+  "n_failed": 0,
+  "sum_comfort_all": -0.6037460328636968,
+  "sum_energy_all": -0.5665437773610875,
+  "sum_carbon_all": -1.4183106516480632,
+  "by_weather": {
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 2.817060093068196e-05,
+      "mean_total_reward": -0.008113133068036404,
+      "mean_per_step_reward": -2.817060093068196e-05
+    },
+    "fairbanks_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008960025082766757,
+      "mean_total_reward": -2.580487223836826,
+      "mean_per_step_reward": -0.008960025082766757
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 2.817060093068196e-05,
+      "mean_total_reward": -0.008113133068036404,
+      "mean_per_step_reward": -2.817060093068196e-05
+    },
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008960025082766757,
+      "mean_total_reward": -2.580487223836826,
+      "mean_per_step_reward": -0.008960025082766757
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 10.868169069290161,
+    "cpu_seconds_total": 17.901331,
+    "wall_seconds_sum_scenarios": 17.98151421546936,
+    "mean_cpu_seconds_per_scenario": 8.9506655,
+    "steps_per_second_cpu": 32.17637839331612,
+    "steps_per_second_step_cpu": 54.25532726559087
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 288,
+      "total_reward": -0.008113133068036404,
+      "mean_per_step_reward": -2.817060093068196e-05,
+      "cpu_seconds": 10.73756,
+      "wall_seconds": 10.778330087661743,
+      "steps_per_second_cpu": 26.821736036864987
+    },
+    {
+      "scenario": "building_train_8/fairbanks_8",
+      "steps": 288,
+      "total_reward": -2.580487223836826,
+      "mean_per_step_reward": -0.008960025082766757,
+      "cpu_seconds": 7.163771,
+      "wall_seconds": 7.203184127807617,
+      "steps_per_second_cpu": 40.20229010670498
+    }
+  ],
+  "failures": []
+}

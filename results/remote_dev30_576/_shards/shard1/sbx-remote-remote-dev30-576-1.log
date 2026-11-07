@@ -1,0 +1,47 @@
+[{"stream_name":"stdout","time":1.057059229,"data":"[sbx-remote      0.0s] job: {\"components\": \"parity\", \"created_utc\": \"2026-11-05T03:23:42Z\", \"dataset_dir\": \"/kaggle/input/sbx-payload\", \"keep_trees\": false, \"kernel_slug\": \"sbx-remote-remote-dev30-576-1\", \"mount\": \"/kaggle/input/competitions/neurips-2026-smart-buildings\", \"n_shards\": 5, \"occupancy_seed\": null, \"params\": {}, \"payload_hash\": \"7bb303412c8c5435f279a5bc081962a8\", \"policy\": \"baseline:pid_water\", \"scenarios\": [\"building_train_1/denver_7\", \"building_train_2/denver_8\", \"building_train_4/denver_2\", \"building_train_5/denver_3\", \"building_train_7/denver_5\", \"building_train_8/denver_6\"], \"shard\": 1, \"sim\": \"shipped\", \"start_offset_days\": 0, \"steps\": 576, \"tag\": \"remote_dev30_576\", \"workers\": 4}\n"}
+,{"stream_name":"stdout","time":1.5003714320000001,"data":"[sbx-remote      0.4s] payload source: dir /kaggle/input/datasets/mors1337/sbx-payload\n"}
+,{"stream_name":"stdout","time":4.55551758,"data":"[sbx-remote      3.5s] payload verified: 82 files, hash 7bb303412c8c5435f279a5bc081962a8\n"}
+,{"stream_name":"stdout","time":5.361986915,"data":"[sbx-remote      4.3s] mount vs local sims/shipped: 96 files, 23 differ, 0 extra -\u003e match=False\n"}
+,{"stream_name":"stdout","time":7.619341445,"data":"[sbx-remote      6.6s] sims/shipped built from the mount in 2.3s\n"}
+,{"stream_name":"stdout","time":7.73774894,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 30 applied at 30\n"}
+,{"stream_name":"stdout","time":7.737777299,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 45 applied at 49\n"}
+,{"stream_name":"stdout","time":7.737782665,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 89 applied at 94\n"}
+,{"stream_name":"stdout","time":7.737787418,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 103 applied at 111\n"}
+,{"stream_name":"stdout","time":7.737791907,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 122 applied at 131\n"}
+,{"stream_name":"stdout","time":7.737796216,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 205 applied at 258\n"}
+,{"stream_name":"stdout","time":7.737800808,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/boiler_energy_balance_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":7.737804876,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 54 applied at 54\n"}
+,{"stream_name":"stdout","time":7.737809405,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 291 applied at 292\n"}
+,{"stream_name":"stdout","time":7.7378136170000005,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 190 applied at 190\n"}
+,{"stream_name":"stdout","time":7.737817673,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 211 applied at 222\n"}
+,{"stream_name":"stdout","time":7.737822135,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 520 applied at 520\n"}
+,{"stream_name":"stdout","time":7.737826187,"data":"[sbx-remote      6.7s] patch: smart_buildings/check_return_air.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":7.7378303630000005,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/return_air_mixing_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":7.737847337,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 7 applied at 7\n"}
+,{"stream_name":"stdout","time":7.737852151,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 289 applied at 289\n"}
+,{"stream_name":"stdout","time":7.737857998,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 315 applied at 312\n"}
+,{"stream_name":"stdout","time":7.737861375,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 704 applied at 690\n"}
+,{"stream_name":"stdout","time":7.73786403,"data":"[sbx-remote      6.7s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 720 applied at 771\n"}
+,{"stream_name":"stdout","time":7.73874014,"data":"[sbx-remote      6.7s] sims/corrected: 6 patched files byte-identical to sims/corrected, 1 differ outside the patched hunks: ['smart_buildings/smart_control/simulator/hot_water_system.py']\n"}
+,{"stream_name":"stdout","time":19.392578576,"data":"[sbx-remote     18.3s] pool scenarios verified: 444 files (222 by digest, 222 by size)\n"}
+,{"stream_name":"stdout","time":19.392948784,"data":"[sbx-remote     18.3s] setup complete in 18.3s; starting the evaluation\n"}
+,{"stream_name":"stdout","time":19.393186048,"data":"[sbx-remote     18.3s] exec /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 576 --sim shipped --workers 4 --tag remote_dev30_576 --out /kaggle/working/results/remote_dev30_576 --components parity --start-offset-days 0 --scenario building_train_1/denver_7 building_train_2/denver_8 building_train_4/denver_2 building_train_5/denver_3 building_train_7/denver_5 building_train_8/denver_6\n"}
+,{"stream_name":"stdout","time":229.264194558,"data":"[evalrun] tag=remote_dev30_576 sim=shipped policy=baseline:pid_water scenarios=6 steps=576 workers=4 out=/kaggle/working/results/remote_dev30_576\n"}
+,{"stream_name":"stdout","time":229.264248899,"data":"[evalrun] 1/6 building_train_1/denver_7              total=     -3.0749 mean=-0.005338 steps=576 cpu=112.9s\n"}
+,{"stream_name":"stdout","time":229.264256839,"data":"[evalrun] 2/6 building_train_4/denver_2              total=    -11.9134 mean=-0.020683 steps=576 cpu=148.5s\n"}
+,{"stream_name":"stdout","time":229.264262008,"data":"[evalrun] 3/6 building_train_5/denver_3              total=    -11.4863 mean=-0.019941 steps=576 cpu=152.6s\n"}
+,{"stream_name":"stdout","time":229.264267086,"data":"[evalrun] 4/6 building_train_7/denver_5              total=     -7.2777 mean=-0.012635 steps=576 cpu=65.8s\n"}
+,{"stream_name":"stdout","time":229.264272229,"data":"[evalrun] 5/6 building_train_2/denver_8              total=    -21.7699 mean=-0.037795 steps=576 cpu=189.7s\n"}
+,{"stream_name":"stdout","time":229.264277093,"data":"[evalrun] 6/6 building_train_8/denver_6              total=     -8.2375 mean=-0.014301 steps=576 cpu=49.5s\n"}
+,{"stream_name":"stdout","time":229.264282088,"data":"[evalrun] score=0.018449 scenarios=6 failed=0 wall=209s -\u003e /kaggle/working/results/remote_dev30_576/summary.json\n"}
+,{"stream_name":"stdout","time":229.264287722,"data":"[sbx-remote    228.2s] evalrun exit=0 wall=209.9s\n"}
+,{"stream_name":"stdout","time":229.26721243,"data":"[sbx-remote    228.2s] shard.json written: 6 records, exit=0\n"}
+,{"stream_name":"stdout","time":230.689883947,"data":"[sbx-remote    229.6s] removed /kaggle/working/payload (1189 MB) so the kernel output is just the results; pass keep_trees to keep the sim trees\n"}
+,{"stream_name":"stdout","time":230.690010733,"data":"[sbx-remote    229.6s] SHARD COMPLETE\n"}
+,{"stream_name":"stderr","time":233.671975272,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":233.672042832,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":234.075129708,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":234.075162054,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":235.172815541,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":235.908415895,"data":"[NbConvertApp] Writing 359767 bytes to __results__.html\n"}
+]

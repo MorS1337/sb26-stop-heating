@@ -1,0 +1,4 @@
+name: anchorage_1
+weather_csv: csv/anchorage.csv
+convection_coefficient: 16.5
+start_timestamp: 2023-01-08 06:00

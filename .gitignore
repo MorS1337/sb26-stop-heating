@@ -1,0 +1,53 @@
+# External checkouts and competition data (re-fetch, never commit:
+# competition data is CC-BY-NC-SA and may not be redistributed).
+starter-kit/
+comp_data/
+
+# Simulator trees and generated pools: rebuild with sbx/make_sims.sh + sbx.make_pool.
+sims/
+
+# Throwaway work and caches.
+scratch/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Kaggle build products and local-only wheels.
+kaggle/build/
+kaggle/.pydeps/
+# remote-eval payload/notebook staging (rebuilt by kaggle/remote/payload.py).
+kaggle/remote/build/
+
+# Raw downloads (re-fetch with sbx/weather_ext.py --refresh).
+data/weather_ext/raw/
+
+# Third-party material kept locally only.
+refs/notebooks/
+refs/papers/
+refs/template.zip
+
+# Bulky downloaded kernel outputs (re-runnable).
+results/remote_parity/
+results/**/records/
+results/**/_gin/
+
+# LaTeX build log.
+paper/main.log
+
+# Recorded simulator snapshots (2.7 GB; re-record with fastsim/record.py) and the
+# C library build output (rebuilt by cenv/build.py on first use).
+fastsim/data/
+cenv/_build/
+
+# Heavy binary artefacts are never committed: the agent host's change tracking
+# hashes every untracked, non-ignored file, and files over 512 MB left 30 GB of
+# git temp packs behind (2026-11-06). Already-tracked files stay tracked; use
+# `git add -f` for a deliberate exception.
+*.npy
+*.npz
+*.pt
+*.pth
+*.whl
+*.tar
+*.tar.gz
+*.tgz

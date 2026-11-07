@@ -1,0 +1,779 @@
+\documentclass{article}
+
+\PassOptionsToPackage{numbers, compress}{natbib}
+
+\usepackage[main,final]{neurips_2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{upquote}
+
+\newcommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
+\newcommand{\e}[1]{\times10^{-#1}}
+\newcommand{\cn}[1]{\texttt{#1}}
+
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.5}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.7}
+
+\title{Stop Heating an Empty Building: Reward Anatomy and a Supervisory Layer\\ for the NeurIPS 2026 Smart Buildings Challenge}
+
+\author{%
+  Semyon Morev\\
+  Institute of Computer Science\\
+  NUST MISIS, Moscow, Russia\\
+  \texttt{m2508348@edu.misis.ru}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Smart Buildings Challenge asks for one controller that runs, without retraining,
+in buildings it has never seen. Two facts about its reward decide the episode: comfort
+regret is the occupancy-weighted \emph{mean} shortfall over present occupants, so
+readiness at the 06:00 mode change dominates; and because at least $30\,\%$ of the
+supply air is outdoor air while discharge is capped at 308.15\,K, the gas billed per
+unit of delivered heat falls as the zone gets colder ($2.0$ at 294\,K, $1.18$ at
+270\,K). On Wu et al.'s public adaptive-physics controller we add a supervisory layer:
+CtrlW enforces a 2\,h readiness constraint ($-1.8\,\%$ on 30 shipped scenarios), and
+CtrlW5 stops heating the empty building at night and delivers the recovery in one
+capacity-limited burst. With the 278\,K ($4.9\,^\circ$C) night floor we ship---the
+coldest room measured stays at $+4.6\,^\circ$C---CtrlW5 scores 0.0071980 ($-2.3\,\%$
+against CtrlW, $-2.6\,\%$ on 49 held-out buildings and climates) and 0.01032 on the
+leaderboard; without the floor it reaches $-80.31$ on the forum's seven-day anchor,
+past the best public number ($-81.9$). We then price the missing information---a
+zonal occupancy sensor $-2.9\,\%$, perfect per-zone foresight $-6.0\,\%$, a perfect
+12\,h forecast $\approx0$---and audit two open accounting seams, worth fractions of a
+unit to an honest controller but 37 anchor units to a boiler-billing exploit.
+\end{abstract}
+
+\section{Introduction}
+
+The Smart Buildings Challenge \citep{goldfeder2026smart} evaluates controllers under a
+protocol that makes transfer the whole problem: one policy is instantiated afresh for each
+of 30 scenarios---six buildings crossed with five weather stations---and must run 8{,}640
+steps of five simulated minutes without retraining, network access or a site visit. Zone
+count varies threefold ($V\in[30,85]$) and air-handler count threefold ($H\in[3,9]$), so
+the action dimension, $3H+2+2V$ continuous values plus $H+1$ binaries, changes per
+scenario; no physics, plant sizes or per-zone occupancy are exposed; and submissions get 9
+CPU-hours of wall-clock for all 30 scenarios \citep{smartbuildings2026rules}, ten times the
+bang-bang baseline's wall-clock, about 125\,ms per step. End-to-end reinforcement learning is
+therefore expensive---0.04--0.13 CPU-seconds per step on $1.2$--$2.6\times10^{5}$ control
+volumes means about 107 CPU-hours for $5\times10^6$ PPO steps, and the organizers report only
+single-digit-percent gains from SAC on one building \citep{goldfeder2024smart}.
+Meanwhile the leaderboard is public, so the object to beat is a documented notebook: the
+strongest \citep{wu2026alpha075} reaches 0.01062 against 0.05498 for the organizers'
+\cn{pid\_water}. We port that controller bit-exactly and ask what is left to fix once a
+strong public controller is in hand.
+
+\paragraph{The reward has a structure that decides the episode.} Comfort is
+charged to \emph{present} occupants only, and as a mean, so the first arrivals cost as much
+per kelvin as the peak: readiness at the mode change is a first-order objective and the
+night is free. The bill is envelope heat times a multiplier that the $30\,\%$ outside-air
+floor and the 308.15\,K discharge cap fix (Eq.~\ref{eq:mult})---so the same recovered heat
+is cheaper when it is delivered into a colder building, in one burst, at the coil's cap.
+The consequence is a two-number change to a public controller. CtrlW adds a 2\,h readiness
+constraint and reward-consistent fuel weights; CtrlW5 then stops heating the empty
+building, because the inherited 282\,K standby floor, held by the coldest zone of each
+air-handler group, keeps every group's plant on from 19:00 to 04:00. Releasing it plus a
+cooler hot-water loop is worth 12.8 of the anchor's 93.1 units, and 6.4 with the
+278\,K ($4.9\,^\circ$C) floor we ship. A receding-horizon planner we built to look for the same
+gain does not find it, which is why we present this as a \emph{supervisory sequencing}
+result rather than a control-quality one.
+
+\paragraph{Contributions.} \textbf{C1}~a reward anatomy (comfort is a per-occupant mean;
+the bill is envelope heat times a closed-form ventilation multiplier; the exchange rate
+between them is $\approx\!39{:}1$ against trading the occupied band); \textbf{C2}~CtrlW, a supervisory layer on the public controller,
+with the diagnosis that its preheat horizon was silently capped at one hour; \textbf{C3}~CtrlW5,
+the night release---its decomposition, a search over the same 16-knob family and a floor
+sweep that agree on it, and the frost-floor cost curve that prices the limit we ship; \textbf{C4}~an evaluation on 30 shipped
+scenarios, 49 holdouts, the corrected tree, reseeded occupancy and the leaderboard; \textbf{C5}~a
+measured value of information; \textbf{C6}~an audit of the two seams plus the exact fused
+simulator step ($2.1\times$) these studies ran on.
+
+\section{The benchmark, and related work}
+\label{sec:setting}
+
+A scenario is a partially observed Markov decision process over a temperature field, plant
+parameters and hidden per-zone occupancy; the policy acts in
+$\mathcal{A}=\mathbb{R}^{3H+2+2V}\times\{0,1\}^{H+1}$ (per handler a supply-air
+temperature, a static-pressure setpoint and a recirculation fraction $r_k\le0.7$; two plant
+values; per zone a damper floored at 10\,\% and a reheat valve), observes $6V+15H+34$ values
+with zone readings lagged one step and \emph{one} building-level occupant count, but no
+per-zone occupancy and no weather forecast; the plant cools centrally and heats only through
+per-zone reheat coils. With live setpoints $T^{\text{lo}}_v,T^{\text{hi}}_v$ and
+per-zone shortfall $s_{v,t}$ (linear to $w=5$\,K, quadratic beyond), the step reward and
+score are $r_t=-0.6\,C_t-0.2\,\hat E_t-0.2\,\hat C_t\le0$ and
+$S=\frac{1}{30}\sum_{s=1}^{30}\big|\tfrac1T\sum_{t=1}^{T}r_{s,t}\big|$, with $C_t$ the
+occupancy-weighted shortfall of Eq.~\eqref{eq:mean} and $\hat E_t,\hat C_t$ metered
+electricity-plus-gas cost and carbon normalized by the draw at rated power times $H$; lower
+$S$ is better. Regret is linear to 5\,K then quadratic, so one runaway zone dominates an
+episode, and the denominators scale with $H$, so one parameter set behaves consistently
+across building sizes.
+
+The challenge \citep{goldfeder2026smart} asks whether domain-specific models or generic
+foundation models adapt better to unseen buildings, on the substrate of the Smart Buildings
+Control Suite \citep{goldfeder2024smart} with its lightweight finite-difference simulator
+\citep{goldfeder2023lightweight}; its authors concluded that aggregating a policy into a
+static schedule retains most of its value \citep{goldfeder2024policyextraction} and that
+better simple heuristics remain to be found \citep{goldfeder2025iccvw}, which is the line our result continues. Because the
+leaderboard is public we measure against three notebooks rather than re-derive them---a
+per-zone PI rule \citep{malyshev2026ztbest}, a residual PPO policy on it
+\citep{alex2026residualppo}, and the analytic one-step search we adopt
+\citep{wu2026alpha075}---all rule-based or one step deep. Transfer is formalized by Building2Building
+\citep{taboga2026building2building} and attacked by GenTL \citep{raisch2025gentl} and BUILDA
+\citep{krug2025builda}, whose generator we reuse; MPC's bottleneck is modelling effort rather
+than optimization \citep{drgona2020mpc}, which is why we identify per zone online and
+optimize nothing per step, with Guideline 36 \citep{ashrae2024g36} and trim-and-respond
+\citep{taylor2015trimrespond} supplying the reset semantics of the base controller.
+Evolution strategies suit a slow deterministic simulator because rollouts parallelize exactly
+\citep{hansen2016cmaes,salimans2017es}; CityLearn 2022 \citep{nweye2023citylearn} is the closest
+precedent, and benchmark hygiene follows BOPTEST \citep{blum2021boptest} and
+\citep{nagy2023tenquestions}.
+
+\input{sections/anatomy}
+
+\section{Method: from a public controller to a night release}
+\label{sec:method}
+
+\subsection{The base controller}
+
+We adopt the public controller of \citet{wu2026alpha075}, credit it as such, and reproduce it
+exactly: with all our flags off, our port returns its dev30 score to the last digit
+(0.0075040). It identifies one first-order zone model by recursive least squares with a
+forgetting factor, lagged one step to match the sensor delay; evaluates candidate (supply-air
+temperature, recirculation) pairs analytically against those models per handler, a
+one-step-deep MPC costing $O(K)$ closed-form evaluations; corrects drift with a small MLP
+ensemble; and weights predicted gas 0.30 against electricity. It is strong---comfort
+$2.14\e{4}$ per step on dev30---but it plans neither the morning nor the night: its standby
+policy holds each zone between 282 and 307\,K, and because a group's plant runs when
+\emph{any} zone of the group calls, one cold zone holds every group's plant on all night.
+
+\subsection{CtrlW: readiness, weights, guards}
+\label{sec:ctrlw}
+
+\paragraph{Readiness constraint.} The base controller ramps its preheat setpoint by a gain
+multiplied by \cn{precondition\_hours}, but the multiplication lives inside the code path
+guarded by \cn{comfort\_mode\_soon}---a flag true only in the 60 minutes before
+comfort-mode onset---so any horizon longer than 1\,h was clamped by construction. We
+implement the ramp outside the flag, as a supervisory decision taken once per simulated hour
+from the identified models: at the mode change $t_s$, every zone that may be occupied must
+satisfy
+\begin{equation}
+T^{\text{lo}}_v+\mu \;\le\; \hat T_v(t_s) \;\le\; T^{\text{hi}}_v-\mu ,
+\qquad
+\hat T_v(t_s)=a_v^{\,t_s-t}T_{v,t}+\big(1-a_v^{\,t_s-t}\big)T^{\text{eq}}_v+b_v^\top\bar x ,
+\label{eq:ready}
+\end{equation}
+with $\mu$ a lag margin, $T^{\text{eq}}_v$ the identified equilibrium under the preheat
+command and $\bar x$ the last exogenous regressors. The controller preheats from $t_s-h$ and holds the
+plant enabled until the constraint is met; $h=2$\,h is the tuned horizon.
+
+\paragraph{Weights and guards.} Per unit of gas energy the reward charges
+$0.2\,(p_g+\lambda\kappa_g)$ and per unit of electricity $0.2\,(p_e+\lambda\kappa_e)$ ($p$ price,
+$\kappa$ carbon intensity, $\lambda$ the ratio of the cost to the carbon normalizer, up to a common scale), so
+the consistent relative weight is
+$(p_g+\lambda\kappa_g)/(p_e+\lambda\kappa_e)\in[0.443,0.509]$ on the 30 shipped scenarios,
+mean 0.481: the base under-weights gas by about $40\,\%$. Measured, it is a plateau
+(0.0075035, better in 16 of 30) because gas is spent on reheat during warm-up and
+electricity on fans and chillers during the day; we adopt the derived weight because it is
+the correct objective and claim no gain for it. Two guards are inert: an occupancy-aware
+release never fires on dev30 (occupancy never returns to zero inside the comfort window) and
+a holiday guard never fires (no holiday in the shipped scenarios); both leave the score at
+0.0075040 exactly, and we say so rather than credit them.
+
+\subsection{CtrlW2 and CtrlW4: what tuning the class can buy}
+
+\emph{CtrlW2} replaces the fixed horizon with a per-zone one,
+$\text{clip}(\text{safety}\cdot\ell_v+\text{slack},1,3)$\,h, where $\ell_v$ is the lead the
+zone's own model needs under full conditioning: 0.0073576 ($-0.16\,\%$, better on 12, worse on 6),
+inside the reseed spread. \emph{CtrlW4} adds the legal half of our oracle study---a fixed 2\,K
+pre-dawn lift for zones on the standby floor, gated on the clock and on a comfort day coming---scoring
+0.0073445 ($-0.34\,\%$, better on 8, worse on 10) and 0.0071587 corrected, and inert on the anchor
+($-93.13$ against $-93.12$). Both are small; the next subsection is not.
+% src: results/q8/ctw2_v4_dev30_kg and results/ctw4_dev30_shipped vs results/q8/ctrw_dev30_shipped_kg (all Kaggle, same platform)
+
+\subsection{CtrlW5: do not heat an empty building}
+\label{sec:ctrlw5}
+
+The night is unoccupied by construction (arrivals 06:00--12:00), so comfort charges nothing
+there, yet CtrlW holds each group's coldest zone at 282\,K from 19:00 to 04:00. CtrlW5
+changes exactly two numbers in \cn{PARAMS}: \cn{standby\_minimum} $282\to262$\,K, which
+releases the floor, and \cn{hot\_water\_target} $345\to336.32$\,K. Restoring them reproduces
+CtrlW4 bit-exactly, and the two are worth $12.07$ and $0.75$ units of the $12.82$: the
+single floor release is the mechanism, the cooler loop is a bonus; the module needs numpy only, no building or weather identifier, no
+forecast and no occupancy channel. Three mechanisms, all measured on the anchor
+(Table~\ref{tab:anchor}, Figure~\ref{fig:mult}): \emph{(a) the night heating
+stops}---night coil duty falls from $30$\,kW to $0$\,kW while the building's \emph{mean}
+temperature barely moves ($287.9\to287.4$\,K, i.e.\ $14\,^\circ$C, still 2\,K from the
+schedule's own 289\,K night setpoint: it is the coldest zones and the group plant that
+change, not the building); \emph{(b) the recovery is one burst at the discharge
+cap}---by Eq.~\eqref{eq:mult} heat delivered into a colder mass is cheaper per delivered
+watt, and CtrlW5's discharge sits at $35.00\,^\circ$C with $1.1$\,K mean headroom against
+CtrlW's $2.3$\,K, its gas per net zone watt $2.061$ against a cap-limited $2.045$
+($0.7\,\%$ of air-side slack, against CtrlW's $1.2\,\%$); \emph{(c) the stored heat pays for
+the day}---charging the mass at 04:00--06:00, the cheapest hours (88\,kg CO$_2$/MWh), and
+letting it drift through the band costs nothing in comfort, because the band's upper edge is
+free, and removes much of the continuous daytime coil duty.
+
+Net: gas $27.19\to23.27$\,MWh ($-14.4\,\%$), coil heat $26.72\to22.97$ ($-14.0\,\%$),
+ventilation-attributable load $14.79\to12.50$ ($-15.5\,\%$), comfort $-0.54\to-1.12$. The
+$+12.82$ units decompose into envelope reheat $+8.75$, the outside-air share $+4.42$, fans
+$+0.27$, pump $-0.22$, boiler standing loss $+0.18$, comfort $-0.58$; by hour block, $+3.3$
+(00--04), $+2.7$ (04--06), $+0.7$ (06--12), $+3.1$ (12--19), $+3.0$ (19--24)
+(Figure~\ref{fig:mult}b). A search over the same family and a floor sweep agree that this is the family's optimum rather
+than a lucky knob, though neither rules out a better mechanism outside it. A
+150-evaluation CMA-ES over CtrlW4's 16 supervisory knobs reaches $-83.109$ with its optimum on
+the lower bound of \cn{standby\_minimum}, and releasing that bound takes it to $-80.298$, i.e.\ to
+CtrlW5-262's $-80.306$ within $0.008$ units. And the floor sweep is monotone and
+saturates at 262\,K, where the floor stops binding and the building free-floats: the optimum
+is not ``a deep setback'', it is \emph{no overnight heating at all}, with the comfort term
+flat at $-1.35$ across the sweep, so none of it is bought from the occupied band.
+% src: docs/control_gap.md §0, §2, §4-4.1, §4.3
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/multiplier.pdf}
+\caption{\textbf{(a)} The bill's ventilation multiplier, Eq.~\eqref{eq:mult}, at the
+anchor's ambient ($-26.3\,^\circ$C) and at $-10\,^\circ$C: the same delivered heat costs
+$2.00$ units of gas at a 294\,K zone and $1.18$ at 270\,K, which is why releasing the night
+and recovering in one burst pays. \textbf{(b)} The anchor's loss by hour block: releasing the floor
+removes $3.3$ (00--04), $2.7$ (04--06) and $3.0$ (19--24) units from the blocks the plant used to
+heat, and $0.7$ and $3.1$ from the two daytime blocks, where the stored charge replaces coil duty.
+Bar heights are losses (lower is better) and the labels are savings.}
+\label{fig:mult}
+% src: paper/figures/multiplier.py; hour blocks from docs/control_gap.md §2 (by_hour)
+\end{figure}
+
+\subsection{Frost protection, and what it costs}
+\label{sec:frost}
+
+A released building in Fairbanks does not stay above freezing on its own: the 262\,K
+release gains $12.8$ units by letting the coldest room reach $-8.58\,^\circ$C on the anchor
+and $-11.2\,^\circ$C on a 30-day episode, with 19 and 90 hours in which some room is below
+$0\,^\circ$C. The simulator has no freezing model and the score has no penalty for it, so
+this is a choice, not a constraint. We ship a floor: \textbf{278\,K}, i.e.\ a
+$4.85\,^\circ$C setpoint floor, which keeps the coldest room at $+4.66\,^\circ$C on the anchor
+and $+4.56\,^\circ$C on the three cold 30-day scenarios, with zero room-hours below
+$0\,^\circ$C, and still beats CtrlW by $6.9\,\%$ on the anchor and $3.8\,\%$ on the six
+Fairbanks scenarios (Appendix~\ref{app:frost}). This is a measured minimum on four scenarios,
+not a guarantee: the floor is a setpoint the controller can miss. The price is steep at the
+top---282$\to$280\,K buys 3.5 units, 280$\to$278 another 2.9---and flat at the bottom
+(Figure~\ref{fig:frost}); $\ge5\,^\circ$C needs 280\,K and costs 9.3 of the 12.8 units, and 274\,K
+leaves rooms at $+0.63\,^\circ$C, inside the pipe-freezing margin the limit exists to protect.
+Holding the floor is also the cheaper way to keep it: a per-zone latch that lets a room reach
+278\,K and recovers it in one burst to $278+b$\,K loses $0.32$--$4.32$ units for $b=0$--$4$\,K
+and lets the room dip to $+1.1$--$3.3\,^\circ$C.
+% src: docs/control_gap.md §8.1-8.3; paper/figures/frost.py
+% src: results/frostburst_anchor/*.json (policies/ctrl_w7.py, 2016 steps, shipped, Mac)
+
+
+
+\section{Results}
+\label{sec:results}
+
+\paragraph{Protocol.} \cn{dev30} is the 30 shipped scenarios at full episode length
+(8{,}641 five-minute steps), which is what the leaderboard draws from; \cn{gen} is 32 scenarios
+from eight generated buildings under weather windows absent from tuning; \cn{ext} replays
+those buildings and two shipped ones under 17 Meteostat 2023 stations absent from the
+benchmark (Appendix~\ref{app:weather}). Scores are means over scenarios of
+$|\tfrac1T\sum_t r_t|$ and comparisons against a base are paired. Episodes are 8{,}640 scored
+steps plus a terminal one (result files report 8{,}641). Reseeding occupancy moves a
+score by at most $0.18\,\%$ and a paired gain by at most $0.12$ points (\S\ref{sec:results}, below), so we read only larger deltas as gains.
+Numbers are shipped unless marked corrected; we report both, because final verification runs the corrected simulator
+\citep{stncsn2026pr2,stncsn2026pr3} and reseeds occupancy, and neither seam nor seed is
+something we tune against.
+
+\begin{table}[t]
+\centering
+\caption{Main comparison; score $S$ (lower is better). \cn{dev30} is 30 shipped scenarios at
+8{,}641 steps, \cn{gen} 32 held-out generated scenarios and \cn{ext} 17 unseen climates;
+\emph{shipped}/\emph{corrected} are the two simulator trees. CtrlW5-278 is the controller we
+ship (278\,K night floor) and CtrlW5-262 the unconstrained bound. Public rows are the authors'
+leaderboard scores unless we re-ran the controller; shipped \cn{pid\_water} combines 25 scenarios
+at 0.054363 with 5 re-runs at 0.058058.}
+% src: results/{pid_water_dev30_shipped+pid_water_dev30_shipped_dstfix (25+5 scenarios),pidw_dev30_corrected,pidw_holdouts_shipped,refzt_dev30_shipped,refzt_dev30_corrected,refzt_holdouts_shipped+refzt_holdouts_shipped_fill (29+20=49 scenarios; gen 32 / ext 17 means computed per scenario),refwu_dev30_shipped,wu_dev30_corrected,refwu_gen_hold_shipped,refwu_ext_hold_shipped,ctrw_all,ctrw_all_corr,ctrw_holdouts_shipped,ctw4_dev30_shipped,ctw4_dev30_corrected,ctw4_holdouts_shipped,ctw5frost_dev30_shipped,ctw5frost_dev30_corrected,ctw5frost_holdouts_shipped,ctw5_dev30_shipped,ctw5_dev30_corrected,ctw5_holdouts_shipped}/summary.json
+\label{tab:main}
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Method & dev30 shipped & dev30 corrected & gen / ext & Kaggle public \\
+\midrule
+\cn{pid\_water} & 0.05498 & 0.05789 & 0.03620 / 0.05189 & --- \\
+per-zone PI \citep{malyshev2026ztbest} & 0.01042 & 0.01023 & 0.007673 / 0.010748 & 0.01420 \\
+Wu et al.\ \citep{wu2026alpha075} & 0.0075040 & 0.0072641 & 0.005293 / 0.008015 & 0.01062 \\
+CtrlW & 0.0073694 & 0.0071449 & 0.005179 / 0.007836 & 0.01051 \\
+CtrlW4 & 0.0073445 & 0.0071587 & 0.005170 / 0.007813 & 0.01049 \\
+CtrlW5-278 & \textbf{0.0071980} & \textbf{0.0070409} & 0.005058 / 0.007616 & 0.01032 \\
+CtrlW5-262 & 0.0071338 & 0.0069430 & 0.005052 / 0.007577 & 0.01024 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Main comparison.} Table~\ref{tab:main}. On dev30 the organizer baseline scores 0.05498, the
+per-zone PI rule 0.01042, the base controller 0.0075040, CtrlW 0.0073694 and CtrlW5-278
+0.0071980; the ordering is unchanged on the corrected tree, which moves the six non-organizer
+controllers by $-1.8$ to $-3.2\,\%$ and makes \cn{pid\_water} worse. The kit's other reference controllers
+are weaker still by its own shipped returns---fixed setpoint 0.0659, PI 0.0674, bang-bang 0.2252---a
+file that puts \cn{pid\_water} at 0.05414 against our re-run's 0.05498, so read them as indicative.
+% src: starter-kit/baseline_returns.json (30 scenarios, |total|/8640); results/pid_water_dev30_shipped*
+On the holdouts CtrlW5-278 is $2.6\,\%$
+better than CtrlW---better on 38 of 49 scenarios, identical on 11, worse on none (sign test $p<10^{-11}$)---so the
+gain is not a dev30 artefact; the unseen climates are $51\,\%$ worse than the same buildings
+under in-distribution weather (0.007616 against 0.005058), so the transfer gap is climatic,
+not architectural. On the public leaderboard CtrlW scored 0.01051 (submission 58025908),
+CtrlW4 0.01049, CtrlW5-278 0.01032 (58059955) and CtrlW5-262 0.01024 (58050174) against the base controller's 0.01062; the
+leaderboard/offline ratio is 1.36--1.44 across the six methods with both numbers (per-zone PI 1.36,
+Wu 1.42, CtrlW 1.43, CtrlW4 1.43, CtrlW5-278 1.43, CtrlW5-262 1.44), a consistency check rather than a calibration.
+The frost floor costs $0.8\,\%$ on the leaderboard (0.01032 against 0.01024), as it costs $0.9\,\%$ on dev30.
+
+\paragraph{The anchor.} On the seven-day episode the public forum compares on
+(2\,016 steps, mean outside $-26.3\,^\circ$C, Appendix~\ref{app:anchor}) CtrlW scores
+$-93.12$, CtrlW4 $-93.13$, and CtrlW is 11.2 units behind the best public physically
+consistent controller ($-81.9$; a twin-plus-LP planner gets $-85.4$, a free-action LP bound
+$-79.1$). Neither information ($+2.60$ units for perfect per-zone foresight) nor the accounting seams
+(\S\ref{sec:integrity}, fractions of a unit) closes that; and our own 8\,h receding-horizon LP on
+a 79-node twin moves $7.6\,\%$ the wrong way ($-100.20$), because it \emph{buys} night capacity
+margin instead of selling it (night bucket $-1.22\to-9.33$, day plan $+2.41$). Fixing its three defects---heat priced at its physical cost, the coil's
+cold side at the zone rather than the mixed-air temperature, a plan margin and a night
+ceiling---recovers $+6.05$ of the $7.08$ and leaves it 1.0 unit behind CtrlW ($-94.15$);
+when the twin is finally allowed to float the night it still does not discover the release
+($-98.53$). The 12.8 units are a \emph{sequencing} decision: released, the same controller
+reaches $-80.31$, and $-86.68$ with the frost limit we ship---our own 8\,h LP, with a better
+model and three defects fixed, did not find it. % src: results/{cg_ctrlw_anchor,cg_ctrlw4_anchor,optg_mpc2_anchor,cg_mpc2_night,cg_mpc2_float,cg_w5_final,foi_anchor_lead5}/summary.json; docs/control_gap.md §1, §5
+
+\paragraph{Ablations, sweeps, reseeds, and what loses.} Table~\ref{tab:abl} (appendix) adds one
+change at a time: the readiness horizon is the only large one at that stage, the two guards are
+inert and the fuel weight a plateau. The horizon sweep is non-monotone in the score---hour-06 comfort falls monotonically while the
+score does not (0.0075040, 0.0074263, 0.0074906, 0.0075614)---because readiness saturates once every
+zone is in band and each extra hour buys gas at night instead of comfort at dawn. Reseeding occupancy moves
+CtrlW's dev30 score from 0.0073694 (seed 17321) to 0.0073726 (12345) and 0.0073743 (777), and
+CtrlW5-278's from 0.0071980 to 0.0072012 and 0.0072111 ($+0.18\,\%$ at most), while CtrlW5-278's gain
+over CtrlW reads $-2.33$, $-2.33$ and $-2.21\,\%$ under the three seeds. Three things lose: holding the schedule's own setpoint instead of
+$0.12$\,K above it costs $1.53$ units on the anchor and $4.3\,\%$ on five of six Fairbanks
+scenarios, every one worse; a deeper night setback in the \emph{same} direction as the base
+controller's ($285$\,K) costs $6.9$ units and $278$\,K through the band-clamp path $96.8$---the
+two levers tried before the release; and the receding-horizon LP, as above.
+% src: results/{ctrw_all,ctrw_dev30_seed12345,ctrw_dev30_seed777,ctw5frost_dev30_shipped,q7/ctw5frost_dev30_seed12345,q7/ctw5frost_dev30_seed777}; docs/opt_gap.md §6; docs/control_gap.md §4-5
+
+\input{sections/voi}
+
+\input{sections/integrity}
+
+\input{sections/tools}
+
+\section{Limitations and conclusion}
+
+\emph{The release relies on an empty building}: it pays because the challenge's occupancy model
+puts no arrivals between 19:00 and 06:00, and with night occupancy---or a hidden scenario colder
+than the coldest we ran---the unconstrained version is unbounded risk for at most 6 units, which
+is why we ship a 278\,K floor and report its price. It is also cold-climate: inert on the warm
+stations, whose air side already sits at its action floors (Appendix~\ref{app:cooling}). \emph{The anchor overstates the effect}: the same two numbers gain
+$13.8\,\%$ over seven days but $2.4\,\%$ over the 30-day episode of the same building, and 30-day
+Fairbanks deltas run $+2.2$ to $+11.8\,\%$. \emph{The ceiling is the base model}: three of the
+four gains we report are under $2\,\%$, and the large one is large because it stops doing something.
+
+Once a strong public controller is in hand, what is left to fix is not the control law but the
+\emph{schedule of the plant}: stop heating at night and deliver the recovery in one burst at the
+coil's cap---$12.8$ of the anchor's $93.1$ units, $6.4$ with the 278\,K floor we ship, and
+0.0073694 $\to$ 0.0071980 on dev30.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+
+\section{The seven-day anchor}
+\label{app:anchor}
+
+\begin{center}
+\centering
+\captionof{table}{The seven-day anchor the public forum compares on
+(\cn{building\_train\_1/fairbanks\_1}, 2\,016 steps, mean outside $-26.3\,^\circ$C, one
+seed), in reward units (higher is better). A positive $\Delta$ is better (reward units). Public rows are other teams' published numbers on
+the same episode, not re-run by us, and we assume the default occupancy seed; \emph{foresight} is
+analysis-only. CtrlMPC is our
+receding-horizon LP on a 79-node twin, v1 as first written and v2 with its three defects
+fixed.}
+% src: results/{cg_ctrlw_anchor,cg_ctrlw4_anchor,cg_mpc2_anchor,cg_mpc2_night,cg_w5_final,foi_anchor_lead5}/summary.json; frost row docs/control_gap.md §8.2; public rows the Kaggle forum digest (not released) §4 and docs/control_gap.md §1
+\label{tab:anchor}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Controller & anchor total & $\Delta$ vs CtrlW & note \\
+\midrule
+CtrlW (ours) & $-93.12$ & --- & readiness + weights + guards \\
+CtrlW4 (ours) & $-93.13$ & $-0.004$ & pre-dawn lift, inert here \\
+CtrlMPC v1 (ours) & $-100.20$ & $-7.08$ & 8\,h LP on the 79-node twin \\
+CtrlMPC2 (ours) & $-94.15$ & $-1.02$ & LP defects fixed, no release found \\
+\textbf{CtrlW5-278} (shipped) & $-86.68$ & $+6.44$ & rooms $\ge4.66\,^\circ$C \\
+CtrlW5-262 (unconstrained) & $\mathbf{-80.31}$ & $\mathbf{+12.82}$ & rooms to $-8.58\,^\circ$C \\
+perfect per-zone foresight & $-90.52$ & $+2.60$ & analysis only \\
+\midrule
+physical public controller \citep{stncsn2026pr2} & $-81.9$ & $+11.2$ & published \\
+twin + LP public planner \citep{alayet2026anchor} & $-85.4$ & $+7.7$ & published \\
+free-action LP bound \citep{alayet2026anchor} & $-79.1$ & $+14.0$ & published bound \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{Ablations}
+\label{app:abl}
+
+\begin{center}
+\centering
+\captionof{table}{Ablations against the public base controller on dev30 (shipped), one change
+at a time, with the comfort component ($\times10^{-4}$ per step) and the
+better/identical/worse count over the 30 scenarios (against the base for a--d, against
+CtrlW for the last four rows). $h$ is the preheat horizon. CtrlW is a--d together and is
+$4.6\e{5}$ better than the horizon change alone, an interaction the one-at-a-time rows do not
+capture.}
+% src: results/{refwu_dev30_shipped,ctrw_a,ctrw_b,ctrw_c,ctrw_d2,ctrw_d3,ctrw_d4,ctrw_all,ctw5frost_dev30_shipped,ctw5_dev30_shipped}/summary.json (Mac);
+% CtrlW2 = results/q8/ctw2_v4_dev30_kg and CtrlW4 = results/ctw4_dev30_shipped, both paired with results/q8/ctrw_dev30_shipped_kg (Kaggle, same platform).
+% comfort = 1e4 * |sum_comfort_all| / (30 * 8641)
+\label{tab:abl}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Variant & score & $\Delta$ & comfort & better / same / worse \\
+\midrule
+base (Wu et al.)                   & 0.0075040 & ---         & 2.14 & --- \\
+(a) occupancy release              & 0.0075040 & $0$         & 2.14 & 0 / 30 / 0 \\
+(b) reward-consistent fuel weights & 0.0075035 & $-5\e{7}$   & 2.13 & 16 / 10 / 4 \\
+(c) holiday guard                  & 0.0075040 & $0$         & 2.14 & 0 / 30 / 0 \\
+(d) readiness $h=2$\,h             & 0.0074263 & $-7.8\e{5}$ & 0.55 & 23 / 0 / 7 \\
+(d) readiness $h=3$\,h             & 0.0074906 & $-1.3\e{5}$ & 0.31 & 16 / 0 / 14 \\
+(d) readiness $h=4$\,h             & 0.0075614 & $+5.7\e{5}$ & 0.30 & 10 / 0 / 20 \\
+\midrule
+CtrlW (a--d, $h=2$\,h)             & 0.0073694 & $-1.8\,\%$  & 0.55 & 30 / 0 / 0 \\
+CtrlW2 (per-zone horizon)          & 0.0073576 & $-0.16\,\%$ & 0.59 & 12 / 12 / 6 \\
+CtrlW4 ($+$2\,K pre-dawn lift)     & 0.0073445 & $-0.34\,\%$ & 0.87 & 8 / 12 / 10 \\
+\textbf{CtrlW5-278} ($+$release, 278\,K) & \textbf{0.0071980} & $-2.3\,\%$ & 1.06 & 18 / 12 / 0 \\
+CtrlW5 ($+$release, 262\,K)        & 0.0071338 & $-3.2\,\%$  & 1.41 & 18 / 12 / 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The information ladder}
+\label{app:voi}
+
+\begin{center}
+\centering
+\captionof{table}{The information ladder behind \S\ref{sec:voi}. Scores are the mean over scenarios of
+$|\tfrac1T\sum_t r_t|$ (lower is better): \emph{subset} is ten scenarios at full episode length
+(its baseline is 0.0119199 because it over-represents the coldest station, so only deltas compare
+across rows), dev30 the 30 shipped scenarios, \emph{anchor} the seven-day comparison episode. Rows
+3--7 read channels the competition does not expose and are analysis-only; row 2 needs no channel
+and is a legal controller. $^\dagger$the 1\,K morning relax is a negative result, included because
+it measures the first-arrival asymmetry directly.}
+% src: all rows results/{foi_ref10,voi_night_fixed,voi_occ_dev10_pc,voi_occ_mild,voi_occ_morning,voi_fcst_dev10_pc,voi_fcst_dev30_shipped,voi_occ_dev30_shipped,foi_foresight10}/summary.json; anchor rows results/houssem_anchor_ctrlw and results/foi_anchor_lead5
+\label{tab:voi}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}clcccc@{}}
+\toprule
+\# & what the controller knows & subset & $\Delta$ & dev30 & anchor \\
+\midrule
+1 & nothing (baseline) & 0.0119199 & --- & 0.0073694 & $-93.12$ \\
+2 & $+$ fixed 2\,K pre-dawn lift & 0.0118597 & $-0.50\,\%$ & 0.0073463 & not run \\
+3 & zonal occupancy, 5\,min late & 0.0116456 & $-2.30\,\%$ & 0.0071585 & not run \\
+4 & zonal occupancy, 289\,K floor & 0.0116352 & $-2.39\,\%$ & not run & not run \\
+5$^\dagger$ & zonal occupancy $+$ 1\,K morning relax & 0.0118677 & $-0.44\,\%$ & not run & not run \\
+6 & perfect 12\,h weather forecast & 0.0118603 & $-0.50\,\%$ & 0.0073572 & not run \\
+7 & perfect per-zone foresight (5\,h lead) & 0.0112001 & $-6.04\,\%$ & not run & $-90.52$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The accounting audit, in full}
+\label{app:integrity}
+
+The measurements behind \S\ref{sec:integrity}, on the seven-day anchor, one seed. Both
+quantities are valid only at the instant the reward is billed, so they are captured by
+wrapping the model calls rather than by re-reading sensors (every read of the boiler's
+supply-water sensor advances the tank), and a policy's own trajectory is not perturbed: three
+rollouts of one episode with full hooks, with only the reward wrapper and with nothing give
+bit-identical per-step rewards ($-93.12290938248043$ shipped, $-92.78747206777916$
+corrected), and on the corrected tree the instrument reports $+0.00$\,kW of return-air
+imbalance (largest residual $2.2\e{13}$\,W), reproducing the published fix rather than
+approximating it. The \emph{worth} column is shipped minus corrected, i.e.\ what the artifacts
+are worth to that trajectory (negative means the controller is \emph{better} on the corrected
+accounting). \emph{Free heat} is the B2 imbalance a policy realises, as a share of the
+coil heat it buys.
+
+\begin{center}
+\centering
+\captionof{table}{Accounting audit on the seven-day anchor
+(\cn{building\_train\_1/fairbanks\_1}, 2\,016 steps, one seed), shipped tree against the
+tree with both public fixes. The upper block is the controllers that score well; the
+probes are analysis-only.}
+% src: docs/integrity_audit.md §3.1, §4 (results/ia_*_shipped, results/ia_*_corrected)
+\label{tab:integrity}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Policy & shipped & corrected & worth & free heat & gas billed (MWh) \\
+\midrule
+ours (CtrlW)              & $-93.123$ & $-92.787$ & $-0.34$ & $182$\,kWh (0.7\,\%) & 27.19 $\to$ 27.09 \\
+Wu et al.\ (base)         & $-95.003$ & $-94.581$ & $-0.42$ & $183$\,kWh (0.7\,\%) & 27.33 $\to$ 27.21 \\
+per-zone PI (zt-best)     & $-105.173$& $-104.317$& $-0.86$ & $303$\,kWh (1.0\,\%) & 30.05 $\to$ 29.64 \\
+organizer \cn{pid\_water} & $-596.865$& $-763.390$& $+166.53$& $1724$\,kWh (1.7\,\%) & 95.76 $\to$ 124.53 \\
+\midrule
+B1 probe (sawtooth)       & $-56.189$ & $-93.380$ & $+37.19$ & $182$\,kWh (0.7\,\%) & 16.06 $\to$ 26.98 \\
+B2 probe (linear ramp)    & $-243.341$& $-255.838$& $+12.50$ & $2370$\,kWh (4.6\,\%) & 51.38 $\to$ 53.95 \\
+B2 probe (2\,kPa)         & $-4707.708$& $-10\,258.068$& $+5550.36$& $40\,810$\,kWh (184\,\%) & 22.37 $\to$ 32.82 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Exactness and speed, in full}
+\label{app:tools}
+
+Table~\ref{tab:tools} lists what each acceleration buys and at what exactness. The
+measurements behind it: the fused step's twelve closed-loop gate cases plus full
+8\,641-step traces on both trees; the five Python patches (cached Woodbury response
+replacing a $19.5$\,ms triangular solve with a $2.7$\,ms matvec, memoised zone means,
+memoised schedule and timezone queries, hoisted per-zone reward metadata, a cached
+gather index) at $1.6$--$1.9\times$ for $+170$\,MB per worker, inert when the fused
+step owns the thermal solve; the solver study (the per-step system is symmetric
+positive definite with $\kappa\approx1.4\e{3}$ and a Jacobi contraction bound of $0.9989$,
+so an unpreconditioned iteration needs about 2\,500 iterations for $10^{-12}$, while a
+direct factorization built once per episode costs $0.2$--$1.2$\,s); the batched sweep
+saturating at $M=32$--$64$ because it becomes main-memory bound ($42$\,GB/s measured),
+with $M=16$ already capturing $90\,\%$ of the win and 19 of 20 gated trajectories
+identical (in the twentieth a damper decision flips at step 2\,564 on a $10^{-14}$
+field difference, and the episode total ends $3.5\e{9}$ relative away); the GPU
+verdict (smoothed-aggregation multigrid with a fixed 16-iteration PCG, $9.0\e{14}$ to
+$1.03\e{13}$ relative per step, $2.15\e{13}$ worst case chained, $22.3$--$23.5$\,ms per
+environment-step, the deficit toolchain rather than algorithm, a fused V-cycle
+projected at $\approx1.2$\,ms still behind the CPU path, and SuperLU's own batched
+solve \emph{degrading} from $7.3$ to $8.7$\,ms per environment-step as $M$ goes from 1
+to 64); and the reduced model (projection in the energy inner product $u=C^{1/2}T$, a
+plain Galerkin projection of $A^{-1}C$ producing spurious eigenvalues outside the unit
+disc and leaving the physical range within twelve steps, $1.0$--$1.2$\,K maximum drift
+and a $-0.2$ to $-0.3$\,K bias flat from $m=100$ to $m=400$ that refitting does not
+remove, closed-loop reward off by $2.6\,\%$ and $5.0\,\%$ while the five-way ranking is
+exact, thermal step $14\times$ cheaper, end to end only $1.19\times$).
+% src: docs/fast_exact.md; docs/solver_cpu.md §1-4, §6; docs/solver_gpu.md; docs/fastsim_rom.md §12-13; cenv/fused.py
+
+\begin{center}
+\centering
+\captionof{table}{What each acceleration buys, at what exactness. \emph{Exactness} is measured
+against the unmodified simulator: a per-step relative error plus whether the episode
+total and the policy's decisions are unchanged. Speed-ups are interleaved A/B ratios on
+one machine; absolute times move with load, every ratio reproduced across sessions and
+on a second CPU.}
+% src: docs/fast_exact.md, docs/solver_cpu.md §3-4, docs/solver_gpu.md, docs/fastsim_rom.md §12-13, cenv/fused.py "Measured"
+\label{tab:tools}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Path & mechanism & speed & exactness & use \\
+\midrule
+fused C step & one C call per step & $2.1/1.8/1.6\times$ & rewards/obs.\ bit-identical, 12/12 & our runner \\
+\cn{--fast} & 5 memoizations & $1.6$--$1.9\times$ & $\le2.8\e{13}$\,K; totals equal & local sweeps \\
+LL$^T$, one RHS & METIS Cholesky & $0.9\times$ & $3.7\e{14}$ & keep SuperLU \\
+LL$^T$, batched & $M$ right-hand sides & $4.1$--$4.9\times$ per env-step & $3.7\e{14}$/solve; 19/20 equal & RL rollouts \\
+GPU MG-PCG & 16-iteration PCG & $0.3\times$ of 1 core & $1\e{13}$/step, $2.2\e{13}$ chained & no-go \\
+ROM, $m=200$ & energy-norm projection & $14\times$ solve, $1.19\times$ e2e & $1.0$--$1.2$\,K; ranking exact & shortlisting \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The bill, decomposed}
+\label{app:energy}
+
+The instrumented decomposition behind \S\ref{sec:anatomy} (Figure~\ref{fig:anatomy}), per
+full-length episode, in reward units (positive $=$ loss). The outside-air column is the same step re-evaluated
+with the mixing box recirculating everything, i.e.\ the exact marginal effect of the
+outside-air fraction, with no assumption about coil saturation. Re-deriving cost and
+carbon from the logged powers reproduces the reward's own terms ($4.9\e{10}$ relative
+worst case), and all six episodes reproduce the plain runner bit-for-bit.
+% src: results/ef_shipped/*.json, results/ef_corrected/*.json; docs/energy_flow.md
+
+\begin{center}
+\centering
+\captionof{table}{Energy-plus-carbon loss by mechanism, six climates (CtrlW, 8\,641 steps each).
+Heating dominates the two Fairbanks buildings and chiller work the three warm ones; the
+outside-air share of the coil load is $50\,\%$ and $63\,\%$ in the two heating weeks,
+yet $100\,\%$ recirculation would cut coil duty by only $18.6\,\%$ and $9.3\,\%$,
+because the coils are water-limited---the remainder is met by the fabric and appears as
+colder zones, one physical loss charged twice.}
+% src: docs/energy_flow.md "The claim, quantified", "The same bill in energy units"
+\label{tab:energy}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+Scenario & $\bar T_\mathrm{out}$ & heating: OA & heating: envelope & boiler & cooling & fans & pump & total \\
+\midrule
+Fairbanks, 39 zones & $-21.4$ & 69.65 & 306.69 & 5.08 & 0.00 & 8.62 & 2.51 & 392.55 \\
+Fairbanks, 85 zones & $-8.2$  & 9.29  & 90.55  & 2.12 & 0.00 & 4.06 & 0.66 & 106.69 \\
+Denver, 36 zones    & $24.2$  & 0.00  & 0.16   & 1.56 & 32.70 & 2.97 & 0.00 & 37.39 \\
+Atlanta, 85 zones   & $20.8$  & 0.01  & 0.39   & 0.91 & 19.44 & 3.83 & 0.00 & 24.58 \\
+Phoenix, 30 zones   & $34.4$  & 0.00& 0.00& 0.07 & 78.06 & 4.87 & 0.00 & 83.00 \\
+Singapore, 54 zones & $28.6$  & 0.00& 0.00& 0.08 & 55.05 & 3.51 & 0.00 & 58.65 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\centering
+\includegraphics[width=0.92\linewidth]{figures/anatomy.pdf}
+\captionof{figure}{Reward anatomy for a controller whose comfort term is already $0.6\,\%$ of its
+loss. \textbf{(a)} The public anchor: energy-plus-carbon loss by local hour, stacked by
+mechanism---envelope reheat (light) plus the outside-air share of the same reheat
+(dark), $41.5\,\%$ of it in the capacity-limited 04--08\,h block, $21\,\%$ of the hours.
+\textbf{(b)} The same decomposition for one full-length episode per climate; three
+scenarios hold $83\,\%$ of the $702.9$-unit total (Appendix~\ref{app:energy}). Each bar
+is a partition of the reward's own terms, reconciled below $1\e{9}$ relative.}
+\label{fig:anatomy}
+% src: paper/figures/anatomy.py reading results/ef_shipped/{*.json,*.npz} (shipped sim, CtrlW)
+\end{center}
+
+\paragraph{The warm stations: nothing to release.}
+\label{app:cooling}
+The release is inert on the warm stations because both conditions it exploits are
+heating-only. On three seven-day warm anchors (CtrlW5-278, shipped) the chiller is
+$93$--$95\,\%$ of the bill and the plant is already off when the building is empty
+(Phoenix: $0.5\,\%$ of chiller energy at night, $0.0\,\%$ at weekends). The coil is billed at a
+constant COP of 3.5 with no capacity limit, so there is no analogue of
+Eq.~\eqref{eq:mult}: only airflow matters, and both airflow floors bind---the supply-air
+setpoint sits at the 285\,K bound of the action space on $100$, $97.5$ and $91.8\,\%$ of live
+AHU-steps (Phoenix, Singapore, Atlanta) and recirculation at the $0.70$ device cap on
+$97$--$100\,\%$. Raising the unoccupied ceiling is bit-identical (it is never reached); riding
+the band's top $0.12$\,K costs $5.0$ units on Phoenix, because the margin is the tracking error
+and the reward prices an occupied kelvin at 298 units a week against $0.62$ of cooling;
+pre-cooling into cheap hours loses $3.9$--$6.9$, because the electricity term is
+price-normalised (moving all of a week's cooling to its cheapest hour is worth $0.91$ of
+$24.6$ units); a night flush is inert where nights are warm and loses where it fires; and
+supply-air, reheat and static-pressure resets are outside the action space.
+% src: docs/cool_gap.md; results/cool_*; policies/ctrl_w6.py (refutation knobs, inert defaults)
+
+\section{Frost exposure}
+\label{app:frost}
+
+The measurements behind \S\ref{sec:frost}, on the six \cn{dev30} Fairbanks scenarios at
+8\,641 steps, recorded by stepping the episode exactly as the evaluation runner does
+and reading only the zone-average temperatures (no monkeypatching, no extra reward
+call; the recorder reproduces the evaluation total to four decimals in every
+configuration where both exist). \emph{h-any} is hours in which any room is below the
+threshold, \emph{zone-h} room-hours.
+
+\begin{center}
+\includegraphics[width=0.52\linewidth]{figures/frost.pdf}
+\captionof{figure}{Price of a frost floor on the anchor (2\,016 steps): anchor total reward (left)
+and the coldest room temperature the episode reaches (right) against the night standby floor,
+CtrlW5's other knobs fixed. Zero freezing is reached at 278\,K; a $\ge5\,^\circ$C setpoint floor
+needs 280\,K.}
+\label{fig:frost}
+\end{center}
+% src: docs/control_gap.md §8.2 (sweep), §8.1 (minimum temperatures)
+
+\begin{center}
+\centering
+\captionof{table}{Frost exposure and its price on the three cold \cn{dev30} Fairbanks scenarios
+(building\_train\_{1,2,8}/fairbanks\_\{1,2,8\}, 8\,641 steps each); the other three never leave
+the band, so the floor is inert there. \emph{h-any} is hours in which any room is below the
+threshold, \emph{zone-h} room-hours, and \emph{mean} the mean of $|\tfrac1T\sum_t r_t|$ over the
+three. Over all six Fairbanks scenarios the set scores are 0.015653 (CtrlW), 0.015063
+(CtrlW5-278, $-3.8\,\%$) and 0.014733 (CtrlW5, $-5.9\,\%$).}
+% src: scratch/ControlGap/frost_*.json (steps=8641); docs/control_gap.md §8.1
+\label{tab:frost}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Controller & coldest room & h-any $<5\,^\circ$C & h-any $<0\,^\circ$C & zone-h $<0\,^\circ$C & mean & $\Delta$ vs CtrlW \\
+\midrule
+CtrlW (282\,K)        & $+8.53$  & 0.0   & 0.0   & 0      & 0.027436 & --- \\
+CtrlW5-278 (shipped) & $+4.56$  & 459.8 & 0.0   & 0      & 0.026384 & $-3.8\,\%$ \\
+CtrlW5-262 (uncontrolled) & $-11.21$ & 496.1 & 274.9 & 2681.8 & 0.025724 & $-6.2\,\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Reproducibility}
+\label{app:repro}
+
+Result directories contain one JSON per scenario with the score components, the
+hour-of-day and weekday/weekend decomposition and the metering-hook output; every
+entry in Tables~\ref{tab:main}--\ref{tab:frost} is read from them, and
+Figures~\ref{fig:mult}--\ref{fig:anatomy} are drawn from stored rollouts by
+\texttt{paper/figures/\{multiplier,frost,anatomy\}.py}, with no simulator calls. The base controller is ported from
+the public notebook \citep{wu2026alpha075} under Apache-2.0; with our flags off it
+reproduces its author's dev30 score to the last digit (0.0075040), which is the parity
+check we ran before adding anything.
+
+\paragraph{Provenance.} The shipped tree is the starter kit at commit \texttt{95cea5b}
+(2026-10-19, including the tracker fix of PR~\#1); the corrected tree adds PR~\#2 and PR~\#3
+\citep{stncsn2026pr2,stncsn2026pr3}, frozen as patches and applied by \texttt{sbx/make\_sims.sh}.
+Generated buildings are the first 24 kit-generator seeds from 5000 that fall inside the shipped
+zone and air-handler ranges (5001--5025 for \cn{gen\_train}, 5026--5046 for \cn{gen\_hold}),
+materials seed 20261105 (\texttt{sbx/make\_pool.py}); the external strips are described in
+Appendix~\ref{app:weather}. Occupancy runs on the kit's seed 17321, and the reseeds use 12345 and
+777. The anchor CMA-ES (\texttt{cma} 4.5.0) searched CtrlW4's 16 knobs scaled to $[0,1]$ at
+$\sigma_0=0.05$, population 12, seed 7, for 150 evaluations, starting from the best of 40 random
+points, with the default point injected in every population.
+
+\paragraph{Commands.} With \texttt{PY=starter-kit/.venv/bin/python} in the repository root
+(\pending{URL, with the code release}):
+{\footnotesize
+\begin{verbatim}
+$PY -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --params '{"standby_minimum": 278.0}' \
+    --set dev30 --steps 8641 --sim shipped --tag ctw5frost_dev30_shipped
+$PY -m sbx.evalrun ... --sim corrected            # the corrected tree
+$PY -m sbx.evalrun ... --set gen_hold ext_hold    # the 49 holdouts
+$PY -m sbx.evalrun ... --cenv fused --fast        # the exact C step, same totals
+$PY -m cenv.verify.gate trace --scenario building_train_8/fairbanks_8 --cenv fused --out t8_c
+$PY -m kaggle.remote.remote_eval --policy ... --set dev30 --shards 4 --cenv fused --fast
+$PY kaggle/build_notebook.py --policy policies/ctrl_w5.py:CtrlW5 \
+    --param standby_minimum=278.0 --slug sbx-ctrl-w5f   # the leaderboard entry
+\end{verbatim}}
+
+\paragraph{Machines and numerics.} Local runs used an Apple M3 and a Ryzen~5 5600X (WSL2); the
+30-scenario and holdout sweeps also ran on Kaggle CPU kernels, at most four at a time. The fused
+step is compiled with \texttt{-O3 -ffp-contract=off -fno-fast-math}---no FMA contraction, no
+reassociation---the flags under which it is bit-identical to the Python step on each machine.
+Across machines (arm64 with Accelerate against x86-64 with OpenBLAS) the same episode differs by
+up to $3.3\e{5}$ relative over 30 days---round-off amplified by the closed loop, e.g.\
+$-93.12290938$ against $-93.12336623$ for the seven-day anchor---far below the printed precision
+of $S$ and the reseed spread, but enough to turn ``identical'' into ``better'' or ``worse''; every
+better/identical/worse count therefore compares runs from one machine.
+% src: results/{mac_smoke_anchor_cf,pc_smoke_anchor_cf}; ctw4_dev30_shipped (Kaggle) vs ctrw_all (Mac): 11 scenarios within 3.3e-5
+% Table abl rows CtrlW2/CtrlW4 re-paired on Kaggle against results/q8/ctrw_dev30_shipped_kg (2026-11-07)
+
+\section{External weather}
+\label{app:weather}
+
+\cn{ext} replays hourly observations from Meteostat \citep{meteostat2024} for calendar
+year 2023 at seventeen stations absent from the benchmark---Anchorage, Auckland,
+Bangkok, Beijing, Chicago, Dubai, Helsinki, Houston, Las Vegas, London, Miami, Montreal,
+Moscow, Reykjavik, San Francisco, Seattle and Tokyo---mapped to the benchmark's
+weather-file schema with no other scenario field modified. Meteostat data are
+distributed under CC~BY~4.0; derived weather files are redistributed under the same
+terms with attribution.
+
+\end{document}

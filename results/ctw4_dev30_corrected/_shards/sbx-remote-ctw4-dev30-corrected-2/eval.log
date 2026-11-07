@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w4:CtrlW4 --steps 8641 --sim corrected --workers 4 --tag ctw4_dev30_corrected --out /kaggle/working/results/ctw4_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_1/phoenix_5 building_train_2/fairbanks_2 building_train_5/denver_3 building_train_5/singapore_4 building_train_7/fairbanks_7 building_train_8/denver_6
+
+STDOUT
+[evalrun] tag=ctw4_dev30_corrected sim=corrected policy=policies.ctrl_w4:CtrlW4 scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/ctw4_dev30_corrected
+[evalrun] 1/7 building_train_1/atlanta_2             total=    -25.0900 mean=-0.002904 steps=8641 cpu=1206.0s
+[evalrun] 2/7 building_train_1/phoenix_5             total=   -123.1026 mean=-0.014246 steps=8641 cpu=1213.4s
+[evalrun] 3/7 building_train_5/denver_3              total=    -31.9369 mean=-0.003696 steps=8641 cpu=1699.8s
+[evalrun] 4/7 building_train_7/fairbanks_7           total=    -67.2137 mean=-0.007778 steps=8641 cpu=819.4s
+[evalrun] 5/7 building_train_2/fairbanks_2           total=   -105.4863 mean=-0.012208 steps=8641 cpu=2188.7s
+[evalrun] 6/7 building_train_8/denver_6              total=    -26.8757 mean=-0.003110 steps=8641 cpu=614.8s
+[evalrun] 7/7 building_train_5/singapore_4           total=    -46.5807 mean=-0.005391 steps=8641 cpu=1396.5s
+[evalrun] score=0.007048 scenarios=7 failed=0 wall=2630s -> /kaggle/working/results/ctw4_dev30_corrected/summary.json
+
+STDERR

@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "tag": "tune_w_corr_A",
+  "policy": "policies.ctrl_w:CtrlW",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_w_core.json",
+  "space_signature": "970c5bcda27459f6",
+  "space_entries": [
+    {
+      "name": "comfort_margin",
+      "lo": 0.0,
+      "hi": 0.8,
+      "scale": "lin",
+      "init": 0.12
+    },
+    {
+      "name": "precondition_hours",
+      "lo": 0.5,
+      "hi": 4.0,
+      "scale": "lin",
+      "init": 2.0
+    },
+    {
+      "name": "recovery_steps",
+      "lo": 1.0,
+      "hi": 5.0,
+      "scale": "lin",
+      "init": 1.5
+    },
+    {
+      "name": "comfort_cost",
+      "lo": 20000.0,
+      "hi": 250000.0,
+      "scale": "log",
+      "init": 65000.0
+    },
+    {
+      "name": "gas_cost_ratio",
+      "lo": 0.1,
+      "hi": 0.9,
+      "scale": "lin",
+      "init": 0.3
+    },
+    {
+      "name": "hot_water_target",
+      "lo": 325.0,
+      "hi": 350.0,
+      "scale": "lin",
+      "init": 345.0
+    },
+    {
+      "name": "standby_minimum",
+      "lo": 274.0,
+      "hi": 289.0,
+      "scale": "lin",
+      "init": 282.0
+    },
+    {
+      "name": "standby_maximum",
+      "lo": 296.0,
+      "hi": 313.0,
+      "scale": "lin",
+      "init": 307.0
+    },
+    {
+      "name": "observation_delay",
+      "lo": 1.0,
+      "hi": 2.0,
+      "scale": "int",
+      "init": 1.0
+    },
+    {
+      "name": "response_scale",
+      "lo": 0.4,
+      "hi": 1.3,
+      "scale": "lin",
+      "init": 0.75
+    },
+    {
+      "name": "disturbance_rate",
+      "lo": 0.1,
+      "hi": 0.8,
+      "scale": "lin",
+      "init": 0.35
+    },
+    {
+      "name": "residual_alpha",
+      "lo": 0.0,
+      "hi": 1.0,
+      "scale": "lin",
+      "init": 0.75
+    },
+    {
+      "name": "correction_limit",
+      "lo": 0.05,
+      "hi": 0.6,
+      "scale": "lin",
+      "init": 0.25
+    },
+    {
+      "name": "disagreement_limit",
+      "lo": 0.05,
+      "hi": 0.4,
+      "scale": "lin",
+      "init": 0.15
+    },
+    {
+      "name": "gas_ratio_scale",
+      "lo": 0.5,
+      "hi": 1.7,
+      "scale": "lin",
+      "init": 1.0
+    },
+    {
+      "name": "early_preheat_hours",
+      "lo": 0.0,
+      "hi": 4.0,
+      "scale": "lin",
+      "init": 2.0
+    }
+  ],
+  "sigma0": 0.2,
+  "sets": [
+    "gen_train"
+  ],
+  "subset": 10,
+  "subset_seed": 0,
+  "subset_ids": [
+    "building_gen_002/phoenix_g4",
+    "building_gen_014/singapore_g2",
+    "building_gen_000/atlanta_g4",
+    "building_gen_011/denver_g2",
+    "building_gen_005/fairbanks_g2",
+    "building_gen_015/denver_g0",
+    "building_gen_007/singapore_g0",
+    "building_gen_014/phoenix_g0",
+    "building_gen_004/denver_g0",
+    "building_gen_002/singapore_g6"
+  ],
+  "subset_info": {
+    "strata": {
+      "atlanta|size0": 3,
+      "atlanta|size1": 5,
+      "atlanta|size2": 5,
+      "denver|size0": 4,
+      "denver|size1": 5,
+      "denver|size2": 4,
+      "fairbanks|size0": 3,
+      "fairbanks|size1": 4,
+      "fairbanks|size2": 6,
+      "phoenix|size0": 5,
+      "phoenix|size1": 2,
+      "phoenix|size2": 6,
+      "singapore|size0": 5,
+      "singapore|size1": 4,
+      "singapore|size2": 3
+    },
+    "size_metric": "num_zones",
+    "count": 10
+  },
+  "steps": 2880,
+  "sim": "corrected",
+  "components": "hook",
+  "start_offset_days": 0,
+  "seed": 0,
+  "popsize": 12,
+  "job_timeout": 1800.0,
+  "backend": "kaggle",
+  "backend_shards": 5,
+  "backend_shard_workers": 4,
+  "payload_hash": "e8eb98d9645fdf12cba925b352f78d41",
+  "created": "2026-11-05T16:11:00",
+  "dataset_version": 8,
+  "payload_pinned_utc": "2026-11-05T16:12:08",
+  "generations_done": 1,
+  "best_objective": 1.0,
+  "updated": "2026-11-05T17:12:18"
+}

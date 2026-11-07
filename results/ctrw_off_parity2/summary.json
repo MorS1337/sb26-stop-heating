@@ -1,0 +1,65 @@
+{
+  "tag": "ctrw_off_parity2",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {
+    "precondition_hours": 1.0,
+    "release_enabled": false,
+    "reward_weights_enabled": false,
+    "holiday_guard_enabled": false,
+    "early_preheat_enabled": false
+  },
+  "sim": "shipped",
+  "steps": 8641,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ctrw_off_parity2",
+  "leaderboard_score": 0.0032821292796319083,
+  "mean_abs_total_reward_per_step": 0.0032821292796319083,
+  "mean_total_reward": -28.36087910529932,
+  "mean_per_step_reward": -0.0032821292796319083,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -1.7001827641396545,
+  "sum_energy_all": -11.998847129012127,
+  "sum_carbon_all": -14.661849661397483,
+  "by_weather": {
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0032821292796319083,
+      "mean_total_reward": -28.36087910529932,
+      "mean_per_step_reward": -0.0032821292796319083
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0032821292796319083,
+      "mean_total_reward": -28.36087910529932,
+      "mean_per_step_reward": -0.0032821292796319083
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 541.5863013267517,
+    "cpu_seconds_total": 472.93886200000003,
+    "wall_seconds_sum_scenarios": 541.5838141441345,
+    "mean_cpu_seconds_per_scenario": 472.93886200000003,
+    "steps_per_second_cpu": 18.270860557870584,
+    "steps_per_second_step_cpu": 19.579321565427744
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 8641,
+      "total_reward": -28.36087910529932,
+      "mean_per_step_reward": -0.0032821292796319083,
+      "cpu_seconds": 472.93886200000003,
+      "wall_seconds": 541.5838141441345,
+      "steps_per_second_cpu": 18.270860557870584
+    }
+  ],
+  "failures": []
+}

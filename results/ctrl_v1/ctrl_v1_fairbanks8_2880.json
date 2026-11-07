@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_8/fairbanks_8",
+  "policy": "ctrl_v1",
+  "tag": "",
+  "steps": 2880,
+  "mean_reward": -0.05495196808040216,
+  "total_reward": -158.26166807155823,
+  "last200_mean": -0.04639940269727958,
+  "wall_s": 39.2,
+  "s_per_step": 0.0136,
+  "prod_mean": -0.022433458566649734,
+  "energy_mean": 0.07368738933400638,
+  "carbon_mean": 0.13377207525067863,
+  "tmin": 283.0232238769531,
+  "tmax": 300.0019836425781,
+  "frac_run": 0.7712962962962964,
+  "frac_water": 0.7621527777777778
+}

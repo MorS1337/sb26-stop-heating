@@ -1,0 +1,229 @@
+{
+ "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+ "payload_sources": {
+  "policies/__init__.py": "387be4421984be3d020e7bad6b815902334999189a432583b8168092e91ad62a",
+  "policies/ctrl_v1.py": "758577488330c4307f7a72b66cea08a4ed023db36880ea4a315405e77e20715f",
+  "policies/ctrl_v2.py": "a1736c5bd165ef9c20c07509816aeca7061f48b2562fb645238a69dbd655e97c",
+  "policies/ref_wu.py": "234d3beac1c0591467f215f2004fbcaf9016f1cbefe4788943594a6951d6b64b",
+  "policies/ref_ztbest.py": "85614b73198cc03574e2b27b16fcfa9fc5872421b634de7908a29cf267b5fca4",
+  "policies/ref_ztoff.py": "c75ac4923fbe924c498220c4e4ab19c5bfdfa455ed64fab0d9365717e3697d94",
+  "sbx/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sbx/evalrun.py": "be0e3156ab9e2c3aef62ee382e33dfb8624926d6f263bcdbaeb74ea07aa7ca70",
+  "sbx/pools/manifest.json": "6e72f52502724481ab9e58eea9218adb1ef940a318d843ec3260307c65cdfd5e",
+  "sbx/scenarios.py": "5a3701c725b22675111195524213173c94180b95d586892d6ceb21aef6b9a380",
+  "sbx/simload.py": "afba764eca75f22c13e23931be8ad8c5e133aca3d92cae0536b3e928f2d8b834"
+ },
+ "dataset": "mors1337/sbx-payload",
+ "dataset_version": 4,
+ "out_dir": "/Users/mors1337/Code/DL/doma/results/remote_8640",
+ "created_utc": "2026-11-05T03:33:14Z",
+ "kernels": [
+  {
+   "slug": "sbx-remote-full-atlanta-0",
+   "id": "mors1337/sbx-remote-full-atlanta-0",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-full-atlanta-0",
+   "job_tag": "full_atlanta",
+   "shard": 0,
+   "n_shards": 1,
+   "scenarios": [
+    "building_train_1/atlanta_2"
+   ],
+   "job": {
+    "tag": "full_atlanta",
+    "policy": "baseline:pid_water",
+    "params": {},
+    "scenarios": [
+     "building_train_1/atlanta_2"
+    ],
+    "steps": 8640,
+    "sim": "shipped",
+    "workers": 1,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 1,
+    "kernel_slug": "sbx-remote-full-atlanta-0",
+    "created_utc": "2026-11-05T03:33:14Z",
+    "keep_trees": false
+   },
+   "pushed_utc": "2026-11-05T03:33:17Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-full-phoenix-0",
+   "id": "mors1337/sbx-remote-full-phoenix-0",
+   "dir": "/Users/mors1337/Code/DL/doma/kaggle/remote/build/kernels/sbx-remote-full-phoenix-0",
+   "job_tag": "full_phoenix",
+   "shard": 0,
+   "n_shards": 1,
+   "scenarios": [
+    "building_train_8/phoenix_4"
+   ],
+   "job": {
+    "tag": "full_phoenix",
+    "policy": "baseline:pid_water",
+    "params": {},
+    "scenarios": [
+     "building_train_8/phoenix_4"
+    ],
+    "steps": 8640,
+    "sim": "shipped",
+    "workers": 1,
+    "components": "parity",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "payload_hash": "7bb303412c8c5435f279a5bc081962a8",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 1,
+    "kernel_slug": "sbx-remote-full-phoenix-0",
+    "created_utc": "2026-11-05T03:33:14Z",
+    "keep_trees": false
+   },
+   "pushed_utc": "2026-11-05T03:33:20Z",
+   "status": "COMPLETE",
+   "done": true
+  }
+ ],
+ "max_concurrency": 5,
+ "poll": {
+  "samples": [
+   {
+    "elapsed": 2.1,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 34.0,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 66.9,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 99.4,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 132.3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 164.7,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 197.7,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 230.4,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 262.9,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 295.3,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 327.7,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 360.0,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 392.4,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 424.7,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 456.7,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 489.0,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 521.4,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 553.9,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 585.0,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 616.2,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 647.4,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 679.0,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 710.2,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 741.5,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 773.1,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 804.9,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 836.4,
+    "RUNNING": 1,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 868.3,
+    "COMPLETE": 2
+   },
+   {
+    "elapsed": 896.1,
+    "COMPLETE": 2
+   }
+  ],
+  "started_at": 1793849600.1199949,
+  "max_concurrent_running": 2,
+  "wall_seconds": 896.1,
+  "queue_observed": false
+ }
+}

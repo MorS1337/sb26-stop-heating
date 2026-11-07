@@ -1,0 +1,47 @@
+[{"stream_name":"stdout","time":1.332989215,"data":"[sbx-remote      0.0s] job: {\"components\": \"hook\", \"created_utc\": \"2026-11-05T23:27:23Z\", \"dataset_dir\": \"/kaggle/input/sbx-payload\", \"job_timeout\": 1800.0, \"keep_trees\": false, \"kernel_slug\": \"sbx-remote-ctrw-dev30-seed777-2\", \"mount\": \"/kaggle/input/competitions/neurips-2026-smart-buildings\", \"n_shards\": 5, \"occupancy_seed\": 777, \"params\": {}, \"payload_hash\": \"f8a0e9a3d9cfe35aa4b0feb3a37b3e7c\", \"policy\": \"policies.ctrl_w:CtrlW\", \"scenarios\": [\"building_train_1/fairbanks_1\", \"building_train_2/fairbanks_2\", \"building_train_4/fairbanks_4\", \"building_train_5/fairbanks_5\", \"building_train_7/fairbanks_7\", \"building_train_8/fairbanks_8\"], \"shard\": 2, \"sim\": \"shipped\", \"start_offset_days\": 0, \"steps\": 8641, \"tag\": \"ctrw_dev30_seed777\", \"tasks\": null, \"workers\": 4}\n"}
+,{"stream_name":"stdout","time":1.468213708,"data":"[sbx-remote      0.1s] payload source: dir /kaggle/input/datasets/mors1337/sbx-payload\n"}
+,{"stream_name":"stdout","time":5.473153193,"data":"[sbx-remote      4.1s] payload verified: 86 files, hash f8a0e9a3d9cfe35aa4b0feb3a37b3e7c\n"}
+,{"stream_name":"stdout","time":6.494435266,"data":"[sbx-remote      5.2s] mount vs local sims/shipped: 96 files, 23 differ, 0 extra -\u003e match=False\n"}
+,{"stream_name":"stdout","time":9.230139613,"data":"[sbx-remote      7.9s] sims/shipped built from the mount in 2.7s\n"}
+,{"stream_name":"stdout","time":9.35215879,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 30 applied at 30\n"}
+,{"stream_name":"stdout","time":9.352196885,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 45 applied at 49\n"}
+,{"stream_name":"stdout","time":9.352201596,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 89 applied at 94\n"}
+,{"stream_name":"stdout","time":9.352204573,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 103 applied at 111\n"}
+,{"stream_name":"stdout","time":9.352207536,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 122 applied at 131\n"}
+,{"stream_name":"stdout","time":9.352210527,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 205 applied at 258\n"}
+,{"stream_name":"stdout","time":9.35221365,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/boiler_energy_balance_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":9.352216693999999,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 54 applied at 54\n"}
+,{"stream_name":"stdout","time":9.352219663,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 291 applied at 292\n"}
+,{"stream_name":"stdout","time":9.352222423,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 190 applied at 190\n"}
+,{"stream_name":"stdout","time":9.352225606,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 211 applied at 222\n"}
+,{"stream_name":"stdout","time":9.352464262,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 520 applied at 520\n"}
+,{"stream_name":"stdout","time":9.352480911,"data":"[sbx-remote      8.0s] patch: smart_buildings/check_return_air.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":9.352512608,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/return_air_mixing_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":9.352533059,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 7 applied at 7\n"}
+,{"stream_name":"stdout","time":9.352538297,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 289 applied at 289\n"}
+,{"stream_name":"stdout","time":9.352545733,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 315 applied at 312\n"}
+,{"stream_name":"stdout","time":9.352550097,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 704 applied at 690\n"}
+,{"stream_name":"stdout","time":9.352554401999999,"data":"[sbx-remote      8.0s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 720 applied at 771\n"}
+,{"stream_name":"stdout","time":9.353211419,"data":"[sbx-remote      8.0s] sims/corrected: 6 patched files byte-identical to sims/corrected, 1 differ outside the patched hunks: ['smart_buildings/smart_control/simulator/hot_water_system.py']\n"}
+,{"stream_name":"stdout","time":28.162600644,"data":"[sbx-remote     26.8s] pool scenarios verified: 452 files (226 by digest, 226 by size)\n"}
+,{"stream_name":"stdout","time":28.163184321,"data":"[sbx-remote     26.8s] setup complete in 26.8s; starting the evaluation\n"}
+,{"stream_name":"stdout","time":28.163408364,"data":"[sbx-remote     26.8s] exec /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim shipped --workers 4 --tag ctrw_dev30_seed777 --out /kaggle/working/results/ctrw_dev30_seed777 --components hook --start-offset-days 0 --scenario building_train_1/fairbanks_1 building_train_2/fairbanks_2 building_train_4/fairbanks_4 building_train_5/fairbanks_5 building_train_7/fairbanks_7 building_train_8/fairbanks_8 --occupancy-seed 777\n"}
+,{"stream_name":"stdout","time":2644.202479888,"data":"[evalrun] tag=ctrw_dev30_seed777 sim=shipped policy=policies.ctrl_w:CtrlW scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/ctrw_dev30_seed777\n"}
+,{"stream_name":"stdout","time":2644.20275306,"data":"[evalrun] 1/6 building_train_1/fairbanks_1           total=   -395.1000 mean=-0.045724 steps=8641 cpu=1462.6s\n"}
+,{"stream_name":"stdout","time":2644.202767091,"data":"[evalrun] 2/6 building_train_4/fairbanks_4           total=    -14.0158 mean=-0.001622 steps=8641 cpu=1900.1s\n"}
+,{"stream_name":"stdout","time":2644.202771216,"data":"[evalrun] 3/6 building_train_5/fairbanks_5           total=    -13.4055 mean=-0.001551 steps=8641 cpu=1946.2s\n"}
+,{"stream_name":"stdout","time":2644.202774882,"data":"[evalrun] 4/6 building_train_7/fairbanks_7           total=    -73.0424 mean=-0.008453 steps=8641 cpu=800.8s\n"}
+,{"stream_name":"stdout","time":2644.202778737,"data":"[evalrun] 5/6 building_train_2/fairbanks_2           total=   -107.0716 mean=-0.012391 steps=8641 cpu=2394.4s\n"}
+,{"stream_name":"stdout","time":2644.202782248,"data":"[evalrun] 6/6 building_train_8/fairbanks_8           total=   -208.9041 mean=-0.024176 steps=8641 cpu=599.0s\n"}
+,{"stream_name":"stdout","time":2644.202785548,"data":"[evalrun] score=0.015653 scenarios=6 failed=0 wall=2615s -\u003e /kaggle/working/results/ctrw_dev30_seed777/summary.json\n"}
+,{"stream_name":"stdout","time":2644.202789486,"data":"[sbx-remote   2642.9s] evalrun exit=0 wall=2616.0s\n"}
+,{"stream_name":"stdout","time":2644.20699978,"data":"[sbx-remote   2642.9s] shard.json written: 6 records, exit=0\n"}
+,{"stream_name":"stdout","time":2646.223581846,"data":"[sbx-remote   2644.9s] removed /kaggle/working/payload (1202 MB) so the kernel output is just the results; pass keep_trees to keep the sim trees\n"}
+,{"stream_name":"stdout","time":2646.223751743,"data":"[sbx-remote   2644.9s] SHARD COMPLETE\n"}
+,{"stream_name":"stderr","time":2650.389732056,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2650.389777201,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2650.989696987,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2650.989739976,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2652.853362398,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2653.81071904,"data":"[NbConvertApp] Writing 371315 bytes to __results__.html\n"}
+]

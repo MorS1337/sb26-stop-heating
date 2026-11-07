@@ -1,0 +1,8 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 8640 --sim shipped --workers 1 --tag full_phoenix --out /kaggle/working/results/full_phoenix --components parity --start-offset-days 0 --scenario building_train_8/phoenix_4
+
+STDOUT
+[evalrun] tag=full_phoenix sim=shipped policy=baseline:pid_water scenarios=1 steps=8640 workers=1 out=/kaggle/working/results/full_phoenix
+[evalrun] 1/1 building_train_8/phoenix_4             total=  -1384.2103 mean=-0.160210 steps=8640 cpu=487.1s
+[evalrun] score=0.160210 scenarios=1 failed=0 wall=495s -> /kaggle/working/results/full_phoenix/summary.json
+
+STDERR

@@ -1,0 +1,57 @@
+=== /dev/dxg
+crw-rw-rw- 1 root root 10, 258 Nov  5 20:22 /dev/dxg
+=== rocminfo
+Agent 1                  
+  Name:                    AMD Ryzen 5 5600X 6-Core Processor 
+  Uuid:                    CPU-XX                             
+  Marketing Name:          AMD Ryzen 5 5600X 6-Core Processor 
+  Vendor Name:             CPU                                
+  Queue Min Size:          0(0x0)                             
+  Queue Max Size:          0(0x0)                             
+  Cacheline Size:          64(0x40)                           
+  Compute Unit:            12                                 
+  Pool Info:               
+      Segment:                 GLOBAL; FLAGS: FINE GRAINED        
+      Size:                    12249904(0xbaeb30) KB              
+      Segment:                 GLOBAL; FLAGS: EXTENDED FINE GRAINED
+      Size:                    12249904(0xbaeb30) KB              
+      Segment:                 GLOBAL; FLAGS: KERNARG, FINE GRAINED
+      Size:                    12249904(0xbaeb30) KB              
+      Segment:                 GLOBAL; FLAGS: COARSE GRAINED      
+      Size:                    12249904(0xbaeb30) KB              
+Agent 2                  
+  Name:                    gfx1200                            
+  Uuid:                    GPU-adf7930ccada2f28               
+  Marketing Name:          AMD Radeon RX 9060 XT              
+  Vendor Name:             AMD                                
+  Queue Min Size:          64(0x40)                           
+  Queue Max Size:          131072(0x20000)                    
+  Cacheline Size:          64(0x40)                           
+  Compute Unit:            32                                 
+  Wavefront Size:          32(0x20)                           
+  Workgroup Max Size:      1024(0x400)                        
+  Grid Max Size:           4294967295(0xffffffff)             
+  Pool Info:               
+      Segment:                 GLOBAL; FLAGS: COARSE GRAINED      
+      Size:                    16644064(0xfdf7e0) KB              
+      Segment:                 GROUP                              
+      Size:                    64(0x40) KB                        
+      Name:                    amdgcn-amd-amdhsa--gfx1200         
+      Workgroup Max Size:      1024(0x400)                        
+      Grid Max Size:           4294967295(0xffffffff)             
+      FBarrier Max Size:       32                                 
+      Name:                    amdgcn-amd-amdhsa--gfx12-generic   
+=== amd-smi
+ERROR:root:Unable to get devices, driver not initialized (amdgpu not found in modules)
+ERROR:root:Unable to detect any GPU devices, check amdgpu version and module status (sudo modprobe amdgpu)
+ERROR:root:Unable to detect any CPU devices, check amd_hsmp (or) hsmp_acpi version and module status (sudo modprobe amd_hsmp (or) sudo modprobe hsmp_acpi)
+AMDSMI Tool: 26.2.1+fc0010cf6a | AMDSMI Library version: 26.2.1 | ROCm version: 7.2.0
+=== torch
+torch 2.9.1+rocm7.2.0.git7e1940d4 hip 7.2.26015-fc0010cf6a py 3.12.3
+cuda.is_available: True
+name: AMD Radeon RX 9060 XT
+props: _CudaDeviceProperties(name='AMD Radeon RX 9060 XT', major=12, minor=0, gcnArchName='gfx1200', total_memory=16253MB, multi_processor_count=16, uuid=61646637-3933-3063-6361-646132663238, pci_bus_id=8, pci_device_id=0, pci_domain_id=0, L2_cache_size=4MB)
+mem GiB: 15.87 cu: 16 arch: gfx1200
+matmul ok: torch.Size([2048, 2048]) -20119.748046875 allclose: True
+alloc ok 1.0
+Warning: Resource leak detected by SharedSignalPool, 2 Signals leaked.

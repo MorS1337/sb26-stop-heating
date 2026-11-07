@@ -1,0 +1,82 @@
+{
+  "tag": "np_proof_plain",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 576,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/np_proof_plain",
+  "leaderboard_score": 0.008502988586499782,
+  "mean_abs_total_reward_per_step": 0.008502988586499782,
+  "mean_total_reward": -4.897721425823875,
+  "mean_per_step_reward": -0.008502988586499782,
+  "n_scenarios": 2,
+  "n_failed": 0,
+  "sum_comfort_all": -0.024959717192638564,
+  "sum_energy_all": -4.330608630889847,
+  "sum_carbon_all": -5.439874679614609,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.012091785893163533,
+      "mean_total_reward": -6.9648686744621955,
+      "mean_per_step_reward": -0.012091785893163533
+    },
+    "singapore_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004914191279836031,
+      "mean_total_reward": -2.8305741771855537,
+      "mean_per_step_reward": -0.004914191279836031
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.012091785893163533,
+      "mean_total_reward": -6.9648686744621955,
+      "mean_per_step_reward": -0.012091785893163533
+    },
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004914191279836031,
+      "mean_total_reward": -2.8305741771855537,
+      "mean_per_step_reward": -0.004914191279836031
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 87.7253110408783,
+    "cpu_seconds_total": 75.340266,
+    "wall_seconds_sum_scenarios": 146.0969295501709,
+    "mean_cpu_seconds_per_scenario": 37.670133,
+    "steps_per_second_cpu": 15.290628254484792,
+    "steps_per_second_step_cpu": 21.364253342434644
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 576,
+      "total_reward": -6.9648686744621955,
+      "mean_per_step_reward": -0.012091785893163533,
+      "cpu_seconds": 45.440968999999996,
+      "wall_seconds": 87.47935628890991,
+      "steps_per_second_cpu": 12.67578602912275
+    },
+    {
+      "scenario": "building_train_8/singapore_7",
+      "steps": 576,
+      "total_reward": -2.8305741771855537,
+      "mean_per_step_reward": -0.004914191279836031,
+      "cpu_seconds": 29.899297,
+      "wall_seconds": 58.617573261260986,
+      "steps_per_second_cpu": 19.26466699200319
+    }
+  ],
+  "failures": []
+}

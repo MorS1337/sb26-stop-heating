@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim corrected --workers 4 --tag wu_dev30_corrected --out /kaggle/working/results/wu_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_2/atlanta_3 building_train_4/atlanta_5 building_train_5/atlanta_6 building_train_7/atlanta_8 building_train_8/atlanta_1 --params {"early_preheat_enabled": false, "holiday_guard_enabled": false, "precondition_hours": 1.0, "release_enabled": false, "reward_weights_enabled": false}
+
+STDOUT
+[evalrun] tag=wu_dev30_corrected sim=corrected policy=policies.ctrl_w:CtrlW scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/wu_dev30_corrected
+[evalrun] 1/6 building_train_1/atlanta_2             total=    -25.4733 mean=-0.002948 steps=8641 cpu=1209.3s
+[evalrun] 2/6 building_train_4/atlanta_5             total=    -55.3586 mean=-0.006406 steps=8641 cpu=1626.6s
+[evalrun] 3/6 building_train_5/atlanta_6             total=    -35.8029 mean=-0.004143 steps=8641 cpu=1695.1s
+[evalrun] 4/6 building_train_7/atlanta_8             total=    -55.1213 mean=-0.006379 steps=8641 cpu=748.6s
+[evalrun] 5/6 building_train_2/atlanta_3             total=    -24.4564 mean=-0.002830 steps=8641 cpu=2053.8s
+[evalrun] 6/6 building_train_8/atlanta_1             total=    -39.3681 mean=-0.004556 steps=8641 cpu=546.4s
+[evalrun] score=0.004544 scenarios=6 failed=0 wall=2194s -> /kaggle/working/results/wu_dev30_corrected/summary.json
+
+STDERR

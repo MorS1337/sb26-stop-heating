@@ -1,0 +1,10 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --steps 8641 --sim shipped --workers 3 --tag remote_c5_cenv --out /kaggle/working/results/remote_c5_cenv --components parity --start-offset-days 0 --scenario building_train_1/fairbanks_1 building_train_1/phoenix_5 building_train_8/phoenix_4 --params {"standby_minimum": 278.0} --cenv fused --fast
+
+STDOUT
+[evalrun] tag=remote_c5_cenv sim=shipped policy=policies.ctrl_w5:CtrlW5 scenarios=3 steps=8641 workers=3 out=/kaggle/working/results/remote_c5_cenv cenv=fused fast=on
+[evalrun] 1/3 building_train_8/phoenix_4             total=    -83.0034 mean=-0.009606 steps=8641 cpu=313.0s
+[evalrun] 2/3 building_train_1/phoenix_5             total=   -123.0441 mean=-0.014240 steps=8641 cpu=528.9s
+[evalrun] 3/3 building_train_1/fairbanks_1           total=   -386.9069 mean=-0.044776 steps=8641 cpu=530.6s
+[evalrun] score=0.022874 scenarios=3 failed=0 wall=540s -> /kaggle/working/results/remote_c5_cenv/summary.json
+
+STDERR

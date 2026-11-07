@@ -1,0 +1,4 @@
+name: bangkok_3
+weather_csv: csv/bangkok.csv
+convection_coefficient: 18.5
+start_timestamp: 2023-11-12 06:00

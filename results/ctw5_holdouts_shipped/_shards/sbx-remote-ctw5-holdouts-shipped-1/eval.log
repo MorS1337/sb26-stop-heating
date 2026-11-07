@@ -1,0 +1,19 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --steps 8641 --sim shipped --workers 4 --tag ctw5_holdouts_shipped --out /kaggle/working/results/ctw5_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/anchorage_1 building_hold_000/atlanta_g5 building_hold_000/minneapolis_g5 building_hold_001/denver_g5 building_hold_001/phoenix_g1 building_hold_002/bangkok_3 building_hold_002/singapore_g5 building_hold_003/minneapolis_g5 building_hold_004/singapore_g1 building_hold_005/minneapolis_g1 building_hold_006/tokyo_2 building_hold_007/houston_2
+
+STDOUT
+[evalrun] tag=ctw5_holdouts_shipped sim=shipped policy=policies.ctrl_w5:CtrlW5 scenarios=12 steps=8641 workers=4 out=/kaggle/working/results/ctw5_holdouts_shipped
+[evalrun] 1/12 building_hold_000/atlanta_g5           total=    -29.6074 mean=-0.003426 steps=8641 cpu=1413.0s
+[evalrun] 2/12 building_hold_000/anchorage_1          total=   -173.7460 mean=-0.020107 steps=8641 cpu=1425.6s
+[evalrun] 3/12 building_hold_000/minneapolis_g5       total=    -27.6437 mean=-0.003199 steps=8641 cpu=1426.0s
+[evalrun] 4/12 building_hold_001/denver_g5            total=    -13.0706 mean=-0.001513 steps=8641 cpu=2069.3s
+[evalrun] 5/12 building_hold_002/bangkok_3            total=    -44.7948 mean=-0.005184 steps=8641 cpu=1403.3s
+[evalrun] 6/12 building_hold_002/singapore_g5         total=    -44.6569 mean=-0.005168 steps=8641 cpu=1405.4s
+[evalrun] 7/12 building_hold_001/phoenix_g1           total=    -40.5272 mean=-0.004690 steps=8641 cpu=2027.0s
+[evalrun] 8/12 building_hold_003/minneapolis_g5       total=    -31.2940 mean=-0.003622 steps=8641 cpu=1687.8s
+[evalrun] 9/12 building_hold_004/singapore_g1         total=    -40.4149 mean=-0.004677 steps=8641 cpu=1022.1s
+[evalrun] 10/12 building_hold_005/minneapolis_g1       total=    -50.0580 mean=-0.005793 steps=8641 cpu=1297.1s
+[evalrun] 11/12 building_hold_006/tokyo_2              total=    -47.1762 mean=-0.005460 steps=8641 cpu=1229.2s
+[evalrun] 12/12 building_hold_007/houston_2            total=    -70.4402 mean=-0.008152 steps=8641 cpu=988.5s
+[evalrun] score=0.005916 scenarios=12 failed=0 wall=4803s -> /kaggle/working/results/ctw5_holdouts_shipped/summary.json
+
+STDERR

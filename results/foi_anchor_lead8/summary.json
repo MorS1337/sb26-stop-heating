@@ -1,0 +1,69 @@
+{
+  "tag": "foi_anchor_lead8",
+  "policy": "policies.oracle_foresight:OracleForesightCtrlW",
+  "policy_labels": [
+    "policies.oracle_foresight:OracleForesightCtrlW"
+  ],
+  "params": {
+    "foresight_preheat_lead_hours": 8
+  },
+  "sim": "shipped",
+  "steps": 2016,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [
+    "foresight"
+  ],
+  "oracle_horizon": 12,
+  "oracle_file": "scratch/VoIOracle/foresight_ref",
+  "oracle_record": null,
+  "components_mode": "hook",
+  "cenv_components": [],
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/foi_anchor_lead8",
+  "leaderboard_score": 0.04509060950818994,
+  "mean_abs_total_reward_per_step": 0.04509060950818994,
+  "mean_total_reward": -90.90266876851092,
+  "mean_per_step_reward": -0.04509060950818994,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.027654847298307382,
+  "sum_energy_all": -25.898115415233335,
+  "sum_carbon_all": -64.97689978702029,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04509060950818994,
+      "mean_total_reward": -90.90266876851092,
+      "mean_per_step_reward": -0.04509060950818994
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04509060950818994,
+      "mean_total_reward": -90.90266876851092,
+      "mean_per_step_reward": -0.04509060950818994
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 57.522876024246216,
+    "cpu_seconds_total": 57.109826999999996,
+    "wall_seconds_sum_scenarios": 57.52132511138916,
+    "mean_cpu_seconds_per_scenario": 57.109826999999996,
+    "steps_per_second_cpu": 35.3004046046226,
+    "steps_per_second_step_cpu": 43.23951473939839
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2016,
+      "total_reward": -90.90266876851092,
+      "mean_per_step_reward": -0.04509060950818994,
+      "cpu_seconds": 57.109826999999996,
+      "wall_seconds": 57.52132511138916,
+      "steps_per_second_cpu": 35.3004046046226
+    }
+  ],
+  "failures": []
+}

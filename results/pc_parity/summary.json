@@ -1,0 +1,59 @@
+{
+  "tag": "pc_parity",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 576,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/home/mors1337/sb26/results/pc_parity",
+  "leaderboard_score": 0.008717316768853265,
+  "mean_abs_total_reward_per_step": 0.008717316768853265,
+  "mean_total_reward": -5.02117445885948,
+  "mean_per_step_reward": -0.008717316768853265,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.00015702682472747836,
+  "sum_energy_all": -4.087576946566604,
+  "sum_carbon_all": -0.933440572838739,
+  "by_weather": {
+    "phoenix_g4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008717316768853265,
+      "mean_total_reward": -5.02117445885948,
+      "mean_per_step_reward": -0.008717316768853265
+    }
+  },
+  "by_building": {
+    "building_gen_002": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008717316768853265,
+      "mean_total_reward": -5.02117445885948,
+      "mean_per_step_reward": -0.008717316768853265
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 70.11915898323059,
+    "cpu_seconds_total": 566.337691251,
+    "wall_seconds_sum_scenarios": 70.11860990524292,
+    "mean_cpu_seconds_per_scenario": 566.337691251,
+    "steps_per_second_cpu": 1.0170610377841118,
+    "steps_per_second_step_cpu": 1.0995219214857768
+  },
+  "scenarios": [
+    {
+      "scenario": "building_gen_002/phoenix_g4",
+      "steps": 576,
+      "total_reward": -5.02117445885948,
+      "mean_per_step_reward": -0.008717316768853265,
+      "cpu_seconds": 566.337691251,
+      "wall_seconds": 70.11860990524292,
+      "steps_per_second_cpu": 1.0170610377841118
+    }
+  ],
+  "failures": []
+}

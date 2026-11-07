@@ -1,0 +1,48 @@
+{
+  "tag": "cool_ef278_corr",
+  "policy": "policies.ctrl_w5:CtrlW5",
+  "sim": "corrected",
+  "steps": 2016,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cool_ef278_corr",
+  "wall_seconds": 77.69514608383179,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "error": null,
+      "mean_per_step_reward": -0.012185865849864462,
+      "total_reward": -24.566705553326756,
+      "reconciliation": {
+        "loss_from_components": -24.566705526255152,
+        "loss_from_reward_terms": -24.566705564409496,
+        "loss_recomputed_from_powers": -24.566705526255156,
+        "energy_from_powers": -19.97279831312965,
+        "energy_from_reward": -19.972798349335793,
+        "carbon_from_powers": -4.593907213125498,
+        "carbon_from_reward": -4.593907215073704,
+        "rel_error_vs_reward_terms": 1.553091585049871e-09,
+        "rel_error_energy": 1.8127726246053275e-09,
+        "rel_error_carbon": 4.2408476047217517e-10,
+        "rel_error_combined_powers_vs_reward": 1.553091440434889e-09
+      }
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "error": null,
+      "mean_per_step_reward": -0.006785736566021186,
+      "total_reward": -13.680044917098712,
+      "reconciliation": {
+        "loss_from_components": -13.565186803591095,
+        "loss_from_reward_terms": -13.565186787910353,
+        "loss_recomputed_from_powers": -13.565186803591095,
+        "energy_from_powers": -10.920035725478805,
+        "energy_from_reward": -10.920035706763157,
+        "carbon_from_powers": -2.6451510781122893,
+        "carbon_from_reward": -2.6451510811471963,
+        "rel_error_vs_reward_terms": 1.1559547452856404e-09,
+        "rel_error_energy": 1.7138815477219663e-09,
+        "rel_error_carbon": 1.147347315627327e-09,
+        "rel_error_combined_powers_vs_reward": 1.1559547452856404e-09
+      }
+    }
+  ]
+}

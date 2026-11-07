@@ -1,0 +1,739 @@
+{
+ "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+ "payload_sources": {
+  "policies/__init__.py": "387be4421984be3d020e7bad6b815902334999189a432583b8168092e91ad62a",
+  "policies/ctrl_mpc.py": "3245a768b5ca5e14ab2570fce0495aa12e95c2a4a4998ee1c93f516c4cffb1e3",
+  "policies/ctrl_v1.py": "758577488330c4307f7a72b66cea08a4ed023db36880ea4a315405e77e20715f",
+  "policies/ctrl_v2.py": "2f81d31a9e92a01dbd5f23ed832a8faf16908e9296357068689d55b1c324641a",
+  "policies/ctrl_w.py": "6bfecc6d934e0c899b7a87cf414f7fe2a35cbf5204d82e5165265f943c58ed37",
+  "policies/ctrl_w2.py": "496e6d72287af2f0f6ab2dcbd79c79fe754211fd5a2361321c77141bec86d5f6",
+  "policies/ctrl_w3.py": "898378eb9adab1836431cfe9f3fdfe15702d99c5df24e8998f4dfc6122327c85",
+  "policies/ctrl_w4.py": "14755afccceb60149075797b71eb673d45791bc61ec1ad4ea81c3330b60cc47e",
+  "policies/oracle_forecast.py": "65a5dd48ad967e37c616aa50f36b8f7201cb19e06b037e335a7f85078ad84e38",
+  "policies/oracle_noop.py": "533fc4dfc01d681d52bf6f8e627f4837dd725df427b7d87ac16d259d16e281c6",
+  "policies/oracle_occupancy.py": "52c9c52fe03c11a069622689ba138c096c6f57ae40baea7151e8fd13166fcad4",
+  "policies/oracle_util.py": "b2dd654f56a437b5b30886d2117fe772c7a3e7b1e533ef752263fa3bf6e325f7",
+  "policies/ref_wu.py": "234d3beac1c0591467f215f2004fbcaf9016f1cbefe4788943594a6951d6b64b",
+  "policies/ref_ztbest.py": "85614b73198cc03574e2b27b16fcfa9fc5872421b634de7908a29cf267b5fca4",
+  "policies/ref_ztoff.py": "c75ac4923fbe924c498220c4e4ab19c5bfdfa455ed64fab0d9365717e3697d94",
+  "policies/wu_core.py": "2d9847212986335571401dde00db42aeedc4bf964584d13ea0d504348255ed20",
+  "policies/wu_weights.py": "af676b5a7d7ae48dcccbeac6c7f734fdfc276c1fff05d782dbb4fc11761bd412",
+  "sbx/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sbx/evalrun.py": "8063841f8433e25140e48f3a1746acccf6908dca35a430846e5ef527563ae6ce",
+  "sbx/pools/manifest.json": "6e72f52502724481ab9e58eea9218adb1ef940a318d843ec3260307c65cdfd5e",
+  "sbx/scenarios.py": "5a3701c725b22675111195524213173c94180b95d586892d6ceb21aef6b9a380",
+  "sbx/simload.py": "afba764eca75f22c13e23931be8ad8c5e133aca3d92cae0536b3e928f2d8b834"
+ },
+ "dataset": "mors1337/sbx-payload",
+ "dataset_version": 4,
+ "out_dir": "/Users/mors1337/Code/DL/doma/results/ctw4_dev30_shipped",
+ "created_utc": "2026-11-06T03:26:25Z",
+ "kernels": [
+  {
+   "slug": "sbx-remote-ctw4-dev30-shipped-0",
+   "id": "mors1337/sbx-remote-ctw4-dev30-shipped-0",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-dev30-shipped-0",
+   "job_tag": "ctw4_dev30_shipped",
+   "shard": 0,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/fairbanks_1",
+    "building_train_2/atlanta_3",
+    "building_train_2/singapore_1",
+    "building_train_4/denver_2",
+    "building_train_4/phoenix_8",
+    "building_train_7/denver_5",
+    "building_train_8/atlanta_1",
+    "building_train_8/phoenix_4"
+   ],
+   "job": {
+    "tag": "ctw4_dev30_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_train_1/fairbanks_1",
+     "building_train_2/atlanta_3",
+     "building_train_2/singapore_1",
+     "building_train_4/denver_2",
+     "building_train_4/phoenix_8",
+     "building_train_7/denver_5",
+     "building_train_8/atlanta_1",
+     "building_train_8/phoenix_4"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 0,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-dev30-shipped-0",
+    "created_utc": "2026-11-06T03:26:25Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T03:26:28Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-dev30-shipped-1",
+   "id": "mors1337/sbx-remote-ctw4-dev30-shipped-1",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-dev30-shipped-1",
+   "job_tag": "ctw4_dev30_shipped",
+   "shard": 1,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/singapore_8",
+    "building_train_2/denver_8",
+    "building_train_4/singapore_3",
+    "building_train_5/atlanta_6",
+    "building_train_5/phoenix_1",
+    "building_train_7/phoenix_3",
+    "building_train_8/fairbanks_8"
+   ],
+   "job": {
+    "tag": "ctw4_dev30_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_train_1/singapore_8",
+     "building_train_2/denver_8",
+     "building_train_4/singapore_3",
+     "building_train_5/atlanta_6",
+     "building_train_5/phoenix_1",
+     "building_train_7/phoenix_3",
+     "building_train_8/fairbanks_8"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 1,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-dev30-shipped-1",
+    "created_utc": "2026-11-06T03:26:25Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T03:26:31Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-dev30-shipped-2",
+   "id": "mors1337/sbx-remote-ctw4-dev30-shipped-2",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-dev30-shipped-2",
+   "job_tag": "ctw4_dev30_shipped",
+   "shard": 2,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/atlanta_2",
+    "building_train_1/phoenix_5",
+    "building_train_2/fairbanks_2",
+    "building_train_5/denver_3",
+    "building_train_5/singapore_4",
+    "building_train_7/fairbanks_7",
+    "building_train_8/denver_6"
+   ],
+   "job": {
+    "tag": "ctw4_dev30_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_train_1/atlanta_2",
+     "building_train_1/phoenix_5",
+     "building_train_2/fairbanks_2",
+     "building_train_5/denver_3",
+     "building_train_5/singapore_4",
+     "building_train_7/fairbanks_7",
+     "building_train_8/denver_6"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 2,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-dev30-shipped-2",
+    "created_utc": "2026-11-06T03:26:25Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T03:26:33Z",
+   "status": "COMPLETE",
+   "done": true
+  },
+  {
+   "slug": "sbx-remote-ctw4-dev30-shipped-3",
+   "id": "mors1337/sbx-remote-ctw4-dev30-shipped-3",
+   "dir": "/Users/mors1337/Code/DL/doma_queue/kaggle/remote/build/kernels/sbx-remote-ctw4-dev30-shipped-3",
+   "job_tag": "ctw4_dev30_shipped",
+   "shard": 3,
+   "n_shards": 4,
+   "scenarios": [
+    "building_train_1/denver_7",
+    "building_train_2/phoenix_6",
+    "building_train_4/atlanta_5",
+    "building_train_4/fairbanks_4",
+    "building_train_5/fairbanks_5",
+    "building_train_7/atlanta_8",
+    "building_train_7/singapore_6",
+    "building_train_8/singapore_7"
+   ],
+   "job": {
+    "tag": "ctw4_dev30_shipped",
+    "policy": "policies.ctrl_w4:CtrlW4",
+    "params": {},
+    "scenarios": [
+     "building_train_1/denver_7",
+     "building_train_2/phoenix_6",
+     "building_train_4/atlanta_5",
+     "building_train_4/fairbanks_4",
+     "building_train_5/fairbanks_5",
+     "building_train_7/atlanta_8",
+     "building_train_7/singapore_6",
+     "building_train_8/singapore_7"
+    ],
+    "steps": 8641,
+    "sim": "shipped",
+    "workers": 4,
+    "components": "hook",
+    "start_offset_days": 0,
+    "occupancy_seed": null,
+    "oracle": [],
+    "oracle_horizon": null,
+    "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+    "dataset_dir": "/kaggle/input/sbx-payload",
+    "mount": "/kaggle/input/competitions/neurips-2026-smart-buildings",
+    "shard": 3,
+    "n_shards": 4,
+    "kernel_slug": "sbx-remote-ctw4-dev30-shipped-3",
+    "created_utc": "2026-11-06T03:26:25Z",
+    "keep_trees": false,
+    "tasks": null,
+    "job_timeout": 1800.0
+   },
+   "pushed_utc": "2026-11-06T03:26:36Z",
+   "status": "COMPLETE",
+   "done": true
+  }
+ ],
+ "max_concurrency": 4,
+ "poll": {
+  "samples": [
+   {
+    "elapsed": 3.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 27.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 51.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 76.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 100.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 124.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 148.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 173.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 197.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 221.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 245.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 270.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 294.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 318.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 342.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 366.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 390.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 415.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 439.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 463.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 487.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 511.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 535.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 559.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 582.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 606.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 630.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 655.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 680.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 704.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 728.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 752.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 777.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 800.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 825.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 849.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 874.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 898.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 922.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 946.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 970.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 994.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1018.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1042.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1067.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1090.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1126.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1161.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1185.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1209.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1232.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1256.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1281.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1315.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1339.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1363.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1388.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1413.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1440.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1465.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1490.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1514.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1550.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1574.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1597.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1622.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1645.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1669.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1693.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1718.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1743.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1767.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1801.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1826.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1849.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1873.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1898.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1923.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1958.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 1981.9,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2006.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2030.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2054.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2078.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2112.2,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2136.0,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2159.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2183.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2207.5,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2230.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2255.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2300.4,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2324.3,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2348.1,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2371.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2395.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2419.6,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2443.7,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2467.8,
+    "RUNNING": 4
+   },
+   {
+    "elapsed": 2491.9,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 2515.0,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 2538.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 2561.2,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 2584.1,
+    "RUNNING": 3,
+    "COMPLETE": 1
+   },
+   {
+    "elapsed": 2607.4,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2629.3,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2651.5,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2673.7,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2695.6,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2717.8,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2739.8,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2761.9,
+    "COMPLETE": 2,
+    "RUNNING": 2
+   },
+   {
+    "elapsed": 2783.8,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 2804.8,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 2825.7,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 2846.7,
+    "COMPLETE": 3,
+    "RUNNING": 1
+   },
+   {
+    "elapsed": 2867.7,
+    "COMPLETE": 4
+   }
+  ],
+  "started_at": 1793935596.276994,
+  "max_concurrent_running": 4,
+  "wall_seconds": 2867.7,
+  "queue_observed": false
+ }
+}

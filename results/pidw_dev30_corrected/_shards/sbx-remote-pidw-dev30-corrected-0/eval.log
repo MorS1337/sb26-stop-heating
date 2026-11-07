@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 8641 --sim corrected --workers 4 --tag pidw_dev30_corrected --out /kaggle/working/results/pidw_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_2/atlanta_3 building_train_4/atlanta_5 building_train_5/atlanta_6 building_train_7/atlanta_8 building_train_8/atlanta_1
+
+STDOUT
+[evalrun] tag=pidw_dev30_corrected sim=corrected policy=baseline:pid_water scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/pidw_dev30_corrected
+[evalrun] 1/6 building_train_1/atlanta_2             total=   -212.3799 mean=-0.024578 steps=8641 cpu=1191.3s
+[evalrun] 2/6 building_train_4/atlanta_5             total=   -255.8308 mean=-0.029607 steps=8641 cpu=1627.0s
+[evalrun] 3/6 building_train_5/atlanta_6             total=   -262.2744 mean=-0.030352 steps=8641 cpu=1650.3s
+[evalrun] 4/6 building_train_7/atlanta_8             total=   -408.8273 mean=-0.047312 steps=8641 cpu=744.4s
+[evalrun] 5/6 building_train_2/atlanta_3             total=   -172.6019 mean=-0.019975 steps=8641 cpu=2050.8s
+[evalrun] 6/6 building_train_8/atlanta_1             total=   -258.8388 mean=-0.029955 steps=8641 cpu=518.4s
+[evalrun] score=0.030297 scenarios=6 failed=0 wall=2177s -> /kaggle/working/results/pidw_dev30_corrected/summary.json
+
+STDERR

@@ -1,0 +1,53 @@
+[{"stream_name":"stdout","time":0.93930088,"data":"[sbx-remote      0.0s] job: {\"components\": \"hook\", \"created_utc\": \"2026-11-06T15:21:56Z\", \"dataset_dir\": \"/kaggle/input/sbx-payload\", \"job_timeout\": 1800.0, \"keep_trees\": false, \"kernel_slug\": \"sbx-remote-ctw4-holdouts-shipped-0\", \"mount\": \"/kaggle/input/competitions/neurips-2026-smart-buildings\", \"n_shards\": 4, \"occupancy_seed\": null, \"oracle\": [], \"oracle_horizon\": null, \"params\": {}, \"payload_hash\": \"cd3a276dc391f66184fb8a03bb592997\", \"policy\": \"policies.ctrl_w4:CtrlW4\", \"scenarios\": [\"building_hold_000/minneapolis_g1\", \"building_hold_001/auckland_2\", \"building_hold_001/montreal_3\", \"building_hold_002/atlanta_g1\", \"building_hold_002/moscow_1\", \"building_hold_003/minneapolis_g1\", \"building_hold_004/denver_g5\", \"building_hold_004/minneapolis_g5\", \"building_hold_005/fairbanks_g5\", \"building_hold_006/phoenix_g5\", \"building_hold_007/atlanta_g5\", \"building_hold_007/singapore_g1\"], \"shard\": 0, \"sim\": \"shipped\", \"start_offset_days\": 0, \"steps\": 8641, \"tag\": \"ctw4_holdouts_shipped\", \"tasks\": null, \"workers\": 4}\n"}
+,{"stream_name":"stdout","time":1.21250615,"data":"[sbx-remote      0.3s] payload source: dir /kaggle/input/datasets/mors1337/sbx-payload\n"}
+,{"stream_name":"stdout","time":4.040305396,"data":"[sbx-remote      3.1s] payload verified: 95 files, hash cd3a276dc391f66184fb8a03bb592997\n"}
+,{"stream_name":"stdout","time":4.827435809,"data":"[sbx-remote      3.9s] mount vs local sims/shipped: 96 files, 23 differ, 0 extra -\u003e match=False\n"}
+,{"stream_name":"stdout","time":6.69498403,"data":"[sbx-remote      5.8s] sims/shipped built from the mount in 1.9s\n"}
+,{"stream_name":"stdout","time":6.805076545,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 30 applied at 30\n"}
+,{"stream_name":"stdout","time":6.805124541,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 45 applied at 49\n"}
+,{"stream_name":"stdout","time":6.8051320109999995,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 89 applied at 94\n"}
+,{"stream_name":"stdout","time":6.805137316,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 103 applied at 111\n"}
+,{"stream_name":"stdout","time":6.805142323,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 122 applied at 131\n"}
+,{"stream_name":"stdout","time":6.8051472870000005,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler.py: hunk at old line 205 applied at 258\n"}
+,{"stream_name":"stdout","time":6.805152379,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/boiler_energy_balance_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":6.805157887,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 54 applied at 54\n"}
+,{"stream_name":"stdout","time":6.80516112,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/hot_water_system.py: hunk at old line 291 applied at 292\n"}
+,{"stream_name":"stdout","time":6.805164325,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 190 applied at 190\n"}
+,{"stream_name":"stdout","time":6.805167608,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator.py: hunk at old line 211 applied at 222\n"}
+,{"stream_name":"stdout","time":6.805170811,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 520 applied at 520\n"}
+,{"stream_name":"stdout","time":6.8051863,"data":"[sbx-remote      5.9s] patch: smart_buildings/check_return_air.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":6.805191451,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/return_air_mixing_test.py: hunk at old line 0 applied at 1\n"}
+,{"stream_name":"stdout","time":6.805196659,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 7 applied at 7\n"}
+,{"stream_name":"stdout","time":6.805201443,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 289 applied at 289\n"}
+,{"stream_name":"stdout","time":6.805207592,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 315 applied at 312\n"}
+,{"stream_name":"stdout","time":6.8052125199999995,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 704 applied at 690\n"}
+,{"stream_name":"stdout","time":6.80521703,"data":"[sbx-remote      5.9s] patch: smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py: hunk at old line 720 applied at 771\n"}
+,{"stream_name":"stdout","time":6.8060701340000005,"data":"[sbx-remote      5.9s] sims/corrected: 6 patched files byte-identical to sims/corrected, 1 differ outside the patched hunks: ['smart_buildings/smart_control/simulator/hot_water_system.py']\n"}
+,{"stream_name":"stdout","time":16.552673023,"data":"[sbx-remote     15.6s] pool scenarios verified: 452 files (226 by digest, 226 by size)\n"}
+,{"stream_name":"stdout","time":16.561123501,"data":"[sbx-remote     15.6s] setup complete in 15.6s; starting the evaluation\n"}
+,{"stream_name":"stdout","time":16.561345429,"data":"[sbx-remote     15.6s] exec /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w4:CtrlW4 --steps 8641 --sim shipped --workers 4 --tag ctw4_holdouts_shipped --out /kaggle/working/results/ctw4_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/minneapolis_g1 building_hold_001/auckland_2 building_hold_001/montreal_3 building_hold_002/atlanta_g1 building_hold_002/moscow_1 building_hold_003/minneapolis_g1 building_hold_004/denver_g5 building_hold_004/minneapolis_g5 building_hold_005/fairbanks_g5 building_hold_006/phoenix_g5 building_hold_007/atlanta_g5 building_hold_007/singapore_g1\n"}
+,{"stream_name":"stdout","time":4649.234368804,"data":"[evalrun] tag=ctw4_holdouts_shipped sim=shipped policy=policies.ctrl_w4:CtrlW4 scenarios=12 steps=8641 workers=4 out=/kaggle/working/results/ctw4_holdouts_shipped\n"}
+,{"stream_name":"stdout","time":4649.23441242,"data":"[evalrun] 1/12 building_hold_002/atlanta_g1           total=    -22.4542 mean=-0.002599 steps=8641 cpu=1404.8s\n"}
+,{"stream_name":"stdout","time":4649.234419929,"data":"[evalrun] 2/12 building_hold_000/minneapolis_g1       total=    -79.4537 mean=-0.009195 steps=8641 cpu=1409.9s\n"}
+,{"stream_name":"stdout","time":4649.234425592,"data":"[evalrun] 3/12 building_hold_001/montreal_3           total=    -11.7783 mean=-0.001363 steps=8641 cpu=2054.4s\n"}
+,{"stream_name":"stdout","time":4649.234431444,"data":"[evalrun] 4/12 building_hold_001/auckland_2           total=     -6.8991 mean=-0.000798 steps=8641 cpu=2059.8s\n"}
+,{"stream_name":"stdout","time":4649.234437002,"data":"[evalrun] 5/12 building_hold_002/moscow_1             total=   -142.9076 mean=-0.016538 steps=8641 cpu=1411.6s\n"}
+,{"stream_name":"stdout","time":4649.234443114,"data":"[evalrun] 6/12 building_hold_004/denver_g5            total=    -15.5559 mean=-0.001800 steps=8641 cpu=1032.1s\n"}
+,{"stream_name":"stdout","time":4649.234448865,"data":"[evalrun] 7/12 building_hold_004/minneapolis_g5       total=    -14.8861 mean=-0.001723 steps=8641 cpu=1033.3s\n"}
+,{"stream_name":"stdout","time":4649.234465061,"data":"[evalrun] 8/12 building_hold_003/minneapolis_g1       total=    -93.7700 mean=-0.010852 steps=8641 cpu=1702.5s\n"}
+,{"stream_name":"stdout","time":4649.23447054,"data":"[evalrun] 9/12 building_hold_005/fairbanks_g5         total=    -31.3405 mean=-0.003627 steps=8641 cpu=1346.1s\n"}
+,{"stream_name":"stdout","time":4649.234475412,"data":"[evalrun] 10/12 building_hold_007/atlanta_g5           total=    -28.9596 mean=-0.003351 steps=8641 cpu=1373.8s\n"}
+,{"stream_name":"stdout","time":4649.234478637,"data":"[evalrun] 11/12 building_hold_007/singapore_g1         total=    -58.8029 mean=-0.006805 steps=8641 cpu=1376.7s\n"}
+,{"stream_name":"stdout","time":4649.234482105,"data":"[evalrun] 12/12 building_hold_006/phoenix_g5           total=    -32.3407 mean=-0.003743 steps=8641 cpu=1491.9s\n"}
+,{"stream_name":"stdout","time":4649.234485265,"data":"[evalrun] score=0.005200 scenarios=12 failed=0 wall=4632s -\u003e /kaggle/working/results/ctw4_holdouts_shipped/summary.json\n"}
+,{"stream_name":"stdout","time":4649.234488877,"data":"[sbx-remote   4648.3s] evalrun exit=0 wall=4632.7s\n"}
+,{"stream_name":"stdout","time":4649.239452587,"data":"[sbx-remote   4648.3s] shard.json written: 12 records, exit=0\n"}
+,{"stream_name":"stdout","time":4650.270117786,"data":"[sbx-remote   4649.3s] removed /kaggle/working/payload (1202 MB) so the kernel output is just the results; pass keep_trees to keep the sim trees\n"}
+,{"stream_name":"stdout","time":4650.27015642,"data":"[sbx-remote   4649.3s] SHARD COMPLETE\n"}
+,{"stream_name":"stderr","time":4653.29470364,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4653.294742845,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4653.656792176,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4653.656828557,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4654.768696363,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4655.5688185,"data":"[NbConvertApp] Writing 374456 bytes to __results__.html\n"}
+]

@@ -1,0 +1,474 @@
+{
+  "tag": "pid_water_dev30_shipped",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+    "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 8640,
+  "start_offset_days": 0,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/pid_water_dev30_shipped",
+  "leaderboard_score": 0.054362901613765294,
+  "mean_abs_total_reward_per_step": 0.054362901613765294,
+  "mean_total_reward": -469.6954699429323,
+  "mean_per_step_reward": -0.054362901613765294,
+  "n_scenarios": 25,
+  "n_failed": 5,
+  "sum_comfort_all": -7382.064965575111,
+  "sum_energy_all": -2610.345944381467,
+  "sum_carbon_all": -1749.9761960438893,
+  "by_weather": {
+    "atlanta_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03094758756991917,
+      "mean_total_reward": -267.3871566041016,
+      "mean_per_step_reward": -0.03094758756991917
+    },
+    "atlanta_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.019981805522956128,
+      "mean_total_reward": -172.64279971834094,
+      "mean_per_step_reward": -0.019981805522956128
+    },
+    "atlanta_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02893980499653234,
+      "mean_total_reward": -250.03991517003942,
+      "mean_per_step_reward": -0.02893980499653234
+    },
+    "atlanta_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0307591535751315,
+      "mean_total_reward": -265.75908688913614,
+      "mean_per_step_reward": -0.0307591535751315
+    },
+    "atlanta_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.048293350187388055,
+      "mean_total_reward": -417.2545456190328,
+      "mean_per_step_reward": -0.048293350187388055
+    },
+    "denver_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04410248802433456,
+      "mean_total_reward": -381.0454965302506,
+      "mean_per_step_reward": -0.04410248802433456
+    },
+    "denver_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03687855423637082,
+      "mean_total_reward": -318.6307086022439,
+      "mean_per_step_reward": -0.03687855423637082
+    },
+    "denver_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.020478693782834408,
+      "mean_total_reward": -176.93591428368927,
+      "mean_per_step_reward": -0.020478693782834408
+    },
+    "denver_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.031004869155273486,
+      "mean_total_reward": -267.8820695015629,
+      "mean_per_step_reward": -0.031004869155273486
+    },
+    "denver_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04063687594807108,
+      "mean_total_reward": -351.1026081913342,
+      "mean_per_step_reward": -0.04063687594807108
+    },
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.21408517618011583,
+      "mean_total_reward": -1849.6959221962006,
+      "mean_per_step_reward": -0.21408517618011583
+    },
+    "fairbanks_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03280079566706583,
+      "mean_total_reward": -283.39887456344877,
+      "mean_per_step_reward": -0.03280079566706583
+    },
+    "fairbanks_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.01688501566280762,
+      "mean_total_reward": -145.88653532665785,
+      "mean_per_step_reward": -0.01688501566280762
+    },
+    "fairbanks_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.05406658788264925,
+      "mean_total_reward": -467.1353193060895,
+      "mean_per_step_reward": -0.05406658788264925
+    },
+    "phoenix_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0332663943829535,
+      "mean_total_reward": -287.4216474687182,
+      "mean_per_step_reward": -0.0332663943829535
+    },
+    "phoenix_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04482725266500352,
+      "mean_total_reward": -387.30746302563045,
+      "mean_per_step_reward": -0.04482725266500352
+    },
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.16020952459202617,
+      "mean_total_reward": -1384.2102924751061,
+      "mean_per_step_reward": -0.16020952459202617
+    },
+    "phoenix_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.13701070984087135,
+      "mean_total_reward": -1183.7725330251285,
+      "mean_per_step_reward": -0.13701070984087135
+    },
+    "phoenix_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.07499301615581068,
+      "mean_total_reward": -647.9396595862042,
+      "mean_per_step_reward": -0.07499301615581068
+    },
+    "phoenix_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.030262419061782734,
+      "mean_total_reward": -261.4673006938028,
+      "mean_per_step_reward": -0.030262419061782734
+    },
+    "singapore_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02590009602749635,
+      "mean_total_reward": -223.77682967756846,
+      "mean_per_step_reward": -0.02590009602749635
+    },
+    "singapore_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03429579477982674,
+      "mean_total_reward": -296.31566689770307,
+      "mean_per_step_reward": -0.03429579477982674
+    },
+    "singapore_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.10990291827728527,
+      "mean_total_reward": -949.5612139157447,
+      "mean_per_step_reward": -0.10990291827728527
+    },
+    "singapore_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03019337012136913,
+      "mean_total_reward": -260.8707178486293,
+      "mean_per_step_reward": -0.03019337012136913
+    },
+    "singapore_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.028350286048257088,
+      "mean_total_reward": -244.94647145694125,
+      "mean_per_step_reward": -0.028350286048257088
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 4,
+      "leaderboard_score": 0.10261276030612942,
+      "mean_total_reward": -886.5742490449584,
+      "mean_per_step_reward": -0.10261276030612942
+    },
+    "building_train_2": {
+      "n_scenarios": 4,
+      "leaderboard_score": 0.04037794841358356,
+      "mean_total_reward": -348.86547429336196,
+      "mean_per_step_reward": -0.04037794841358356
+    },
+    "building_train_4": {
+      "n_scenarios": 4,
+      "leaderboard_score": 0.03157470362630191,
+      "mean_total_reward": -272.8054393312485,
+      "mean_per_step_reward": -0.03157470362630191
+    },
+    "building_train_5": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.046983193984502486,
+      "mean_total_reward": -405.9347960261015,
+      "mean_per_step_reward": -0.046983193984502486
+    },
+    "building_train_7": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.042851823018556154,
+      "mean_total_reward": -370.23975088032523,
+      "mean_per_step_reward": -0.042851823018556154
+    },
+    "building_train_8": {
+      "n_scenarios": 3,
+      "leaderboard_score": 0.07054526864825993,
+      "mean_total_reward": -609.5111211209656,
+      "mean_per_step_reward": -0.07054526864825993
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 3598.6775600910187,
+    "cpu_seconds_total": 14387.981465,
+    "wall_seconds_sum_scenarios": 15792.448499917984,
+    "mean_cpu_seconds_per_scenario": 575.5192586000001,
+    "steps_per_second_cpu": 15.012529764890129,
+    "steps_per_second_step_cpu": 15.409445088843498
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/denver_7",
+      "steps": 8640,
+      "total_reward": -267.8820695015629,
+      "mean_per_step_reward": -0.031004869155273486,
+      "cpu_seconds": 472.272252,
+      "wall_seconds": 522.1349029541016,
+      "steps_per_second_cpu": 18.294532366470687
+    },
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 8640,
+      "total_reward": -1849.6959221962006,
+      "mean_per_step_reward": -0.21408517618011583,
+      "cpu_seconds": 475.909041,
+      "wall_seconds": 525.8129341602325,
+      "steps_per_second_cpu": 18.154729697602026
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "steps": 8640,
+      "total_reward": -1183.7725330251285,
+      "mean_per_step_reward": -0.13701070984087135,
+      "cpu_seconds": 478.40784,
+      "wall_seconds": 528.7356081008911,
+      "steps_per_second_cpu": 18.059904703902845
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "steps": 8640,
+      "total_reward": -244.94647145694125,
+      "mean_per_step_reward": -0.028350286048257088,
+      "cpu_seconds": 475.543772,
+      "wall_seconds": 525.8828909397125,
+      "steps_per_second_cpu": 18.168674491651213
+    },
+    {
+      "scenario": "building_train_2/atlanta_3",
+      "steps": 8640,
+      "total_reward": -172.64279971834094,
+      "mean_per_step_reward": -0.019981805522956128,
+      "cpu_seconds": 927.265355,
+      "wall_seconds": 1056.1150240898132,
+      "steps_per_second_cpu": 9.317721139274097
+    },
+    {
+      "scenario": "building_train_2/denver_8",
+      "steps": 8640,
+      "total_reward": -351.1026081913342,
+      "mean_per_step_reward": -0.04063687594807108,
+      "cpu_seconds": 943.18527,
+      "wall_seconds": 1079.5196342468262,
+      "steps_per_second_cpu": 9.160448402677027
+    },
+    {
+      "scenario": "building_train_2/phoenix_6",
+      "steps": 8640,
+      "total_reward": -647.9396595862042,
+      "mean_per_step_reward": -0.07499301615581068,
+      "cpu_seconds": 944.3499499999999,
+      "wall_seconds": 1081.1751050949097,
+      "steps_per_second_cpu": 9.149150693553805
+    },
+    {
+      "scenario": "building_train_2/singapore_1",
+      "steps": 8640,
+      "total_reward": -223.77682967756846,
+      "mean_per_step_reward": -0.02590009602749635,
+      "cpu_seconds": 945.960189,
+      "wall_seconds": 1082.8316152095795,
+      "steps_per_second_cpu": 9.133576761970899
+    },
+    {
+      "scenario": "building_train_4/atlanta_5",
+      "steps": 8640,
+      "total_reward": -250.03991517003942,
+      "mean_per_step_reward": -0.02893980499653234,
+      "cpu_seconds": 694.156807,
+      "wall_seconds": 758.9035131931305,
+      "steps_per_second_cpu": 12.446755420205799
+    },
+    {
+      "scenario": "building_train_4/fairbanks_4",
+      "steps": 8640,
+      "total_reward": -283.39887456344877,
+      "mean_per_step_reward": -0.03280079566706583,
+      "cpu_seconds": 695.337735,
+      "wall_seconds": 768.2172889709473,
+      "steps_per_second_cpu": 12.425616452413589
+    },
+    {
+      "scenario": "building_train_4/phoenix_8",
+      "steps": 8640,
+      "total_reward": -261.4673006938028,
+      "mean_per_step_reward": -0.030262419061782734,
+      "cpu_seconds": 696.340595,
+      "wall_seconds": 769.5107977390289,
+      "steps_per_second_cpu": 12.407721253131882
+    },
+    {
+      "scenario": "building_train_4/singapore_3",
+      "steps": 8640,
+      "total_reward": -296.31566689770307,
+      "mean_per_step_reward": -0.03429579477982674,
+      "cpu_seconds": 701.373366,
+      "wall_seconds": 774.2081499099731,
+      "steps_per_second_cpu": 12.318688474406654
+    },
+    {
+      "scenario": "building_train_5/atlanta_6",
+      "steps": 8640,
+      "total_reward": -265.75908688913614,
+      "mean_per_step_reward": -0.0307591535751315,
+      "cpu_seconds": 712.769025,
+      "wall_seconds": 779.5753729343414,
+      "steps_per_second_cpu": 12.121738876068582
+    },
+    {
+      "scenario": "building_train_5/denver_3",
+      "steps": 8640,
+      "total_reward": -381.0454965302506,
+      "mean_per_step_reward": -0.04410248802433456,
+      "cpu_seconds": 705.061834,
+      "wall_seconds": 767.9653859138489,
+      "steps_per_second_cpu": 12.254244356105652
+    },
+    {
+      "scenario": "building_train_5/fairbanks_5",
+      "steps": 8640,
+      "total_reward": -145.88653532665785,
+      "mean_per_step_reward": -0.01688501566280762,
+      "cpu_seconds": 696.790844,
+      "wall_seconds": 737.259651184082,
+      "steps_per_second_cpu": 12.399703690710378
+    },
+    {
+      "scenario": "building_train_5/phoenix_1",
+      "steps": 8640,
+      "total_reward": -287.4216474687182,
+      "mean_per_step_reward": -0.0332663943829535,
+      "cpu_seconds": 699.1480180000001,
+      "wall_seconds": 740.9510889053345,
+      "steps_per_second_cpu": 12.357898152548291
+    },
+    {
+      "scenario": "building_train_5/singapore_4",
+      "steps": 8640,
+      "total_reward": -949.5612139157447,
+      "mean_per_step_reward": -0.10990291827728527,
+      "cpu_seconds": 699.48407,
+      "wall_seconds": 741.9646852016449,
+      "steps_per_second_cpu": 12.351961067533676
+    },
+    {
+      "scenario": "building_train_7/atlanta_8",
+      "steps": 8640,
+      "total_reward": -417.2545456190328,
+      "mean_per_step_reward": -0.048293350187388055,
+      "cpu_seconds": 344.939459,
+      "wall_seconds": 364.06722807884216,
+      "steps_per_second_cpu": 25.04787369078584
+    },
+    {
+      "scenario": "building_train_7/denver_5",
+      "steps": 8640,
+      "total_reward": -318.6307086022439,
+      "mean_per_step_reward": -0.03687855423637082,
+      "cpu_seconds": 340.348617,
+      "wall_seconds": 359.0715317726135,
+      "steps_per_second_cpu": 25.38573559122175
+    },
+    {
+      "scenario": "building_train_7/fairbanks_7",
+      "steps": 8640,
+      "total_reward": -467.1353193060895,
+      "mean_per_step_reward": -0.05406658788264925,
+      "cpu_seconds": 329.993323,
+      "wall_seconds": 351.1839301586151,
+      "steps_per_second_cpu": 26.182347937991462
+    },
+    {
+      "scenario": "building_train_7/phoenix_3",
+      "steps": 8640,
+      "total_reward": -387.30746302563045,
+      "mean_per_step_reward": -0.04482725266500352,
+      "cpu_seconds": 328.562394,
+      "wall_seconds": 348.23434710502625,
+      "steps_per_second_cpu": 26.296375232766295
+    },
+    {
+      "scenario": "building_train_7/singapore_6",
+      "steps": 8640,
+      "total_reward": -260.8707178486293,
+      "mean_per_step_reward": -0.03019337012136913,
+      "cpu_seconds": 323.86301100000003,
+      "wall_seconds": 341.14962100982666,
+      "steps_per_second_cpu": 26.67794625055221
+    },
+    {
+      "scenario": "building_train_8/atlanta_1",
+      "steps": 8640,
+      "total_reward": -267.3871566041016,
+      "mean_per_step_reward": -0.03094758756991917,
+      "cpu_seconds": 296.167531,
+      "wall_seconds": 311.75632214546204,
+      "steps_per_second_cpu": 29.172677946253334
+    },
+    {
+      "scenario": "building_train_8/denver_6",
+      "steps": 8640,
+      "total_reward": -176.93591428368927,
+      "mean_per_step_reward": -0.020478693782834408,
+      "cpu_seconds": 292.524993,
+      "wall_seconds": 306.9942350387573,
+      "steps_per_second_cpu": 29.535937806175763
+    },
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 8640,
+      "total_reward": -1384.2102924751061,
+      "mean_per_step_reward": -0.16020952459202617,
+      "cpu_seconds": 168.226174,
+      "wall_seconds": 169.22763586044312,
+      "steps_per_second_cpu": 51.359427576353255
+    }
+  ],
+  "failures": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_1/atlanta_2/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 419, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 372, in _run_scenario\n    obs, reward, terminated, truncated, _ = env.step(action)\n                                            ^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1725, in step\n    reward_value = self._get_reward()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1501, in _get_reward\n    _, reward_response = self.get_reward_info_and_response()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1474, in get_reward_info_and_response\n    reward_response = self.reward_function.compute_reward(reward_info)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 122, in compute_reward\n    self._capture(reward_info, response)\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 129, in _capture\n    ts = self.env.current_local_timestamp\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1198, in current_local_timestamp\n    return self.current_simulation_timestamp.tz_localize(self.time_zone)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pandas/_libs/tslibs/timestamps.pyx\", line 2290, in pandas._libs.tslibs.timestamps.Timestamp.tz_localize\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 180, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc_single\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 431, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc\npytz.exceptions.NonExistentTimeError: 2023-03-12 02:00:00\n"
+    },
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_2/fairbanks_2/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 419, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 372, in _run_scenario\n    obs, reward, terminated, truncated, _ = env.step(action)\n                                            ^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1725, in step\n    reward_value = self._get_reward()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1501, in _get_reward\n    _, reward_response = self.get_reward_info_and_response()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1474, in get_reward_info_and_response\n    reward_response = self.reward_function.compute_reward(reward_info)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 122, in compute_reward\n    self._capture(reward_info, response)\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 129, in _capture\n    ts = self.env.current_local_timestamp\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1198, in current_local_timestamp\n    return self.current_simulation_timestamp.tz_localize(self.time_zone)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pandas/_libs/tslibs/timestamps.pyx\", line 2290, in pandas._libs.tslibs.timestamps.Timestamp.tz_localize\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 180, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc_single\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 431, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc\npytz.exceptions.NonExistentTimeError: 2023-03-12 02:00:00\n"
+    },
+    {
+      "scenario": "building_train_4/denver_2",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_4/denver_2/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 419, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 372, in _run_scenario\n    obs, reward, terminated, truncated, _ = env.step(action)\n                                            ^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1725, in step\n    reward_value = self._get_reward()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1501, in _get_reward\n    _, reward_response = self.get_reward_info_and_response()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1474, in get_reward_info_and_response\n    reward_response = self.reward_function.compute_reward(reward_info)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 122, in compute_reward\n    self._capture(reward_info, response)\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 129, in _capture\n    ts = self.env.current_local_timestamp\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1198, in current_local_timestamp\n    return self.current_simulation_timestamp.tz_localize(self.time_zone)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pandas/_libs/tslibs/timestamps.pyx\", line 2290, in pandas._libs.tslibs.timestamps.Timestamp.tz_localize\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 180, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc_single\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 431, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc\npytz.exceptions.NonExistentTimeError: 2023-03-12 02:00:00\n"
+    },
+    {
+      "scenario": "building_train_8/fairbanks_8",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_8/fairbanks_8/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 419, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 372, in _run_scenario\n    obs, reward, terminated, truncated, _ = env.step(action)\n                                            ^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1725, in step\n    reward_value = self._get_reward()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1501, in _get_reward\n    _, reward_response = self.get_reward_info_and_response()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1474, in get_reward_info_and_response\n    reward_response = self.reward_function.compute_reward(reward_info)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 122, in compute_reward\n    self._capture(reward_info, response)\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 129, in _capture\n    ts = self.env.current_local_timestamp\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1198, in current_local_timestamp\n    return self.current_simulation_timestamp.tz_localize(self.time_zone)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pandas/_libs/tslibs/timestamps.pyx\", line 2290, in pandas._libs.tslibs.timestamps.Timestamp.tz_localize\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 180, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc_single\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 371, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc\npytz.exceptions.AmbiguousTimeError: Cannot infer dst time from 2023-11-05 01:00:00, try using the 'ambiguous' argument\n"
+    },
+    {
+      "scenario": "building_train_8/singapore_7",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_8/singapore_7/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 419, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 372, in _run_scenario\n    obs, reward, terminated, truncated, _ = env.step(action)\n                                            ^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1725, in step\n    reward_value = self._get_reward()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1501, in _get_reward\n    _, reward_response = self.get_reward_info_and_response()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1474, in get_reward_info_and_response\n    reward_response = self.reward_function.compute_reward(reward_info)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 122, in compute_reward\n    self._capture(reward_info, response)\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 129, in _capture\n    ts = self.env.current_local_timestamp\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/environment/environment.py\", line 1198, in current_local_timestamp\n    return self.current_simulation_timestamp.tz_localize(self.time_zone)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"pandas/_libs/tslibs/timestamps.pyx\", line 2290, in pandas._libs.tslibs.timestamps.Timestamp.tz_localize\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 180, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc_single\n  File \"pandas/_libs/tslibs/tzconversion.pyx\", line 371, in pandas._libs.tslibs.tzconversion.tz_localize_to_utc\npytz.exceptions.AmbiguousTimeError: Cannot infer dst time from 2023-11-05 01:00:00, try using the 'ambiguous' argument\n"
+    }
+  ]
+}

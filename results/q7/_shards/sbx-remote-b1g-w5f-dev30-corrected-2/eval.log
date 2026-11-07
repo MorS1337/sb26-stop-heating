@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.exploit_b1:ExploitB1GatedW5 --steps 8641 --sim corrected --workers 4 --tag b1g_w5f_dev30_corrected --out /kaggle/working/results/b1g_w5f_dev30_corrected --components parity --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_1/phoenix_5 building_train_2/fairbanks_2 building_train_5/denver_3 building_train_5/singapore_4 building_train_7/fairbanks_7 building_train_8/denver_6 --params {"standby_minimum": 278.0} --cenv fused --fast
+
+STDOUT
+[evalrun] tag=b1g_w5f_dev30_corrected sim=corrected policy=policies.exploit_b1:ExploitB1GatedW5 scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/b1g_w5f_dev30_corrected cenv=fused fast=on
+[evalrun] 1/7 building_train_1/phoenix_5             total=   -123.1026 mean=-0.014246 steps=8641 cpu=619.4s
+[evalrun] 2/7 building_train_1/atlanta_2             total=    -25.1135 mean=-0.002906 steps=8641 cpu=621.3s
+[evalrun] 3/7 building_train_5/denver_3              total=    -31.9389 mean=-0.003696 steps=8641 cpu=812.9s
+[evalrun] 4/7 building_train_7/fairbanks_7           total=    -66.7147 mean=-0.007721 steps=8641 cpu=424.2s
+[evalrun] 5/7 building_train_8/denver_6              total=    -26.8826 mean=-0.003111 steps=8641 cpu=311.5s
+[evalrun] 6/7 building_train_2/fairbanks_2           total=    -98.8840 mean=-0.011444 steps=8641 cpu=1174.7s
+[evalrun] 7/7 building_train_5/singapore_4           total=    -46.5807 mean=-0.005391 steps=8641 cpu=685.4s
+[evalrun] score=0.006931 scenarios=7 failed=0 wall=1324s -> /kaggle/working/results/b1g_w5f_dev30_corrected/summary.json
+
+STDERR

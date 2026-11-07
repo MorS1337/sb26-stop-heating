@@ -1,0 +1,64 @@
+{
+  "tag": "smoke_oracle_noop",
+  "policy": "policies.oracle_noop:OracleNoopCtrlW",
+  "policy_labels": [
+    "policies.oracle_noop:OracleNoopCtrlW"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 96,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [
+    "occupancy",
+    "forecast"
+  ],
+  "oracle_horizon": 12,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/smoke_oracle_noop",
+  "leaderboard_score": 3.9358907694501495e-06,
+  "mean_abs_total_reward_per_step": 3.9358907694501495e-06,
+  "mean_total_reward": -0.0003778455138672143,
+  "mean_per_step_reward": -3.9358907694501495e-06,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": 0.0,
+  "sum_energy_all": -9.679218418190714e-05,
+  "sum_carbon_all": -0.00028105333677083563,
+  "by_weather": {
+    "singapore_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 3.9358907694501495e-06,
+      "mean_total_reward": -0.0003778455138672143,
+      "mean_per_step_reward": -3.9358907694501495e-06
+    }
+  },
+  "by_building": {
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 3.9358907694501495e-06,
+      "mean_total_reward": -0.0003778455138672143,
+      "mean_per_step_reward": -3.9358907694501495e-06
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 23.914556980133057,
+    "cpu_seconds_total": 12.886496000000001,
+    "wall_seconds_sum_scenarios": 23.912256002426147,
+    "mean_cpu_seconds_per_scenario": 12.886496000000001,
+    "steps_per_second_cpu": 7.4496589297819975,
+    "steps_per_second_step_cpu": 23.632997277035614
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_8/singapore_7",
+      "steps": 96,
+      "total_reward": -0.0003778455138672143,
+      "mean_per_step_reward": -3.9358907694501495e-06,
+      "cpu_seconds": 12.886496000000001,
+      "wall_seconds": 23.912256002426147,
+      "steps_per_second_cpu": 7.4496589297819975
+    }
+  ],
+  "failures": []
+}

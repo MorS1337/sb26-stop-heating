@@ -1,0 +1,67 @@
+{
+  "tag": "tune_local_smoke",
+  "gen": 0,
+  "idx": 3,
+  "kind": "candidate",
+  "objective": 0.000833835272108748,
+  "params": {
+    "comfort_margin": 0.105277,
+    "precondition_hours": 0.503751,
+    "recovery_steps": 3.264043,
+    "comfort_cost": 47473.332891,
+    "gas_cost_ratio": 0.435838,
+    "hot_water_target": 349.211089,
+    "standby_minimum": 281.468927,
+    "standby_maximum": 306.325255,
+    "observation_delay": 1,
+    "response_scale": 0.93168,
+    "disturbance_rate": 0.606794,
+    "residual_alpha": 0.60272,
+    "correction_limit": 0.308896,
+    "disagreement_limit": 0.102759,
+    "release_hour": 13.295322,
+    "release_empty_steps": 1,
+    "gas_ratio_scale": 1.199558,
+    "early_preheat_hours": 2.162112
+  },
+  "x": [
+    0.131596,
+    0.001072,
+    0.566011,
+    0.342252,
+    0.419797,
+    0.968444,
+    0.497928,
+    0.607368,
+    0.233016,
+    0.590755,
+    0.723991,
+    0.60272,
+    0.47072,
+    0.15074,
+    0.536915,
+    0.008696,
+    0.582965,
+    0.540528
+  ],
+  "per_scenario": {
+    "building_gen_001/singapore_g2": {
+      "mean_per_step_reward": -0.000833835272108748,
+      "score": 0.000833835272108748,
+      "steps": 48,
+      "wall_s": 11.133521795272827,
+      "error": null
+    }
+  },
+  "n_failed": 0,
+  "policy": "policies.ctrl_w:CtrlW",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_w.json",
+  "space_signature": "e00280787b9db075",
+  "subset": [
+    "building_gen_001/singapore_g2"
+  ],
+  "steps": 48,
+  "sim": "shipped",
+  "components": "hook",
+  "updated": "2026-11-05T12:20:15"
+}

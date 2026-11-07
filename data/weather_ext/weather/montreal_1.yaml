@@ -1,0 +1,4 @@
+name: montreal_1
+weather_csv: csv/montreal.csv
+convection_coefficient: 24.5
+start_timestamp: 2023-01-08 06:00

@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_8/fairbanks_8",
+  "policy": "pid_water",
+  "tag": "",
+  "steps": 2880,
+  "mean_reward": -0.07492840577848862,
+  "total_reward": -215.79380864204722,
+  "last200_mean": -0.05317495820567274,
+  "wall_s": 38.3,
+  "s_per_step": 0.0133,
+  "prod_mean": -0.0528597720601182,
+  "energy_mean": 0.07445823311384679,
+  "carbon_mean": 0.14160447948285462,
+  "tmin": 282.2196350097656,
+  "tmax": 300.709228515625,
+  "frac_run": 0.33067129629629627,
+  "frac_water": 0.5888888888888889
+}

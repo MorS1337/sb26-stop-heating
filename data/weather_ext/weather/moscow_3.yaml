@@ -1,0 +1,4 @@
+name: moscow_3
+weather_csv: csv/moscow.csv
+convection_coefficient: 25.4
+start_timestamp: 2023-10-08 06:00

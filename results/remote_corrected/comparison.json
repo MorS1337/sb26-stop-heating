@@ -1,0 +1,15 @@
+{
+ "n_compared": 1,
+ "identical": true,
+ "max_abs_delta": 0.0,
+ "scenarios": [
+  {
+   "scenario": "building_gen_000/fairbanks_g0",
+   "remote_total_reward": -37.701378152589314,
+   "local_total_reward": -37.701378152589314,
+   "delta": 0.0,
+   "steps_remote": 288,
+   "steps_local": 288
+  }
+ ]
+}

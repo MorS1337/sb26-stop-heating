@@ -1,0 +1,59 @@
+{
+  "tag": "v2_final_smoke",
+  "policy": "policies.ctrl_v2:CtrlV2",
+  "policy_labels": [
+    "policies.ctrl_v2:CtrlV2"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 288,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/v2_final_smoke",
+  "leaderboard_score": 0.00215024092535158,
+  "mean_abs_total_reward_per_step": 0.00215024092535158,
+  "mean_total_reward": -0.6192693865012551,
+  "mean_per_step_reward": -0.00215024092535158,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.028471070914311003,
+  "sum_energy_all": -0.46651349176869483,
+  "sum_carbon_all": -0.12428484381860447,
+  "by_weather": {
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.00215024092535158,
+      "mean_total_reward": -0.6192693865012551,
+      "mean_per_step_reward": -0.00215024092535158
+    }
+  },
+  "by_building": {
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.00215024092535158,
+      "mean_total_reward": -0.6192693865012551,
+      "mean_per_step_reward": -0.00215024092535158
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 20.20810294151306,
+    "cpu_seconds_total": 19.344628999999998,
+    "wall_seconds_sum_scenarios": 20.206592082977295,
+    "mean_cpu_seconds_per_scenario": 19.344628999999998,
+    "steps_per_second_cpu": 14.887853367464428,
+    "steps_per_second_step_cpu": 27.37046263304613
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 288,
+      "total_reward": -0.6192693865012551,
+      "mean_per_step_reward": -0.00215024092535158,
+      "cpu_seconds": 19.344628999999998,
+      "wall_seconds": 20.206592082977295,
+      "steps_per_second_cpu": 14.887853367464428
+    }
+  ],
+  "failures": []
+}

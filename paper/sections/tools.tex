@@ -1,0 +1,37 @@
+% ---------------------------------------------------------------------------
+% Section draft: tools (fast exact simulator). Main-text version; the solver and
+% ROM detail is Appendix~\ref{app:tools}.
+% ---------------------------------------------------------------------------
+\providecommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
+\providecommand{\e}[1]{\times10^{-#1}}
+
+\section{Tools: an exact fast simulator}
+\label{sec:tools}
+
+Every claim above compares controllers on the same trajectory, so these studies are only as good
+as the number of episodes they can afford: one step costs $28.1$\,ms of CPU on the smallest
+building (thermal solve $13.7$, rest of the HVAC step $6.0$, reward and observation assembly
+$8.4$, plus the policy's $1.8$ outside \texttt{env.step}), against the $\approx\!125$\,ms per step
+the 9-hour rule allows. Both halves must fall, and neither may change
+the trajectory: a speed-up that flips a damper decision is a different experiment.
+% src: docs/fastsim_rom.md §12
+
+The whole of \texttt{env.step}---zone means, thermostat decisions, the damper floor,
+supply-air temperature, boiler and hot-water demand, gains, the finite-difference solve with
+its Woodbury air side, the air-side fold-back, convection, the observation vector and the
+reward numbers---now runs as one C call, with the policy-facing half ($\approx0.4$\,ms) and
+the array API ($\approx0.2$\,ms) left in Python. % src: cenv/fused.py docstring
+Two simulator behaviours dictated the design (the boiler's sensor mutates the tank on every read,
+and zone thermal power is assigned rather than accumulated), and the kernel reproduces both.
+The gate is twelve closed-loop episodes (three buildings, both trees, two occupancy seeds) with
+observations and rewards bit-identical in all twelve ($\max|\Delta r_t|=0.0$; zone temperatures
+$\le1.2\e{15}$ relative, i.e.\ the policy-visible quantities are bit-identical, not the
+field), plus full 8\,641-step traces on both trees identical to the last bit.
+Cost per step falls from $20.5$ to $9.6$\,ms on the 30-zone building ($2.1\times$),
+$49.8\to27.8$ ($1.8\times$) on the 79-zone one and $67.6\to42.0$ ($1.6\times$) on the 85-zone one; five pure-Python
+patches recover $1.6$--$1.9\times$ where C is unavailable. % src: cenv/fused.py "Gate", "Measured"; docs/fast_exact.md
+The shipped SuperLU is already optimal for a single right-hand side, batching is worth
+$4.1$--$4.9\times$, a correct GPU solver loses to one CPU core, and a $200$-mode reduced model
+drifts $1.0$--$1.2$\,K yet reproduces a five-way policy ranking exactly---a shortlisting filter,
+not a simulator (Table~\ref{tab:tools}, Appendix~\ref{app:tools}).
+% src: docs/solver_cpu.md §1-4, docs/solver_gpu.md, docs/fastsim_rom.md §5.4-5.5, §13

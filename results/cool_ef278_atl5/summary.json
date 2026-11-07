@@ -1,0 +1,29 @@
+{
+  "tag": "cool_ef278_atl5",
+  "policy": "policies.ctrl_w5:CtrlW5",
+  "sim": "shipped",
+  "steps": 2016,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cool_ef278_atl5",
+  "wall_seconds": 95.10787391662598,
+  "scenarios": [
+    {
+      "scenario": "building_train_4/atlanta_5",
+      "error": null,
+      "mean_per_step_reward": -0.0057485162839120965,
+      "total_reward": -11.589008828366786,
+      "reconciliation": {
+        "loss_from_components": -11.294804511512803,
+        "loss_from_reward_terms": -11.294804499843213,
+        "loss_recomputed_from_powers": -11.294804511512805,
+        "energy_from_powers": -9.15788230601396,
+        "energy_from_reward": -9.157882298363894,
+        "carbon_from_powers": -2.136922205498844,
+        "carbon_from_reward": -2.1369222014793197,
+        "rel_error_vs_reward_terms": 1.0331820917426058e-09,
+        "rel_error_energy": 8.353531112051093e-10,
+        "rel_error_carbon": 1.8809876495273203e-09,
+        "rel_error_combined_powers_vs_reward": 1.0331822490146364e-09
+      }
+    }
+  ]
+}

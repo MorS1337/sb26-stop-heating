@@ -1,0 +1,75 @@
+{
+  "tag": "tune_remote_demo",
+  "gen": 1,
+  "idx": 0,
+  "kind": "candidate",
+  "objective": 0.002432031233755399,
+  "params": {
+    "comfort_margin": 0.040531,
+    "precondition_hours": 1.465616,
+    "recovery_steps": 1.577619,
+    "comfort_cost": 28926.950405,
+    "gas_cost_ratio": 0.371746,
+    "hot_water_target": 340.309495,
+    "standby_minimum": 279.441513,
+    "standby_maximum": 307.901941,
+    "observation_delay": 1,
+    "response_scale": 0.994155,
+    "disturbance_rate": 0.411062,
+    "residual_alpha": 0.394207,
+    "correction_limit": 0.338961,
+    "disagreement_limit": 0.325022,
+    "release_hour": 9.960948,
+    "release_empty_steps": 5,
+    "gas_ratio_scale": 0.824174,
+    "early_preheat_hours": 2.499928
+  },
+  "x": [
+    0.050663,
+    0.27589,
+    0.144405,
+    0.146113,
+    0.339682,
+    0.61238,
+    0.362768,
+    0.700114,
+    0.039039,
+    0.660172,
+    0.444374,
+    0.394207,
+    0.525383,
+    0.785778,
+    0.120119,
+    0.38988,
+    0.270145,
+    0.624982
+  ],
+  "per_scenario": {
+    "building_gen_001/singapore_g2": {
+      "mean_per_step_reward": -0.004470636145242679,
+      "score": 0.004470636145242679,
+      "steps": 288,
+      "wall_s": 131.06931114196777,
+      "error": null
+    },
+    "building_gen_012/fairbanks_g4": {
+      "mean_per_step_reward": -0.00039342632226811876,
+      "score": 0.00039342632226811876,
+      "steps": 288,
+      "wall_s": 137.3588387966156,
+      "error": null
+    }
+  },
+  "n_failed": 0,
+  "policy": "policies.ctrl_w:CtrlW",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_w.json",
+  "space_signature": "e00280787b9db075",
+  "subset": [
+    "building_gen_001/singapore_g2",
+    "building_gen_012/fairbanks_g4"
+  ],
+  "steps": 288,
+  "sim": "shipped",
+  "components": "hook",
+  "updated": "2026-11-05T12:01:34"
+}

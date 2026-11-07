@@ -1,0 +1,1260 @@
+{
+  "scenario": "building_train_2/atlanta_3",
+  "sim": "shipped",
+  "steps": 8641,
+  "num_zones": 87,
+  "num_ahus": 9,
+  "num_vavs": 85,
+  "first_local_timestamp": "6.0",
+  "total_reward": -24.79903363977155,
+  "mean_per_step_reward": -0.002869926355719425,
+  "loss_comfort": -0.2238752030749424,
+  "loss_energy": -19.1830812889395,
+  "loss_carbon": -5.392077128915116,
+  "reconciliation": {
+    "loss_from_components": -24.575158429826597,
+    "loss_from_reward_terms": -24.575158417854617,
+    "loss_recomputed_from_powers": -24.575158429826597,
+    "energy_from_powers": -19.183081298521028,
+    "energy_from_reward": -19.1830812889395,
+    "carbon_from_powers": -5.392077131305566,
+    "carbon_from_reward": -5.392077128915116,
+    "rel_error_vs_reward_terms": 4.871578256603113e-10,
+    "rel_error_energy": 4.994779795205411e-10,
+    "rel_error_carbon": 4.433263024393741e-10,
+    "rel_error_combined_powers_vs_reward": 4.871578256603113e-10
+  },
+  "diagnostics": {
+    "coil_saturation_median": 0.006969617515984637,
+    "heating_steps": 434,
+    "vent_exceeds_coil_share": 0.9400921658986175,
+    "vent_to_coil_median": 13.46195472796727
+  },
+  "fuel_totals": {
+    "gas_billed_sum": 10880780.00595299,
+    "gas_coil_sum": 3351927.2522708364,
+    "gas_standby_sum": 379687.62120030844,
+    "reheat_sum": 3008565.071055323,
+    "reheat_cf_sum": 2895486.5514854444,
+    "vent_analytic_sum": -65245504.591216154,
+    "chiller_electrical_sum": 74550625.74099606,
+    "chiller_vent_sum": 4713907.381620314,
+    "coil_thermal_sum": -260927190.0934862,
+    "coil_cf_thermal_sum": -323944812.7275604,
+    "fan_supply_sum": 9210179.904662212,
+    "fan_exhaust_sum": 5665697.977815387,
+    "pump_sum": 232.437257340575
+  },
+  "components": {
+    "heat_vent": {
+      "loss_total": -0.013536372909845898,
+      "energy_total": -0.003267716968451785,
+      "carbon_total": -0.01026865594139411,
+      "loss_by_bucket": {
+        "weekday_occupied": -0.008917880317640773,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.004618492592205124,
+        "preheat__steps": 528,
+        "weekday_night": 0.0,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "heat_rest": {
+      "loss_total": -0.3870585944265357,
+      "energy_total": -0.09319987738036074,
+      "carbon_total": -0.293858717046175,
+      "loss_by_bucket": {
+        "weekday_occupied": -0.2549226387108957,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.13213595571563996,
+        "preheat__steps": 528,
+        "weekday_night": 0.0,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "boiler_standby": {
+      "loss_total": -0.9057850745111864,
+      "energy_total": -0.2211715439562759,
+      "carbon_total": -0.6846135305549105,
+      "loss_by_bucket": {
+        "weekday_occupied": -0.2744580178989464,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.5688138693414028,
+        "preheat__steps": 528,
+        "weekday_night": -0.032692088005587136,
+        "weekday_night__steps": 2316,
+        "weekend": -0.029821099265249895,
+        "weekend__steps": 2519
+      }
+    },
+    "cool_vent": {
+      "loss_total": -1.2360241427313767,
+      "energy_total": -1.000395371841568,
+      "carbon_total": -0.2356287708898089,
+      "loss_by_bucket": {
+        "weekday_occupied": -1.234724566145359,
+        "weekday_occupied__steps": 3278,
+        "preheat": 0.0,
+        "preheat__steps": 528,
+        "weekday_night": -0.0012995765860180357,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "cool_rest": {
+      "loss_total": -18.20315446830012,
+      "energy_total": -14.752612825005968,
+      "carbon_total": -3.4505416432941516,
+      "loss_by_bucket": {
+        "weekday_occupied": -17.937198108447202,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.18233128438503965,
+        "preheat__steps": 528,
+        "weekday_night": -0.08362507546787779,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "fan_supply": {
+      "loss_total": -2.3737358092267353,
+      "energy_total": -1.928511841468377,
+      "carbon_total": -0.4452239677583584,
+      "loss_by_bucket": {
+        "weekday_occupied": -2.1349110670762776,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.22244332655863078,
+        "preheat__steps": 528,
+        "weekday_night": -0.016381415591827382,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "fan_exhaust": {
+      "loss_total": -1.4558064171867096,
+      "energy_total": -1.1838749833864024,
+      "carbon_total": -0.27193143380030727,
+      "loss_by_bucket": {
+        "weekday_occupied": -1.283520536802666,
+        "weekday_occupied__steps": 3278,
+        "preheat": -0.15869008600599555,
+        "preheat__steps": 528,
+        "weekday_night": -0.013595794378048106,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    },
+    "pump": {
+      "loss_total": -5.755053408606684e-05,
+      "energy_total": -4.7138513625306446e-05,
+      "carbon_total": -1.0412020460760383e-05,
+      "loss_by_bucket": {
+        "weekday_occupied": -3.2122358173003594e-05,
+        "weekday_occupied__steps": 3278,
+        "preheat": -2.5428175913063234e-05,
+        "preheat__steps": 528,
+        "weekday_night": 0.0,
+        "weekday_night__steps": 2316,
+        "weekend": 0.0,
+        "weekend__steps": 2519
+      }
+    }
+  },
+  "by_bucket_total": {
+    "weekday_occupied": -23.128684937757164,
+    "weekday_occupied__steps": 3278,
+    "preheat": -1.2690584427748268,
+    "preheat__steps": 528,
+    "weekday_night": -0.14759395002935846,
+    "weekday_night__steps": 2316,
+    "weekend": -0.029821099265249895,
+    "weekend__steps": 2519
+  },
+  "by_hour": {
+    "0": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.005271913968661439,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.005271913968661439
+    },
+    "1": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.0054242349809107224,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.0054242349809107224
+    },
+    "2": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.005533677998427715,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.005533677998427715
+    },
+    "3": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.005620537966070207,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.005620537966070207
+    },
+    "4": {
+      "heat_vent": -3.220857198233337e-05,
+      "heat_rest": -0.0016676628273881537,
+      "boiler_standby": -0.043975627655071056,
+      "cool_vent": 0.0,
+      "cool_rest": -0.08359319352274779,
+      "fan_supply": -0.08710463757419998,
+      "fan_exhaust": -0.05998802403901699,
+      "pump": -5.350949116563622e-08,
+      "total": -0.2763614076998975
+    },
+    "5": {
+      "heat_vent": -0.004586284020222791,
+      "heat_rest": -0.13046829288825182,
+      "boiler_standby": -0.5276098051675356,
+      "cool_vent": 0.0,
+      "cool_rest": -0.09873809086229186,
+      "fan_supply": -0.13533868898443077,
+      "fan_exhaust": -0.09870206196697856,
+      "pump": -2.53746664218976e-05,
+      "total": -0.9954685985561333
+    },
+    "6": {
+      "heat_vent": -0.006699696170190574,
+      "heat_rest": -0.1663290436710251,
+      "boiler_standby": -0.24279187789887813,
+      "cool_vent": 0.0,
+      "cool_rest": -0.36687668858631167,
+      "fan_supply": -0.21373311890930496,
+      "fan_exhaust": -0.17718143504142575,
+      "pump": -2.8581784621492896e-05,
+      "total": -1.1736404420617577
+    },
+    "7": {
+      "heat_vent": -0.0020288480337068916,
+      "heat_rest": -0.06760228021891504,
+      "boiler_standby": -0.00714906624674747,
+      "cool_vent": -0.01018140123308867,
+      "cool_rest": -0.7156003552916099,
+      "fan_supply": -0.19051902864404124,
+      "fan_exhaust": -0.14358775849631866,
+      "pump": -3.3151531978496473e-06,
+      "total": -1.136672053317626
+    },
+    "8": {
+      "heat_vent": -0.00016926281058477605,
+      "heat_rest": -0.017686768784533402,
+      "boiler_standby": -0.006632554582931473,
+      "cool_vent": -0.03408091293529192,
+      "cool_rest": -0.9525751509157605,
+      "fan_supply": -0.18586249272729788,
+      "fan_exhaust": -0.13271081091543585,
+      "pump": -2.1383790387879198e-07,
+      "total": -1.3297181675097396
+    },
+    "9": {
+      "heat_vent": -2.0050205402008793e-05,
+      "heat_rest": -0.002659021128962005,
+      "boiler_standby": -0.005927592024763457,
+      "cool_vent": -0.06939196222250886,
+      "cool_rest": -1.2326891114014957,
+      "fan_supply": -0.1670560225574531,
+      "fan_exhaust": -0.10191037808725475,
+      "pump": -1.0802564407943989e-08,
+      "total": -1.5796541484304043
+    },
+    "10": {
+      "heat_vent": -2.1520569835182453e-08,
+      "heat_rest": -0.0005010202240521444,
+      "boiler_standby": -0.004629703765629591,
+      "cool_vent": -0.10341502256504947,
+      "cool_rest": -1.4261780815778056,
+      "fan_supply": -0.14691201620624056,
+      "fan_exhaust": -0.0733503118820604,
+      "pump": -7.437291034640514e-10,
+      "total": -1.7549861784851366
+    },
+    "11": {
+      "heat_vent": -1.573833839927547e-09,
+      "heat_rest": -0.0001328589152413305,
+      "boiler_standby": -0.0034867121385609807,
+      "cool_vent": -0.11858517379472935,
+      "cool_rest": -1.5229358733806744,
+      "fan_supply": -0.1468825477610798,
+      "fan_exhaust": -0.07448354044924421,
+      "pump": -3.5692412521437156e-11,
+      "total": -1.8665067080490565
+    },
+    "12": {
+      "heat_vent": -3.3528463577488205e-12,
+      "heat_rest": -1.1645768166678293e-05,
+      "boiler_standby": -0.0024447216362019743,
+      "cool_vent": -0.14457275672741265,
+      "cool_rest": -1.6731282939039267,
+      "fan_supply": -0.15012489412662022,
+      "fan_exhaust": -0.0756491304120796,
+      "pump": -4.638583320117603e-13,
+      "total": -2.0459314425782247
+    },
+    "13": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.002335060740166937,
+      "cool_vent": -0.176768606718267,
+      "cool_rest": -1.7843759351485722,
+      "fan_supply": -0.14869393276202736,
+      "fan_exhaust": -0.07428352247679135,
+      "pump": 0.0,
+      "total": -2.1864570578458244
+    },
+    "14": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.00199432988018191,
+      "cool_vent": -0.1748688588278055,
+      "cool_rest": -1.8096249398253528,
+      "fan_supply": -0.14897335324963146,
+      "fan_exhaust": -0.07641976916721453,
+      "pump": 0.0,
+      "total": -2.2118812509501864
+    },
+    "15": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.0021200510337014483,
+      "cool_vent": -0.1526556204657932,
+      "cool_rest": -1.7952844828904415,
+      "fan_supply": -0.15104102648351098,
+      "fan_exhaust": -0.07783975664642427,
+      "pump": 0.0,
+      "total": -2.1789409375198714
+    },
+    "16": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.002551429104961855,
+      "cool_vent": -0.11515249985380481,
+      "cool_rest": -1.6881578985381385,
+      "fan_supply": -0.15619492935485638,
+      "fan_exhaust": -0.08561606112421724,
+      "pump": 0.0,
+      "total": -2.047672817975979
+    },
+    "17": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.0030237110688788767,
+      "cool_vent": -0.08884330312100239,
+      "cool_rest": -1.5774028125888604,
+      "fan_supply": -0.16068801956997356,
+      "fan_exhaust": -0.08724353628184803,
+      "pump": 0.0,
+      "total": -1.9172013826305632
+    },
+    "18": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.0035768007379100757,
+      "cool_vent": -0.04620844768060504,
+      "cool_rest": -1.3923684843982507,
+      "fan_supply": -0.16822968472423994,
+      "fan_exhaust": -0.10324452582235134,
+      "pump": 0.0,
+      "total": -1.713627943363357
+    },
+    "19": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.00414204947900508,
+      "cool_vent": -0.0012995765860180357,
+      "cool_rest": -0.08362507546787779,
+      "fan_supply": -0.016381415591827382,
+      "fan_exhaust": -0.013595794378048105,
+      "pump": 0.0,
+      "total": -0.11904391150277639
+    },
+    "20": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.0046071040932120656,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.0046071040932120656
+    },
+    "21": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.004829140271720702,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.004829140271720702
+    },
+    "22": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.004977942766829929,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.004977942766829929
+    },
+    "23": {
+      "heat_vent": 0.0,
+      "heat_rest": 0.0,
+      "boiler_standby": -0.005129429304227625,
+      "cool_vent": 0.0,
+      "cool_rest": 0.0,
+      "fan_supply": 0.0,
+      "fan_exhaust": 0.0,
+      "pump": 0.0,
+      "total": -0.005129429304227625
+    }
+  },
+  "ahu": {
+    "ahu_1": {
+      "airflow_mean": 0.33740880945579926,
+      "recirculation_mean": 0.6113297815552438,
+      "outside_air_fraction_mean": 0.38867021844475624,
+      "return_temp_mean": 297.02040350379445,
+      "mixed_temp_mean": 295.84201936603887,
+      "supply_temp_mean": 293.07898130029065,
+      "coil_thermal_mean": -2420.443456312293,
+      "chiller_electrical_mean": -691.5552732320838,
+      "fan_supply_mean": 77.93095060155538,
+      "fan_exhaust_mean": 44.57533064762126
+    },
+    "ahu_2": {
+      "airflow_mean": 0.4528063303166599,
+      "recirculation_mean": 0.6086587413098715,
+      "outside_air_fraction_mean": 0.3913412586901285,
+      "return_temp_mean": 297.1860234639666,
+      "mixed_temp_mean": 295.935910793434,
+      "supply_temp_mean": 293.2379500893986,
+      "coil_thermal_mean": -2697.917170410874,
+      "chiller_electrical_mean": -770.8334772602495,
+      "fan_supply_mean": 101.2170565355333,
+      "fan_exhaust_mean": 60.44138387453274
+    },
+    "ahu_3": {
+      "airflow_mean": 0.6101262414138263,
+      "recirculation_mean": 0.5880581402982803,
+      "outside_air_fraction_mean": 0.4119418597017197,
+      "return_temp_mean": 297.5608009756859,
+      "mixed_temp_mean": 296.0372960408116,
+      "supply_temp_mean": 293.15560778745424,
+      "coil_thermal_mean": -3888.450810054654,
+      "chiller_electrical_mean": -1110.9859457299012,
+      "fan_supply_mean": 139.0612433120154,
+      "fan_exhaust_mean": 92.86902542692478
+    },
+    "ahu_4": {
+      "airflow_mean": 0.6894646564547562,
+      "recirculation_mean": 0.5912261427780114,
+      "outside_air_fraction_mean": 0.40877385722198856,
+      "return_temp_mean": 297.3276276036269,
+      "mixed_temp_mean": 295.90577542547186,
+      "supply_temp_mean": 293.14920466730945,
+      "coil_thermal_mean": -4488.566935036564,
+      "chiller_electrical_mean": -1282.447695724733,
+      "fan_supply_mean": 155.95522281881836,
+      "fan_exhaust_mean": 100.55500499733398
+    },
+    "ahu_5": {
+      "airflow_mean": 0.36259469469981814,
+      "recirculation_mean": 0.6571418520353304,
+      "outside_air_fraction_mean": 0.3428581479646696,
+      "return_temp_mean": 296.54405921859154,
+      "mixed_temp_mean": 295.6750812032421,
+      "supply_temp_mean": 293.19915304425353,
+      "coil_thermal_mean": -2559.0835630457536,
+      "chiller_electrical_mean": -731.1667322987869,
+      "fan_supply_mean": 80.5920886110591,
+      "fan_exhaust_mean": 40.00582047430227
+    },
+    "ahu_6": {
+      "airflow_mean": 0.5187360579118011,
+      "recirculation_mean": 0.6152224229132877,
+      "outside_air_fraction_mean": 0.38477757708671234,
+      "return_temp_mean": 297.00401643231424,
+      "mixed_temp_mean": 295.8299095782392,
+      "supply_temp_mean": 293.12997661847527,
+      "coil_thermal_mean": -3250.859627022181,
+      "chiller_electrical_mean": -928.8170362920517,
+      "fan_supply_mean": 117.2589875397406,
+      "fan_exhaust_mean": 67.55439092602359
+    },
+    "ahu_7": {
+      "airflow_mean": 0.5816119188654457,
+      "recirculation_mean": 0.5859863981061367,
+      "outside_air_fraction_mean": 0.41401360189386327,
+      "return_temp_mean": 297.54443783598947,
+      "mixed_temp_mean": 295.99874837451534,
+      "supply_temp_mean": 293.32961187524626,
+      "coil_thermal_mean": -3405.9906795064076,
+      "chiller_electrical_mean": -973.1401941446879,
+      "fan_supply_mean": 131.46945077108043,
+      "fan_exhaust_mean": 88.23235649271658
+    },
+    "ahu_8": {
+      "airflow_mean": 0.5864487614631414,
+      "recirculation_mean": 0.5857056618916355,
+      "outside_air_fraction_mean": 0.41429433810836447,
+      "return_temp_mean": 297.5848179321633,
+      "mixed_temp_mean": 296.025598420119,
+      "supply_temp_mean": 293.1382886220175,
+      "coil_thermal_mean": -3637.414903198033,
+      "chiller_electrical_mean": -1039.2614009137235,
+      "fan_supply_mean": 132.51156475958865,
+      "fan_exhaust_mean": 90.35968785783298
+    },
+    "ahu_9": {
+      "airflow_mean": 0.5802463022980776,
+      "recirculation_mean": 0.6295316867869205,
+      "outside_air_fraction_mean": 0.3704683132130795,
+      "return_temp_mean": 296.8896058780074,
+      "mixed_temp_mean": 295.8200873719367,
+      "supply_temp_mean": 293.21412475886206,
+      "coil_thermal_mean": -3847.6841612211524,
+      "chiller_electrical_mean": -1099.338331777472,
+      "fan_supply_mean": 129.8731150254047,
+      "fan_exhaust_mean": 71.08319162019673
+    }
+  },
+  "vav_columns": [
+    "flow",
+    "reheat",
+    "reheat_cf",
+    "damper",
+    "valve",
+    "zone_temp"
+  ],
+  "vav_means": {
+    "VAV_1": {
+      "flow_mean": 0.029087305218953044,
+      "reheat_mean": 42.50603258629665,
+      "damper_mean": 0.10304108704216657,
+      "valve_mean": 0.0417906131550968,
+      "zone_temp_mean": 295.81015916404937
+    },
+    "VAV_10": {
+      "flow_mean": 0.05325606750956006,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1403658788570609,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5258426687597
+    },
+    "VAV_11": {
+      "flow_mean": 0.047288676096125914,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13095710392614135,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.3328045854041
+    },
+    "VAV_12": {
+      "flow_mean": 0.052065096972582166,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1384796673694759,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5685585772615
+    },
+    "VAV_13": {
+      "flow_mean": 0.03348263058859819,
+      "reheat_mean": 0.5526660087659525,
+      "damper_mean": 0.10921451754556764,
+      "valve_mean": 0.00016209649730647497,
+      "zone_temp_mean": 296.7857963568486
+    },
+    "VAV_14": {
+      "flow_mean": 0.05691686862013033,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.14615157256936492,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5868924848064
+    },
+    "VAV_15": {
+      "flow_mean": 0.11563818061201309,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.23877221766534662,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.8082965713171
+    },
+    "VAV_16": {
+      "flow_mean": 0.05925708069837263,
+      "reheat_mean": 0.0640194024957439,
+      "damper_mean": 0.14939208420983152,
+      "valve_mean": 1.3114463509046539e-05,
+      "zone_temp_mean": 297.0886732411045
+    },
+    "VAV_17": {
+      "flow_mean": 0.06928261276024131,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.16466184806222237,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.88741544067943
+    },
+    "VAV_18": {
+      "flow_mean": 0.05907449707330729,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1487065799754191,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.88217823591765
+    },
+    "VAV_19": {
+      "flow_mean": 0.029174193090331604,
+      "reheat_mean": 16.785433454989743,
+      "damper_mean": 0.10223958441510603,
+      "valve_mean": 0.010826907894178447,
+      "zone_temp_mean": 296.18023252186066
+    },
+    "VAV_2": {
+      "flow_mean": 0.03260328145852166,
+      "reheat_mean": 1.3762013952975303,
+      "damper_mean": 0.10848599380398913,
+      "valve_mean": 0.00044507969172102147,
+      "zone_temp_mean": 296.635918302544
+    },
+    "VAV_20": {
+      "flow_mean": 0.0341760713721668,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1099314189125523,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.2270063279503
+    },
+    "VAV_21": {
+      "flow_mean": 0.048543356741833424,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13227793831624396,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.715711269859
+    },
+    "VAV_22": {
+      "flow_mean": 0.146693771019102,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.2856935314634942,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 298.0007848486684
+    },
+    "VAV_23": {
+      "flow_mean": 0.04489669297159157,
+      "reheat_mean": 0.01565749733452716,
+      "damper_mean": 0.1268417845706589,
+      "valve_mean": 3.200812881128916e-06,
+      "zone_temp_mean": 297.1360216941119
+    },
+    "VAV_24": {
+      "flow_mean": 0.04283603523067782,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.12336166808553048,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.75770978628407
+    },
+    "VAV_25": {
+      "flow_mean": 0.07624831281935433,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.17559262913502063,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.7325686774911
+    },
+    "VAV_26": {
+      "flow_mean": 0.08036328361210586,
+      "reheat_mean": 16.864997318365326,
+      "damper_mean": 0.18299845267247164,
+      "valve_mean": 0.006932992723967353,
+      "zone_temp_mean": 296.4713260495208
+    },
+    "VAV_27": {
+      "flow_mean": 0.02812014939464499,
+      "reheat_mean": 0.45902042452874037,
+      "damper_mean": 0.10063400360020677,
+      "valve_mean": 0.00013841696737982749,
+      "zone_temp_mean": 296.53302409846316
+    },
+    "VAV_28": {
+      "flow_mean": 0.13727119167024965,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.2716677479301941,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.80193453768106
+    },
+    "VAV_29": {
+      "flow_mean": 0.10017026248072226,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.21348225509053978,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.50286023646305
+    },
+    "VAV_3": {
+      "flow_mean": 0.0438632280937744,
+      "reheat_mean": 0.3354894597631651,
+      "damper_mean": 0.12599913510386695,
+      "valve_mean": 8.160849851447804e-05,
+      "zone_temp_mean": 296.9026020093181
+    },
+    "VAV_30": {
+      "flow_mean": 0.08139503902496906,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.18398815379928019,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.90884267613023
+    },
+    "VAV_31": {
+      "flow_mean": 0.02819177772573559,
+      "reheat_mean": 0.6607968124422902,
+      "damper_mean": 0.10074772826914241,
+      "valve_mean": 0.00020579075098672324,
+      "zone_temp_mean": 296.52011906307445
+    },
+    "VAV_32": {
+      "flow_mean": 0.0710212989382324,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1677469635000109,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.53703492699196
+    },
+    "VAV_33": {
+      "flow_mean": 0.07228849025033068,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1697111653227619,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.6360074831814
+    },
+    "VAV_34": {
+      "flow_mean": 0.03838880826834922,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.11660455388060437,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.31859723506483
+    },
+    "VAV_35": {
+      "flow_mean": 0.05231073745256906,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13840441730491213,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.494120233421
+    },
+    "VAV_36": {
+      "flow_mean": 0.029227794801338514,
+      "reheat_mean": 1.9982051870077582,
+      "damper_mean": 0.10958222810516562,
+      "valve_mean": 0.0006850389863947809,
+      "zone_temp_mean": 296.57127508112546
+    },
+    "VAV_37": {
+      "flow_mean": 0.036472157097536116,
+      "reheat_mean": 0.9252362389722584,
+      "damper_mean": 0.12103565900141743,
+      "valve_mean": 0.00028218778177704364,
+      "zone_temp_mean": 296.8124658560078
+    },
+    "VAV_38": {
+      "flow_mean": 0.03740734765781141,
+      "reheat_mean": 1.6769759986788852,
+      "damper_mean": 0.12251428121453209,
+      "valve_mean": 0.0005532574900569856,
+      "zone_temp_mean": 296.7484450002811
+    },
+    "VAV_39": {
+      "flow_mean": 0.0363310990185474,
+      "reheat_mean": 3.331999050531459,
+      "damper_mean": 0.12081266336040411,
+      "valve_mean": 0.001214081091042567,
+      "zone_temp_mean": 296.6421288237161
+    },
+    "VAV_4": {
+      "flow_mean": 0.17254708218124296,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.32496037565093255,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.612529589733
+    },
+    "VAV_40": {
+      "flow_mean": 0.028506175281982897,
+      "reheat_mean": 37.727820325951356,
+      "damper_mean": 0.108444330141426,
+      "valve_mean": 0.02842320117419578,
+      "zone_temp_mean": 295.96953551223083
+    },
+    "VAV_41": {
+      "flow_mean": 0.050347052541290266,
+      "reheat_mean": 3.9745628910562796,
+      "damper_mean": 0.1429711133996972,
+      "valve_mean": 0.0013935505178098587,
+      "zone_temp_mean": 296.71297783163305
+    },
+    "VAV_42": {
+      "flow_mean": 0.030815285702675378,
+      "reheat_mean": 6.146424777085204,
+      "damper_mean": 0.1120923663100329,
+      "valve_mean": 0.0025748316232645737,
+      "zone_temp_mean": 296.5622071301531
+    },
+    "VAV_43": {
+      "flow_mean": 0.03110271063415474,
+      "reheat_mean": 38.0433486956121,
+      "damper_mean": 0.11254947747970095,
+      "valve_mean": 0.027654801018880123,
+      "zone_temp_mean": 296.02015450452717
+    },
+    "VAV_44": {
+      "flow_mean": 0.0394069978266991,
+      "reheat_mean": 8.810788968705094,
+      "damper_mean": 0.12567540184861878,
+      "valve_mean": 0.00363802679461636,
+      "zone_temp_mean": 296.48443460520514
+    },
+    "VAV_45": {
+      "flow_mean": 0.043041458005390276,
+      "reheat_mean": 0.7537635300898001,
+      "damper_mean": 0.13142154119092275,
+      "valve_mean": 0.00022556927728095604,
+      "zone_temp_mean": 296.8637257308647
+    },
+    "VAV_46": {
+      "flow_mean": 0.03290537521984391,
+      "reheat_mean": 0.38778504534547664,
+      "damper_mean": 0.10857223473810901,
+      "valve_mean": 0.00010343782535624054,
+      "zone_temp_mean": 296.8649286482549
+    },
+    "VAV_47": {
+      "flow_mean": 0.02926779669350975,
+      "reheat_mean": 0.5271822517621724,
+      "damper_mean": 0.10286851707893782,
+      "valve_mean": 0.00015283445905803076,
+      "zone_temp_mean": 296.75088382993306
+    },
+    "VAV_48": {
+      "flow_mean": 0.03165086845647191,
+      "reheat_mean": 0.6286478308120822,
+      "damper_mean": 0.10660412526837021,
+      "valve_mean": 0.00018863936787249797,
+      "zone_temp_mean": 296.78956976950104
+    },
+    "VAV_49": {
+      "flow_mean": 0.052540796923819584,
+      "reheat_mean": 33.27177532909384,
+      "damper_mean": 0.139675520916612,
+      "valve_mean": 0.01842535815433749,
+      "zone_temp_mean": 296.21822099185044
+    },
+    "VAV_5": {
+      "flow_mean": 0.029770714748653296,
+      "reheat_mean": 4.896606845717044,
+      "damper_mean": 0.10409479921938244,
+      "valve_mean": 0.0019585488226358267,
+      "zone_temp_mean": 296.5551013471668
+    },
+    "VAV_50": {
+      "flow_mean": 0.09698977280229557,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.20873187813559088,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.494689179071
+    },
+    "VAV_51": {
+      "flow_mean": 0.043202598434672446,
+      "reheat_mean": 0.9027750033677566,
+      "damper_mean": 0.12479611185120983,
+      "valve_mean": 0.00026591658978505813,
+      "zone_temp_mean": 296.7536322322882
+    },
+    "VAV_52": {
+      "flow_mean": 0.06928847277854445,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.16534910455661686,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5777623527794
+    },
+    "VAV_53": {
+      "flow_mean": 0.047348622697828587,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13097446765657958,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.28944577305333
+    },
+    "VAV_54": {
+      "flow_mean": 0.04102604197425929,
+      "reheat_mean": 3.231320409003583,
+      "damper_mean": 0.12141391699850222,
+      "valve_mean": 0.0011211268887477345,
+      "zone_temp_mean": 296.6092224030337
+    },
+    "VAV_55": {
+      "flow_mean": 0.07457254563035894,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.17363433094919176,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.75573898734314
+    },
+    "VAV_56": {
+      "flow_mean": 0.08859806742623592,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.19552722532927697,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.7280131306963
+    },
+    "VAV_57": {
+      "flow_mean": 0.08514511964033569,
+      "reheat_mean": 1.9331644852349816,
+      "damper_mean": 0.19045196691813146,
+      "valve_mean": 0.000530641804054895,
+      "zone_temp_mean": 296.75117636375217
+    },
+    "VAV_58": {
+      "flow_mean": 0.05891051256341026,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.1489241375020637,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.59484209093415
+    },
+    "VAV_59": {
+      "flow_mean": 0.05111844232150789,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13665373349007656,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.79489330654803
+    },
+    "VAV_6": {
+      "flow_mean": 0.029571763198468343,
+      "reheat_mean": 6.998270119092627,
+      "damper_mean": 0.10378900705947189,
+      "valve_mean": 0.0029653479670529123,
+      "zone_temp_mean": 296.43904072302297
+    },
+    "VAV_60": {
+      "flow_mean": 0.04953956872141079,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.13416207300997243,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.85845381692684
+    },
+    "VAV_61": {
+      "flow_mean": 0.044442366112882936,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.12616570792793055,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.887246565308
+    },
+    "VAV_62": {
+      "flow_mean": 0.07178964755815895,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.16910065777350627,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.9389515247707
+    },
+    "VAV_63": {
+      "flow_mean": 0.05157610141362785,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.137359550694958,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.896694352891
+    },
+    "VAV_64": {
+      "flow_mean": 0.04009476456812604,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.11936490149868266,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.7436346723849
+    },
+    "VAV_65": {
+      "flow_mean": 0.04045375719384031,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.11992936564904512,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5929937621722
+    },
+    "VAV_66": {
+      "flow_mean": 0.048651584310296925,
+      "reheat_mean": 0.17308828072684396,
+      "damper_mean": 0.13295873175091166,
+      "valve_mean": 3.775660741413347e-05,
+      "zone_temp_mean": 296.9609855511452
+    },
+    "VAV_67": {
+      "flow_mean": 0.0444125038492603,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.12608738991207388,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.921388624765
+    },
+    "VAV_68": {
+      "flow_mean": 0.05916967285695537,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.14932523975009765,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.6341724561974
+    },
+    "VAV_69": {
+      "flow_mean": 0.06819537458127943,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.16346069861032278,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.8386141170228
+    },
+    "VAV_7": {
+      "flow_mean": 0.03298698254861458,
+      "reheat_mean": 7.499098812671401,
+      "damper_mean": 0.10847003201742497,
+      "valve_mean": 0.0032039138746818947,
+      "zone_temp_mean": 296.41750376943384
+    },
+    "VAV_70": {
+      "flow_mean": 0.12686989739331997,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.25554734272491103,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.9369675701273
+    },
+    "VAV_71": {
+      "flow_mean": 0.0616916991364987,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.15323421356923847,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.8549335103778
+    },
+    "VAV_72": {
+      "flow_mean": 0.058168154521019484,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.14775046148850346,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.525734593723
+    },
+    "VAV_73": {
+      "flow_mean": 0.03397751713320808,
+      "reheat_mean": 2.7661920469732766,
+      "damper_mean": 0.10992797945553115,
+      "valve_mean": 0.0010067307380680242,
+      "zone_temp_mean": 296.6143528096954
+    },
+    "VAV_74": {
+      "flow_mean": 0.04430856931895955,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.12596590379200218,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.6611818512963
+    },
+    "VAV_75": {
+      "flow_mean": 0.0410602054436999,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.12087880258565148,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.5862261985182
+    },
+    "VAV_76": {
+      "flow_mean": 0.06901147709795982,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.16584759093230417,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.6763949375818
+    },
+    "VAV_77": {
+      "flow_mean": 0.09219746219545039,
+      "reheat_mean": 0.0,
+      "damper_mean": 0.20233876450637636,
+      "valve_mean": 0.0,
+      "zone_temp_mean": 297.267596859284
+    },
+    "VAV_78": {
+      "flow_mean": 0.04046795245703103,
+      "reheat_mean": 1.6332924056003444,
+      "damper_mean": 0.1209794398680452,
+      "valve_mean": 0.000521657357487934,
+      "zone_temp_mean": 296.6652544166829
+    },
+    "VAV_79": {
+      "flow_mean": 0.0546532707921912,
+      "reheat_mean": 0.12689954510976117,
+      "damper_mean": 0.1432384313187546,
+      "valve_mean": 2.6659920816826553e-05,
+      "zone_temp_mean": 297.0531100160367
+    },
+    "VAV_8": {
+      "flow_mean": 0.0313659087121561,
+      "reheat_mean": 1.2114319519237744,
+      "damper_mean": 0.10588219232504574,
+      "valve_mean": 0.00038792739421070595,
+      "zone_temp_mean": 296.60693820846006
+    },
+    "VAV_80": {
+      "flow_mean": 0.08436353463480543,
+      "reheat_mean": 0.021599665860286943,
+      "damper_mean": 0.19000822609807178,
+      "valve_mean": 4.331449049102144e-06,
+      "zone_temp_mean": 297.1813473710736
+    },
+    "VAV_81": {
+      "flow_mean": 0.05914418815870597,
+      "reheat_mean": 0.1688456916067804,
+      "damper_mean": 0.15030681948986835,
+      "valve_mean": 3.617258690501954e-05,
+      "zone_temp_mean": 297.02502676002746
+    },
+    "VAV_82": {
+      "flow_mean": 0.02986994202042866,
+      "reheat_mean": 0.38699312472648023,
+      "damper_mean": 0.10425369767261979,
+      "valve_mean": 0.00011801982819930559,
+      "zone_temp_mean": 296.8406732611847
+    },
+    "VAV_83": {
+      "flow_mean": 0.029409329052094122,
+      "reheat_mean": 0.41536281874035486,
+      "damper_mean": 0.10353644774090072,
+      "valve_mean": 0.0001274876890600783,
+      "zone_temp_mean": 296.83326688730995
+    },
+    "VAV_84": {
+      "flow_mean": 0.0891205112870976,
+      "reheat_mean": 19.49008129131846,
+      "damper_mean": 0.1978261042366893,
+      "valve_mean": 0.007836429450732941,
+      "zone_temp_mean": 296.46832997060613
+    },
+    "VAV_85": {
+      "flow_mean": 0.03206579233868657,
+      "reheat_mean": 35.452129400860485,
+      "damper_mean": 0.10778973619083387,
+      "valve_mean": 0.025498175594130954,
+      "zone_temp_mean": 295.96967939565087
+    },
+    "VAV_9": {
+      "flow_mean": 0.02985667319917788,
+      "reheat_mean": 43.04126968104506,
+      "damper_mean": 0.10354728263887651,
+      "valve_mean": 0.04356961166978696,
+      "zone_temp_mean": 295.80133367007403
+    }
+  },
+  "zone_names": [
+    "exterior_space",
+    "interior_wall",
+    "room_1",
+    "room_2",
+    "room_3",
+    "room_4",
+    "room_5",
+    "room_6",
+    "room_7",
+    "room_8",
+    "room_9",
+    "room_10",
+    "room_11",
+    "room_12",
+    "room_13",
+    "room_14",
+    "room_15",
+    "room_16",
+    "room_17",
+    "room_18",
+    "room_19",
+    "room_20",
+    "room_21",
+    "room_22",
+    "room_23",
+    "room_24",
+    "room_25",
+    "room_26",
+    "room_27",
+    "room_28",
+    "room_29",
+    "room_30",
+    "room_31",
+    "room_32",
+    "room_33",
+    "room_34",
+    "room_35",
+    "room_36",
+    "room_37",
+    "room_38",
+    "room_39",
+    "room_40",
+    "room_41",
+    "room_42",
+    "room_43",
+    "room_44",
+    "room_45",
+    "room_46",
+    "room_47",
+    "room_48",
+    "room_49",
+    "room_50",
+    "room_51",
+    "room_52",
+    "room_53",
+    "room_54",
+    "room_55",
+    "room_56",
+    "room_57",
+    "room_58",
+    "room_59",
+    "room_60",
+    "room_61",
+    "room_62",
+    "room_63",
+    "room_64",
+    "room_65",
+    "room_66",
+    "room_67",
+    "room_68",
+    "room_69",
+    "room_70",
+    "room_71",
+    "room_72",
+    "room_73",
+    "room_74",
+    "room_75",
+    "room_76",
+    "room_77",
+    "room_78",
+    "room_79",
+    "room_80",
+    "room_81",
+    "room_82",
+    "room_83",
+    "room_84",
+    "room_85"
+  ],
+  "occupancy_sum": 280511.0,
+  "outside_temp_mean": 293.9707807738302,
+  "outside_temp_min": 281.15,
+  "outside_temp_max": 303.75,
+  "policy": "policies.ctrl_w:CtrlW",
+  "tag": "ef_shipped",
+  "requested_steps": 8641,
+  "wall_seconds": 2710.807147026062,
+  "cpu_seconds": 1023.27311,
+  "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_2/atlanta_3/config.gin"
+}

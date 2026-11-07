@@ -1,0 +1,44 @@
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_8/atlanta_1 --steps 600 --policy policies.ctrl_w:CtrlW --sim shipped --out /kaggle/working/gate/shipped__building_train_8__atlanta_1__plain.npz --components parity
+[gate] building_train_8/atlanta_1 500/600 steps
+[gate] wrote /kaggle/working/gate/shipped__building_train_8__atlanta_1__plain.npz: steps=600 total_reward=-3.993469 step_cpu=180.4s (300.61 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_8/atlanta_1 --steps 600 --policy policies.ctrl_w:CtrlW --sim shipped --out /kaggle/working/gate/shipped__building_train_8__atlanta_1__cenv.npz --components parity --cenv fused
+cenv: installed fused: ['SimulatorBuilding.wait_time', 'Environment._get_observation', 'Environment.reset', 'Simulator.reward_info']
+[gate] building_train_8/atlanta_1 500/600 steps
+[gate] wrote /kaggle/working/gate/shipped__building_train_8__atlanta_1__cenv.npz: steps=600 total_reward=-3.993469 step_cpu=78.6s (131.04 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_2/phoenix_6 --steps 600 --policy policies.ctrl_w:CtrlW --sim shipped --out /kaggle/working/gate/shipped__building_train_2__phoenix_6__plain.npz --components parity
+[gate] building_train_2/phoenix_6 500/600 steps
+[gate] wrote /kaggle/working/gate/shipped__building_train_2__phoenix_6__plain.npz: steps=600 total_reward=-4.093992 step_cpu=330.1s (550.14 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_2/phoenix_6 --steps 600 --policy policies.ctrl_w:CtrlW --sim shipped --out /kaggle/working/gate/shipped__building_train_2__phoenix_6__cenv.npz --components parity --cenv fused
+cenv: installed fused: ['SimulatorBuilding.wait_time', 'Environment._get_observation', 'Environment.reset', 'Simulator.reward_info']
+[gate] building_train_2/phoenix_6 500/600 steps
+[gate] wrote /kaggle/working/gate/shipped__building_train_2__phoenix_6__cenv.npz: steps=600 total_reward=-4.093992 step_cpu=291.0s (485.05 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_8/atlanta_1 --steps 600 --policy policies.ctrl_w:CtrlW --sim corrected --out /kaggle/working/gate/corrected__building_train_8__atlanta_1__plain.npz --components parity
+[gate] building_train_8/atlanta_1 500/600 steps
+[gate] wrote /kaggle/working/gate/corrected__building_train_8__atlanta_1__plain.npz: steps=600 total_reward=-3.313390 step_cpu=179.4s (298.96 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_8/atlanta_1 --steps 600 --policy policies.ctrl_w:CtrlW --sim corrected --out /kaggle/working/gate/corrected__building_train_8__atlanta_1__cenv.npz --components parity --cenv fused
+cenv: installed fused: ['SimulatorBuilding.wait_time', 'Environment._get_observation', 'Environment.reset', 'Simulator.reward_info']
+[gate] building_train_8/atlanta_1 500/600 steps
+[gate] wrote /kaggle/working/gate/corrected__building_train_8__atlanta_1__cenv.npz: steps=600 total_reward=-3.313390 step_cpu=78.8s (131.37 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_2/phoenix_6 --steps 600 --policy policies.ctrl_w:CtrlW --sim corrected --out /kaggle/working/gate/corrected__building_train_2__phoenix_6__plain.npz --components parity
+[gate] building_train_2/phoenix_6 500/600 steps
+[gate] wrote /kaggle/working/gate/corrected__building_train_2__phoenix_6__plain.npz: steps=600 total_reward=-4.096427 step_cpu=330.5s (550.90 ms/step)
+
+
+COMMAND: /usr/bin/python3 -m cenv.verify.gate trace --scenario building_train_2/phoenix_6 --steps 600 --policy policies.ctrl_w:CtrlW --sim corrected --out /kaggle/working/gate/corrected__building_train_2__phoenix_6__cenv.npz --components parity --cenv fused
+cenv: installed fused: ['SimulatorBuilding.wait_time', 'Environment._get_observation', 'Environment.reset', 'Simulator.reward_info']
+[gate] building_train_2/phoenix_6 500/600 steps
+[gate] wrote /kaggle/working/gate/corrected__building_train_2__phoenix_6__cenv.npz: steps=600 total_reward=-4.096427 step_cpu=290.8s (484.70 ms/step)
+
+

@@ -1,0 +1,126 @@
+{
+  "tag": "scanI_3",
+  "policy": "policies.ctrl_v2:CtrlV2",
+  "policy_labels": [
+    "policies.ctrl_v2:CtrlV2"
+  ],
+  "params": {
+    "CEILING_WINDOW_H": 0,
+    "FLOOR_ADAPT_K": 0,
+    "HEAT_MARGIN_K": 0.35
+  },
+  "sim": "shipped",
+  "steps": 2880,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/scanI_3",
+  "leaderboard_score": 0.010343502330359498,
+  "mean_abs_total_reward_per_step": 0.010343502330359498,
+  "mean_total_reward": -29.789286711435352,
+  "mean_per_step_reward": -0.010343502330359498,
+  "n_scenarios": 4,
+  "n_failed": 0,
+  "sum_comfort_all": -11.714557254401548,
+  "sum_energy_all": -74.12166130770018,
+  "sum_carbon_all": -33.32093029470244,
+  "by_weather": {
+    "atlanta_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.010775086066518705,
+      "mean_total_reward": -31.032247871573873,
+      "mean_per_step_reward": -0.010775086066518705
+    },
+    "denver_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.010897290663636264,
+      "mean_total_reward": -31.384197111272442,
+      "mean_per_step_reward": -0.010897290663636264
+    },
+    "singapore_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008307264755710263,
+      "mean_total_reward": -23.92492249644556,
+      "mean_per_step_reward": -0.008307264755710263
+    },
+    "singapore_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.011394367835572754,
+      "mean_total_reward": -32.81577936644953,
+      "mean_per_step_reward": -0.011394367835572754
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.011394367835572754,
+      "mean_total_reward": -32.81577936644953,
+      "mean_per_step_reward": -0.011394367835572754
+    },
+    "building_train_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008307264755710263,
+      "mean_total_reward": -23.92492249644556,
+      "mean_per_step_reward": -0.008307264755710263
+    },
+    "building_train_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.010775086066518705,
+      "mean_total_reward": -31.032247871573873,
+      "mean_per_step_reward": -0.010775086066518705
+    },
+    "building_train_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.010897290663636264,
+      "mean_total_reward": -31.384197111272442,
+      "mean_per_step_reward": -0.010897290663636264
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 199.59863185882568,
+    "cpu_seconds_total": 664.824843,
+    "wall_seconds_sum_scenarios": 670.4186239242554,
+    "mean_cpu_seconds_per_scenario": 166.20621075,
+    "steps_per_second_cpu": 17.32787232802009,
+    "steps_per_second_step_cpu": 18.595588606287176
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/singapore_8",
+      "steps": 2880,
+      "total_reward": -32.81577936644953,
+      "mean_per_step_reward": -0.011394367835572754,
+      "cpu_seconds": 127.932666,
+      "wall_seconds": 129.14560890197754,
+      "steps_per_second_cpu": 22.511842284284143
+    },
+    {
+      "scenario": "building_train_2/singapore_1",
+      "steps": 2880,
+      "total_reward": -23.92492249644556,
+      "mean_per_step_reward": -0.008307264755710263,
+      "cpu_seconds": 198.034867,
+      "wall_seconds": 199.49307107925415,
+      "steps_per_second_cpu": 14.542893600650638
+    },
+    {
+      "scenario": "building_train_4/atlanta_5",
+      "steps": 2880,
+      "total_reward": -31.032247871573873,
+      "mean_per_step_reward": -0.010775086066518705,
+      "cpu_seconds": 167.530294,
+      "wall_seconds": 169.00470495224,
+      "steps_per_second_cpu": 17.19092070595901
+    },
+    {
+      "scenario": "building_train_5/denver_3",
+      "steps": 2880,
+      "total_reward": -31.384197111272442,
+      "mean_per_step_reward": -0.010897290663636264,
+      "cpu_seconds": 171.327016,
+      "wall_seconds": 172.7752389907837,
+      "steps_per_second_cpu": 16.8099583313819
+    }
+  ],
+  "failures": []
+}

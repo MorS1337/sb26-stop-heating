@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_1/atlanta_2",
+  "policy": "ctrl_v1",
+  "tag": "",
+  "steps": 576,
+  "mean_reward": -0.0027768705523543405,
+  "total_reward": -1.5994774381561,
+  "last200_mean": -0.002602316104894271,
+  "wall_s": 35.0,
+  "s_per_step": 0.0607,
+  "prod_mean": -0.0003204624121053712,
+  "energy_mean": 0.00448250927168677,
+  "carbon_mean": 0.008440456149072715,
+  "tmin": 292.5724792480469,
+  "tmax": 297.3188781738281,
+  "frac_run": 0.5073784722222222,
+  "frac_water": 0.125
+}

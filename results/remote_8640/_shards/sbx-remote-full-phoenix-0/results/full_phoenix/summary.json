@@ -1,0 +1,59 @@
+{
+  "tag": "full_phoenix",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+    "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 8640,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "parity",
+  "out_dir": "/kaggle/working/results/full_phoenix",
+  "leaderboard_score": 0.16020952459202617,
+  "mean_abs_total_reward_per_step": 0.16020952459202617,
+  "mean_total_reward": -1384.2102924751061,
+  "mean_per_step_reward": -0.16020952459202617,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -795.0581008521926,
+  "sum_energy_all": -409.41573754795525,
+  "sum_carbon_all": -179.7364941340683,
+  "by_weather": {
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.16020952459202617,
+      "mean_total_reward": -1384.2102924751061,
+      "mean_per_step_reward": -0.16020952459202617
+    }
+  },
+  "by_building": {
+    "building_train_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.16020952459202617,
+      "mean_total_reward": -1384.2102924751061,
+      "mean_per_step_reward": -0.16020952459202617
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 494.53652238845825,
+    "cpu_seconds_total": 487.05689421299996,
+    "wall_seconds_sum_scenarios": 494.4945945739746,
+    "mean_cpu_seconds_per_scenario": 487.05689421299996,
+    "steps_per_second_cpu": 17.73920070253959,
+    "steps_per_second_step_cpu": 20.310818175167586
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 8640,
+      "total_reward": -1384.2102924751061,
+      "mean_per_step_reward": -0.16020952459202617,
+      "cpu_seconds": 487.05689421299996,
+      "wall_seconds": 494.4945945739746,
+      "steps_per_second_cpu": 17.73920070253959
+    }
+  ],
+  "failures": []
+}

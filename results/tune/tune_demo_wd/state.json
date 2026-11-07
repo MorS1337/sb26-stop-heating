@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "tag": "tune_demo_wd",
+  "policy": "policies.ctrl_v1:CtrlV1",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_v1_core.json",
+  "space_signature": "a7c898ab5a630a67",
+  "space_entries": [
+    {
+      "name": "KP",
+      "lo": 0.01,
+      "hi": 0.4,
+      "scale": "lin",
+      "init": 0.08
+    },
+    {
+      "name": "KI",
+      "lo": 0.0,
+      "hi": 0.4,
+      "scale": "lin",
+      "init": 0.06
+    },
+    {
+      "name": "MARGIN_K",
+      "lo": 0.05,
+      "hi": 1.5,
+      "scale": "lin",
+      "init": 0.5
+    },
+    {
+      "name": "ZONE_SHIFT_MAX_K",
+      "lo": 0.0,
+      "hi": 2.0,
+      "scale": "lin",
+      "init": 0.6
+    },
+    {
+      "name": "DEMAND_FULL",
+      "lo": 0.1,
+      "hi": 1.5,
+      "scale": "lin",
+      "init": 0.5
+    },
+    {
+      "name": "SAT_MIN_K",
+      "lo": 281.0,
+      "hi": 290.0,
+      "scale": "lin",
+      "init": 285.0
+    },
+    {
+      "name": "SAT_MAX_K",
+      "lo": 293.0,
+      "hi": 306.0,
+      "scale": "lin",
+      "init": 305.0
+    },
+    {
+      "name": "ECON_MIN_ADV_K",
+      "lo": 0.0,
+      "hi": 2.0,
+      "scale": "lin",
+      "init": 0.5
+    },
+    {
+      "name": "WATER_MIN_K",
+      "lo": 300.0,
+      "hi": 322.0,
+      "scale": "lin",
+      "init": 310.0
+    },
+    {
+      "name": "WATER_MAX_K",
+      "lo": 327.0,
+      "hi": 365.0,
+      "scale": "lin",
+      "init": 350.0
+    },
+    {
+      "name": "WATER_RESET_FULL_K",
+      "lo": 0.5,
+      "hi": 16.0,
+      "scale": "log",
+      "init": 4.0
+    },
+    {
+      "name": "FLOOR_TEMP_K",
+      "lo": 279.0,
+      "hi": 288.5,
+      "scale": "lin",
+      "init": 285.0
+    },
+    {
+      "name": "PRESTART_SAFETY",
+      "lo": 0.6,
+      "hi": 2.0,
+      "scale": "lin",
+      "init": 1.2
+    },
+    {
+      "name": "PRESTART_MAX_H",
+      "lo": 1.0,
+      "hi": 10.0,
+      "scale": "lin",
+      "init": 8.0
+    },
+    {
+      "name": "EARLY_STOP_H",
+      "lo": 0.0,
+      "hi": 3.0,
+      "scale": "lin",
+      "init": 1.0
+    }
+  ],
+  "sigma0": 0.25,
+  "sets": [
+    "gen_train"
+  ],
+  "subset": 2,
+  "subset_seed": 0,
+  "subset_ids": [
+    "building_gen_002/phoenix_g4",
+    "building_gen_014/singapore_g2"
+  ],
+  "subset_info": {
+    "strata": {
+      "atlanta|size0": 3,
+      "atlanta|size1": 5,
+      "atlanta|size2": 5,
+      "denver|size0": 4,
+      "denver|size1": 5,
+      "denver|size2": 4,
+      "fairbanks|size0": 3,
+      "fairbanks|size1": 4,
+      "fairbanks|size2": 6,
+      "phoenix|size0": 5,
+      "phoenix|size1": 2,
+      "phoenix|size2": 6,
+      "singapore|size0": 5,
+      "singapore|size1": 4,
+      "singapore|size2": 3
+    },
+    "size_metric": "num_zones",
+    "count": 2
+  },
+  "steps": 144,
+  "sim": "corrected",
+  "components": "hook",
+  "start_offset_days": 1,
+  "seed": 0,
+  "popsize": 4,
+  "job_timeout": 1800.0,
+  "created": "2026-11-05T03:33:09",
+  "generations_done": 2,
+  "best_objective": 0.020368430987206112,
+  "updated": "2026-11-05T03:39:17"
+}

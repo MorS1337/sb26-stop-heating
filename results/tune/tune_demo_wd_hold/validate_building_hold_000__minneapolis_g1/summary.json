@@ -1,0 +1,74 @@
+{
+  "tag": "tune_demo_wd_hold_validate_building_hold_000__minneapolis_g1",
+  "policy": "policies.ctrl_v1:CtrlV1",
+  "policy_labels": [
+    "policies.ctrl_v1:CtrlV1"
+  ],
+  "params": {
+    "KP": 0.050731,
+    "KI": 0.228084,
+    "MARGIN_K": 0.959274,
+    "ZONE_SHIFT_MAX_K": 0.842562,
+    "DEMAND_FULL": 0.405799,
+    "SAT_MIN_K": 281.799257,
+    "SAT_MAX_K": 294.933901,
+    "ECON_MIN_ADV_K": 1.667442,
+    "WATER_MIN_K": 315.354582,
+    "WATER_MAX_K": 360.192997,
+    "WATER_RESET_FULL_K": 1.919119,
+    "FLOOR_TEMP_K": 285.745397,
+    "PRESTART_SAFETY": 1.046561,
+    "PRESTART_MAX_H": 8.961716,
+    "EARLY_STOP_H": 0.058199
+  },
+  "sim": "corrected",
+  "steps": 8640,
+  "start_offset_days": 0,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/tune/tune_demo_wd_hold/validate_building_hold_000__minneapolis_g1",
+  "leaderboard_score": 0.01482463923761804,
+  "mean_abs_total_reward_per_step": 0.01482463923761804,
+  "mean_total_reward": -128.08488301301986,
+  "mean_per_step_reward": -0.01482463923761804,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -2.008523335460877,
+  "sum_energy_all": -45.47963561048012,
+  "sum_carbon_all": -80.59672603901194,
+  "by_weather": {
+    "minneapolis_g1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.01482463923761804,
+      "mean_total_reward": -128.08488301301986,
+      "mean_per_step_reward": -0.01482463923761804
+    }
+  },
+  "by_building": {
+    "building_hold_000": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.01482463923761804,
+      "mean_total_reward": -128.08488301301986,
+      "mean_per_step_reward": -0.01482463923761804
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 615.1866919994354,
+    "cpu_seconds_total": 582.3547870000001,
+    "wall_seconds_sum_scenarios": 615.1844069957733,
+    "mean_cpu_seconds_per_scenario": 582.3547870000001,
+    "steps_per_second_cpu": 14.836316611234448,
+    "steps_per_second_step_cpu": 15.48083561422422
+  },
+  "scenarios": [
+    {
+      "scenario": "building_hold_000/minneapolis_g1",
+      "steps": 8640,
+      "total_reward": -128.08488301301986,
+      "mean_per_step_reward": -0.01482463923761804,
+      "cpu_seconds": 582.3547870000001,
+      "wall_seconds": 615.1844069957733,
+      "steps_per_second_cpu": 14.836316611234448
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,17 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim shipped --workers 4 --tag ctrw_holdouts_shipped --out /kaggle/working/results/ctrw_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/miami_2 building_hold_001/minneapolis_g1 building_hold_002/bangkok_3 building_hold_003/beijing_1 building_hold_003/phoenix_g5 building_hold_004/denver_g5 building_hold_004/sanfrancisco_3 building_hold_006/helsinki_1 building_hold_006/tokyo_2 building_hold_007/minneapolis_g5
+
+STDOUT
+[evalrun] tag=ctrw_holdouts_shipped sim=shipped policy=policies.ctrl_w:CtrlW scenarios=10 steps=8641 workers=4 out=/kaggle/working/results/ctrw_holdouts_shipped
+[evalrun] 1/10 building_hold_002/bangkok_3            total=    -44.7948 mean=-0.005184 steps=8641 cpu=1310.4s
+[evalrun] 2/10 building_hold_000/miami_2              total=    -47.9054 mean=-0.005544 steps=8641 cpu=1318.4s
+[evalrun] 3/10 building_hold_003/beijing_1            total=   -204.3204 mean=-0.023645 steps=8641 cpu=1592.0s
+[evalrun] 4/10 building_hold_001/minneapolis_g1       total=    -22.0603 mean=-0.002553 steps=8641 cpu=1910.4s
+[evalrun] 5/10 building_hold_004/denver_g5            total=    -15.3390 mean=-0.001775 steps=8641 cpu=940.2s
+[evalrun] 6/10 building_hold_004/sanfrancisco_3       total=    -10.9345 mean=-0.001265 steps=8641 cpu=941.9s
+[evalrun] 7/10 building_hold_003/phoenix_g5           total=    -56.5937 mean=-0.006549 steps=8641 cpu=1571.4s
+[evalrun] 8/10 building_hold_006/helsinki_1           total=    -73.6970 mean=-0.008529 steps=8641 cpu=1430.4s
+[evalrun] 9/10 building_hold_006/tokyo_2              total=    -47.1762 mean=-0.005460 steps=8641 cpu=1299.7s
+[evalrun] 10/10 building_hold_007/minneapolis_g5       total=    -22.9505 mean=-0.002656 steps=8641 cpu=1094.7s
+[evalrun] score=0.006316 scenarios=10 failed=0 wall=3665s -> /kaggle/working/results/ctrw_holdouts_shipped/summary.json
+
+STDERR

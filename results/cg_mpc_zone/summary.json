@@ -1,0 +1,70 @@
+{
+  "tag": "cg_mpc_zone",
+  "policy": "policies.ctrl_mpc:CtrlMPC",
+  "policy_labels": [
+    "policies.ctrl_mpc:CtrlMPC"
+  ],
+  "params": {
+    "heat_price_mode": "phys",
+    "tcold_mode": "zone"
+  },
+  "sim": "shipped",
+  "steps": 2016,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "oracle_file": null,
+  "oracle_record": null,
+  "components_mode": "parity",
+  "cenv_components": [
+    "fused"
+  ],
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cg_mpc_zone",
+  "leaderboard_score": 0.05164154190379122,
+  "mean_abs_total_reward_per_step": 0.05164154190379122,
+  "mean_total_reward": -104.1093484780431,
+  "mean_per_step_reward": -0.05164154190379122,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -5.2334111231037355,
+  "sum_energy_all": -28.122917431253406,
+  "sum_carbon_all": -70.75302180219286,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.05164154190379122,
+      "mean_total_reward": -104.1093484780431,
+      "mean_per_step_reward": -0.05164154190379122
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.05164154190379122,
+      "mean_total_reward": -104.1093484780431,
+      "mean_per_step_reward": -0.05164154190379122
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 309.3694498538971,
+    "cpu_seconds_total": 306.767572,
+    "wall_seconds_sum_scenarios": 309.36779618263245,
+    "mean_cpu_seconds_per_scenario": 306.767572,
+    "steps_per_second_cpu": 6.571750680348965,
+    "steps_per_second_step_cpu": 46.022319044110915
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2016,
+      "total_reward": -104.1093484780431,
+      "mean_per_step_reward": -0.05164154190379122,
+      "cpu_seconds": 306.767572,
+      "wall_seconds": 309.36779618263245,
+      "steps_per_second_cpu": 6.571750680348965
+    }
+  ],
+  "failures": []
+}

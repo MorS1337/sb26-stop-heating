@@ -1,0 +1,123 @@
+{
+  "tag": "ctw2_v1",
+  "policy": "policies.ctrl_w2:CtrlW2",
+  "policy_labels": [
+    "policies.ctrl_w2:CtrlW2"
+  ],
+  "params": {
+    "preheat_min_hours": 2.0,
+    "preheat_max_hours": 2.5,
+    "preheat_gate_k": 1.0,
+    "preheat_safety": 1.25,
+    "preheat_slack_hours": 0.35
+  },
+  "sim": "shipped",
+  "steps": 8641,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ctw2_v1",
+  "leaderboard_score": 0.04569737159881869,
+  "mean_abs_total_reward_per_step": 0.04569737159881869,
+  "mean_total_reward": -394.8709879853923,
+  "mean_per_step_reward": -0.04569737159881869,
+  "n_scenarios": 1,
+  "n_failed": 11,
+  "sum_comfort_all": -2.30992117294508,
+  "sum_energy_all": -112.21819233684695,
+  "sum_carbon_all": -280.3428802456868,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04569737159881869,
+      "mean_total_reward": -394.8709879853923,
+      "mean_per_step_reward": -0.04569737159881869
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04569737159881869,
+      "mean_total_reward": -394.8709879853923,
+      "mean_per_step_reward": -0.04569737159881869
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 1727.7582218647003,
+    "cpu_seconds_total": 534.621866,
+    "wall_seconds_sum_scenarios": 1727.3134713172913,
+    "mean_cpu_seconds_per_scenario": 534.621866,
+    "steps_per_second_cpu": 16.162825633473062,
+    "steps_per_second_step_cpu": 17.453486579456403
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 8641,
+      "total_reward": -394.8709879853923,
+      "mean_per_step_reward": -0.04569737159881869,
+      "cpu_seconds": 534.621866,
+      "wall_seconds": 1727.3134713172913,
+      "steps_per_second_cpu": 16.162825633473062
+    }
+  ],
+  "failures": [
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_2/fairbanks_2/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_4/fairbanks_4",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_4/fairbanks_4/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_5/fairbanks_5",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_5/fairbanks_5/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_7/fairbanks_7",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_7/fairbanks_7/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_8/fairbanks_8",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_8/fairbanks_8/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_1/phoenix_5/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_2/phoenix_6",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_2/phoenix_6/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_4/phoenix_8",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_4/phoenix_8/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_5/phoenix_1",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_5/phoenix_1/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_7/phoenix_3",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_7/phoenix_3/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    },
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "config_path": "/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/training_scenarios/building_train_8/phoenix_4/config.gin",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 704, in _worker\n    return _run_scenario(task)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/evalrun.py\", line 590, in _run_scenario\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n"
+    }
+  ]
+}

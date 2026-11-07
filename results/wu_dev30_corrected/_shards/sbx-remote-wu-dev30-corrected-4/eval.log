@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w:CtrlW --steps 8641 --sim corrected --workers 4 --tag wu_dev30_corrected --out /kaggle/working/results/wu_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/singapore_8 building_train_2/singapore_1 building_train_4/singapore_3 building_train_5/singapore_4 building_train_7/singapore_6 building_train_8/singapore_7 --params {"early_preheat_enabled": false, "holiday_guard_enabled": false, "precondition_hours": 1.0, "release_enabled": false, "reward_weights_enabled": false}
+
+STDOUT
+[evalrun] tag=wu_dev30_corrected sim=corrected policy=policies.ctrl_w:CtrlW scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/wu_dev30_corrected
+[evalrun] 1/6 building_train_1/singapore_8           total=    -56.2715 mean=-0.006512 steps=8641 cpu=797.2s
+[evalrun] 2/6 building_train_4/singapore_3           total=    -60.1237 mean=-0.006958 steps=8641 cpu=1069.2s
+[evalrun] 3/6 building_train_5/singapore_4           total=    -47.0719 mean=-0.005448 steps=8641 cpu=1124.8s
+[evalrun] 4/6 building_train_7/singapore_6           total=    -48.1451 mean=-0.005572 steps=8641 cpu=523.6s
+[evalrun] 5/6 building_train_2/singapore_1           total=    -40.7228 mean=-0.004713 steps=8641 cpu=1386.3s
+[evalrun] 6/6 building_train_8/singapore_7           total=    -46.4400 mean=-0.005374 steps=8641 cpu=417.0s
+[evalrun] score=0.005763 scenarios=6 failed=0 wall=1503s -> /kaggle/working/results/wu_dev30_corrected/summary.json
+
+STDERR

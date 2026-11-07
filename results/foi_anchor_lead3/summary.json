@@ -1,0 +1,69 @@
+{
+  "tag": "foi_anchor_lead3",
+  "policy": "policies.oracle_foresight:OracleForesightCtrlW",
+  "policy_labels": [
+    "policies.oracle_foresight:OracleForesightCtrlW"
+  ],
+  "params": {
+    "foresight_preheat_lead_hours": 3
+  },
+  "sim": "shipped",
+  "steps": 2016,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [
+    "foresight"
+  ],
+  "oracle_horizon": 12,
+  "oracle_file": "scratch/VoIOracle/foresight_ref",
+  "oracle_record": null,
+  "components_mode": "hook",
+  "cenv_components": [],
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/foi_anchor_lead3",
+  "leaderboard_score": 0.04523154986009825,
+  "mean_abs_total_reward_per_step": 0.04523154986009825,
+  "mean_total_reward": -91.18680451795808,
+  "mean_per_step_reward": -0.04523154986009825,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.7668685210297513,
+  "sum_energy_all": -25.894431813768428,
+  "sum_carbon_all": -64.52550559319958,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04523154986009825,
+      "mean_total_reward": -91.18680451795808,
+      "mean_per_step_reward": -0.04523154986009825
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04523154986009825,
+      "mean_total_reward": -91.18680451795808,
+      "mean_per_step_reward": -0.04523154986009825
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 53.54546809196472,
+    "cpu_seconds_total": 53.188126,
+    "wall_seconds_sum_scenarios": 53.54441022872925,
+    "mean_cpu_seconds_per_scenario": 53.188126,
+    "steps_per_second_cpu": 37.90319666460894,
+    "steps_per_second_step_cpu": 47.3000893164584
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2016,
+      "total_reward": -91.18680451795808,
+      "mean_per_step_reward": -0.04523154986009825,
+      "cpu_seconds": 53.188126,
+      "wall_seconds": 53.54441022872925,
+      "steps_per_second_cpu": 37.90319666460894
+    }
+  ],
+  "failures": []
+}

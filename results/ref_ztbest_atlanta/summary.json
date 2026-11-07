@@ -1,0 +1,58 @@
+{
+  "tag": "ref_ztbest_atlanta",
+  "policy": "policies.ref_ztbest:RefZtBest",
+  "policy_labels": [
+    "policies.ref_ztbest:RefZtBest"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 8640,
+  "start_offset_days": 0,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ref_ztbest_atlanta",
+  "leaderboard_score": 0.005561002427296873,
+  "mean_abs_total_reward_per_step": 0.005561002427296873,
+  "mean_total_reward": -48.047060971844985,
+  "mean_per_step_reward": -0.005561002427296873,
+  "n_scenarios": 1,
+  "n_failed": 0,
+  "sum_comfort_all": -0.2759598094926037,
+  "sum_energy_all": -23.60617660447423,
+  "sum_carbon_all": -24.164925292145682,
+  "by_weather": {
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005561002427296873,
+      "mean_total_reward": -48.047060971844985,
+      "mean_per_step_reward": -0.005561002427296873
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005561002427296873,
+      "mean_total_reward": -48.047060971844985,
+      "mean_per_step_reward": -0.005561002427296873
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 557.2556080818176,
+    "cpu_seconds_total": 524.413825,
+    "wall_seconds_sum_scenarios": 557.2539691925049,
+    "mean_cpu_seconds_per_scenario": 524.413825,
+    "steps_per_second_cpu": 16.47553818780426,
+    "steps_per_second_step_cpu": 17.27616997677325
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 8640,
+      "total_reward": -48.047060971844985,
+      "mean_per_step_reward": -0.005561002427296873,
+      "cpu_seconds": 524.413825,
+      "wall_seconds": 557.2539691925049,
+      "steps_per_second_cpu": 16.47553818780426
+    }
+  ],
+  "failures": []
+}

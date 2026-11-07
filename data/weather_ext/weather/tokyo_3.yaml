@@ -1,0 +1,4 @@
+name: tokyo_3
+weather_csv: csv/tokyo.csv
+convection_coefficient: 27
+start_timestamp: 2023-10-08 06:00

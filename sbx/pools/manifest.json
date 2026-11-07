@@ -1,0 +1,1753 @@
+{
+  "generated_utc": "2026-11-04T23:25:02Z",
+  "generator": {
+    "module": "sbx.make_pool",
+    "sim_generated_in": "shipped",
+    "seed_start": 5000,
+    "seed_limit": 200,
+    "materials_seed": 20261105,
+    "building_ranges": {
+      "building_shape": "composite",
+      "width": [
+        315,
+        435
+      ],
+      "height": [
+        185,
+        300
+      ],
+      "num_floors": [
+        2,
+        4
+      ],
+      "min_room_size": [
+        25,
+        36
+      ],
+      "room_size_span": [
+        11,
+        16
+      ],
+      "shape_ratio": [
+        0.28,
+        0.4
+      ],
+      "composite_coverage": [
+        0.65,
+        0.85
+      ],
+      "composite_style": "architectural",
+      "num_ahus": [
+        3,
+        5
+      ],
+      "occupants_per_zone": 2
+    },
+    "zone_limits": [
+      28,
+      85
+    ],
+    "ahu_limits": [
+      3,
+      9
+    ],
+    "strip_gap_index_train": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "strip_gap_index_hold": [
+      1,
+      5
+    ],
+    "strip_rule": "gap k starts one week before the station's shipped window k+1, i.e. inside the 12-day gap between two shipped windows"
+  },
+  "buildings": [
+    {
+      "name": "building_gen_000",
+      "split": "gen_train",
+      "seed": 5001,
+      "num_zones": 84,
+      "num_ahus": 9,
+      "width": 387,
+      "height": 222,
+      "num_floors": 4,
+      "min_room_size": 31,
+      "max_room_size": 47,
+      "materials": {
+        "exterior_cv_conductivity": 0.1873,
+        "exterior_cv_density": 640.5676,
+        "interior_mass_cv_density": 32.3457,
+        "interior_wall_cv_conductivity": 0.5914,
+        "interior_wall_cv_density": 248.7952,
+        "exterior_cv_heat_capacity": 852.3417
+      }
+    },
+    {
+      "name": "building_gen_001",
+      "split": "gen_train",
+      "seed": 5002,
+      "num_zones": 55,
+      "num_ahus": 6,
+      "width": 396,
+      "height": 217,
+      "num_floors": 2,
+      "min_room_size": 25,
+      "max_room_size": 40,
+      "materials": {
+        "exterior_cv_conductivity": 0.5066,
+        "exterior_cv_density": 1769.5797,
+        "interior_mass_cv_density": 18.716,
+        "interior_wall_cv_conductivity": 0.4599,
+        "interior_wall_cv_density": 140.6528,
+        "exterior_cv_heat_capacity": 904.5085
+      }
+    },
+    {
+      "name": "building_gen_002",
+      "split": "gen_train",
+      "seed": 5003,
+      "num_zones": 78,
+      "num_ahus": 8,
+      "width": 335,
+      "height": 283,
+      "num_floors": 4,
+      "min_room_size": 31,
+      "max_room_size": 44,
+      "materials": {
+        "exterior_cv_conductivity": 0.2789,
+        "exterior_cv_density": 864.5661,
+        "interior_mass_cv_density": 15.4897,
+        "interior_wall_cv_conductivity": 0.4542,
+        "interior_wall_cv_density": 382.6511,
+        "exterior_cv_heat_capacity": 876.2047
+      }
+    },
+    {
+      "name": "building_gen_003",
+      "split": "gen_train",
+      "seed": 5006,
+      "num_zones": 78,
+      "num_ahus": 8,
+      "width": 336,
+      "height": 281,
+      "num_floors": 4,
+      "min_room_size": 35,
+      "max_room_size": 51,
+      "materials": {
+        "exterior_cv_conductivity": 0.4566,
+        "exterior_cv_density": 2051.4633,
+        "interior_mass_cv_density": 21.1376,
+        "interior_wall_cv_conductivity": 0.5154,
+        "interior_wall_cv_density": 177.749,
+        "exterior_cv_heat_capacity": 962.9768
+      }
+    },
+    {
+      "name": "building_gen_004",
+      "split": "gen_train",
+      "seed": 5008,
+      "num_zones": 30,
+      "num_ahus": 3,
+      "width": 316,
+      "height": 259,
+      "num_floors": 2,
+      "min_room_size": 36,
+      "max_room_size": 49,
+      "materials": {
+        "exterior_cv_conductivity": 0.3205,
+        "exterior_cv_density": 476.6396,
+        "interior_mass_cv_density": 11.0594,
+        "interior_wall_cv_conductivity": 0.4741,
+        "interior_wall_cv_density": 151.7086,
+        "exterior_cv_heat_capacity": 910.6119
+      }
+    },
+    {
+      "name": "building_gen_005",
+      "split": "gen_train",
+      "seed": 5010,
+      "num_zones": 65,
+      "num_ahus": 7,
+      "width": 354,
+      "height": 186,
+      "num_floors": 3,
+      "min_room_size": 28,
+      "max_room_size": 44,
+      "materials": {
+        "exterior_cv_conductivity": 0.408,
+        "exterior_cv_density": 963.0974,
+        "interior_mass_cv_density": 11.6656,
+        "interior_wall_cv_conductivity": 0.5956,
+        "interior_wall_cv_density": 449.8669,
+        "exterior_cv_heat_capacity": 937.1844
+      }
+    },
+    {
+      "name": "building_gen_006",
+      "split": "gen_train",
+      "seed": 5011,
+      "num_zones": 57,
+      "num_ahus": 6,
+      "width": 401,
+      "height": 210,
+      "num_floors": 4,
+      "min_room_size": 33,
+      "max_room_size": 45,
+      "materials": {
+        "exterior_cv_conductivity": 0.4211,
+        "exterior_cv_density": 1900.2012,
+        "interior_mass_cv_density": 14.6732,
+        "interior_wall_cv_conductivity": 0.4902,
+        "interior_wall_cv_density": 219.6292,
+        "exterior_cv_heat_capacity": 978.0804
+      }
+    },
+    {
+      "name": "building_gen_007",
+      "split": "gen_train",
+      "seed": 5012,
+      "num_zones": 49,
+      "num_ahus": 5,
+      "width": 323,
+      "height": 267,
+      "num_floors": 2,
+      "min_room_size": 30,
+      "max_room_size": 45,
+      "materials": {
+        "exterior_cv_conductivity": 0.1685,
+        "exterior_cv_density": 573.4966,
+        "interior_mass_cv_density": 39.6217,
+        "interior_wall_cv_conductivity": 0.5004,
+        "interior_wall_cv_density": 371.5464,
+        "exterior_cv_heat_capacity": 914.1593
+      }
+    },
+    {
+      "name": "building_gen_008",
+      "split": "gen_train",
+      "seed": 5013,
+      "num_zones": 43,
+      "num_ahus": 5,
+      "width": 348,
+      "height": 250,
+      "num_floors": 3,
+      "min_room_size": 34,
+      "max_room_size": 48,
+      "materials": {
+        "exterior_cv_conductivity": 0.2033,
+        "exterior_cv_density": 1338.9439,
+        "interior_mass_cv_density": 24.3667,
+        "interior_wall_cv_conductivity": 0.5238,
+        "interior_wall_cv_density": 575.7676,
+        "exterior_cv_heat_capacity": 898.6178
+      }
+    },
+    {
+      "name": "building_gen_009",
+      "split": "gen_train",
+      "seed": 5015,
+      "num_zones": 49,
+      "num_ahus": 5,
+      "width": 362,
+      "height": 245,
+      "num_floors": 2,
+      "min_room_size": 31,
+      "max_room_size": 42,
+      "materials": {
+        "exterior_cv_conductivity": 0.2531,
+        "exterior_cv_density": 370.7931,
+        "interior_mass_cv_density": 16.1177,
+        "interior_wall_cv_conductivity": 0.4949,
+        "interior_wall_cv_density": 267.545,
+        "exterior_cv_heat_capacity": 988.3793
+      }
+    },
+    {
+      "name": "building_gen_010",
+      "split": "gen_train",
+      "seed": 5016,
+      "num_zones": 72,
+      "num_ahus": 8,
+      "width": 419,
+      "height": 260,
+      "num_floors": 4,
+      "min_room_size": 35,
+      "max_room_size": 47,
+      "materials": {
+        "exterior_cv_conductivity": 0.2095,
+        "exterior_cv_density": 539.5097,
+        "interior_mass_cv_density": 12.5582,
+        "interior_wall_cv_conductivity": 0.5873,
+        "interior_wall_cv_density": 345.9613,
+        "exterior_cv_heat_capacity": 930.3127
+      }
+    },
+    {
+      "name": "building_gen_011",
+      "split": "gen_train",
+      "seed": 5018,
+      "num_zones": 54,
+      "num_ahus": 6,
+      "width": 330,
+      "height": 274,
+      "num_floors": 2,
+      "min_room_size": 29,
+      "max_room_size": 44,
+      "materials": {
+        "exterior_cv_conductivity": 0.5451,
+        "exterior_cv_density": 1686.4166,
+        "interior_mass_cv_density": 19.7848,
+        "interior_wall_cv_conductivity": 0.5065,
+        "interior_wall_cv_density": 318.8805,
+        "exterior_cv_heat_capacity": 865.113
+      }
+    },
+    {
+      "name": "building_gen_012",
+      "split": "gen_train",
+      "seed": 5019,
+      "num_zones": 44,
+      "num_ahus": 5,
+      "width": 340,
+      "height": 256,
+      "num_floors": 2,
+      "min_room_size": 32,
+      "max_room_size": 48,
+      "materials": {
+        "exterior_cv_conductivity": 0.2297,
+        "exterior_cv_density": 2258.2487,
+        "interior_mass_cv_density": 10.5446,
+        "interior_wall_cv_conductivity": 0.5758,
+        "interior_wall_cv_density": 682.1253,
+        "exterior_cv_heat_capacity": 972.5462
+      }
+    },
+    {
+      "name": "building_gen_013",
+      "split": "gen_train",
+      "seed": 5020,
+      "num_zones": 74,
+      "num_ahus": 8,
+      "width": 424,
+      "height": 242,
+      "num_floors": 4,
+      "min_room_size": 33,
+      "max_room_size": 48,
+      "materials": {
+        "exterior_cv_conductivity": 0.151,
+        "exterior_cv_density": 1191.2623,
+        "interior_mass_cv_density": 13.4057,
+        "interior_wall_cv_conductivity": 0.5652,
+        "interior_wall_cv_density": 191.7583,
+        "exterior_cv_heat_capacity": 922.5523
+      }
+    },
+    {
+      "name": "building_gen_014",
+      "split": "gen_train",
+      "seed": 5022,
+      "num_zones": 62,
+      "num_ahus": 7,
+      "width": 386,
+      "height": 212,
+      "num_floors": 4,
+      "min_room_size": 30,
+      "max_room_size": 41,
+      "materials": {
+        "exterior_cv_conductivity": 0.2684,
+        "exterior_cv_density": 1440.5147,
+        "interior_mass_cv_density": 35.7447,
+        "interior_wall_cv_conductivity": 0.5454,
+        "interior_wall_cv_density": 295.8826,
+        "exterior_cv_heat_capacity": 941.5596
+      }
+    },
+    {
+      "name": "building_gen_015",
+      "split": "gen_train",
+      "seed": 5025,
+      "num_zones": 75,
+      "num_ahus": 8,
+      "width": 360,
+      "height": 195,
+      "num_floors": 3,
+      "min_room_size": 28,
+      "max_room_size": 39,
+      "materials": {
+        "exterior_cv_conductivity": 0.4924,
+        "exterior_cv_density": 403.2923,
+        "interior_mass_cv_density": 31.1239,
+        "interior_wall_cv_conductivity": 0.482,
+        "interior_wall_cv_density": 437.2444,
+        "exterior_cv_heat_capacity": 871.0084
+      }
+    },
+    {
+      "name": "building_hold_000",
+      "split": "gen_hold",
+      "seed": 5026,
+      "num_zones": 44,
+      "num_ahus": 5,
+      "width": 408,
+      "height": 262,
+      "num_floors": 2,
+      "min_room_size": 33,
+      "max_room_size": 48,
+      "materials": {
+        "exterior_cv_conductivity": 0.3755,
+        "exterior_cv_density": 768.9964,
+        "interior_mass_cv_density": 34.3709,
+        "interior_wall_cv_conductivity": 0.5558,
+        "interior_wall_cv_density": 235.356,
+        "exterior_cv_heat_capacity": 856.0518
+      }
+    },
+    {
+      "name": "building_hold_001",
+      "split": "gen_hold",
+      "seed": 5029,
+      "num_zones": 71,
+      "num_ahus": 8,
+      "width": 337,
+      "height": 245,
+      "num_floors": 3,
+      "min_room_size": 29,
+      "max_room_size": 43,
+      "materials": {
+        "exterior_cv_conductivity": 0.1643,
+        "exterior_cv_density": 1063.4792,
+        "interior_mass_cv_density": 23.3869,
+        "interior_wall_cv_conductivity": 0.5335,
+        "interior_wall_cv_density": 130.9801,
+        "exterior_cv_heat_capacity": 958.8292
+      }
+    },
+    {
+      "name": "building_hold_002",
+      "split": "gen_hold",
+      "seed": 5031,
+      "num_zones": 52,
+      "num_ahus": 6,
+      "width": 405,
+      "height": 234,
+      "num_floors": 2,
+      "min_room_size": 30,
+      "max_room_size": 44,
+      "materials": {
+        "exterior_cv_conductivity": 0.3062,
+        "exterior_cv_density": 494.0211,
+        "interior_mass_cv_density": 17.6065,
+        "interior_wall_cv_conductivity": 0.4638,
+        "interior_wall_cv_density": 537.3136,
+        "exterior_cv_heat_capacity": 995.7407
+      }
+    },
+    {
+      "name": "building_hold_003",
+      "split": "gen_hold",
+      "seed": 5032,
+      "num_zones": 47,
+      "num_ahus": 5,
+      "width": 343,
+      "height": 281,
+      "num_floors": 3,
+      "min_room_size": 36,
+      "max_room_size": 51,
+      "materials": {
+        "exterior_cv_conductivity": 0.3947,
+        "exterior_cv_density": 842.6819,
+        "interior_mass_cv_density": 27.4077,
+        "interior_wall_cv_conductivity": 0.5726,
+        "interior_wall_cv_density": 484.0025,
+        "exterior_cv_heat_capacity": 985.96
+      }
+    },
+    {
+      "name": "building_hold_004",
+      "split": "gen_hold",
+      "seed": 5035,
+      "num_zones": 33,
+      "num_ahus": 5,
+      "width": 327,
+      "height": 223,
+      "num_floors": 2,
+      "min_room_size": 31,
+      "max_room_size": 43,
+      "materials": {
+        "exterior_cv_conductivity": 0.2334,
+        "exterior_cv_density": 1098.3203,
+        "interior_mass_cv_density": 28.9379,
+        "interior_wall_cv_conductivity": 0.527,
+        "interior_wall_cv_density": 125.9993,
+        "exterior_cv_heat_capacity": 886.2208
+      }
+    },
+    {
+      "name": "building_hold_005",
+      "split": "gen_hold",
+      "seed": 5036,
+      "num_zones": 54,
+      "num_ahus": 6,
+      "width": 395,
+      "height": 192,
+      "num_floors": 2,
+      "min_room_size": 26,
+      "max_room_size": 38,
+      "materials": {
+        "exterior_cv_conductivity": 0.3428,
+        "exterior_cv_density": 678.5107,
+        "interior_mass_cv_density": 25.7043,
+        "interior_wall_cv_conductivity": 0.475,
+        "interior_wall_cv_density": 646.1644,
+        "exterior_cv_heat_capacity": 888.727
+      }
+    },
+    {
+      "name": "building_hold_006",
+      "split": "gen_hold",
+      "seed": 5037,
+      "num_zones": 67,
+      "num_ahus": 7,
+      "width": 403,
+      "height": 205,
+      "num_floors": 3,
+      "min_room_size": 28,
+      "max_room_size": 43,
+      "materials": {
+        "exterior_cv_conductivity": 0.1847,
+        "exterior_cv_density": 1606.6272,
+        "interior_mass_cv_density": 21.5745,
+        "interior_wall_cv_conductivity": 0.5396,
+        "interior_wall_cv_density": 168.7356,
+        "exterior_cv_heat_capacity": 844.4991
+      }
+    },
+    {
+      "name": "building_hold_007",
+      "split": "gen_hold",
+      "seed": 5046,
+      "num_zones": 47,
+      "num_ahus": 5,
+      "width": 319,
+      "height": 283,
+      "num_floors": 2,
+      "min_room_size": 31,
+      "max_room_size": 43,
+      "materials": {
+        "exterior_cv_conductivity": 0.2998,
+        "exterior_cv_density": 427.8573,
+        "interior_mass_cv_density": 12.8983,
+        "interior_wall_cv_conductivity": 0.559,
+        "interior_wall_cv_density": 115.1958,
+        "exterior_cv_heat_capacity": 950.0131
+      }
+    }
+  ],
+  "strips": [
+    {
+      "name": "fairbanks_g0",
+      "station": "fairbanks",
+      "gap": 0,
+      "start_timestamp": "2023-02-05 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "fairbanks_g1",
+      "station": "fairbanks",
+      "gap": 1,
+      "start_timestamp": "2023-03-19 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "fairbanks_g2",
+      "station": "fairbanks",
+      "gap": 2,
+      "start_timestamp": "2023-04-30 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "fairbanks_g3",
+      "station": "fairbanks",
+      "gap": 3,
+      "start_timestamp": "2023-06-11 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": []
+    },
+    {
+      "name": "fairbanks_g4",
+      "station": "fairbanks",
+      "gap": 4,
+      "start_timestamp": "2023-07-23 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "fairbanks_g5",
+      "station": "fairbanks",
+      "gap": 5,
+      "start_timestamp": "2023-09-03 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "fairbanks_g6",
+      "station": "fairbanks",
+      "gap": 6,
+      "start_timestamp": "2023-10-15 06:00",
+      "weather_csv": "csv/fairbanks.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "denver_g0",
+      "station": "denver",
+      "gap": 0,
+      "start_timestamp": "2023-02-19 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "denver_g1",
+      "station": "denver",
+      "gap": 1,
+      "start_timestamp": "2023-04-02 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "denver_g2",
+      "station": "denver",
+      "gap": 2,
+      "start_timestamp": "2023-05-14 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "denver_g3",
+      "station": "denver",
+      "gap": 3,
+      "start_timestamp": "2023-06-25 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": []
+    },
+    {
+      "name": "denver_g4",
+      "station": "denver",
+      "gap": 4,
+      "start_timestamp": "2023-08-06 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "denver_g5",
+      "station": "denver",
+      "gap": 5,
+      "start_timestamp": "2023-09-17 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "denver_g6",
+      "station": "denver",
+      "gap": 6,
+      "start_timestamp": "2023-10-29 06:00",
+      "weather_csv": "csv/denver.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "atlanta_g0",
+      "station": "atlanta",
+      "gap": 0,
+      "start_timestamp": "2023-02-26 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "atlanta_g1",
+      "station": "atlanta",
+      "gap": 1,
+      "start_timestamp": "2023-04-09 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "atlanta_g2",
+      "station": "atlanta",
+      "gap": 2,
+      "start_timestamp": "2023-05-21 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "atlanta_g3",
+      "station": "atlanta",
+      "gap": 3,
+      "start_timestamp": "2023-07-02 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": []
+    },
+    {
+      "name": "atlanta_g4",
+      "station": "atlanta",
+      "gap": 4,
+      "start_timestamp": "2023-08-13 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "atlanta_g5",
+      "station": "atlanta",
+      "gap": 5,
+      "start_timestamp": "2023-09-24 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "atlanta_g6",
+      "station": "atlanta",
+      "gap": 6,
+      "start_timestamp": "2023-11-05 06:00",
+      "weather_csv": "csv/atlanta.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "phoenix_g0",
+      "station": "phoenix",
+      "gap": 0,
+      "start_timestamp": "2023-03-05 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "phoenix_g1",
+      "station": "phoenix",
+      "gap": 1,
+      "start_timestamp": "2023-04-16 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "phoenix_g2",
+      "station": "phoenix",
+      "gap": 2,
+      "start_timestamp": "2023-05-28 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "phoenix_g3",
+      "station": "phoenix",
+      "gap": 3,
+      "start_timestamp": "2023-07-09 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": []
+    },
+    {
+      "name": "phoenix_g4",
+      "station": "phoenix",
+      "gap": 4,
+      "start_timestamp": "2023-08-20 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "phoenix_g5",
+      "station": "phoenix",
+      "gap": 5,
+      "start_timestamp": "2023-10-01 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "phoenix_g6",
+      "station": "phoenix",
+      "gap": 6,
+      "start_timestamp": "2023-11-12 06:00",
+      "weather_csv": "csv/phoenix.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "singapore_g0",
+      "station": "singapore",
+      "gap": 0,
+      "start_timestamp": "2023-03-12 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "singapore_g1",
+      "station": "singapore",
+      "gap": 1,
+      "start_timestamp": "2023-04-23 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "singapore_g2",
+      "station": "singapore",
+      "gap": 2,
+      "start_timestamp": "2023-06-04 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "singapore_g3",
+      "station": "singapore",
+      "gap": 3,
+      "start_timestamp": "2023-07-16 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": []
+    },
+    {
+      "name": "singapore_g4",
+      "station": "singapore",
+      "gap": 4,
+      "start_timestamp": "2023-08-27 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "singapore_g5",
+      "station": "singapore",
+      "gap": 5,
+      "start_timestamp": "2023-10-08 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "singapore_g6",
+      "station": "singapore",
+      "gap": 6,
+      "start_timestamp": "2023-11-19 06:00",
+      "weather_csv": "csv/singapore.csv",
+      "used_by": [
+        "gen_train"
+      ]
+    },
+    {
+      "name": "minneapolis_g0",
+      "station": "minneapolis",
+      "gap": 0,
+      "start_timestamp": "2023-02-12 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": []
+    },
+    {
+      "name": "minneapolis_g1",
+      "station": "minneapolis",
+      "gap": 1,
+      "start_timestamp": "2023-03-26 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "minneapolis_g2",
+      "station": "minneapolis",
+      "gap": 2,
+      "start_timestamp": "2023-05-07 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": []
+    },
+    {
+      "name": "minneapolis_g3",
+      "station": "minneapolis",
+      "gap": 3,
+      "start_timestamp": "2023-06-18 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": []
+    },
+    {
+      "name": "minneapolis_g4",
+      "station": "minneapolis",
+      "gap": 4,
+      "start_timestamp": "2023-07-30 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": []
+    },
+    {
+      "name": "minneapolis_g5",
+      "station": "minneapolis",
+      "gap": 5,
+      "start_timestamp": "2023-09-10 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": [
+        "gen_hold"
+      ]
+    },
+    {
+      "name": "minneapolis_g6",
+      "station": "minneapolis",
+      "gap": 6,
+      "start_timestamp": "2023-10-22 06:00",
+      "weather_csv": "csv/minneapolis.csv",
+      "used_by": []
+    }
+  ],
+  "sets": {
+    "gen_train": [
+      "building_gen_000/fairbanks_g0",
+      "building_gen_000/denver_g2",
+      "building_gen_000/atlanta_g4",
+      "building_gen_000/phoenix_g6",
+      "building_gen_001/singapore_g2",
+      "building_gen_001/fairbanks_g4",
+      "building_gen_001/denver_g6",
+      "building_gen_001/atlanta_g0",
+      "building_gen_002/phoenix_g4",
+      "building_gen_002/singapore_g6",
+      "building_gen_002/fairbanks_g0",
+      "building_gen_002/denver_g2",
+      "building_gen_003/atlanta_g6",
+      "building_gen_003/phoenix_g0",
+      "building_gen_003/singapore_g2",
+      "building_gen_003/fairbanks_g4",
+      "building_gen_004/denver_g0",
+      "building_gen_004/atlanta_g2",
+      "building_gen_004/phoenix_g4",
+      "building_gen_004/singapore_g6",
+      "building_gen_005/fairbanks_g2",
+      "building_gen_005/denver_g4",
+      "building_gen_005/atlanta_g6",
+      "building_gen_005/phoenix_g0",
+      "building_gen_006/singapore_g4",
+      "building_gen_006/fairbanks_g6",
+      "building_gen_006/denver_g0",
+      "building_gen_006/atlanta_g2",
+      "building_gen_007/phoenix_g6",
+      "building_gen_007/singapore_g0",
+      "building_gen_007/fairbanks_g2",
+      "building_gen_007/denver_g4",
+      "building_gen_008/atlanta_g0",
+      "building_gen_008/phoenix_g2",
+      "building_gen_008/singapore_g4",
+      "building_gen_008/fairbanks_g6",
+      "building_gen_009/denver_g2",
+      "building_gen_009/atlanta_g4",
+      "building_gen_009/phoenix_g6",
+      "building_gen_009/singapore_g0",
+      "building_gen_010/fairbanks_g4",
+      "building_gen_010/denver_g6",
+      "building_gen_010/atlanta_g0",
+      "building_gen_010/phoenix_g2",
+      "building_gen_011/singapore_g6",
+      "building_gen_011/fairbanks_g0",
+      "building_gen_011/denver_g2",
+      "building_gen_011/atlanta_g4",
+      "building_gen_012/phoenix_g0",
+      "building_gen_012/singapore_g2",
+      "building_gen_012/fairbanks_g4",
+      "building_gen_012/denver_g6",
+      "building_gen_013/atlanta_g2",
+      "building_gen_013/phoenix_g4",
+      "building_gen_013/singapore_g6",
+      "building_gen_013/fairbanks_g0",
+      "building_gen_014/denver_g4",
+      "building_gen_014/atlanta_g6",
+      "building_gen_014/phoenix_g0",
+      "building_gen_014/singapore_g2",
+      "building_gen_015/fairbanks_g6",
+      "building_gen_015/denver_g0",
+      "building_gen_015/atlanta_g2",
+      "building_gen_015/phoenix_g4"
+    ],
+    "gen_hold": [
+      "building_hold_000/minneapolis_g1",
+      "building_hold_000/minneapolis_g5",
+      "building_hold_000/fairbanks_g1",
+      "building_hold_000/atlanta_g5",
+      "building_hold_001/minneapolis_g5",
+      "building_hold_001/minneapolis_g1",
+      "building_hold_001/denver_g5",
+      "building_hold_001/phoenix_g1",
+      "building_hold_002/minneapolis_g1",
+      "building_hold_002/minneapolis_g5",
+      "building_hold_002/atlanta_g1",
+      "building_hold_002/singapore_g5",
+      "building_hold_003/minneapolis_g5",
+      "building_hold_003/minneapolis_g1",
+      "building_hold_003/phoenix_g5",
+      "building_hold_003/fairbanks_g1",
+      "building_hold_004/minneapolis_g1",
+      "building_hold_004/minneapolis_g5",
+      "building_hold_004/singapore_g1",
+      "building_hold_004/denver_g5",
+      "building_hold_005/minneapolis_g5",
+      "building_hold_005/minneapolis_g1",
+      "building_hold_005/fairbanks_g5",
+      "building_hold_005/atlanta_g1",
+      "building_hold_006/minneapolis_g1",
+      "building_hold_006/minneapolis_g5",
+      "building_hold_006/denver_g1",
+      "building_hold_006/phoenix_g5",
+      "building_hold_007/minneapolis_g5",
+      "building_hold_007/minneapolis_g1",
+      "building_hold_007/atlanta_g5",
+      "building_hold_007/singapore_g1"
+    ],
+    "ext_hold": [
+      "building_hold_000/anchorage_1",
+      "building_hold_001/auckland_2",
+      "building_hold_002/bangkok_3",
+      "building_hold_003/beijing_1",
+      "building_hold_004/chicago_2",
+      "building_hold_005/dubai_3",
+      "building_hold_006/helsinki_1",
+      "building_hold_007/houston_2",
+      "building_train_1/lasvegas_3",
+      "building_train_8/london_1",
+      "building_hold_000/miami_2",
+      "building_hold_001/montreal_3",
+      "building_hold_002/moscow_1",
+      "building_hold_003/reykjavik_2",
+      "building_hold_004/sanfrancisco_3",
+      "building_hold_005/seattle_1",
+      "building_hold_006/tokyo_2"
+    ]
+  },
+  "scenarios": {
+    "building_gen_000/fairbanks_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 9,
+      "config_sha": "bf92813b8411c696d8f0a450398982bd9e03ad6f5b57b6dbb80406ea38b4588e"
+    },
+    "building_gen_000/denver_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 9,
+      "config_sha": "f19a26febc419fef2f31516f331269fda72fae9c6cade634134dbe5a8d8e49e9"
+    },
+    "building_gen_000/atlanta_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 9,
+      "config_sha": "044f655843ab33cfa6784e15587c96c745074f79b3f47017dc0b743789de5fbb"
+    },
+    "building_gen_000/phoenix_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 9,
+      "config_sha": "4e1eb12004d80d7f9a61e5013dd458751deab888b0e2fc6260cfda186a93d1f7"
+    },
+    "building_gen_001/singapore_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "4dc169ee5d8cc1bc07a53f371e8d5c854066b8cb10679d25971772a84be6ae74"
+    },
+    "building_gen_001/fairbanks_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "42dae6d7514727728df80e58eed677dee0c362117a27972c1fae912835277de0"
+    },
+    "building_gen_001/denver_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "26490bd376c28299860d261b3a7a1b075cef80fe255bd4e5edca8e4b482d29d2"
+    },
+    "building_gen_001/atlanta_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "6f5c5917c1771e76fc7577eb0f80ff435ba06b0433c8fa3458932abcc7b73102"
+    },
+    "building_gen_002/phoenix_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "0deda91351303a66ba88f5c3f41cf5d8f5ef4b3977c0dbe712339cb7618f4df5"
+    },
+    "building_gen_002/singapore_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "1a5f8f3505e6f04509649bfe6550007bc354566fb83d3ede4121f0fdb08cb7af"
+    },
+    "building_gen_002/fairbanks_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "222c00ae3b943642235cae854328a77bd3a1112976b86432ece0de4f254e22ca"
+    },
+    "building_gen_002/denver_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "e5f8f195c041134f48784c10f1b7804a20614ddfb1811c07af9d2c3a0faf6667"
+    },
+    "building_gen_003/atlanta_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "f50194ddd1f4fb073db5836bbad3c96f98fdcd1e9da26db8601b0a8cae060fa7"
+    },
+    "building_gen_003/phoenix_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "0eb2cee9bfa73fde17216618fc01f7b99b537a5e209029703f2c57268d28d9d5"
+    },
+    "building_gen_003/singapore_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "f66249b1cf3e2c8b7a76ee45565d3f085b22d210ad53147982ccf632cdfdce88"
+    },
+    "building_gen_003/fairbanks_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "48151006c8734bb36377420e40d64d1437fe5505673b2245fe66f27c00148b77"
+    },
+    "building_gen_004/denver_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 3,
+      "config_sha": "e789e55e1d53d7bd5d0c9fb11a3f2790f690b5b741a7eba77d2256e22edaa2c2"
+    },
+    "building_gen_004/atlanta_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 3,
+      "config_sha": "d439207a029db69de5b9382480e08d148d8febad8c37699bb8bb57cb2b931174"
+    },
+    "building_gen_004/phoenix_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 3,
+      "config_sha": "034e6cf4fc6e9f40ff656dca78c9e82aa4a47755e4f167e62a75e329956d0670"
+    },
+    "building_gen_004/singapore_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 3,
+      "config_sha": "00f9dcf62e8ae0f3e9c83ab156934c818e70c5f7046cf60e692a06f6a5a204ac"
+    },
+    "building_gen_005/fairbanks_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "9d15dcad36f1803dce8c9bafcb01b81da46824f176f500cccfba854cf84818c2"
+    },
+    "building_gen_005/denver_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "a4fd7538366ac08a0229e80b2b2523fb3874654993bcc2de3e37104e64a844ea"
+    },
+    "building_gen_005/atlanta_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "73f724ec9d39d5b895e9b54c0984d3de1eb7796e09d9cfa4ea0b634008b40854"
+    },
+    "building_gen_005/phoenix_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "62a44a4426c5c45cbbe7ea91aa059449d04997aeab6f6876ef6326d54d05d8e7"
+    },
+    "building_gen_006/singapore_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "f00e1282bafc390c4699b192a5f73611d3c032fce40f652588cc229281a5dec8"
+    },
+    "building_gen_006/fairbanks_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "b74571555407a978610182fed6c34dcf1262239d6303040c83f8a0f360a54c23"
+    },
+    "building_gen_006/denver_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "25a811e986cf3bb6f9f8c6ca5a44834fd34257c0a5405684c03b348958cb4d6d"
+    },
+    "building_gen_006/atlanta_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "95e7940fa03e96be9310a0758d9878121e6537c37f2efa48f106a604d0d846db"
+    },
+    "building_gen_007/phoenix_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "bfe8c16b3ef1e420882b9568f637ac0a8f4958381478f11bab310f69b538cffb"
+    },
+    "building_gen_007/singapore_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "f7c196058e857283e80ac45ed7f4e159e50bd52fde0c2ac639f74d131129d8b4"
+    },
+    "building_gen_007/fairbanks_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "8b8f8943cb9027fc5d2a6c44eb2c78a3984ce85c23357f759581f67bfaacc420"
+    },
+    "building_gen_007/denver_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "5ae79f3324e56a2b8a159296bbeeeb4f4253f61af1a2556c2000419e7743ffd0"
+    },
+    "building_gen_008/atlanta_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "62e8291f0bd339dbfb38631cf8c67b3fc88d97eea2815831f91206846269b4c2"
+    },
+    "building_gen_008/phoenix_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "e68cf333473f2928694cef7052cbf12de769a91ccda9a404c04d5e63112b5ffc"
+    },
+    "building_gen_008/singapore_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "e22481e58382290de41a5a06d55a1ccfd710dd76795159b8f40d1015a8708dda"
+    },
+    "building_gen_008/fairbanks_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "b0d0f7d1e9ec52e36ddff90c2fdedff5bd9dce01bc1c2f62e2b1dba5bc812f5e"
+    },
+    "building_gen_009/denver_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "ac5a16d185027032f26240b7a669656b9581c64cb694edf61ef8b4a22e89746b"
+    },
+    "building_gen_009/atlanta_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "23692e01c37701586804f0524872582ed49d8020312585355955a9d156654f5c"
+    },
+    "building_gen_009/phoenix_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "8b5a5b5328a4ddbc2cb2f6a18b1bbe08eff51c1cd698938c36b1de4af81bd706"
+    },
+    "building_gen_009/singapore_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "600e75dc08e926f64e1aaf40ee1957041b90a4912bad270fbf08ec43d45f5be9"
+    },
+    "building_gen_010/fairbanks_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "f35504ddfc4a458b88d69657b2b1cb43448266b0bc26512524683f50136891f4"
+    },
+    "building_gen_010/denver_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "640827d74d6fb7b1a302d1a39ef32b257dba29cc97e71e7551aadd5f11fe39bd"
+    },
+    "building_gen_010/atlanta_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "f47338aac76f236925d8007f6bf3ef95517b935b228f87f894e43dd1d3243ca9"
+    },
+    "building_gen_010/phoenix_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "dadc64e32ef5e27b1ad9e6ed5a58116a2b6faddf8030e0ef69d636a4eb15b94b"
+    },
+    "building_gen_011/singapore_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "19c7c03b6812002dfc6196a6ad3c65d34b4381e2c4917e5d83144bc8ddfbe69e"
+    },
+    "building_gen_011/fairbanks_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "f512a2d5e87ce5c2adca93b1b5512a30e7f89be776a7cba506090bd555bece95"
+    },
+    "building_gen_011/denver_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "b715d7fdd2d03d5062d4454874c8a5c6d7d4d8c565a8dba2d768fc09e38e76c8"
+    },
+    "building_gen_011/atlanta_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "b7a146c773008f9fcbf6ee5c99ba46df400a1a68c32149cd1b389357e2dd38d1"
+    },
+    "building_gen_012/phoenix_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "3ff3e2127bea1abf825d16d589fabc3bfba71953b7ac5938ed9375f9417ad5c6"
+    },
+    "building_gen_012/singapore_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "1ce444319162cc70545bafcc201f1ae91c9aec07f5281caa23ffc41395d9eafd"
+    },
+    "building_gen_012/fairbanks_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "e6269fb02bb49ddb4a7291995c7d12d79128f463ef9ecbaa42527e26603c7b31"
+    },
+    "building_gen_012/denver_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "026c59de64c83a30ac245114c156948791d41b8837534efdab9e873566108404"
+    },
+    "building_gen_013/atlanta_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "5f6665f3b01fae70e3e25c06ee7e2df4e751c3eb5617b66a46da50d9ecb40def"
+    },
+    "building_gen_013/phoenix_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "8df440b70b0c1f46ee45aef93b3fd768b828dc883d344592262ab9f5207d2c5d"
+    },
+    "building_gen_013/singapore_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "3d1bf07c19092a023c80336d32f8972325d9e9670c561d505c5a671f21f76eee"
+    },
+    "building_gen_013/fairbanks_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "21a3dc0acc508f2f785f78f8ffcadf448c9938d6edecfce9efc0fe93016008f3"
+    },
+    "building_gen_014/denver_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "cafa5231c328363ab6bb00525861e50fb92acc48624897b92421bd026febd389"
+    },
+    "building_gen_014/atlanta_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "457713a1bfcaf98669f006d1d5d5729102ccba502cf54d32b2fa7eb272db81bd"
+    },
+    "building_gen_014/phoenix_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "122e5d3677c7aa2f95808ba866d9c650424a67a3f8f93ddb5461b3593ec43adb"
+    },
+    "building_gen_014/singapore_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "98e0a4ffb540341f194a299f8b95bab6a4af761d6b4ee1c3ae6addc46582b8b3"
+    },
+    "building_gen_015/fairbanks_g6": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "1fc4562ace439487e07b89603ed122a7fd73aeffe5243a410e64b8c303ac4998"
+    },
+    "building_gen_015/denver_g0": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "84b13edca268254107607681ef3374764e088c599ad83548e2713de1653e3fd7"
+    },
+    "building_gen_015/atlanta_g2": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "d37e97cf7343236d9feb0b3f6bf47b770268ba6b178f44a59352bb69e0d23ad3"
+    },
+    "building_gen_015/phoenix_g4": {
+      "set": "gen_train",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "2bfbd292161e5b937b2289f1ee2e81f1c12b7a9c28ca414459994c7a61d515da"
+    },
+    "building_hold_000/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "1944645afb018a0872a1ae8757f3919a88c520d0dbc4aa66d9584728237f026c"
+    },
+    "building_hold_000/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "d970d46ff5dc956ad5c2e5fb873cd6c55e85929deaadd35942350fedcec2eb55"
+    },
+    "building_hold_000/fairbanks_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "31170b4ee521133e6356a9dd5f9b1382a2eb1dc1d6c9796b3ecbf86892c9dd4a"
+    },
+    "building_hold_000/atlanta_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "2ec62e2313ced25895303353732c24593211cf089c20da2de535126a0bcdbcf7"
+    },
+    "building_hold_001/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "54fdd19feea0e332f0c41153502ad94e14cf69b40200bc7d24dd08f67e3c43da"
+    },
+    "building_hold_001/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "63fa28cfdfc9cd9e2f6ad6bf09cddd031b837ca7bcc9d7755b619fd45b98d1da"
+    },
+    "building_hold_001/denver_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "8f83680ab7406b8398f63bd8c6a257301d4cb521bd6d1922f88412d635288c09"
+    },
+    "building_hold_001/phoenix_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "6f2b2103ca2625cd5eec3e0b5fe5e725d31aaf52fa6ecb86a7dd9a2f9cceb2ec"
+    },
+    "building_hold_002/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "e08db0321b7d01dde9f3b906bd50db0f29cfce564acc2c8bd340a75725cdad24"
+    },
+    "building_hold_002/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "ce0ed27aa45afbafbe6bb5c3c9ce8bf933ec7b43b5fefbe1d769c81f872bede4"
+    },
+    "building_hold_002/atlanta_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "efdbbc2393e8c3d1765ee0d84378ebdb33ac4b66ccccb8e78438250849fc46f2"
+    },
+    "building_hold_002/singapore_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "646431a3ca0646b442b02960cacef2798a525225e414b18a3cd9aa5449c2710a"
+    },
+    "building_hold_003/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "29a5ef63e6bd89c2de0c5eb508a2aa16fe75f74a09b5c45659e44fc2f71386ea"
+    },
+    "building_hold_003/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "7bfe89e04bc9329c6343b1c5868a75f39f73e43f03ea6b4d05e7d083f69ce9e1"
+    },
+    "building_hold_003/phoenix_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "610d235616f6a19b10d53d906da4e999884fdc441099257891a12443546216e3"
+    },
+    "building_hold_003/fairbanks_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "143ec08aee4ca4e53de1af4a435ae5263631ceecaf473c71c0b62cb51aa85d4f"
+    },
+    "building_hold_004/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "b51499fe52fafcdb91e95815135ce5f2cd465e287ef79b124feb8ccd6dbf07db"
+    },
+    "building_hold_004/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "9ff7ff9211573e173153e4c3e949ae87afc71a84e01af31760a53c9c60b6ab34"
+    },
+    "building_hold_004/singapore_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "5b8c416d79e18c12c2922e451bb28900bec8de707ab804a2652d58f7530880b5"
+    },
+    "building_hold_004/denver_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "1538115d980b5ca39f223b8f8cf0c3f46c30466fc8b613639f1842c6effd51b8"
+    },
+    "building_hold_005/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "98c8047b57ba2b218e9688efe39af04e70af72cbfd035c07c7686dfbf6941e77"
+    },
+    "building_hold_005/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "5dfc3de149a0ccbe50779971a78ee65749af1a5d8875f888b9a860d183ef0e0d"
+    },
+    "building_hold_005/fairbanks_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "42b26bd5f5f98e378b1d5418385b75116eb12841fd8253cfcfbadb86c96e21d4"
+    },
+    "building_hold_005/atlanta_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "43d24273f8013f115ef69c79cfac39b95383363197a7a4df773e3eee9e32e094"
+    },
+    "building_hold_006/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "e8695878db6307cb6d7a62d3a9e448129ac3d840084741c4262f6918a5939778"
+    },
+    "building_hold_006/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "35788893b812588ebbc144ca9f828ad57d816d237facd5917043e19983e5754c"
+    },
+    "building_hold_006/denver_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "2ccf0b12e7d6c126910a3132d03453775d2e521ac9f4628e33ade18d785976d0"
+    },
+    "building_hold_006/phoenix_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "5ec12d409bf0a4c5a9db1cb9abc69f74f501b6ec7ae1952cd2321de9650a0d0d"
+    },
+    "building_hold_007/minneapolis_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "9bd0304157329db93c4909ef7615062c1d80ea77beec589573bcc83fe84a9008"
+    },
+    "building_hold_007/minneapolis_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "8e14df13727a7553cbd0fbd230f3c2b26cbc6115ee97f78e799c4e834e7edb25"
+    },
+    "building_hold_007/atlanta_g5": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "6b31556bb7a28af6b9edb82b5595ba14beb8a5cbe386dd7f8fe90afdac2a6cc7"
+    },
+    "building_hold_007/singapore_g1": {
+      "set": "gen_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "8d61029c7f33881a49d3fc671c34e46ac86eca709d054e0f5e2ddd3f0faa5e11"
+    },
+    "building_hold_000/anchorage_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "ac11702f774254c24cda0c19b3fd0992a37a384cd9f43796c4070e56e34e8214"
+    },
+    "building_hold_001/auckland_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "3873a2363b52f55cf5406bba49232d2bd33f92cc03c6120e5b2b809c4308ff5e"
+    },
+    "building_hold_002/bangkok_3": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "a7a89e1639f29742ac1dab857feea73fe0bc59389a2b3b580d3d23bf72c4ac6b"
+    },
+    "building_hold_003/beijing_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "69b9aeb16d20961fe8e3ac0a221db42c2c9562e065996536e88f59beaa7a0226"
+    },
+    "building_hold_004/chicago_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "a74e68f2b2de92b948e0cccd16c4b2d2bc16e1bf398e686ac7d81a0bf7a34328"
+    },
+    "building_hold_005/dubai_3": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "39d2834a03060db4c0503caf6648d3a6d4966d5f2b3887d9fdd4c012e427bf87"
+    },
+    "building_hold_006/helsinki_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "e37877336876360d700c781d89f47c16f415c3d79d38c5df3aa0aed80b00c1f4"
+    },
+    "building_hold_007/houston_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "82461541b454b7a4c5045eeb439598192aa1b75985fe80610e576d3c54fae8c5"
+    },
+    "building_train_1/lasvegas_3": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 4,
+      "config_sha": "91beecdb0c2bb200c3cedc1686999cefb8ed4c30b82cbd1c385d11242f24c3cc"
+    },
+    "building_train_8/london_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 3,
+      "config_sha": "52d919f71e5c5fa523f4b90d4e2d19e72f0ffef219e1b6504ea009535bd85d1d"
+    },
+    "building_hold_000/miami_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "3e36de4f55215dae3b7149ca6ac7fe828ec459dafd39f369b69b398201f96670"
+    },
+    "building_hold_001/montreal_3": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 8,
+      "config_sha": "5bf2744f2607cfa0c197bd74b1c98fd3354742c655911644a9632c28bd49ea83"
+    },
+    "building_hold_002/moscow_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "f8a12d08d6b1c6ee375abb76eaabd68f736be71a85a6ab2fd705d8c06b0301a3"
+    },
+    "building_hold_003/reykjavik_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "1e1c5d1a7d6e85aacd17aefd87a9b61aba6195f811f6291815c2e70c7072c24e"
+    },
+    "building_hold_004/sanfrancisco_3": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 5,
+      "config_sha": "c10ada4391c6015ce3e2744ae9d0614974723595f02dd14943ba2b7b0e6fb93a"
+    },
+    "building_hold_005/seattle_1": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 6,
+      "config_sha": "cb6bcc7339b33c366d6cb7f2a8466c20595bb84be696a7d031d4acbc5067be29"
+    },
+    "building_hold_006/tokyo_2": {
+      "set": "ext_hold",
+      "num_zones": 2,
+      "num_ahus": 7,
+      "config_sha": "a2892fdecb32ea424099d9499cd207f95588ea8e9b381552c98c68eedeb5ec50"
+    }
+  },
+  "mirrored_files": 196,
+  "wall_seconds": 435.1
+}

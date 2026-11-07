@@ -1,0 +1,67 @@
+{
+  "tag": "cool_ef278",
+  "policy": "policies.ctrl_w5:CtrlW5",
+  "sim": "shipped",
+  "steps": 2016,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/cool_ef278",
+  "wall_seconds": 64.8399760723114,
+  "scenarios": [
+    {
+      "scenario": "building_train_7/atlanta_8",
+      "error": null,
+      "mean_per_step_reward": -0.005441636896495174,
+      "total_reward": -10.97033998333427,
+      "reconciliation": {
+        "loss_from_components": -10.607193256089438,
+        "loss_from_reward_terms": -10.607193282669325,
+        "loss_recomputed_from_powers": -10.607193256089438,
+        "energy_from_powers": -3.006248145291373,
+        "energy_from_reward": -3.0062481488253985,
+        "carbon_from_powers": -7.6009451107980635,
+        "carbon_from_reward": -7.600945133843926,
+        "rel_error_vs_reward_terms": 2.5058359952271568e-09,
+        "rel_error_energy": 1.1755601473060052e-09,
+        "rel_error_carbon": 3.0319732219796526e-09,
+        "rel_error_combined_powers_vs_reward": 2.5058359952271568e-09
+      }
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "error": null,
+      "mean_per_step_reward": -0.012185325873763461,
+      "total_reward": -24.56561696150714,
+      "reconciliation": {
+        "loss_from_components": -24.56561696881217,
+        "loss_from_reward_terms": -24.565616976972183,
+        "loss_recomputed_from_powers": -24.565616968812165,
+        "energy_from_powers": -19.96833710856259,
+        "energy_from_reward": -19.968337119077837,
+        "carbon_from_powers": -4.597279860249575,
+        "carbon_from_reward": -4.597279857894344,
+        "rel_error_vs_reward_terms": 3.32172193910918e-10,
+        "rel_error_energy": 5.265960443686698e-10,
+        "rel_error_carbon": 5.123096156761345e-10,
+        "rel_error_combined_powers_vs_reward": 3.321723385323082e-10
+      }
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "error": null,
+      "mean_per_step_reward": -0.006798980250650514,
+      "total_reward": -13.706744185311436,
+      "reconciliation": {
+        "loss_from_components": -13.59193607097591,
+        "loss_from_reward_terms": -13.591936065942901,
+        "loss_recomputed_from_powers": -13.591936070975908,
+        "energy_from_powers": -10.925965811792706,
+        "energy_from_reward": -10.925965809253285,
+        "carbon_from_powers": -2.6659702591832044,
+        "carbon_from_reward": -2.665970256689616,
+        "rel_error_vs_reward_terms": 3.70293727992344e-10,
+        "rel_error_energy": 2.3242074542098992e-10,
+        "rel_error_carbon": 9.353399350881907e-10,
+        "rel_error_combined_powers_vs_reward": 3.702935973003785e-10
+      }
+    }
+  ]
+}

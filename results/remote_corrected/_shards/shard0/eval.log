@@ -1,0 +1,8 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 288 --sim corrected --workers 4 --tag remote_corrected --out /kaggle/working/results/remote_corrected --components parity --start-offset-days 0 --scenario building_gen_000/fairbanks_g0
+
+STDOUT
+[evalrun] tag=remote_corrected sim=corrected policy=baseline:pid_water scenarios=1 steps=288 workers=4 out=/kaggle/working/results/remote_corrected
+[evalrun] 1/1 building_gen_000/fairbanks_g0          total=    -37.7014 mean=-0.130908 steps=288 cpu=75.2s
+[evalrun] score=0.130908 scenarios=1 failed=0 wall=76s -> /kaggle/working/results/remote_corrected/summary.json
+
+STDERR

@@ -1,0 +1,4 @@
+name: dubai_3
+weather_csv: csv/dubai.csv
+convection_coefficient: 21.2
+start_timestamp: 2023-09-10 06:00

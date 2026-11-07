@@ -1,0 +1,17 @@
+{
+  "sim": "corrected",
+  "scenario": "building_train_1/phoenix_5",
+  "steps": 600,
+  "worst": {
+    "temp": 6.455121556844267e-13,
+    "mass": 5.899484988817484e-13,
+    "tank": 0.0,
+    "ret": 0.0,
+    "reward": 5.667800416918107e-08
+  },
+  "total_env": -7.387282752722967,
+  "total_twin": -7.387282739612553,
+  "total_rel": 1.7747275319682193e-09,
+  "cpu": 27.527656000000004,
+  "pass_": false
+}

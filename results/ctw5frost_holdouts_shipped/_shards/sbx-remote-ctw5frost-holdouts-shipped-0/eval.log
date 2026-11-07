@@ -1,0 +1,19 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --steps 8641 --sim shipped --workers 4 --tag ctw5frost_holdouts_shipped --out /kaggle/working/results/ctw5frost_holdouts_shipped --components hook --start-offset-days 0 --scenario building_hold_000/minneapolis_g1 building_hold_001/auckland_2 building_hold_001/montreal_3 building_hold_002/atlanta_g1 building_hold_002/moscow_1 building_hold_003/minneapolis_g1 building_hold_004/denver_g5 building_hold_004/minneapolis_g5 building_hold_005/fairbanks_g5 building_hold_006/phoenix_g5 building_hold_007/atlanta_g5 building_hold_007/singapore_g1 --params {"standby_minimum": 278.0}
+
+STDOUT
+[evalrun] tag=ctw5frost_holdouts_shipped sim=shipped policy=policies.ctrl_w5:CtrlW5 scenarios=12 steps=8641 workers=4 out=/kaggle/working/results/ctw5frost_holdouts_shipped
+[evalrun] 1/12 building_hold_002/atlanta_g1           total=    -21.9072 mean=-0.002535 steps=8641 cpu=1279.8s
+[evalrun] 2/12 building_hold_000/minneapolis_g1       total=    -76.9798 mean=-0.008909 steps=8641 cpu=1301.2s
+[evalrun] 3/12 building_hold_001/montreal_3           total=    -11.1888 mean=-0.001295 steps=8641 cpu=1853.8s
+[evalrun] 4/12 building_hold_001/auckland_2           total=     -6.2940 mean=-0.000728 steps=8641 cpu=1870.3s
+[evalrun] 5/12 building_hold_002/moscow_1             total=   -137.7328 mean=-0.015939 steps=8641 cpu=1276.4s
+[evalrun] 6/12 building_hold_004/denver_g5            total=    -14.6241 mean=-0.001692 steps=8641 cpu=929.2s
+[evalrun] 7/12 building_hold_004/minneapolis_g5       total=    -14.2536 mean=-0.001650 steps=8641 cpu=930.8s
+[evalrun] 8/12 building_hold_003/minneapolis_g1       total=    -92.5695 mean=-0.010713 steps=8641 cpu=1552.6s
+[evalrun] 9/12 building_hold_005/fairbanks_g5         total=    -30.4356 mean=-0.003522 steps=8641 cpu=1220.2s
+[evalrun] 10/12 building_hold_007/atlanta_g5           total=    -28.6689 mean=-0.003318 steps=8641 cpu=1300.8s
+[evalrun] 11/12 building_hold_007/singapore_g1         total=    -58.8029 mean=-0.006805 steps=8641 cpu=1268.9s
+[evalrun] 12/12 building_hold_006/phoenix_g5           total=    -32.2280 mean=-0.003730 steps=8641 cpu=1390.8s
+[evalrun] score=0.005070 scenarios=12 failed=0 wall=4221s -> /kaggle/working/results/ctw5frost_holdouts_shipped/summary.json
+
+STDERR

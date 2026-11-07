@@ -1,0 +1,29 @@
+{
+  "tag": "ef_corrected",
+  "policy": "policies.ctrl_w:CtrlW",
+  "sim": "corrected",
+  "steps": 8641,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ef_corrected",
+  "wall_seconds": 530.378790140152,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "error": null,
+      "mean_per_step_reward": -0.045388680537301836,
+      "total_reward": -392.20358852282516,
+      "reconciliation": {
+        "loss_from_components": -389.58364402655576,
+        "loss_from_reward_terms": -389.5836438072089,
+        "loss_recomputed_from_powers": -389.5836440265557,
+        "energy_from_powers": -111.40888411929163,
+        "energy_from_reward": -111.4088841101795,
+        "carbon_from_powers": -278.1747599072641,
+        "carbon_from_reward": -278.17475969702934,
+        "rel_error_vs_reward_terms": 5.630289582122785e-10,
+        "rel_error_energy": 8.178995790020107e-11,
+        "rel_error_carbon": 7.557650435577462e-10,
+        "rel_error_combined_powers_vs_reward": 5.630288123041539e-10
+      }
+    }
+  ]
+}

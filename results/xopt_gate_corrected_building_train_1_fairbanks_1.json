@@ -1,0 +1,17 @@
+{
+  "sim": "corrected",
+  "scenario": "building_train_1/fairbanks_1",
+  "steps": 600,
+  "worst": {
+    "temp": 7.364927116012309e-13,
+    "mass": 6.85087245355068e-13,
+    "tank": 0.0,
+    "ret": 3.548865562895789e-13,
+    "reward": 0.0
+  },
+  "total_env": -28.99845691891096,
+  "total_twin": -28.99845691891096,
+  "total_rel": 0.0,
+  "cpu": 25.247884,
+  "pass_": true
+}

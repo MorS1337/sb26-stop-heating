@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.ctrl_w5:CtrlW5 --steps 8641 --sim shipped --workers 4 --tag ctw5frost_dev30_seed12345 --out /kaggle/working/results/ctw5frost_dev30_seed12345 --components parity --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_1/phoenix_5 building_train_2/fairbanks_2 building_train_5/denver_3 building_train_5/singapore_4 building_train_7/fairbanks_7 building_train_8/denver_6 --params {"standby_minimum": 278.0} --cenv fused --fast --occupancy-seed 12345
+
+STDOUT
+[evalrun] tag=ctw5frost_dev30_seed12345 sim=shipped policy=policies.ctrl_w5:CtrlW5 scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/ctw5frost_dev30_seed12345 cenv=fused fast=on
+[evalrun] 1/7 building_train_1/phoenix_5             total=   -123.2229 mean=-0.014260 steps=8641 cpu=679.9s
+[evalrun] 2/7 building_train_1/atlanta_2             total=    -27.3914 mean=-0.003170 steps=8641 cpu=681.5s
+[evalrun] 3/7 building_train_5/denver_3              total=    -33.3317 mean=-0.003857 steps=8641 cpu=891.0s
+[evalrun] 4/7 building_train_7/fairbanks_7           total=    -70.7588 mean=-0.008189 steps=8641 cpu=466.4s
+[evalrun] 5/7 building_train_8/denver_6              total=    -27.6694 mean=-0.003202 steps=8641 cpu=323.9s
+[evalrun] 6/7 building_train_2/fairbanks_2           total=    -98.8566 mean=-0.011440 steps=8641 cpu=1279.6s
+[evalrun] 7/7 building_train_5/singapore_4           total=    -46.6062 mean=-0.005394 steps=8641 cpu=737.8s
+[evalrun] score=0.007073 scenarios=7 failed=0 wall=1433s -> /kaggle/working/results/ctw5frost_dev30_seed12345/summary.json
+
+STDERR

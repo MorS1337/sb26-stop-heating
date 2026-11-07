@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 576 --sim shipped --workers 4 --tag remote_dev30_576 --out /kaggle/working/results/remote_dev30_576 --components parity --start-offset-days 0 --scenario building_train_1/fairbanks_1 building_train_2/fairbanks_2 building_train_4/fairbanks_4 building_train_5/fairbanks_5 building_train_7/fairbanks_7 building_train_8/fairbanks_8
+
+STDOUT
+[evalrun] tag=remote_dev30_576 sim=shipped policy=baseline:pid_water scenarios=6 steps=576 workers=4 out=/kaggle/working/results/remote_dev30_576
+[evalrun] 1/6 building_train_1/fairbanks_1           total=    -13.2996 mean=-0.023090 steps=576 cpu=112.5s
+[evalrun] 2/6 building_train_4/fairbanks_4           total=     -6.9508 mean=-0.012067 steps=576 cpu=149.3s
+[evalrun] 3/6 building_train_5/fairbanks_5           total=     -0.0115 mean=-0.000020 steps=576 cpu=154.1s
+[evalrun] 4/6 building_train_2/fairbanks_2           total=    -49.8145 mean=-0.086483 steps=576 cpu=185.3s
+[evalrun] 5/6 building_train_7/fairbanks_7           total=    -13.7523 mean=-0.023875 steps=576 cpu=70.8s
+[evalrun] 6/6 building_train_8/fairbanks_8           total=    -21.3135 mean=-0.037003 steps=576 cpu=49.7s
+[evalrun] score=0.030423 scenarios=6 failed=0 wall=209s -> /kaggle/working/results/remote_dev30_576/summary.json
+
+STDERR

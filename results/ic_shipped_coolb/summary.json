@@ -1,0 +1,149 @@
+{
+  "tag": "ic_shipped_coolb",
+  "policy": "policies.exploit_b2:ExploitB2",
+  "params": {
+    "b2_sign": -1.0,
+    "b2_ramp": "binary",
+    "b2_pressure_native": 0.0,
+    "b2_valve_mode": "base"
+  },
+  "sim": "shipped",
+  "steps": 2016,
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ic_shipped_coolb",
+  "wall_seconds": 53.23307991027832,
+  "mean_total_reward": -147.20803910680115,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "error": null,
+      "total_reward": -147.20803910680115,
+      "b2": {
+        "imbalance_kwh_net": -2934.0850056761005,
+        "imbalance_kwh_heat": 108.23380025216653,
+        "imbalance_kwh_cool": 3042.318805928267,
+        "imbalance_kw_mean": -17.46479170045298,
+        "imbalance_kw_max": 52.945042512113595,
+        "imbalance_kw_min": -58.23735587212739,
+        "supply_gap_kwh_heat": 3.992108730540682,
+        "supply_gap_kwh_cool": 1708.4474399816124,
+        "steps_negative_entropy": 1969,
+        "step_fraction_negative_entropy": 0.9766865079365079,
+        "reheat_kwh": 1208.26690410903,
+        "share_of_reheat": 0.0895777248256068,
+        "passthru_share_of_reheat": 0.003303995761999658,
+        "recirculation_mean": 0.699999988079071,
+        "flow_mean": 30.971277015970777,
+        "per_ahu": {
+          "ahu_1": {
+            "imbalance_kw_mean": -5.072323324343564,
+            "imbalance_kwh_net": -852.1503184897189,
+            "imbalance_kwh_heat": 67.99128719981465,
+            "imbalance_kwh_cool": 920.1416056895334,
+            "imbalance_kw_max": 14.897466589538773,
+            "imbalance_kw_min": -17.17823299923409,
+            "supply_gap_kwh_heat": 0.20079295873455694,
+            "supply_gap_kwh_cool": 490.95822091872816,
+            "t_area_mean": 298.67894329113807,
+            "t_flow_mean": 299.4506494782781,
+            "delta_t_mean": -0.7717061871400869,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 7.778174593052025,
+            "t_coldest_mean": 296.8213425708962,
+            "t_warmest_mean": 300.4720386785483,
+            "abs_delta_t_mean": 0.8948518243950441,
+            "ceiling_kwh_heat": 5274.349536625774,
+            "steps_negative_entropy": 1710
+          },
+          "ahu_2": {
+            "imbalance_kw_mean": -4.3535016175752315,
+            "imbalance_kwh_net": -731.3882717526388,
+            "imbalance_kwh_heat": 70.02778281920348,
+            "imbalance_kwh_cool": 801.4160545718424,
+            "imbalance_kw_max": 16.298242846442264,
+            "imbalance_kw_min": -17.59695461864151,
+            "supply_gap_kwh_heat": 0.7773299251094815,
+            "supply_gap_kwh_cool": 406.86397111551616,
+            "t_area_mean": 299.00120496174065,
+            "t_flow_mean": 299.66354920109217,
+            "delta_t_mean": -0.6623442393514947,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 7.778174593052025,
+            "t_coldest_mean": 297.1250929616629,
+            "t_warmest_mean": 300.67156998936866,
+            "abs_delta_t_mean": 0.7891783720173351,
+            "ceiling_kwh_heat": 5326.9092493567905,
+            "steps_negative_entropy": 1678
+          },
+          "ahu_3": {
+            "imbalance_kw_mean": -3.7473091135682206,
+            "imbalance_kwh_net": -629.547931079461,
+            "imbalance_kwh_heat": 54.09583525276529,
+            "imbalance_kwh_cool": 683.6437663322264,
+            "imbalance_kw_max": 16.586256965228095,
+            "imbalance_kw_min": -16.294509379288886,
+            "supply_gap_kwh_heat": 0.576877869026755,
+            "supply_gap_kwh_cool": 396.42411224228624,
+            "t_area_mean": 298.9278424882893,
+            "t_flow_mean": 299.50851798787795,
+            "delta_t_mean": -0.5806754995887053,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 7.636753236814713,
+            "t_coldest_mean": 297.1384063733315,
+            "t_warmest_mean": 300.6242867284438,
+            "abs_delta_t_mean": 0.6804681431995155,
+            "ceiling_kwh_heat": 5080.8074312761955,
+            "steps_negative_entropy": 1607
+          },
+          "ahu_4": {
+            "imbalance_kw_mean": -4.291657644965963,
+            "imbalance_kwh_net": -720.9984843542818,
+            "imbalance_kwh_heat": 70.20965075624288,
+            "imbalance_kwh_cool": 791.2081351105246,
+            "imbalance_kw_max": 19.647119721302204,
+            "imbalance_kw_min": -20.512495838390137,
+            "supply_gap_kwh_heat": 3.9411748236744266,
+            "supply_gap_kwh_cool": 415.70520255108624,
+            "t_area_mean": 298.7153503902946,
+            "t_flow_mean": 299.3682856520931,
+            "delta_t_mean": -0.6529352617985758,
+            "recirculation_mean": 0.699999988079071,
+            "airflow_mean": 7.778174593052025,
+            "t_coldest_mean": 296.51842788944083,
+            "t_warmest_mean": 300.4732246460247,
+            "abs_delta_t_mean": 0.780098793184831,
+            "ceiling_kwh_heat": 6237.7975245788675,
+            "steps_negative_entropy": 1572
+          }
+        }
+      },
+      "b1": {
+        "gas_billed_kwh": 1546.1197483021042,
+        "gas_drawn_kwh": 1220.772719393455,
+        "billed_over_drawn": 1.2665090919383413,
+        "reheat_kwh": 1208.26690410903
+      }
+    },
+    {
+      "scenario": "building_train_7/phoenix_3",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 617, in _worker\n    return _run_one(task)\n           ^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 515, in _run_one\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n",
+      "total_reward": null,
+      "b2": null,
+      "b1": null
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 617, in _worker\n    return _run_one(task)\n           ^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 515, in _run_one\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n",
+      "total_reward": null,
+      "b2": null,
+      "b1": null
+    },
+    {
+      "scenario": "building_train_8/singapore_7",
+      "error": "Traceback (most recent call last):\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 617, in _worker\n    return _run_one(task)\n           ^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sbx/integrity.py\", line 515, in _run_one\n    from smart_buildings import evaluate  # noqa: PLC0415\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/evaluate.py\", line 52, in <module>\n    from smart_buildings.smart_control.reward import electricity_energy_cost  # noqa: F401\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/sims/shipped/smart_buildings/smart_control/reward/electricity_energy_cost.py\", line 104, in <module>\n    @gin.configurable()\n     ^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1790, in perform_decoration\n    return _make_configurable(fn_or_cls, name, module, allowlist, denylist)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/mors1337/Code/DL/doma/starter-kit/.venv/lib/python3.12/site-packages/gin/config.py\", line 1673, in _make_configurable\n    raise ValueError(err_str.format(selector))\nValueError: A different configurable matching 'smart_buildings.smart_control.reward.electricity_energy_cost.ElectricityEnergyCost' already exists.\n\nTo allow re-registration of configurables in an interactive environment, use:\n\n    gin.enter_interactive_mode()\n",
+      "total_reward": null,
+      "b2": null,
+      "b1": null
+    }
+  ]
+}

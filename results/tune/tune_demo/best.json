@@ -1,0 +1,69 @@
+{
+  "tag": "tune_demo",
+  "gen": 0,
+  "idx": -1,
+  "kind": "baseline",
+  "objective": 0.0,
+  "params": {
+    "KP": 0.08,
+    "KI": 0.06,
+    "MARGIN_K": 0.5,
+    "ZONE_SHIFT_MAX_K": 0.6,
+    "DEMAND_FULL": 0.5,
+    "SAT_MIN_K": 285.0,
+    "SAT_MAX_K": 305.0,
+    "ECON_MIN_ADV_K": 0.5,
+    "WATER_MIN_K": 310.0,
+    "WATER_MAX_K": 350.0,
+    "WATER_RESET_FULL_K": 4.0,
+    "FLOOR_TEMP_K": 285.0,
+    "PRESTART_SAFETY": 1.2,
+    "PRESTART_MAX_H": 8.0,
+    "EARLY_STOP_H": 1.0
+  },
+  "x": [
+    0.179487,
+    0.15,
+    0.310345,
+    0.3,
+    0.285714,
+    0.444444,
+    0.923077,
+    0.25,
+    0.454545,
+    0.605263,
+    0.6,
+    0.631579,
+    0.428571,
+    0.777778,
+    0.333333
+  ],
+  "per_scenario": {
+    "building_gen_002/phoenix_g4": {
+      "mean_per_step_reward": 0.0,
+      "score": 0.0,
+      "steps": 144,
+      "wall_s": 43.63995814323425,
+      "error": null
+    },
+    "building_gen_014/singapore_g2": {
+      "mean_per_step_reward": 0.0,
+      "score": 0.0,
+      "steps": 144,
+      "wall_s": 35.11443591117859,
+      "error": null
+    }
+  },
+  "n_failed": 0,
+  "policy": "policies.ctrl_v1:CtrlV1",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_v1_core.json",
+  "space_signature": "a7c898ab5a630a67",
+  "subset": [
+    "building_gen_002/phoenix_g4",
+    "building_gen_014/singapore_g2"
+  ],
+  "steps": 144,
+  "sim": "corrected",
+  "components": "hook",
+  "updated": "2026-11-05T03:28:13"
+}

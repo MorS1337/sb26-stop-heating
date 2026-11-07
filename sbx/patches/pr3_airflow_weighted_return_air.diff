@@ -1,0 +1,471 @@
+diff --git a/smart_buildings/check_return_air.py b/smart_buildings/check_return_air.py
+new file mode 100644
+index 0000000..b80fbd5
+--- /dev/null
++++ b/smart_buildings/check_return_air.py
+@@ -0,0 +1,160 @@
++"""Checks the air handlers' return-air energy balance, step by step, without changing the simulator.
++
++Each step, for every air handler, this compares the recirculation temperature the simulator uses with the airflow-
++weighted mixture of the air its VAVs extract, and reports:
++
++  imbalance_W  r * rho * c_p * V_total * (T_used - T_mixture): heat (+) or cooling (-) that no air stream carried
++  passthru_W   the part of it that reaches the zones (mixed air passes the cooling coil unchanged)
++  S_mix_WK     entropy generated in the mixing box by the actual streams (recirculated extract at each VAV's zone
++               temperature plus outdoor air) ending at the mixed temperature the simulator uses; < 0 is impossible
++
++Usage, from the starter-kit root:
++  python smart_buildings/check_return_air.py --config smart_buildings/training_scenarios/<building>/<weather>/config.gin
++      [--policy pid | high-flow-cold] [--steps 576] [--out check.csv]
++
++'high-flow-cold' is a scripted stress test on top of the PID baseline: air handlers on at maximum static pressure,
++recirculation and supply temperature setpoint, dampers fully open on the colder half of each handler's zones and closed
++on the warmer half, reheat valves closed. On a correct simulator imbalance_W is 0 (to rounding) for every policy.
++"""
++
++import argparse
++import csv
++from pathlib import Path
++
++import numpy as np
++
++from smart_buildings import evaluate
++from smart_buildings.baselines.pid import PIDPolicy
++from smart_buildings.smart_control.simulator import air_handler as air_handler_py
++from smart_buildings.smart_control.simulator import constants
++
++RHO_CP = constants.AIR_DENSITY * constants.AIR_HEAT_CAPACITY
++
++
++class HighFlowCold(PIDPolicy):
++  """Stress test: airflow to the colder half of each air handler's zones only, no reheat."""
++
++  def get_action(self, obs):
++    act = super().get_action(obs)
++    c, d = act['continuous_action'], act['discrete_action']
++    for ctrl in self.ahu_controllers:
++      d[ctrl['run_discrete_idx']] = 1
++      if ctrl['pressure_idx'] is not None:
++        c[ctrl['pressure_idx']] = 1.0
++      c[ctrl['temp_idx']] = 1.0
++      zones = sorted(ctrl['zones'], key=lambda z: self._denormalize_zone_temp(obs[z[1]]))
++      for k, (_, _, idx) in enumerate(zones):
++        damper = idx.get('supply_air_damper_percentage_command')
++        reheat = idx.get('reheat_valve_percentage_command')
++        if damper is not None:
++          c[damper] = 1.0 if k < len(zones) // 2 else -1.0
++        if reheat is not None:
++          c[reheat] = -1.0
++    for i in self.recirculation_indices:
++      c[i] = 1.0
++    return act
++
++
++POLICIES = {'pid': PIDPolicy, 'high-flow-cold': HighFlowCold}
++
++
++class ReturnAirCheck:
++  """Records the return-air balance while the simulator computes the supply air temperature."""
++
++  def __init__(self, sim):
++    self.sim, self.rows, self._in_step = sim, [], False
++    hvac = sim.hvac
++    self.ahus = (hvac.air_handler.ahus
++                 if isinstance(hvac.air_handler, air_handler_py.AirHandlerSystem)
++                 else [hvac.air_handler])
++    step, supply = sim.execute_step_sim, hvac.air_handler.get_supply_air_temp
++
++    def execute_step_sim(*a, **k):
++      self._in_step = True
++      try:
++        return step(*a, **k)
++      finally:
++        self._in_step = False
++
++    def get_supply_air_temp(recirculation, ambient):
++      out = supply(recirculation, ambient)
++      if self._in_step:   # the bill calls it too; record only the physics step
++        self._record(recirculation, ambient, out)
++      return out
++
++    sim.execute_step_sim = execute_step_sim
++    hvac.air_handler.get_supply_air_temp = get_supply_air_temp
++
++  def _record(self, recirculation, ambient, supply):
++    """Called inside the step, after the dampers are set and before the zones are solved."""
++    sim, hvac = self.sim, self.sim.hvac
++    temps = sim.building.get_zone_average_temps()
++    areas = {z: len(c) for z, c in sim.building.room_dict.items()}
++    row = dict(imbalance_W=0.0, passthru_W=0.0, S_mix_WK=0.0, S_mix_negative_ahus=0)
++    for ahu in self.ahus:
++      ahu_id = ahu.device_id()
++      t_used = recirculation[ahu_id] if isinstance(recirculation, dict) else recirculation
++      t_sup = supply[ahu_id] if isinstance(supply, dict) else supply
++      streams = []   # (airflow m3/s, extract temperature K) of each VAV that delivers air
++      for v_id, vav in hvac.vavs.items():
++        if vav.air_handler.device_id() != ahu_id or not (vav.damper_setting > 0 and vav.max_air_flow_rate > 0):
++          continue
++        zones = [z for z in hvac.get_zones_for_vav(v_id) if z in temps]
++        area = sum(areas[z] for z in zones)
++        if area > 0:
++          streams.append((vav.unrestricted_flow_rate_demand, sum(temps[z] * areas[z] for z in zones) / area))
++      if not streams:
++        continue
++      flow, temp = np.array(streams).T
++      flow = flow * min(1.0, ahu.max_air_flow_rate / flow.sum())   # the handler's cap, common to its VAVs
++      g, r = RHO_CP * flow, ahu.recirculation
++      t_mixture = float(g @ temp / g.sum())
++      t_mix = r * t_used + (1 - r) * ambient
++      imbalance = r * g.sum() * (t_used - t_mixture)
++      s_mix = r * float(g @ np.log(t_mix / temp)) + (1 - r) * g.sum() * np.log(t_mix / ambient)
++      scale = (r * float(g @ np.abs(t_mix - temp)) + (1 - r) * g.sum() * abs(t_mix - ambient)) / t_mix
++      row['imbalance_W'] += imbalance
++      row['passthru_W'] += imbalance if np.isclose(t_sup, t_mix) else 0.0
++      row['S_mix_WK'] += s_mix
++      row['S_mix_negative_ahus'] += int(s_mix < -1e-6 * scale)
++    self.rows.append(row)
++
++
++def main():
++  p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
++  p.add_argument('--config', type=Path, required=True)
++  p.add_argument('--policy', choices=sorted(POLICIES), default='pid')
++  p.add_argument('--steps', type=int, default=576)
++  p.add_argument('--out', type=Path)
++  a = p.parse_args()
++
++  env = evaluate.load_hybrid_environment(a.config)
++  env.metrics_path = None   # no metrics files from a check run
++  meta = evaluate.create_building_meta_data(env, a.config.parent)
++  policy = evaluate.initialize_policy(POLICIES[a.policy], meta, env.action_spec())
++  obs, _ = env.reset()
++  check = ReturnAirCheck(env.building.simulator)
++  for _ in range(a.steps):
++    action = evaluate.validate_action(evaluate.get_policy_action(policy, obs), env.action_spec())
++    obs, _, terminated, truncated, _ = env.step(action)
++    if terminated or truncated:
++      break
++
++  rows = check.rows
++  hours = env.building.simulator.time_step_sec / 3600
++  imb = np.array([r['imbalance_W'] for r in rows])
++  pt = np.array([r['passthru_W'] for r in rows])
++  neg = np.array([r['S_mix_negative_ahus'] for r in rows])
++  print(f'{a.config.parent.parent.name}/{a.config.parent.name}, policy {a.policy}, {len(rows)} steps')
++  print(f'  return-air imbalance: mean {imb.mean() / 1e3:+.2f} kW, min {imb.min() / 1e3:+.2f}, max {imb.max() / 1e3:+.2f}')
++  print(f'  reaching the zones: {pt.sum() * hours / 1e6:+.2f} MWh in total, mean {pt.mean() / 1e3:+.2f} kW')
++  print(f'  steps with negative mixing-box entropy generation: {100 * (neg > 0).mean():.1f} %')
++  if a.out:
++    with open(a.out, 'w', newline='') as f:
++      w = csv.DictWriter(f, list(rows[0]))
++      w.writeheader()
++      w.writerows(rows)
++
++
++if __name__ == '__main__':
++  main()
+diff --git a/smart_buildings/smart_control/simulator/return_air_mixing_test.py b/smart_buildings/smart_control/simulator/return_air_mixing_test.py
+new file mode 100644
+index 0000000..722a774
+--- /dev/null
++++ b/smart_buildings/smart_control/simulator/return_air_mixing_test.py
+@@ -0,0 +1,118 @@
++"""The return air an air handler recirculates is the airflow-weighted mixture of its VAVs' extract.
++
++With unequal airflow per unit floor area, an area-weighted average does not carry the enthalpy of the air that left
++the zones: the handler then delivers heat (or cooling) that no stream carried.
++"""
++
++from pathlib import Path
++import traceback
++
++import numpy as np
++from absl.testing import absltest
++
++from smart_buildings.evaluate import load_hybrid_environment
++
++_SCENARIO_ROOT = Path('smart_buildings/training_scenarios')
++
++
++def _first_scenario() -> Path:
++  building = sorted(p for p in _SCENARIO_ROOT.iterdir() if p.is_dir())[0]
++  strip = sorted(p for p in building.iterdir() if p.is_dir())[0]
++  return strip / 'config.gin'
++
++
++class ReturnAirMixingTest(absltest.TestCase):
++
++  @classmethod
++  def setUpClass(cls):
++    super().setUpClass()
++    cls.env = load_hybrid_environment(_first_scenario())
++
++  def setUp(self):
++    super().setUp()
++    self.env.reset()
++    self.sim = self.env.building.simulator
++    hvac = self.sim.hvac
++    by_ahu = {}
++    for v_id, vav in hvac.vavs.items():
++      if hvac.get_zones_for_vav(v_id):
++        by_ahu.setdefault(vav.air_handler.device_id(), []).append(v_id)
++    # An air handler with at least two VAVs: the first one cold, the others warm.
++    self.ahu_id, self.v_ids = next((a, v) for a, v in by_ahu.items() if len(v) >= 2)
++    for v_id in self.v_ids:
++      for zone in hvac.get_zones_for_vav(v_id):
++        for r, c in self.sim.building.room_dict[zone]:
++          self.sim.building.temp[r, c] = 283.15 if v_id == self.v_ids[0] else 298.15
++
++  def _vav_means(self):
++    """(area, temperature, mixing weight) of each VAV of the chosen handler, from the zone fields."""
++    hvac, rooms = self.sim.hvac, self.sim.building.room_dict
++    avg = self.sim.building.get_zone_average_temps()
++    out = []
++    for v_id in self.v_ids:
++      vav = hvac.vavs[v_id]
++      zones = hvac.get_zones_for_vav(v_id)
++      area = sum(len(rooms[z]) for z in zones)
++      temp = sum(avg[z] * len(rooms[z]) for z in zones) / area
++      flow = (
++          vav.unrestricted_flow_rate_demand
++          if vav.damper_setting > 0 and vav.max_air_flow_rate > 0
++          else 0.0
++      )
++      out.append((area, temp, flow))
++    return avg, out
++
++  def test_recirculated_air_is_the_airflow_weighted_mixture(self):
++    hvac = self.sim.hvac
++    for v_id in self.v_ids:   # cold VAV at full airflow, the others at their minimum
++      vav = hvac.vavs[v_id]
++      vav.damper_setting = 1.0 if v_id == self.v_ids[0] else vav.min_damper_setting
++    avg, vavs = self._vav_means()
++    flow_mix = sum(f * t for _, t, f in vavs) / sum(f for _, _, f in vavs)
++    area_mix = sum(a * t for a, t, _ in vavs) / sum(a for a, _, _ in vavs)
++
++    got = self.sim._recirculation_temps(avg)[self.ahu_id]  # pylint: disable=protected-access
++    self.assertAlmostEqual(got, flow_mix, places=9)
++    # Not vacuous: the old area weighting gives a clearly warmer return here.
++    self.assertGreater(area_mix - got, 0.5)
++
++  def test_closed_dampers_carry_no_weight(self):
++    hvac = self.sim.hvac
++    for v_id in self.v_ids:   # only the cold VAV moves air
++      hvac.vavs[v_id].damper_setting = 1.0 if v_id == self.v_ids[0] else 0.0
++    avg, vavs = self._vav_means()
++    got = self.sim._recirculation_temps(avg)[self.ahu_id]  # pylint: disable=protected-access
++    self.assertAlmostEqual(got, vavs[0][1], places=9)
++
++  def test_no_airflow_falls_back_to_the_area_mean(self):
++    for v_id in self.v_ids:
++      self.sim.hvac.vavs[v_id].damper_setting = 0.0
++    avg, vavs = self._vav_means()
++    area_mix = sum(a * t for a, t, _ in vavs) / sum(a for a, _, _ in vavs)
++    got = self.sim._recirculation_temps(avg)[self.ahu_id]  # pylint: disable=protected-access
++    self.assertAlmostEqual(got, area_mix, places=9)
++
++  def test_the_step_and_the_cooling_bill_both_use_it(self):
++    calls = []
++    original = self.sim._recirculation_temps  # pylint: disable=protected-access
++
++    def spy(avg_temps):
++      calls.append(traceback.extract_stack()[-2].name)
++      return original(avg_temps)
++
++    self.sim._recirculation_temps = spy  # pylint: disable=protected-access
++    try:
++      spec = self.env.action_spec()
++      self.env.step({
++          'continuous_action': np.ones(spec['continuous_action'].shape, dtype=np.float32),
++          'discrete_action': np.ones(spec['discrete_action'].shape, dtype=np.int32),
++      })
++    finally:
++      del self.sim._recirculation_temps  # pylint: disable=protected-access
++    self.assertCountEqual(
++        calls, ['execute_step_sim', '_get_air_handler_reward_infos']
++    )
++
++
++if __name__ == '__main__':
++  absltest.main()
+diff --git a/smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py b/smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py
+index 318ebe2..317504a 100644
+--- a/smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py
++++ b/smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py
+@@ -7,13 +7,13 @@
+ temperature from the air handler(s) for the current simulation time step.
+ 
+ First, it calculates the recirculation air temperature for each air handler
+-unit (AHU). This is the area-weighted average temperature of all zones serviced
+-by that AHU.
++unit (AHU). This is the air its VAVs extract from their zones, mixed in
++proportion to each VAV's airflow.
+ 
+ It iterates through each Variable Air Volume (VAV) unit to find the average
+ temperature of the zones it serves (v_sensing_temp), weighted by the area of
+ each zone. It then calculates the recirculation temperature for each AHU by
+-taking an area-weighted average of the v_sensing_temp of all VAVs connected
++taking an airflow-weighted average of the v_sensing_temp of all VAVs connected
+ to it. Finally, it uses this per-AHU recirculation temperature and the outside
+ ambient temperature to calculate the temperature of the air that will be
+ supplied by each AHU. This logic handles both single and multiple AHU
+@@ -289,13 +289,10 @@ def execute_step_sim(
+     avg_temps = self.building.get_zone_average_temps()
+     ambient_temperature = self._weather_controller.get_current_temp(current_ts)
+ 
+-    ahu_temp_weighted_sum = collections.defaultdict(float)
+-    ahu_area_total = collections.defaultdict(float)
+     vav_cached_data: dict[str, _VavZones] = {}
+     vav_sensing_temp_map = {}
+ 
+     for v_id, vav in hvac.vavs.items():
+-      ahu_id = vav.air_handler.device_id()
+       assigned_zones = [
+           z for z in hvac.get_zones_for_vav(v_id) if z in avg_temps
+       ]
+@@ -315,23 +312,9 @@ def execute_step_sim(
+       )
+       vav_sensing_temp_map[v_id] = v_sensing_temp
+ 
+-      ahu_temp_weighted_sum[ahu_id] += v_sensing_temp * v_area
+-      ahu_area_total[ahu_id] += v_area
+-
+-    if isinstance(hvac.air_handler, air_handler_py.AirHandlerSystem):
+-      ahus = hvac.air_handler.ahus
+-    else:
+-      ahus = [hvac.air_handler]
+-
+-    recirculation_temps = {}
+-    for ahu in ahus:
+-      ahu_id = ahu.device_id()
+-      if ahu_area_total.get(ahu_id, 0) > 0:
+-        recirculation_temps[ahu_id] = (
+-            ahu_temp_weighted_sum[ahu_id] / ahu_area_total[ahu_id]
+-        )
+-      else:
+-        recirculation_temps[ahu_id] = self.building.temp.mean()
++    # After the loop: update_settings above sets the dampers this step's
++    # airflow, and so the mixing weights, depend on.
++    recirculation_temps = self._recirculation_temps(avg_temps)
+ 
+     if isinstance(hvac.air_handler, air_handler_py.AirHandlerSystem):
+       supply_air_temp = hvac.air_handler.get_supply_air_temp(
+@@ -704,6 +687,71 @@ def _get_zone_reward_infos(
+       )
+     return zone_reward_infos
+ 
++  def _recirculation_temps(
++      self, avg_temps: Mapping[str, float]
++  ) -> dict[str, float]:
++    """Returns each air handler's recirculated air temperature in K.
++
++    The return air is a mixture of the streams the VAVs extract from their
++    zones, so each VAV counts with its airflow. Within a VAV the zones count
++    with their floor area, because a VAV splits its air between its zones by
++    area.
++
++    The previous version weighted every VAV by floor area. That differs from
++    the enthalpy of the extracted air whenever airflow per unit area differs
++    between VAVs: sending most of the air through cold zones and little through
++    warm ones made the recirculated air warmer than the air that actually left
++    the zones, so the handler delivered heat that no stream carried, and its
++    mixing box generated negative entropy. The reverse gives free cooling. The
++    handler's flow cap scales every VAV it serves by the same ratio, so the
++    uncapped demand gives the same weights. A VAV the step skips (closed damper
++    or no maximum flow) delivers no air and gets no weight.
++
++    This corrects the spatial weighting only. The step still mixes
++    start-of-step zone temperatures while the zones exchange heat at their
++    end-of-step temperatures, a separate temporal-discretization error.
++
++    Args:
++      avg_temps: Average temperature in K of each zone.
++    """
++    room_areas = {z: len(c) for z, c in self.building.room_dict.items()}
++    flow_temp_sum = collections.defaultdict(float)
++    flow_total = collections.defaultdict(float)
++    area_temp_sum = collections.defaultdict(float)
++    area_total = collections.defaultdict(float)
++    for v_id, vav in self._hvac.vavs.items():
++      zones = [z for z in self._hvac.get_zones_for_vav(v_id) if z in avg_temps]
++      v_area = sum(room_areas[z] for z in zones)
++      if v_area <= 0:
++        continue
++      v_temp = sum(avg_temps[z] * room_areas[z] for z in zones) / v_area
++      ahu_id = vav.air_handler.device_id()
++      # Same condition as the step's air-side coupling below.
++      v_flow = (
++          vav.unrestricted_flow_rate_demand
++          if vav.damper_setting > 0 and vav.max_air_flow_rate > 0
++          else 0.0
++      )
++      flow_temp_sum[ahu_id] += v_temp * v_flow
++      flow_total[ahu_id] += v_flow
++      area_temp_sum[ahu_id] += v_temp * v_area
++      area_total[ahu_id] += v_area
++
++    if isinstance(self._hvac.air_handler, air_handler_py.AirHandlerSystem):
++      ahus = self._hvac.air_handler.ahus
++    else:
++      ahus = [self._hvac.air_handler]
++    temps = {}
++    for ahu in ahus:
++      ahu_id = ahu.device_id()
++      if flow_total.get(ahu_id, 0) > 0:
++        temps[ahu_id] = flow_temp_sum[ahu_id] / flow_total[ahu_id]
++      elif area_total.get(ahu_id, 0) > 0:  # no air moving: nothing to mix
++        temps[ahu_id] = area_temp_sum[ahu_id] / area_total[ahu_id]
++      else:
++        temps[ahu_id] = self.building.temp.mean()
++    return temps
++
+   def _get_air_handler_reward_infos(
+       self,
+   ) -> Mapping[str, RewardInfo.AirHandlerRewardInfo]:
+@@ -720,43 +768,9 @@ def _get_air_handler_reward_infos(
+     ambient_temp = self._weather_controller.get_current_temp(
+         self._current_timestamp
+     )
+-    avg_temps = self.building.get_zone_average_temps()
+-    room_dict = self.building.room_dict
+-    room_areas = {z: len(coords) for z, coords in room_dict.items()}
+-
+-    ahu_temp_weighted_sum = collections.defaultdict(float)
+-    ahu_area_total = collections.defaultdict(float)
+-
+-    for v_id, vav in self._hvac.vavs.items():
+-      ahu_id = vav.air_handler.device_id()
+-      assigned_zones = [
+-          z for z in self._hvac.get_zones_for_vav(v_id) if z in avg_temps
+-      ]
+-      if not assigned_zones:
+-        continue
+-
+-      v_area = sum(room_areas[z] for z in assigned_zones)
+-      if v_area > 0:
+-        v_sensing_temp = (
+-            sum(avg_temps[z] * room_areas[z] for z in assigned_zones) / v_area
+-        )
+-        ahu_temp_weighted_sum[ahu_id] += v_sensing_temp * v_area
+-        ahu_area_total[ahu_id] += v_area
+-
+-    if isinstance(self._hvac.air_handler, air_handler_py.AirHandlerSystem):
+-      ahus = self._hvac.air_handler.ahus
+-    else:
+-      ahus = [self._hvac.air_handler]
+-
+-    recirculation_temps = {}
+-    for ahu in ahus:
+-      ahu_id = ahu.device_id()
+-      if ahu_area_total.get(ahu_id, 0) > 0:
+-        recirculation_temps[ahu_id] = (
+-            ahu_temp_weighted_sum[ahu_id] / ahu_area_total[ahu_id]
+-        )
+-      else:
+-        recirculation_temps[ahu_id] = self.building.temp.mean()
++    recirculation_temps = self._recirculation_temps(
++        self.building.get_zone_average_temps()
++    )
+ 
+     if isinstance(self._hvac.air_handler, air_handler_py.AirHandlerSystem):
+       recirculation_input = recirculation_temps

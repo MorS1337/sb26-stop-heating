@@ -1,0 +1,42 @@
+{
+  "tag": "ia_proof_reward_shipped",
+  "policy": "policies.ctrl_w:CtrlW",
+  "params": {},
+  "sim": "shipped",
+  "steps": 2016,
+  "fast": true,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/ia_proof_reward_shipped",
+  "wall_seconds": 50.05811595916748,
+  "mean_total_reward": -93.12290938248043,
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "error": null,
+      "total_reward": -93.12290938248043,
+      "b2": {
+        "imbalance_kwh_net": 0.0,
+        "imbalance_kwh_heat": 0.0,
+        "imbalance_kwh_cool": 0.0,
+        "imbalance_kw_mean": 0.0,
+        "imbalance_kw_max": 0.0,
+        "imbalance_kw_min": 0.0,
+        "supply_gap_kwh_heat": 0.0,
+        "supply_gap_kwh_cool": 0.0,
+        "steps_negative_entropy": 0,
+        "step_fraction_negative_entropy": 0.0,
+        "reheat_kwh": 0.0,
+        "share_of_reheat": null,
+        "passthru_share_of_reheat": null,
+        "recirculation_mean": 0.0,
+        "flow_mean": 0.0,
+        "per_ahu": {}
+      },
+      "b1": {
+        "gas_billed_kwh": 0.0,
+        "gas_drawn_kwh": 0.0,
+        "billed_over_drawn": null,
+        "reheat_kwh": 0.0
+      }
+    }
+  ]
+}

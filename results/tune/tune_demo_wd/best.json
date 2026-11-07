@@ -1,0 +1,69 @@
+{
+  "tag": "tune_demo_wd",
+  "gen": 1,
+  "idx": 2,
+  "kind": "candidate",
+  "objective": 0.020368430987206112,
+  "params": {
+    "KP": 0.050731,
+    "KI": 0.228084,
+    "MARGIN_K": 0.959274,
+    "ZONE_SHIFT_MAX_K": 0.842562,
+    "DEMAND_FULL": 0.405799,
+    "SAT_MIN_K": 281.799257,
+    "SAT_MAX_K": 294.933901,
+    "ECON_MIN_ADV_K": 1.667442,
+    "WATER_MIN_K": 315.354582,
+    "WATER_MAX_K": 360.192997,
+    "WATER_RESET_FULL_K": 1.919119,
+    "FLOOR_TEMP_K": 285.745397,
+    "PRESTART_SAFETY": 1.046561,
+    "PRESTART_MAX_H": 8.961716,
+    "EARLY_STOP_H": 0.058199
+  },
+  "x": [
+    0.104437,
+    0.570209,
+    0.627086,
+    0.421281,
+    0.218428,
+    0.088806,
+    0.148762,
+    0.833721,
+    0.697936,
+    0.8735,
+    0.388089,
+    0.710042,
+    0.318972,
+    0.884635,
+    0.0194
+  ],
+  "per_scenario": {
+    "building_gen_002/phoenix_g4": {
+      "mean_per_step_reward": -0.030093422008172235,
+      "score": 0.030093422008172235,
+      "steps": 144,
+      "wall_s": 43.48613405227661,
+      "error": null
+    },
+    "building_gen_014/singapore_g2": {
+      "mean_per_step_reward": -0.01064343996623999,
+      "score": 0.01064343996623999,
+      "steps": 144,
+      "wall_s": 35.374000787734985,
+      "error": null
+    }
+  },
+  "n_failed": 0,
+  "policy": "policies.ctrl_v1:CtrlV1",
+  "space": "/Users/mors1337/Code/DL/doma/sbx/spaces/ctrl_v1_core.json",
+  "space_signature": "a7c898ab5a630a67",
+  "subset": [
+    "building_gen_002/phoenix_g4",
+    "building_gen_014/singapore_g2"
+  ],
+  "steps": 144,
+  "sim": "corrected",
+  "components": "hook",
+  "updated": "2026-11-05T03:39:17"
+}

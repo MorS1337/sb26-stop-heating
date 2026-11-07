@@ -1,0 +1,4 @@
+name: lasvegas_2
+weather_csv: csv/lasvegas.csv
+convection_coefficient: 18.2
+start_timestamp: 2023-07-09 06:00

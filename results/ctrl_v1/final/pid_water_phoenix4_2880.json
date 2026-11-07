@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_8/phoenix_4",
+  "policy": "pid_water",
+  "tag": "",
+  "steps": 2880,
+  "mean_reward": -0.13985761418499737,
+  "total_reward": -402.7899288527924,
+  "last200_mean": -0.21164775120469131,
+  "wall_s": 68.2,
+  "s_per_step": 0.0237,
+  "prod_mean": -0.13312149925529612,
+  "energy_mean": 0.20777103345791936,
+  "carbon_mean": 0.09215253996133489,
+  "tmin": 286.9878234863281,
+  "tmax": 306.2716979980469,
+  "frac_run": 0.5592592592592592,
+  "frac_water": 0.8524305555555556
+}

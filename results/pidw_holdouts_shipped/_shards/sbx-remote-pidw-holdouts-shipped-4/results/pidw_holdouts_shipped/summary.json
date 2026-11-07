@@ -1,0 +1,230 @@
+{
+  "tag": "pidw_holdouts_shipped",
+  "policy": "baseline:pid_water",
+  "policy_labels": [
+    "baseline:pid_water"
+  ],
+  "params": {},
+  "sim": "shipped",
+  "steps": 8641,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/kaggle/working/results/pidw_holdouts_shipped",
+  "leaderboard_score": 0.03988998413618216,
+  "mean_abs_total_reward_per_step": 0.03988998413618216,
+  "mean_total_reward": -344.68935292075014,
+  "mean_per_step_reward": -0.03988998413618216,
+  "n_scenarios": 10,
+  "n_failed": 0,
+  "sum_comfort_all": -2473.3643272945724,
+  "sum_energy_all": -684.0135745354025,
+  "sum_carbon_all": -289.5157404242258,
+  "by_weather": {
+    "atlanta_g5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.024506193543787403,
+      "mean_total_reward": -211.75801841186694,
+      "mean_per_step_reward": -0.024506193543787403
+    },
+    "dubai_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.12708606661252383,
+      "mean_total_reward": -1098.1507015988184,
+      "mean_per_step_reward": -0.12708606661252383
+    },
+    "houston_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03273455296710505,
+      "mean_total_reward": -282.85927218875474,
+      "mean_per_step_reward": -0.03273455296710505
+    },
+    "lasvegas_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02791510601895377,
+      "mean_total_reward": -241.21443110977953,
+      "mean_per_step_reward": -0.02791510601895377
+    },
+    "minneapolis_g1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.060883817340159144,
+      "mean_total_reward": -526.0970656363152,
+      "mean_per_step_reward": -0.060883817340159144
+    },
+    "minneapolis_g5": {
+      "n_scenarios": 3,
+      "leaderboard_score": 0.02343324283064618,
+      "mean_total_reward": -202.48665129961364,
+      "mean_per_step_reward": -0.02343324283064618
+    },
+    "montreal_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.028549511162894236,
+      "mean_total_reward": -246.6963259585691,
+      "mean_per_step_reward": -0.028549511162894236
+    },
+    "singapore_g1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.026924865224459672,
+      "mean_total_reward": -232.65776040455603,
+      "mean_per_step_reward": -0.026924865224459672
+    }
+  },
+  "by_building": {
+    "building_hold_000": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.024506193543787403,
+      "mean_total_reward": -211.75801841186694,
+      "mean_per_step_reward": -0.024506193543787403
+    },
+    "building_hold_001": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.028549511162894236,
+      "mean_total_reward": -246.6963259585691,
+      "mean_per_step_reward": -0.028549511162894236
+    },
+    "building_hold_002": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02301438809063648,
+      "mean_total_reward": -198.86732749118983,
+      "mean_per_step_reward": -0.02301438809063648
+    },
+    "building_hold_003": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.060883817340159144,
+      "mean_total_reward": -526.0970656363152,
+      "mean_per_step_reward": -0.060883817340159144
+    },
+    "building_hold_004": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.026924865224459672,
+      "mean_total_reward": -232.65776040455603,
+      "mean_per_step_reward": -0.026924865224459672
+    },
+    "building_hold_005": {
+      "n_scenarios": 2,
+      "leaderboard_score": 0.07556440269004773,
+      "mean_total_reward": -652.9520036447024,
+      "mean_per_step_reward": -0.07556440269004773
+    },
+    "building_hold_006": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.023242601633730445,
+      "mean_total_reward": -200.83932071706477,
+      "mean_per_step_reward": -0.023242601633730445
+    },
+    "building_hold_007": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.03273455296710505,
+      "mean_total_reward": -282.85927218875474,
+      "mean_per_step_reward": -0.03273455296710505
+    },
+    "building_train_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.02791510601895377,
+      "mean_total_reward": -241.21443110977953,
+      "mean_per_step_reward": -0.02791510601895377
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 3526.5791103839874,
+    "cpu_seconds_total": 12990.528954681,
+    "wall_seconds_sum_scenarios": 13148.862255811691,
+    "mean_cpu_seconds_per_scenario": 1299.0528954681,
+    "steps_per_second_cpu": 6.651769169789123,
+    "steps_per_second_step_cpu": 6.807720466066332
+  },
+  "scenarios": [
+    {
+      "scenario": "building_hold_000/atlanta_g5",
+      "steps": 8641,
+      "total_reward": -211.75801841186694,
+      "mean_per_step_reward": -0.024506193543787403,
+      "cpu_seconds": 1317.895912264,
+      "wall_seconds": 1338.0759258270264,
+      "steps_per_second_cpu": 6.556663481227219
+    },
+    {
+      "scenario": "building_hold_001/montreal_3",
+      "steps": 8641,
+      "total_reward": -246.6963259585691,
+      "mean_per_step_reward": -0.028549511162894236,
+      "cpu_seconds": 1874.952921414,
+      "wall_seconds": 1900.7951781749725,
+      "steps_per_second_cpu": 4.6086490499630095
+    },
+    {
+      "scenario": "building_hold_002/minneapolis_g5",
+      "steps": 8641,
+      "total_reward": -198.86732749118983,
+      "mean_per_step_reward": -0.02301438809063648,
+      "cpu_seconds": 1290.800571465,
+      "wall_seconds": 1311.5836939811707,
+      "steps_per_second_cpu": 6.694295145990567
+    },
+    {
+      "scenario": "building_hold_003/minneapolis_g1",
+      "steps": 8641,
+      "total_reward": -526.0970656363152,
+      "mean_per_step_reward": -0.060883817340159144,
+      "cpu_seconds": 1598.7119160490001,
+      "wall_seconds": 1622.1832299232483,
+      "steps_per_second_cpu": 5.404976289508782
+    },
+    {
+      "scenario": "building_hold_004/singapore_g1",
+      "steps": 8641,
+      "total_reward": -232.65776040455603,
+      "mean_per_step_reward": -0.026924865224459672,
+      "cpu_seconds": 929.0478132970001,
+      "wall_seconds": 939.2937295436859,
+      "steps_per_second_cpu": 9.300920659115341
+    },
+    {
+      "scenario": "building_hold_005/dubai_3",
+      "steps": 8641,
+      "total_reward": -1098.1507015988184,
+      "mean_per_step_reward": -0.12708606661252383,
+      "cpu_seconds": 1226.270278606,
+      "wall_seconds": 1239.771827697754,
+      "steps_per_second_cpu": 7.046570524259073
+    },
+    {
+      "scenario": "building_hold_005/minneapolis_g5",
+      "steps": 8641,
+      "total_reward": -207.75330569058633,
+      "mean_per_step_reward": -0.024042738767571615,
+      "cpu_seconds": 1214.376702655,
+      "wall_seconds": 1228.4839367866516,
+      "steps_per_second_cpu": 7.115584464942487
+    },
+    {
+      "scenario": "building_hold_006/minneapolis_g5",
+      "steps": 8641,
+      "total_reward": -200.83932071706477,
+      "mean_per_step_reward": -0.023242601633730445,
+      "cpu_seconds": 1399.5206856510001,
+      "wall_seconds": 1412.1259696483612,
+      "steps_per_second_cpu": 6.174256721314953
+    },
+    {
+      "scenario": "building_hold_007/houston_2",
+      "steps": 8641,
+      "total_reward": -282.85927218875474,
+      "mean_per_step_reward": -0.03273455296710505,
+      "cpu_seconds": 1201.164500499,
+      "wall_seconds": 1211.362847328186,
+      "steps_per_second_cpu": 7.193852296176142
+    },
+    {
+      "scenario": "building_train_1/lasvegas_3",
+      "steps": 8641,
+      "total_reward": -241.21443110977953,
+      "mean_per_step_reward": -0.02791510601895377,
+      "cpu_seconds": 937.787652781,
+      "wall_seconds": 945.1859169006348,
+      "steps_per_second_cpu": 9.214239464952646
+    }
+  ],
+  "failures": []
+}

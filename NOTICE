@@ -1,0 +1,26 @@
+Stop Heating an Empty Building -- code for a NeurIPS 2026 Smart Buildings Challenge paper
+Copyright 2026 Semyon Morev
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository contains, or is derived from, the following third-party work:
+
+* policies/wu_core.py and policies/wu_weights.py port Daniel Wu's Kaggle notebook
+  "CPU A -- alpha 0.75 control" (danielwuu/cpu-a-alpha075-control-20261022),
+  Apache License, Version 2.0.
+
+* cenv/ and diffsim/ reimplement, formula for formula, the simulator step of the
+  Smart Buildings Competition starter kit
+  (https://github.com/smart-buildings-2026/starter-kit, Apache License, Version 2.0,
+  Copyright 2024-2026 The Smart Buildings Competition Authors), which itself derives
+  from Google's Smart Buildings Simulator (smart_control / sbsim), also under the
+  Apache License, Version 2.0.
+
+* sbx/patches/ freezes starter-kit pull requests #2 and #3 (author StnCsn),
+  contributed to that repository under the Apache License, Version 2.0.
+
+* data/weather_ext/ is derived from Meteostat hourly observations
+  (https://meteostat.net), CC BY 4.0.
+
+* paper/neurips_2026.sty is the NeurIPS 2026 style file distributed with the
+  official paper template.

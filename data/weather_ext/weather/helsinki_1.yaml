@@ -1,0 +1,4 @@
+name: helsinki_1
+weather_csv: csv/helsinki.csv
+convection_coefficient: 23.7
+start_timestamp: 2023-01-08 06:00

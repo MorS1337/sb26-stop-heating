@@ -1,0 +1,78 @@
+{
+  "tag": "scanC_4",
+  "policy": "policies.ctrl_v2:CtrlV2",
+  "policy_labels": [
+    "policies.ctrl_v2:CtrlV2"
+  ],
+  "params": {
+    "REHEAT_ALLOC_K": 0.5,
+    "HEAT_FLOW_FRAC": 0.15,
+    "PRESS_COOL_MAX": 0.15
+  },
+  "sim": "shipped",
+  "steps": 2880,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "components_mode": "hook",
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/scanC_4",
+  "leaderboard_score": 0.07677758064241466,
+  "mean_abs_total_reward_per_step": 0.07677758064241466,
+  "mean_total_reward": -221.1194322501542,
+  "mean_per_step_reward": -0.07677758064241466,
+  "n_scenarios": 2,
+  "n_failed": 0,
+  "sum_comfort_all": -184.95626451383995,
+  "sum_energy_all": -114.95945010864199,
+  "sum_carbon_all": -142.32316043518824,
+  "by_weather": {
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.1071956846266504,
+      "mean_total_reward": -308.7235717247531,
+      "mean_per_step_reward": -0.1071956846266504
+    },
+    "phoenix_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04635947665817892,
+      "mean_total_reward": -133.51529277555528,
+      "mean_per_step_reward": -0.04635947665817892
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 2,
+      "leaderboard_score": 0.07677758064241466,
+      "mean_total_reward": -221.1194322501542,
+      "mean_per_step_reward": -0.07677758064241466
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 86.86937999725342,
+    "cpu_seconds_total": 173.05584499999998,
+    "wall_seconds_sum_scenarios": 173.4102668762207,
+    "mean_cpu_seconds_per_scenario": 86.52792249999999,
+    "steps_per_second_cpu": 33.28405347996192,
+    "steps_per_second_step_cpu": 36.07677950406016
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 2880,
+      "total_reward": -308.7235717247531,
+      "mean_per_step_reward": -0.1071956846266504,
+      "cpu_seconds": 86.45554,
+      "wall_seconds": 86.63382077217102,
+      "steps_per_second_cpu": 33.31191962944191
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "steps": 2880,
+      "total_reward": -133.51529277555528,
+      "mean_per_step_reward": -0.04635947665817892,
+      "cpu_seconds": 86.60030499999999,
+      "wall_seconds": 86.77644610404968,
+      "steps_per_second_cpu": 33.256233912802045
+    }
+  ],
+  "failures": []
+}

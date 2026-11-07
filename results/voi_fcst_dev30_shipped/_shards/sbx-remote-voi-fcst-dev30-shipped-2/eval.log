@@ -1,0 +1,14 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.oracle_forecast:OracleFcstCtrlW --steps 8641 --sim shipped --workers 4 --tag voi_fcst_dev30_shipped --out /kaggle/working/results/voi_fcst_dev30_shipped --components hook --start-offset-days 0 --scenario building_train_1/atlanta_2 building_train_1/phoenix_5 building_train_2/fairbanks_2 building_train_5/denver_3 building_train_5/singapore_4 building_train_7/fairbanks_7 building_train_8/denver_6 --oracle forecast --oracle-horizon 12
+
+STDOUT
+[evalrun] tag=voi_fcst_dev30_shipped sim=shipped policy=policies.oracle_forecast:OracleFcstCtrlW scenarios=7 steps=8641 workers=4 out=/kaggle/working/results/voi_fcst_dev30_shipped oracle=forecast
+[evalrun] 1/7 building_train_1/phoenix_5             total=   -123.0594 mean=-0.014241 steps=8641 cpu=1236.6s
+[evalrun] 2/7 building_train_1/atlanta_2             total=    -27.8713 mean=-0.003225 steps=8641 cpu=1240.7s
+[evalrun] 3/7 building_train_5/denver_3              total=    -34.9457 mean=-0.004044 steps=8641 cpu=1731.9s
+[evalrun] 4/7 building_train_7/fairbanks_7           total=    -72.8569 mean=-0.008432 steps=8641 cpu=853.0s
+[evalrun] 5/7 building_train_2/fairbanks_2           total=   -106.3648 mean=-0.012309 steps=8641 cpu=2237.2s
+[evalrun] 6/7 building_train_8/denver_6              total=    -28.1214 mean=-0.003254 steps=8641 cpu=648.8s
+[evalrun] 7/7 building_train_5/singapore_4           total=    -46.4282 mean=-0.005373 steps=8641 cpu=1406.1s
+[evalrun] score=0.007268 scenarios=7 failed=0 wall=2671s -> /kaggle/working/results/voi_fcst_dev30_shipped/summary.json
+
+STDERR

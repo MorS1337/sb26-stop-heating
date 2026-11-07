@@ -1,0 +1,116 @@
+{
+ "torch": "2.9.1+rocm7.2.0.git7e1940d4",
+ "hip": "7.2.26015-fc0010cf6a",
+ "device": "AMD Radeon RX 9060 XT",
+ "total_mem_gib": 15.87,
+ "cu": 16,
+ "arch": "gfx1200",
+ "fp32_tflops": 5.73,
+ "rom": [
+  {
+   "kind": "rom_step",
+   "B": 1000,
+   "m": 100,
+   "ms_per_step": 0.1564,
+   "env_steps_per_s": 6393832,
+   "kenv_steps_per_s": 6393.8,
+   "gbps": 5.6
+  },
+  {
+   "kind": "rom_step",
+   "B": 10000,
+   "m": 100,
+   "ms_per_step": 0.3123,
+   "env_steps_per_s": 32018081,
+   "kenv_steps_per_s": 32018.1,
+   "gbps": 26.8
+  },
+  {
+   "kind": "rom_step",
+   "B": 100000,
+   "m": 100,
+   "ms_per_step": 2.3821,
+   "env_steps_per_s": 41979192,
+   "kenv_steps_per_s": 41979.2,
+   "gbps": 34.9
+  },
+  {
+   "kind": "rom_step",
+   "B": 1000,
+   "m": 200,
+   "ms_per_step": 0.1206,
+   "env_steps_per_s": 8292482,
+   "kenv_steps_per_s": 8292.5,
+   "gbps": 14.9
+  },
+  {
+   "kind": "rom_step",
+   "B": 10000,
+   "m": 200,
+   "ms_per_step": 0.6564,
+   "env_steps_per_s": 15234473,
+   "kenv_steps_per_s": 15234.5,
+   "gbps": 25.1
+  },
+  {
+   "kind": "rom_step",
+   "B": 100000,
+   "m": 200,
+   "ms_per_step": 6.294,
+   "env_steps_per_s": 15888185,
+   "kenv_steps_per_s": 15888.2,
+   "gbps": 26.0
+  },
+  {
+   "kind": "rom_step",
+   "B": 1000,
+   "m": 400,
+   "ms_per_step": 0.2401,
+   "env_steps_per_s": 4164464,
+   "kenv_steps_per_s": 4164.5,
+   "gbps": 16.2
+  },
+  {
+   "kind": "rom_step",
+   "B": 10000,
+   "m": 400,
+   "ms_per_step": 2.0262,
+   "env_steps_per_s": 4935246,
+   "kenv_steps_per_s": 4935.2,
+   "gbps": 16.3
+  },
+  {
+   "kind": "rom_step",
+   "B": 100000,
+   "m": 400,
+   "ms_per_step": 15.3355,
+   "env_steps_per_s": 6520835,
+   "kenv_steps_per_s": 6520.8,
+   "gbps": 21.1
+  }
+ ],
+ "stencil": [
+  {
+   "kind": "stencil5p",
+   "copies": 64,
+   "grid": "600x400",
+   "cells": 15360000,
+   "ms_per_sweep": 3.421,
+   "env_steps_per_s": 18707,
+   "msweeps_per_s": 18.7,
+   "gcells_per_s": 4.49,
+   "gbps": 107.8
+  },
+  {
+   "kind": "stencil5p",
+   "copies": 256,
+   "grid": "600x400",
+   "cells": 61440000,
+   "ms_per_sweep": 14.132,
+   "env_steps_per_s": 18115,
+   "msweeps_per_s": 18.1,
+   "gcells_per_s": 4.35,
+   "gbps": 104.3
+  }
+ ]
+}

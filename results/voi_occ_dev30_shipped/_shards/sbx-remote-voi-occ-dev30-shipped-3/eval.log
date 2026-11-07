@@ -1,0 +1,15 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy policies.oracle_occupancy:OracleOccCtrlW --steps 8641 --sim shipped --workers 4 --tag voi_occ_dev30_shipped --out /kaggle/working/results/voi_occ_dev30_shipped --components hook --start-offset-days 0 --scenario building_train_1/denver_7 building_train_2/phoenix_6 building_train_4/atlanta_5 building_train_4/fairbanks_4 building_train_5/fairbanks_5 building_train_7/atlanta_8 building_train_7/singapore_6 building_train_8/singapore_7 --oracle occupancy --oracle-horizon 12
+
+STDOUT
+[evalrun] tag=voi_occ_dev30_shipped sim=shipped policy=policies.oracle_occupancy:OracleOccCtrlW scenarios=8 steps=8641 workers=4 out=/kaggle/working/results/voi_occ_dev30_shipped oracle=occupancy
+[evalrun] 1/8 building_train_1/denver_7              total=    -18.0222 mean=-0.002086 steps=8641 cpu=1126.9s
+[evalrun] 2/8 building_train_4/atlanta_5             total=    -53.1828 mean=-0.006155 steps=8641 cpu=1509.4s
+[evalrun] 3/8 building_train_4/fairbanks_4           total=    -13.2476 mean=-0.001533 steps=8641 cpu=1531.2s
+[evalrun] 4/8 building_train_2/phoenix_6             total=    -60.3053 mean=-0.006979 steps=8641 cpu=2047.6s
+[evalrun] 5/8 building_train_7/atlanta_8             total=    -57.9597 mean=-0.006708 steps=8641 cpu=758.1s
+[evalrun] 6/8 building_train_7/singapore_6           total=    -45.9415 mean=-0.005317 steps=8641 cpu=748.4s
+[evalrun] 7/8 building_train_5/fairbanks_5           total=    -12.6624 mean=-0.001465 steps=8641 cpu=1392.8s
+[evalrun] 8/8 building_train_8/singapore_7           total=    -45.1857 mean=-0.005229 steps=8641 cpu=511.0s
+[evalrun] score=0.004434 scenarios=8 failed=0 wall=2583s -> /kaggle/working/results/voi_occ_dev30_shipped/summary.json
+
+STDERR

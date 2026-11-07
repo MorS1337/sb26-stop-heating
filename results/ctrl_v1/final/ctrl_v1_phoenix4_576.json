@@ -1,0 +1,18 @@
+{
+  "scenario": "building_train_8/phoenix_4",
+  "policy": "ctrl_v1",
+  "tag": "",
+  "steps": 576,
+  "mean_reward": -0.01384160767943197,
+  "total_reward": -7.972766023352815,
+  "last200_mean": -0.015698210485861636,
+  "wall_s": 23.0,
+  "s_per_step": 0.0399,
+  "prod_mean": -0.00821302876971054,
+  "energy_mean": 0.036244104840603156,
+  "carbon_mean": 0.008324847233933156,
+  "tmin": 288.7049560546875,
+  "tmax": 304.53179931640625,
+  "frac_run": 0.6163194444444444,
+  "frac_water": 0.0
+}

@@ -1,0 +1,902 @@
+{
+  "tag": "wu_dev30_seed12345",
+  "policy": "policies.ctrl_w:CtrlW",
+  "policy_labels": [
+    "policies.ctrl_w:CtrlW"
+  ],
+  "params": {
+    "precondition_hours": 1.0,
+    "release_enabled": false,
+    "reward_weights_enabled": false,
+    "holiday_guard_enabled": false,
+    "early_preheat_enabled": false
+  },
+  "sim": "shipped",
+  "steps": 8641,
+  "start_offset_days": 0,
+  "occupancy_seed": 12345,
+  "oracle": [],
+  "oracle_horizon": null,
+  "components_mode": "hook",
+  "cenv_components": [],
+  "fast": false,
+  "out_dir": "/Users/mors1337/Code/DL/doma/results/wu_dev30_seed12345",
+  "leaderboard_score": 0.0075185618468683185,
+  "mean_abs_total_reward_per_step": 0.0075185618468683185,
+  "mean_total_reward": -64.96789291878915,
+  "mean_per_step_reward": -0.0075185618468683185,
+  "n_scenarios": 30,
+  "n_failed": 0,
+  "sum_comfort_all": -58.548059804362474,
+  "sum_energy_all": -969.196181252847,
+  "sum_carbon_all": -921.2925769215153,
+  "by_weather": {
+    "atlanta_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005610224211919298,
+      "mean_total_reward": -48.47794741519465,
+      "mean_per_step_reward": -0.005610224211919298
+    },
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0033423961327202286,
+      "mean_total_reward": -28.881644982835496,
+      "mean_per_step_reward": -0.0033423961327202286
+    },
+    "atlanta_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.002916550943422886,
+      "mean_total_reward": -25.20191670211716,
+      "mean_per_step_reward": -0.002916550943422886
+    },
+    "atlanta_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006410130334698427,
+      "mean_total_reward": -55.38993622212911,
+      "mean_per_step_reward": -0.006410130334698427
+    },
+    "atlanta_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004144540048797618,
+      "mean_total_reward": -35.81297056166022,
+      "mean_per_step_reward": -0.004144540048797618
+    },
+    "atlanta_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.007185999867000233,
+      "mean_total_reward": -62.094224850749015,
+      "mean_per_step_reward": -0.007185999867000233
+    },
+    "denver_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005624783179359899,
+      "mean_total_reward": -48.60375145284888,
+      "mean_per_step_reward": -0.005624783179359899
+    },
+    "denver_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004192894182146028,
+      "mean_total_reward": -36.23079862792383,
+      "mean_per_step_reward": -0.004192894182146028
+    },
+    "denver_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004421877039423548,
+      "mean_total_reward": -38.20943949765888,
+      "mean_per_step_reward": -0.004421877039423548
+    },
+    "denver_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0033470752268466267,
+      "mean_total_reward": -28.9220770351817,
+      "mean_per_step_reward": -0.0033470752268466267
+    },
+    "denver_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0023457564527016796,
+      "mean_total_reward": -20.269681507795212,
+      "mean_per_step_reward": -0.0023457564527016796
+    },
+    "denver_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004550866492284571,
+      "mean_total_reward": -39.32403735983098,
+      "mean_per_step_reward": -0.004550866492284571
+    },
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04651409474732008,
+      "mean_total_reward": -401.9282927115928,
+      "mean_per_step_reward": -0.04651409474732008
+    },
+    "fairbanks_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.012649555531053343,
+      "mean_total_reward": -109.30480934383195,
+      "mean_per_step_reward": -0.012649555531053343
+    },
+    "fairbanks_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0016677797216273775,
+      "mean_total_reward": -14.411284574582169,
+      "mean_per_step_reward": -0.0016677797216273775
+    },
+    "fairbanks_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.001607849898439784,
+      "mean_total_reward": -13.893430972418173,
+      "mean_per_step_reward": -0.001607849898439784
+    },
+    "fairbanks_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.008873966904340926,
+      "mean_total_reward": -76.67994802040994,
+      "mean_per_step_reward": -0.008873966904340926
+    },
+    "fairbanks_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.024584494798844364,
+      "mean_total_reward": -212.43461955681414,
+      "mean_per_step_reward": -0.024584494798844364
+    },
+    "phoenix_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0025470264244017208,
+      "mean_total_reward": -22.00885533325527,
+      "mean_per_step_reward": -0.0025470264244017208
+    },
+    "phoenix_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005463794578262251,
+      "mean_total_reward": -47.212648950764105,
+      "mean_per_step_reward": -0.005463794578262251
+    },
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.009693535326628405,
+      "mean_total_reward": -83.76183875739605,
+      "mean_per_step_reward": -0.009693535326628405
+    },
+    "phoenix_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.01428295183905379,
+      "mean_total_reward": -123.4189868412638,
+      "mean_per_step_reward": -0.01428295183905379
+    },
+    "phoenix_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.007246403060264772,
+      "mean_total_reward": -62.61616884374789,
+      "mean_per_step_reward": -0.007246403060264772
+    },
+    "phoenix_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0016939938959631548,
+      "mean_total_reward": -14.63780125501762,
+      "mean_per_step_reward": -0.0016939938959631548
+    },
+    "singapore_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004720306428605678,
+      "mean_total_reward": -40.78816784958167,
+      "mean_per_step_reward": -0.004720306428605678
+    },
+    "singapore_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006958996410216644,
+      "mean_total_reward": -60.13268798068202,
+      "mean_per_step_reward": -0.006958996410216644
+    },
+    "singapore_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005449543010438974,
+      "mean_total_reward": -47.08950115320317,
+      "mean_per_step_reward": -0.005449543010438974
+    },
+    "singapore_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.00558009691652211,
+      "mean_total_reward": -48.21761745566755,
+      "mean_per_step_reward": -0.00558009691652211
+    },
+    "singapore_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005389425521661895,
+      "mean_total_reward": -46.57002593268044,
+      "mean_per_step_reward": -0.005389425521661895
+    },
+    "singapore_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006539946281083278,
+      "mean_total_reward": -56.5116758148406,
+      "mean_per_step_reward": -0.006539946281083278
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.014605029090575813,
+      "mean_total_reward": -126.20205637166559,
+      "mean_per_step_reward": -0.014605029090575813
+    },
+    "building_train_2": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.00641673649112625,
+      "mean_total_reward": -55.447020019821935,
+      "mean_per_step_reward": -0.00641673649112625
+    },
+    "building_train_4": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.0044711367083731,
+      "mean_total_reward": -38.63509229705196,
+      "mean_per_step_reward": -0.0044711367083731
+    },
+    "building_train_5": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.0035883707128448244,
+      "mean_total_reward": -31.007111329692133,
+      "mean_per_step_reward": -0.0035883707128448244
+    },
+    "building_train_7": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.006305147061109813,
+      "mean_total_reward": -54.4827757550499,
+      "mean_per_step_reward": -0.006305147061109813
+    },
+    "building_train_8": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.00972495101718012,
+      "mean_total_reward": -84.03330173945339,
+      "mean_per_step_reward": -0.00972495101718012
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 2897.4,
+    "cpu_seconds_total": 35910.665194724,
+    "wall_seconds_sum_scenarios": 36317.601063489914,
+    "mean_cpu_seconds_per_scenario": 1197.0221731574668,
+    "steps_per_second_cpu": 7.218746815029371,
+    "steps_per_second_step_cpu": 7.754375839771762
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 8641,
+      "total_reward": -28.881644982835496,
+      "mean_per_step_reward": -0.0033423961327202286,
+      "cpu_seconds": 1227.9880024059999,
+      "wall_seconds": 1248.5693924427032,
+      "steps_per_second_cpu": 7.036713700027743
+    },
+    {
+      "scenario": "building_train_1/denver_7",
+      "steps": 8641,
+      "total_reward": -20.269681507795212,
+      "mean_per_step_reward": -0.0023457564527016796,
+      "cpu_seconds": 1146.001131454,
+      "wall_seconds": 1160.8794405460358,
+      "steps_per_second_cpu": 7.540132171629401
+    },
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 8641,
+      "total_reward": -401.9282927115928,
+      "mean_per_step_reward": -0.04651409474732008,
+      "cpu_seconds": 1201.929631943,
+      "wall_seconds": 1223.8870725631714,
+      "steps_per_second_cpu": 7.189272791312452
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "steps": 8641,
+      "total_reward": -123.4189868412638,
+      "mean_per_step_reward": -0.01428295183905379,
+      "cpu_seconds": 1227.9284346059999,
+      "wall_seconds": 1248.6472952365875,
+      "steps_per_second_cpu": 7.0370550566919645
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "steps": 8641,
+      "total_reward": -56.5116758148406,
+      "mean_per_step_reward": -0.006539946281083278,
+      "cpu_seconds": 764.718915457,
+      "wall_seconds": 773.7998418807983,
+      "steps_per_second_cpu": 11.299576648808397
+    },
+    {
+      "scenario": "building_train_2/atlanta_3",
+      "steps": 8641,
+      "total_reward": -25.20191670211716,
+      "mean_per_step_reward": -0.002916550943422886,
+      "cpu_seconds": 2179.381382937,
+      "wall_seconds": 2210.7219648361206,
+      "steps_per_second_cpu": 3.96488658095956
+    },
+    {
+      "scenario": "building_train_2/denver_8",
+      "steps": 8641,
+      "total_reward": -39.32403735983098,
+      "mean_per_step_reward": -0.004550866492284571,
+      "cpu_seconds": 1394.902351195,
+      "wall_seconds": 1408.2036347389221,
+      "steps_per_second_cpu": 6.194698856588301
+    },
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "steps": 8641,
+      "total_reward": -109.30480934383195,
+      "mean_per_step_reward": -0.012649555531053343,
+      "cpu_seconds": 2186.2364254440004,
+      "wall_seconds": 2214.229609489441,
+      "steps_per_second_cpu": 3.952454501001697
+    },
+    {
+      "scenario": "building_train_2/phoenix_6",
+      "steps": 8641,
+      "total_reward": -62.61616884374789,
+      "mean_per_step_reward": -0.007246403060264772,
+      "cpu_seconds": 2067.492564245,
+      "wall_seconds": 2089.78506565094,
+      "steps_per_second_cpu": 4.179458804078211
+    },
+    {
+      "scenario": "building_train_2/singapore_1",
+      "steps": 8641,
+      "total_reward": -40.78816784958167,
+      "mean_per_step_reward": -0.004720306428605678,
+      "cpu_seconds": 2168.562923192,
+      "wall_seconds": 2199.1943142414093,
+      "steps_per_second_cpu": 3.9846664846971303
+    },
+    {
+      "scenario": "building_train_4/atlanta_5",
+      "steps": 8641,
+      "total_reward": -55.38993622212911,
+      "mean_per_step_reward": -0.006410130334698427,
+      "cpu_seconds": 1540.8291636719998,
+      "wall_seconds": 1558.1511924266815,
+      "steps_per_second_cpu": 5.608019502569223
+    },
+    {
+      "scenario": "building_train_4/denver_2",
+      "steps": 8641,
+      "total_reward": -48.60375145284888,
+      "mean_per_step_reward": -0.005624783179359899,
+      "cpu_seconds": 1634.0409803500002,
+      "wall_seconds": 1659.180424451828,
+      "steps_per_second_cpu": 5.288117069223783
+    },
+    {
+      "scenario": "building_train_4/fairbanks_4",
+      "steps": 8641,
+      "total_reward": -14.411284574582169,
+      "mean_per_step_reward": -0.0016677797216273775,
+      "cpu_seconds": 1545.812253289,
+      "wall_seconds": 1564.1605851650238,
+      "steps_per_second_cpu": 5.589941457388944
+    },
+    {
+      "scenario": "building_train_4/phoenix_8",
+      "steps": 8641,
+      "total_reward": -14.63780125501762,
+      "mean_per_step_reward": -0.0016939938959631548,
+      "cpu_seconds": 1543.672132406,
+      "wall_seconds": 1558.1674072742462,
+      "steps_per_second_cpu": 5.597691257489992
+    },
+    {
+      "scenario": "building_train_4/singapore_3",
+      "steps": 8641,
+      "total_reward": -60.13268798068202,
+      "mean_per_step_reward": -0.006958996410216644,
+      "cpu_seconds": 1034.0614134940001,
+      "wall_seconds": 1044.8269529342651,
+      "steps_per_second_cpu": 8.356370218672836
+    },
+    {
+      "scenario": "building_train_5/atlanta_6",
+      "steps": 8641,
+      "total_reward": -35.81297056166022,
+      "mean_per_step_reward": -0.004144540048797618,
+      "cpu_seconds": 1089.494977816,
+      "wall_seconds": 1100.5353183746338,
+      "steps_per_second_cpu": 7.9311976428948165
+    },
+    {
+      "scenario": "building_train_5/denver_3",
+      "steps": 8641,
+      "total_reward": -36.23079862792383,
+      "mean_per_step_reward": -0.004192894182146028,
+      "cpu_seconds": 1713.285718767,
+      "wall_seconds": 1738.2032370567322,
+      "steps_per_second_cpu": 5.043525376618832
+    },
+    {
+      "scenario": "building_train_5/fairbanks_5",
+      "steps": 8641,
+      "total_reward": -13.893430972418173,
+      "mean_per_step_reward": -0.001607849898439784,
+      "cpu_seconds": 1426.0338053970002,
+      "wall_seconds": 1435.6271533966064,
+      "steps_per_second_cpu": 6.059463644758682
+    },
+    {
+      "scenario": "building_train_5/phoenix_1",
+      "steps": 8641,
+      "total_reward": -22.00885533325527,
+      "mean_per_step_reward": -0.0025470264244017208,
+      "cpu_seconds": 948.727116802,
+      "wall_seconds": 953.0063354969025,
+      "steps_per_second_cpu": 9.107993064567777
+    },
+    {
+      "scenario": "building_train_5/singapore_4",
+      "steps": 8641,
+      "total_reward": -47.08950115320317,
+      "mean_per_step_reward": -0.005449543010438974,
+      "cpu_seconds": 1358.638732368,
+      "wall_seconds": 1366.9783222675323,
+      "steps_per_second_cpu": 6.360042441112671
+    },
+    {
+      "scenario": "building_train_7/atlanta_8",
+      "steps": 8641,
+      "total_reward": -62.094224850749015,
+      "mean_per_step_reward": -0.007185999867000233,
+      "cpu_seconds": 769.3880776579999,
+      "wall_seconds": 776.0628523826599,
+      "steps_per_second_cpu": 11.23100324910546
+    },
+    {
+      "scenario": "building_train_7/denver_5",
+      "steps": 8641,
+      "total_reward": -38.20943949765888,
+      "mean_per_step_reward": -0.004421877039423548,
+      "cpu_seconds": 807.962774436,
+      "wall_seconds": 817.3074355125427,
+      "steps_per_second_cpu": 10.694799653402184
+    },
+    {
+      "scenario": "building_train_7/fairbanks_7",
+      "steps": 8641,
+      "total_reward": -76.67994802040994,
+      "mean_per_step_reward": -0.008873966904340926,
+      "cpu_seconds": 829.209023918,
+      "wall_seconds": 836.6482014656067,
+      "steps_per_second_cpu": 10.420774196560727
+    },
+    {
+      "scenario": "building_train_7/phoenix_3",
+      "steps": 8641,
+      "total_reward": -47.212648950764105,
+      "mean_per_step_reward": -0.005463794578262251,
+      "cpu_seconds": 487.46757813100004,
+      "wall_seconds": 489.98104524612427,
+      "steps_per_second_cpu": 17.726307117963554
+    },
+    {
+      "scenario": "building_train_7/singapore_6",
+      "steps": 8641,
+      "total_reward": -48.21761745566755,
+      "mean_per_step_reward": -0.00558009691652211,
+      "cpu_seconds": 765.5725507999999,
+      "wall_seconds": 771.8187825679779,
+      "steps_per_second_cpu": 11.286977296887693
+    },
+    {
+      "scenario": "building_train_8/atlanta_1",
+      "steps": 8641,
+      "total_reward": -48.47794741519465,
+      "mean_per_step_reward": -0.005610224211919298,
+      "cpu_seconds": 639.02435884,
+      "wall_seconds": 644.0777304172516,
+      "steps_per_second_cpu": 13.522176237046306
+    },
+    {
+      "scenario": "building_train_8/denver_6",
+      "steps": 8641,
+      "total_reward": -28.9220770351817,
+      "mean_per_step_reward": -0.0033470752268466267,
+      "cpu_seconds": 609.7928194320001,
+      "wall_seconds": 613.0389144420624,
+      "steps_per_second_cpu": 14.170386604500818
+    },
+    {
+      "scenario": "building_train_8/fairbanks_8",
+      "steps": 8641,
+      "total_reward": -212.43461955681414,
+      "mean_per_step_reward": -0.024584494798844364,
+      "cpu_seconds": 447.731613003,
+      "wall_seconds": 449.8459038734436,
+      "steps_per_second_cpu": 19.299508341712965
+    },
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 8641,
+      "total_reward": -83.76183875739605,
+      "mean_per_step_reward": -0.009693535326628405,
+      "cpu_seconds": 629.946625253,
+      "wall_seconds": 634.8765714168549,
+      "steps_per_second_cpu": 13.717035148064474
+    },
+    {
+      "scenario": "building_train_8/singapore_7",
+      "steps": 8641,
+      "total_reward": -46.57002593268044,
+      "mean_per_step_reward": -0.005389425521661895,
+      "cpu_seconds": 524.8317160129999,
+      "wall_seconds": 527.189065694809,
+      "steps_per_second_cpu": 16.464325109090712
+    }
+  ],
+  "failures": [],
+  "remote": {
+    "local_sources_match_payload": {
+      "match": true,
+      "differing": [],
+      "missing": []
+    },
+    "dataset": "mors1337/sbx-payload",
+    "dataset_version": 4,
+    "payload_hash": "c4f8ee1b547bab292a5d1431cfef22d2",
+    "kernels": [
+      "sbx-remote-wu-dev30-seed12345-0",
+      "sbx-remote-wu-dev30-seed12345-1",
+      "sbx-remote-wu-dev30-seed12345-2",
+      "sbx-remote-wu-dev30-seed12345-3"
+    ],
+    "n_shards": 4,
+    "shards": [
+      {
+        "slug": "sbx-remote-wu-dev30-seed12345-0",
+        "status": "COMPLETE",
+        "scenarios": [
+          "building_train_1/fairbanks_1",
+          "building_train_2/atlanta_3",
+          "building_train_2/singapore_1",
+          "building_train_4/denver_2",
+          "building_train_4/phoenix_8",
+          "building_train_7/denver_5",
+          "building_train_8/atlanta_1",
+          "building_train_8/phoenix_4"
+        ],
+        "steps": 8641,
+        "sim": "shipped",
+        "cpu_count": 4,
+        "python": "3.13.18",
+        "setup_seconds": 22.8,
+        "total_seconds": 2871.3,
+        "tree_timings": {
+          "shipped_copy_seconds": 2.6,
+          "corrected_build_seconds": 0.1,
+          "pool_and_weather_seconds": 5.1,
+          "corrected_post_verified": [
+            "smart_buildings/check_return_air.py",
+            "smart_buildings/smart_control/simulator/boiler.py",
+            "smart_buildings/smart_control/simulator/boiler_energy_balance_test.py",
+            "smart_buildings/smart_control/simulator/return_air_mixing_test.py",
+            "smart_buildings/smart_control/simulator/simulator.py",
+            "smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py"
+          ],
+          "corrected_post_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ],
+          "shipped_pre_patch_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ]
+        },
+        "eval_seconds": 2848.45,
+        "steps_per_second_cpu": 6.398062553605647,
+        "mean_cpu_seconds_per_scenario": 1350.565101169625,
+        "mount_vs_local_shipped": {
+          "reference_files": 96,
+          "differing": [
+            "smart_buildings/baselines/pid_plus.py",
+            "smart_buildings/smart_control/environment/environment.py",
+            "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+            "smart_buildings/smart_control/simulator/building.py",
+            "smart_buildings/smart_control/simulator/building_utils.py",
+            "smart_buildings/smart_control/simulator/constants.py",
+            "smart_buildings/smart_control/simulator/hot_water_system.py",
+            "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+            "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+            "smart_buildings/smart_control/simulator/simulator_building.py",
+            "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+            "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+            "smart_buildings/smart_control/utils/building_image_generator.py",
+            "smart_buildings/smart_control/utils/constants.py",
+            "smart_buildings/smart_control/utils/conversion_utils.py",
+            "smart_buildings/smart_control/utils/environment_utils.py",
+            "smart_buildings/smart_control/utils/histogram_reducer.py",
+            "smart_buildings/smart_control/utils/plot_utils.py",
+            "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+            "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+            "smart_buildings/smart_control/utils/scenario_generator.py",
+            "smart_buildings/smart_control/utils/scenario_generator_test.py",
+            "smart_buildings/smart_control/utils/temperature_conversion.py"
+          ],
+          "extra": [],
+          "match": false
+        },
+        "versions": {
+          "numpy": "2.1.3",
+          "pandas": "2.3.3",
+          "numba": "0.61.2",
+          "gin-config": "0.5.0",
+          "protobuf": "7.36.2",
+          "scipy": "1.16.3"
+        }
+      },
+      {
+        "slug": "sbx-remote-wu-dev30-seed12345-1",
+        "status": "COMPLETE",
+        "scenarios": [
+          "building_train_1/singapore_8",
+          "building_train_2/denver_8",
+          "building_train_4/singapore_3",
+          "building_train_5/atlanta_6",
+          "building_train_5/phoenix_1",
+          "building_train_7/phoenix_3",
+          "building_train_8/fairbanks_8"
+        ],
+        "steps": 8641,
+        "sim": "shipped",
+        "cpu_count": 4,
+        "python": "3.13.18",
+        "setup_seconds": 21.8,
+        "total_seconds": 1750.4,
+        "tree_timings": {
+          "shipped_copy_seconds": 2.2,
+          "corrected_build_seconds": 0.1,
+          "pool_and_weather_seconds": 4.3,
+          "corrected_post_verified": [
+            "smart_buildings/check_return_air.py",
+            "smart_buildings/smart_control/simulator/boiler.py",
+            "smart_buildings/smart_control/simulator/boiler_energy_balance_test.py",
+            "smart_buildings/smart_control/simulator/return_air_mixing_test.py",
+            "smart_buildings/smart_control/simulator/simulator.py",
+            "smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py"
+          ],
+          "corrected_post_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ],
+          "shipped_pre_patch_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ]
+        },
+        "eval_seconds": 1728.57,
+        "steps_per_second_cpu": 9.808007183675297,
+        "mean_cpu_seconds_per_scenario": 881.0148522711428,
+        "mount_vs_local_shipped": {
+          "reference_files": 96,
+          "differing": [
+            "smart_buildings/baselines/pid_plus.py",
+            "smart_buildings/smart_control/environment/environment.py",
+            "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+            "smart_buildings/smart_control/simulator/building.py",
+            "smart_buildings/smart_control/simulator/building_utils.py",
+            "smart_buildings/smart_control/simulator/constants.py",
+            "smart_buildings/smart_control/simulator/hot_water_system.py",
+            "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+            "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+            "smart_buildings/smart_control/simulator/simulator_building.py",
+            "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+            "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+            "smart_buildings/smart_control/utils/building_image_generator.py",
+            "smart_buildings/smart_control/utils/constants.py",
+            "smart_buildings/smart_control/utils/conversion_utils.py",
+            "smart_buildings/smart_control/utils/environment_utils.py",
+            "smart_buildings/smart_control/utils/histogram_reducer.py",
+            "smart_buildings/smart_control/utils/plot_utils.py",
+            "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+            "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+            "smart_buildings/smart_control/utils/scenario_generator.py",
+            "smart_buildings/smart_control/utils/scenario_generator_test.py",
+            "smart_buildings/smart_control/utils/temperature_conversion.py"
+          ],
+          "extra": [],
+          "match": false
+        },
+        "versions": {
+          "numpy": "2.1.3",
+          "pandas": "2.3.3",
+          "numba": "0.61.2",
+          "gin-config": "0.5.0",
+          "protobuf": "7.36.2",
+          "scipy": "1.16.3"
+        }
+      },
+      {
+        "slug": "sbx-remote-wu-dev30-seed12345-2",
+        "status": "COMPLETE",
+        "scenarios": [
+          "building_train_1/atlanta_2",
+          "building_train_1/phoenix_5",
+          "building_train_2/fairbanks_2",
+          "building_train_5/denver_3",
+          "building_train_5/singapore_4",
+          "building_train_7/fairbanks_7",
+          "building_train_8/denver_6"
+        ],
+        "steps": 8641,
+        "sim": "shipped",
+        "cpu_count": 4,
+        "python": "3.13.18",
+        "setup_seconds": 19.2,
+        "total_seconds": 2637.5,
+        "tree_timings": {
+          "shipped_copy_seconds": 2.2,
+          "corrected_build_seconds": 0.1,
+          "pool_and_weather_seconds": 4.4,
+          "corrected_post_verified": [
+            "smart_buildings/check_return_air.py",
+            "smart_buildings/smart_control/simulator/boiler.py",
+            "smart_buildings/smart_control/simulator/boiler_energy_balance_test.py",
+            "smart_buildings/smart_control/simulator/return_air_mixing_test.py",
+            "smart_buildings/smart_control/simulator/simulator.py",
+            "smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py"
+          ],
+          "corrected_post_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ],
+          "shipped_pre_patch_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ]
+        },
+        "eval_seconds": 2618.28,
+        "steps_per_second_cpu": 6.6083772425513505,
+        "mean_cpu_seconds_per_scenario": 1307.582736705857,
+        "mount_vs_local_shipped": {
+          "reference_files": 96,
+          "differing": [
+            "smart_buildings/baselines/pid_plus.py",
+            "smart_buildings/smart_control/environment/environment.py",
+            "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+            "smart_buildings/smart_control/simulator/building.py",
+            "smart_buildings/smart_control/simulator/building_utils.py",
+            "smart_buildings/smart_control/simulator/constants.py",
+            "smart_buildings/smart_control/simulator/hot_water_system.py",
+            "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+            "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+            "smart_buildings/smart_control/simulator/simulator_building.py",
+            "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+            "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+            "smart_buildings/smart_control/utils/building_image_generator.py",
+            "smart_buildings/smart_control/utils/constants.py",
+            "smart_buildings/smart_control/utils/conversion_utils.py",
+            "smart_buildings/smart_control/utils/environment_utils.py",
+            "smart_buildings/smart_control/utils/histogram_reducer.py",
+            "smart_buildings/smart_control/utils/plot_utils.py",
+            "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+            "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+            "smart_buildings/smart_control/utils/scenario_generator.py",
+            "smart_buildings/smart_control/utils/scenario_generator_test.py",
+            "smart_buildings/smart_control/utils/temperature_conversion.py"
+          ],
+          "extra": [],
+          "match": false
+        },
+        "versions": {
+          "numpy": "2.1.3",
+          "pandas": "2.3.3",
+          "numba": "0.61.2",
+          "gin-config": "0.5.0",
+          "protobuf": "7.36.2",
+          "scipy": "1.16.3"
+        }
+      },
+      {
+        "slug": "sbx-remote-wu-dev30-seed12345-3",
+        "status": "COMPLETE",
+        "scenarios": [
+          "building_train_1/denver_7",
+          "building_train_2/phoenix_6",
+          "building_train_4/atlanta_5",
+          "building_train_4/fairbanks_4",
+          "building_train_5/fairbanks_5",
+          "building_train_7/atlanta_8",
+          "building_train_7/singapore_6",
+          "building_train_8/singapore_7"
+        ],
+        "steps": 8641,
+        "sim": "shipped",
+        "cpu_count": 4,
+        "python": "3.13.18",
+        "setup_seconds": 16.7,
+        "total_seconds": 2636.1,
+        "tree_timings": {
+          "shipped_copy_seconds": 1.9,
+          "corrected_build_seconds": 0.1,
+          "pool_and_weather_seconds": 3.8,
+          "corrected_post_verified": [
+            "smart_buildings/check_return_air.py",
+            "smart_buildings/smart_control/simulator/boiler.py",
+            "smart_buildings/smart_control/simulator/boiler_energy_balance_test.py",
+            "smart_buildings/smart_control/simulator/return_air_mixing_test.py",
+            "smart_buildings/smart_control/simulator/simulator.py",
+            "smart_buildings/smart_control/simulator/simulator_flexible_floor_plan.py"
+          ],
+          "corrected_post_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ],
+          "shipped_pre_patch_drifted": [
+            "smart_buildings/smart_control/simulator/hot_water_system.py"
+          ]
+        },
+        "eval_seconds": 2619.32,
+        "steps_per_second_cpu": 7.063996897750055,
+        "mean_cpu_seconds_per_scenario": 1223.2451578159998,
+        "mount_vs_local_shipped": {
+          "reference_files": 96,
+          "differing": [
+            "smart_buildings/baselines/pid_plus.py",
+            "smart_buildings/smart_control/environment/environment.py",
+            "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+            "smart_buildings/smart_control/simulator/building.py",
+            "smart_buildings/smart_control/simulator/building_utils.py",
+            "smart_buildings/smart_control/simulator/constants.py",
+            "smart_buildings/smart_control/simulator/hot_water_system.py",
+            "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+            "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+            "smart_buildings/smart_control/simulator/simulator_building.py",
+            "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+            "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+            "smart_buildings/smart_control/utils/building_image_generator.py",
+            "smart_buildings/smart_control/utils/constants.py",
+            "smart_buildings/smart_control/utils/conversion_utils.py",
+            "smart_buildings/smart_control/utils/environment_utils.py",
+            "smart_buildings/smart_control/utils/histogram_reducer.py",
+            "smart_buildings/smart_control/utils/plot_utils.py",
+            "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+            "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+            "smart_buildings/smart_control/utils/scenario_generator.py",
+            "smart_buildings/smart_control/utils/scenario_generator_test.py",
+            "smart_buildings/smart_control/utils/temperature_conversion.py"
+          ],
+          "extra": [],
+          "match": false
+        },
+        "versions": {
+          "numpy": "2.1.3",
+          "pandas": "2.3.3",
+          "numba": "0.61.2",
+          "gin-config": "0.5.0",
+          "protobuf": "7.36.2",
+          "scipy": "1.16.3"
+        }
+      }
+    ],
+    "max_concurrent_running": 4,
+    "queue_observed": false,
+    "poll_wall_seconds": 2897.4,
+    "mean_setup_seconds": 20.125,
+    "mean_eval_seconds": 2453.655,
+    "mount_matches_local_shipped": false,
+    "mount_differing_files": [
+      "smart_buildings/baselines/pid_plus.py",
+      "smart_buildings/smart_control/environment/environment.py",
+      "smart_buildings/smart_control/environment/hybrid_action_environment.py",
+      "smart_buildings/smart_control/simulator/building.py",
+      "smart_buildings/smart_control/simulator/building_utils.py",
+      "smart_buildings/smart_control/simulator/constants.py",
+      "smart_buildings/smart_control/simulator/hot_water_system.py",
+      "smart_buildings/smart_control/simulator/randomized_arrival_departure_occupancy.py",
+      "smart_buildings/smart_control/simulator/setpoint_schedule.py",
+      "smart_buildings/smart_control/simulator/simulator_building.py",
+      "smart_buildings/smart_control/simulator/thermal_diffuser_utils.py",
+      "smart_buildings/smart_control/simulator/zone_floor_area_test.py",
+      "smart_buildings/smart_control/utils/building_image_generator.py",
+      "smart_buildings/smart_control/utils/constants.py",
+      "smart_buildings/smart_control/utils/conversion_utils.py",
+      "smart_buildings/smart_control/utils/environment_utils.py",
+      "smart_buildings/smart_control/utils/histogram_reducer.py",
+      "smart_buildings/smart_control/utils/plot_utils.py",
+      "smart_buildings/smart_control/utils/proto_parsers/observation_response_parser.py",
+      "smart_buildings/smart_control/utils/proto_parsers/reward_info_parser.py",
+      "smart_buildings/smart_control/utils/scenario_generator.py",
+      "smart_buildings/smart_control/utils/scenario_generator_test.py",
+      "smart_buildings/smart_control/utils/temperature_conversion.py"
+    ]
+  }
+}

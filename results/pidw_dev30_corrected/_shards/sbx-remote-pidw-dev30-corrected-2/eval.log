@@ -1,0 +1,13 @@
+COMMAND: /usr/bin/python3 -m sbx.evalrun --policy baseline:pid_water --steps 8641 --sim corrected --workers 4 --tag pidw_dev30_corrected --out /kaggle/working/results/pidw_dev30_corrected --components hook --start-offset-days 0 --scenario building_train_1/fairbanks_1 building_train_2/fairbanks_2 building_train_4/fairbanks_4 building_train_5/fairbanks_5 building_train_7/fairbanks_7 building_train_8/fairbanks_8
+
+STDOUT
+[evalrun] tag=pidw_dev30_corrected sim=corrected policy=baseline:pid_water scenarios=6 steps=8641 workers=4 out=/kaggle/working/results/pidw_dev30_corrected
+[evalrun] 1/6 building_train_1/fairbanks_1           total=  -2608.3409 mean=-0.301856 steps=8641 cpu=1111.5s
+[evalrun] 2/6 building_train_4/fairbanks_4           total=   -284.4948 mean=-0.032924 steps=8641 cpu=1515.2s
+[evalrun] 3/6 building_train_5/fairbanks_5           total=   -145.8903 mean=-0.016884 steps=8641 cpu=1532.0s
+[evalrun] 4/6 building_train_7/fairbanks_7           total=   -461.6121 mean=-0.053421 steps=8641 cpu=669.3s
+[evalrun] 5/6 building_train_2/fairbanks_2           total=   -781.2276 mean=-0.090409 steps=8641 cpu=1918.4s
+[evalrun] 6/6 building_train_8/fairbanks_8           total=   -963.6942 mean=-0.111526 steps=8641 cpu=469.2s
+[evalrun] score=0.101170 scenarios=6 failed=0 wall=2013s -> /kaggle/working/results/pidw_dev30_corrected/summary.json
+
+STDERR

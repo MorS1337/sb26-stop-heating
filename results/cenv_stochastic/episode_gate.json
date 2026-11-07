@@ -1,0 +1,128 @@
+{
+ "policy": "policies.ctrl_w:CtrlW",
+ "scenario": "building_train_8/fairbanks_8",
+ "seeds": {
+  "12345": {
+   "gate": {
+    "convection": {
+     "calls": 2880,
+     "cpu_c": 6.1533,
+     "cpu_py": 4.6709,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "occupancy": {
+     "calls": 345630,
+     "cpu_c": 0.6453,
+     "cpu_py": 3.8045,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.get_current_temp": {
+     "calls": 23043,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.interp": {
+     "calls": 23043,
+     "cpu_c": 0.0813,
+     "cpu_py": 1.1876,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.read_weather_csv": {
+     "calls": 8,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    }
+   },
+   "identical": true,
+   "occupancy_zones": [
+    30
+   ],
+   "passed": true,
+   "step_cpu_seconds": {
+    "on": 59.25064399999971,
+    "ref": 77.46004799999996,
+    "shadow": 77.24116799999996
+   },
+   "total_reward": {
+    "on": -63.179793020914076,
+    "ref": -63.179793020914076,
+    "shadow": -63.179793020914076
+   }
+  },
+  "17321": {
+   "gate": {
+    "convection": {
+     "calls": 2880,
+     "cpu_c": 5.9157,
+     "cpu_py": 4.4387,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "occupancy": {
+     "calls": 345630,
+     "cpu_c": 0.5911,
+     "cpu_py": 3.453,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.get_current_temp": {
+     "calls": 23043,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.interp": {
+     "calls": 23043,
+     "cpu_c": 0.0753,
+     "cpu_py": 1.1058,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    },
+    "weather.read_weather_csv": {
+     "calls": 8,
+     "first": null,
+     "max_abs_diff": 0.0,
+     "mismatches": 0,
+     "passed": true
+    }
+   },
+   "identical": true,
+   "occupancy_zones": [
+    30
+   ],
+   "passed": true,
+   "step_cpu_seconds": {
+    "on": 57.62169899999974,
+    "ref": 77.54067500000036,
+    "shadow": 72.71569700000029
+   },
+   "total_reward": {
+    "on": -63.124732939584646,
+    "ref": -63.124732939584646,
+    "shadow": -63.124732939584646
+   }
+  }
+ },
+ "sim": "corrected",
+ "steps": 2880
+}
