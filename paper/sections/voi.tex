@@ -8,34 +8,31 @@
 \section{What information is worth}
 \label{sec:voi}
 
-The observation space exposes one occupant count for the whole building, no per-zone
-occupancy and no weather forecast, while comfort is charged per zone. We hand the same
-controller each missing channel in turn (Table~\ref{tab:voi}, Appendix~\ref{app:voi}) and never submit any of them, so
-the deltas measure what sensing would be worth, and none of them is an entry. The oracles are
-transparent: dropping the payload reproduces an ordinary run to the last digit, and the
+The observation gives one occupant count for the whole building, no per-zone occupancy and no
+weather forecast, while comfort is charged per zone. We give the same controller each missing
+channel in turn (Table~\ref{tab:voi}, Appendix~\ref{app:voi}) and never submit any of these
+variants, so the differences measure what sensing would be worth. The oracles do not perturb
+the simulation: dropping the extra input reproduces an ordinary run to the last digit, and the
 forecast matches the sensor $h$ hours later to $1.4\e{5}$\,K.
 % src: docs/voi_oracle.md §1 "Non-perturbation proof", "Forecast alignment"
 
-\emph{Zonal occupancy pays $2.9\,\%$.} Dropping each zone to standby 15\,min after its own
-occupants leave, rather than waiting for the whole building to empty, improves dev30 from
-0.0073694 to 0.0071585 and the corrected tree from 0.0071449 to 0.0069403 (both
-$-2.86\,\%$); on the ten-scenario subset it is $-2.30\,\%$, better on 10 of 10, recovering
-$23.9$ units of energy plus carbon for $0.16$ of comfort. Raising the release floor from 282
-to 289\,K moves the subset score by $0.09\,\%$: what matters is \emph{which} zones are
+\emph{Zonal occupancy is worth $2.9\,\%$.} Sending each zone to standby 15\,min after its own
+occupants leave, instead of waiting for the whole building to empty, improves the dev30 score by
+$2.86\,\%$ on both simulator versions and wins on all ten scenarios of the benchmark subset,
+mostly by saving energy and carbon at almost no cost in comfort. Raising the release floor from
+282 to 289\,K changes the result by less than $0.1\,\%$: what matters is \emph{which} zones are
 empty, and hardly how cold they are kept.
 % src: results/{voi_occ_dev30_shipped,voi_occ_dev30_corrected,voi_occ_mild,voi_occ_dev10_pc}; docs/voi_oracle.md §3
 
-\emph{A perfect forecast is worth nothing on top of a clock rule.} A fixed 2\,K pre-dawn lift,
-gated only on the clock, the comfort-day predicate and the zone sitting on its standby floor,
-scores 0.0073463 on dev30 ($-0.31\,\%$) and is a wash on the corrected tree (0.0071582 against
-0.0071449). Driving that lift and the preheat horizon from a perfect 12\,h forecast scores
-0.0073572: $0.15\,\%$ \emph{worse} than the constant lift on dev30 and $0.004\,\%$ worse on the
-subset (the forecast-driven lift alone is $0.01\,\%$ better), so the information is worth zero to
-within our resolution.
+\emph{A perfect forecast adds nothing to a clock rule.} A fixed 2\,K pre-dawn lift, gated only on
+the clock, the comfort-day flag and the zone sitting on its standby floor, improves dev30 by
+$0.31\,\%$ and is neutral on the corrected simulator. Driving the same lift and the preheat
+horizon from a perfect 12\,h forecast does slightly worse than the constant lift, so within our
+resolution the forecast is worth nothing.
 % src: results/{nightlift_dev30_shipped,nightlift_dev30_corrected,voi_fcst_dev30_shipped,voi_fcst_dev10_pc,voi_night_fixed,voi_fcst_night_lift}; docs/voi_oracle.md §3-4
 
-\emph{The schedule is worth more than twice the sensor, and the difference is the lag.} Per-zone
-foreknowledge of the episode's own occupancy, with a 5\,h preheat lead, scores 0.0112001 on the
-subset ($-6.04\,\%$, 10/10) and $-90.52$ on the anchor ($+2.60$ units, $+2.79\,\%$); the same information
-five minutes late, as a sensor gives it, loses $3.7$ points.
+\emph{Knowing the schedule is worth more than twice the sensor, and the difference is the lag.}
+Per-zone foreknowledge of the episode's own occupancy, with a 5\,h preheat lead, improves the
+subset by $6.0\,\%$ and the anchor by 2.6 units ($2.8\,\%$); the same information five minutes
+late, as a sensor delivers it, gives up 3.7 of those 6.0 points.
 % src: results/{foi_foresight10,foi_anchor_lead5,voi_occ_morning}; docs/voi_oracle.md §3, §9.3-9.4

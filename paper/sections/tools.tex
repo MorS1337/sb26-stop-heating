@@ -5,15 +5,11 @@
 \providecommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
 \providecommand{\e}[1]{\times10^{-#1}}
 
-Every claim in the paper compares controllers on the same trajectory, so these studies are only as good
-as the number of episodes they can afford, and a speed-up that flips a damper decision is a
-different experiment. The whole of \texttt{env.step} now runs as one C call that reproduces the
-simulator's order-dependent behaviours: twelve closed-loop episodes (three buildings, both
-trees, two occupancy seeds) and full 8\,641-step traces are bit-identical in observations and
-rewards, at $2.1$, $1.8$ and $1.6\times$ on the 30-, 79- and 85-zone buildings; five pure-Python
-patches recover $1.6$--$1.9\times$ where C is unavailable. The shipped SuperLU is already optimal
-for a single right-hand side, batching is worth $4.1$--$4.9\times$, a correct GPU solver loses to
-one CPU core, and a $200$-mode reduced model drifts $1.0$--$1.2$\,K yet reproduces a five-way
-policy ranking exactly---a shortlisting filter, not a simulator (Table~\ref{tab:tools},
-Appendix~\ref{app:tools}).
+Every comparison in the paper runs controllers on the same trajectories, so the studies are
+limited by how many episodes they can afford, and a speed-up that changed even one damper
+decision would change the experiment. We therefore reimplemented the whole of \texttt{env.step}
+as one C call that reproduces the simulator's order-dependent behaviour. On twelve closed-loop
+gate episodes (three buildings, both simulator versions, two occupancy seeds) and on full
+8\,641-step traces, observations and rewards are bit-identical, and the step is $2.1$, $1.8$ and
+$1.6\times$ faster on the 30-, 79- and 85-zone buildings (Table~\ref{tab:tools}).
 % src: cenv/fused.py "Gate", "Measured"; docs/fast_exact.md; docs/solver_cpu.md §1-4, docs/solver_gpu.md, docs/fastsim_rom.md §5.4-5.5, §13

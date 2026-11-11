@@ -17,49 +17,46 @@ worth is a measurement, taken by an instrument that leaves every per-step reward
 (Appendix~\ref{app:integrity}). % src: docs/integrity_audit.md §2.3-2.4
 % src: the Kaggle forum digest (not released) B1/B2; docs/integrity_audit.md §2
 
-\emph{B1 rewards an exploit.} A probe applying the published
-setpoint recipe on top of CtrlW delivers the same $26.72$\,MWh$_{\text{th}}$ of reheat
-while $11.1$\,MWh of gas stops being billed, comfort does not move, and the anchor improves
-by $+36.93$ units over CtrlW ($+39.7\,\%$), $3.3$ times the gap to the best public score there. It is pure
-accounting: on the corrected tree the same probe is $0.59$ units \emph{worse}. Across dev30,
-gated to the base controller's own heating periods, the recipe takes CtrlW5-278 from 0.0071980
-to 0.0058864 ($-18.2\,\%$; $-36\,\%$ on Fairbanks, $0$ in Singapore) and costs $0.46\,\%$
-corrected: a fifth of an honest score is free to whoever cycles the tank.
+\emph{B1 rewards an exploit.} A probe that applies the published setpoint recipe on top of CtrlW
+delivers the same reheat while $11.1$\,MWh of gas stops being billed and comfort does not move:
+the anchor improves by $36.9$ units, $3.3$ times the gap to the best public score there. It is
+pure accounting: on the corrected simulator the same probe is slightly \emph{worse}. Over dev30,
+gated to the heating periods, the recipe lowers CtrlW5-278's score by $18\,\%$ ($36\,\%$ on
+Fairbanks, nothing in Singapore) and costs $0.46\,\%$ on the corrected simulator: a fifth of an
+honest score is free to whoever cycles the tank.
 % src: results/q7/b1g_w5f_dev30_{shipped,corrected} (policies/exploit_b1.py:ExploitB1GatedW5, analysis only, never submitted) vs results/ctw5frost_dev30_{shipped,corrected}
-A learned policy finds the seam untold: $39\,\%$ of a residual-PPO entry's gain was unbilled
-tank heat \citep{alex2026residualppo}.
+A learned policy finds the seam without being told: $39\,\%$ of a residual-PPO entry's gain was
+unbilled tank heat \citep{alex2026residualppo}.
 % src: the Kaggle forum update (not released) §4 (alexchilton notebook §4b, 2026-11-06)
 
-\emph{B2 hardly matters to a controller that moves air well.} The manufactured heat is
-$0.7$--$1.0\,\%$ of the coil heat the three well-scoring controllers buy, and the artifact is worth
-\emph{minus} a fraction of a unit ($-0.34$, $-0.42$, $-0.86$; Table~\ref{tab:integrity}):
-harvesting it is priced out by the fan and by comfort. All three controllers improve when the
-accounting is fixed, more so on a mild scenario ($10.4\,\%$ on a full-length Atlanta episode),
-where the B1 probe reverses: its worth is scenario-dependent and the anchor figure is a ceiling.
+\emph{B2 hardly matters to a controller that moves air well.} The heat it manufactures is about
+$1\,\%$ of the coil heat the three well-scoring controllers buy, and for them it is worth slightly
+\emph{less} than nothing (Table~\ref{tab:integrity}), because harvesting it costs fan power and
+comfort. All three controllers improve when the accounting is fixed, most on a mild scenario
+($10.4\,\%$ on a full-length Atlanta episode), where the B1 probe reverses; what B1 is worth
+depends on the scenario, and the anchor figure is a ceiling.
 % src: docs/integrity_audit.md §3.1-3.2, §4-6
 The third public channel is a leak: the occupancy generator runs on the kit's
 one default seed, which the observation does not expose, so replaying it would yield the per-zone
-schedule, whose value is the foresight number of \S\ref{sec:voi} ($2.79\,\%$). Final verification reseeds, so we never use it.
+schedule, whose value is the foresight number of \S\ref{sec:voi} ($2.8\,\%$ on the anchor). Final verification reseeds, so we never use it.
 % src: docs/voi_oracle.md §9; the Kaggle forum digest (not released) B7
 
-\paragraph{B1 also overcharges an honest controller.} When the base controller idles the loop
-after two hours without demand, the
-shipped tank falls to 310\,K unbilled, and the first call of the next morning is billed for
-the recharge: in a mild seven-day week CtrlX is billed $1.055$ units of gas per unit of heat its
-coils draw ($1.017$ in a cold one; $1.099$ before the off-peak tank floor), and its shipped dev30
-score is $1.9\,\%$ above its corrected one. The cleanest measurement is a change that does nothing physically. The
-burner raises the tank by at most $2.5$\,K per step in every scenario, so a setpoint capped at
-the observed tank temperature plus $2.5$\,K commands the same trajectory: on the corrected tree
-all ten benchmark scores are identical to the last digit, and on the shipped tree the capped
-controller scores $0.55\,\%$ better. Holding the tank setpoint through the idle branch and at its
-30-hour peak, under that cap, removes the overcharge without ever billing less than the coils
-draw ($1.035$ and $1.004$): the shipped score then meets the corrected one
-(Table~\ref{tab:main}) and the leaderboard entry moves from 0.01002 to 0.00982 (58217787). We
-report that variant apart, because it is a response to the accounting: it costs
-$0.05\,\%$ on the corrected tree and is worth nothing once the fixes land. A
-corollary for reading the public board: the late start of \S\ref{sec:ctrlx} is worth $0.33\,\%$
-on the corrected development set and nothing on the leaderboard ($0.01007\to0.01008$), because
-the unfixed billing charges the later morning call. We attribute nothing to other teams beyond
-their published numbers: the audit bounds what these seams can be worth to a controller that
-respects comfort; it says nothing about what any particular team did.
+\paragraph{B1 also overcharges an honest controller.} When the base controller idles the
+hot-water loop after two hours without demand, the shipped tank falls to 310\,K unbilled, and the
+first call of the next morning is billed for the whole recharge. In a mild week CtrlX is
+therefore billed $1.055$ units of gas per unit of heat its coils draw, and its shipped dev30 score
+is $1.9\,\%$ worse than its corrected one. The cleanest measurement is a change that does nothing
+physically. The burner raises the tank by at most $2.5$\,K per step, so capping the setpoint at
+the observed tank temperature plus $2.5$\,K leaves the trajectory unchanged: on the corrected
+simulator all ten benchmark scores are identical to the last digit, while on the shipped one the
+capped controller scores $0.55\,\%$ better. Holding the tank setpoint through the idle periods,
+under the same cap, removes the overcharge without ever billing less than the coils draw: the
+shipped score then meets the corrected one (Table~\ref{tab:main}), and the leaderboard entry
+improves from 0.01002 to 0.00982. We report that variant apart, because it responds to the
+accounting: it costs $0.05\,\%$ on the corrected simulator and is worth nothing once the fixes
+land. The same effect explains a puzzle on the public board: the late start of
+\S\ref{sec:ctrlx} is worth $0.33\,\%$ on the corrected development set and nothing on the
+leaderboard, because the unfixed billing charges the later morning call. We attribute nothing to
+other teams beyond their published numbers: the audit bounds what these seams can be worth to a
+controller that respects comfort, and says nothing about what any particular team did.
 % src: docs/ctrlx_experiments.md 2026-11-10 log (sbx.integrity billed/drawn on denver_2 and fairbanks_1, 7 d, shipped; water_rise_guard_K on wl7 corrected/shipped; arx_v6s_hpk, arx_p7c/p7d); docs/control_gap.md §0-1, §5

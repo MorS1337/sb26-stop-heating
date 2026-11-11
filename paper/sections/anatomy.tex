@@ -9,7 +9,7 @@
 \section{Reward anatomy}
 \label{sec:anatomy}
 
-\paragraph{Comfort regret is a per-occupant mean, so arrival dominates.} For zone $v$
+\paragraph{Comfort is a mean over the people present.} For zone $v$
 with live band $[T^{\text{lo}}_v,T^{\text{hi}}_v]$ and shortfall $s_{v,t}$ (linear to
 $5$\,K, quadratic beyond), the productivity term of the reward is
 \begin{equation}
@@ -18,57 +18,49 @@ $5$\,K, quadratic beyond), the productivity term of the reward is
 \label{eq:mean}
 \end{equation}
 the occupancy-weighted \emph{mean} shortfall over the occupants present
-\citep{goldfeder2026smart}. The headcount cancels: a kelvin of shortfall costs the same with two
-people in the building as with sixty. Occupancy is
-exogenous---the same headcount in every zone (two in most scenarios, one in the rest), arrivals
-06:00--12:00, departures 13:00--19:00---so the ramp runs from 0 to $2V$ people across the morning ($74$ on the anchor) and a reactive
-controller pays a fixed price at every mode change. % src: docs/sim_analysis.md L192-198, L341-343
-The measurement is one horizon change: the public base controller's preheat gain is
-multiplied by a parameter that lives inside a 60\,min look-ahead flag, so its ramps never
-exceeded one hour. Moving the ramp outside the flag at a $2$\,h horizon cuts mean hour-06
-comfort regret from $46.2\e{4}$ to $9.2\e{4}$ per step and the score from 0.0075040 to
-0.0074263; the remaining $0.0074263\to0.0073694$ is the release of a building that is still
-empty at noon, which is additive with it ($-0.77\,\%$ alone). Longer
-horizons keep improving the arrival hour while the score rises (0.0074906 at 3\,h, 0.0075614
-at 4\,h): readiness saturates once every zone is in band; the gas does not. % src: results/{refwu_dev30_shipped,ctrw_all,ctrw_d3,ctrw_d4}
+\citep{goldfeder2026smart}. Because it is a mean, the headcount cancels: a kelvin of shortfall
+costs the same with two people in the building as with sixty, so the first arrivals of the
+morning cost as much as a full building, and an empty building costs nothing. Occupancy is
+exogenous: every zone holds the same headcount, people arrive between 06:00 and 12:00 and leave
+between 13:00 and 19:00, and a controller that only reacts to arrivals pays at every morning
+mode change. % src: docs/sim_analysis.md L192-198, L341-343
+The base controller is more reactive than its parameters suggest: its preheat ramp sits inside a
+flag that is true only in the hour before the mode change, so its ramps never exceeded one hour.
+Moving the ramp outside the flag at a 2\,h horizon cuts comfort regret in the first occupied hour
+fivefold and improves the score by $1.0\,\%$; releasing a building that is still empty at noon
+adds $0.77\,\%$ more, independently. Longer horizons keep improving that hour but not the score:
+readiness saturates once every zone is in band, while the gas keeps growing. % src: results/{refwu_dev30_shipped,ctrw_all,ctrw_d3,ctrw_d4}
 
-\paragraph{The bill is envelope heat times a ventilation multiplier.} On the public
-forum's comparison episode (\texttt{building\_train\_1/fairbanks\_1}, 2\,016 steps,
-mean outside $-26.3\,^\circ$C) the same controller loses $93.12$ units: comfort $0.54$
-(0.6\,\%), energy $26.23$ (28.2\,\%), carbon $66.35$ (71.3\,\%), carbon being $2.5$
-times energy. % src: results/houssem_anchor_ctrlw; docs/opt_gap.md §3
-Instrumenting the trajectory at the model call partitions the bill: $73.3\,\%$
-envelope reheat at the band bottom, $22.9\,\%$ the outside-air share of the same
-reheat, $1.9\,\%$ fans, $1.3\,\%$ boiler standing loss, $0.6\,\%$ pump, no
-chiller. % src: results/ef_shipped/building_train_1__fairbanks_1.npz (2016 steps)
-That outside-air share is not a modelling choice but the action space's floor:
-recirculation is capped at $r\le0.7$, so at least $30\,\%$ of the supply air is
-outdoor air, and the coil must lift it from
+\paragraph{The bill is envelope heat times a ventilation multiplier.} On the anchor
+(\texttt{building\_train\_1/fairbanks\_1}, 2\,016 steps, mean outside $-26.3\,^\circ$C) the same
+controller loses $93.12$ units, almost all of them to energy and carbon; comfort is $0.6\,\%$.
+% src: results/houssem_anchor_ctrlw; docs/opt_gap.md §3
+Instrumenting the trajectory splits the bill: about three quarters is reheat that replaces the
+heat the envelope loses, just under a quarter is the outside-air share of that same reheat, and
+fans, the boiler's standing loss and the pump make up the last few percent
+(Appendix~\ref{app:energy}). % src: results/ef_shipped/building_train_1__fairbanks_1.npz (2016 steps)
+The outside-air share is fixed by the action space: recirculation is capped at $r\le0.7$, so at
+least $30\,\%$ of the supply air comes from outside, and the coil must lift it from
 $T_{\text{mix}}=0.7\,T_{\text{ret}}+0.3\,T_{\text{out}}$ to the discharge cap
-$T_{\text{dis}}=308.15$\,K while the zone only receives the drop from
-$T_{\text{dis}}$ to $T_{\text{zone}}$. With $T_{\text{ret}}\approx T_{\text{zone}}$
-the plant's own air-side law is
+$T_{\text{dis}}=308.15$\,K, while the zone receives only the drop from $T_{\text{dis}}$ to
+$T_{\text{zone}}$. With $T_{\text{ret}}\approx T_{\text{zone}}$ this gives
 \begin{equation}
 \frac{\text{gas billed}}{\text{net zone heat}}\;=\;
 1+\frac{0.3\,\big(T_{\text{zone}}-T_{\text{out}}\big)}{T_{\text{dis}}-T_{\text{zone}}},
 \label{eq:mult}
 \end{equation}
-so at the anchor's ambient the multiplier is $2.00$ for a zone held at $294$\,K and
-$1.18$ for one at $270$\,K (Figure~\ref{fig:mult}a). \emph{Heat delivered into a
-colder building is cheaper per delivered watt.} What a controller cannot change is the
-$0.3$; what it can is the temperature at which it delivers the recovery.
-% src: docs/control_gap.md §0.2, §2 (eff.py: gas/Q_net exact identity)
-Measured over the episode, gas per net zone watt is $1.975$ for CtrlW and $2.061$ for CtrlW5
-against a cap-limited $1.949$ and $2.045$: the air side has about one unit of slack
-($1.15$ units, $1.2\,\%$, for CtrlW; $0.58$ for CtrlW5), so \emph{airflow is not where the money is}. The ventilation share is large in the counterfactual sense (coil heat against
-non-ventilation load, a factor $2.24$), but that only describes how the bill splits; no controller can move it.
-% src: docs/control_gap.md §2; docs/opt_gap.md §2-3
+so at the anchor's ambient the multiplier is $2.00$ for a zone held at $294$\,K and $1.18$ for one
+at $270$\,K (Figure~\ref{fig:mult}a): \emph{heat delivered into a colder building is cheaper}. A
+controller cannot change the $0.3$, but it can choose the temperature at which it delivers the
+morning recovery. Beyond that, the air side leaves little to gain: over the episode CtrlW pays
+only about $1\,\%$ more gas per delivered watt than a coil at its cap would.
+% src: docs/control_gap.md §0.2, §2 (eff.py: gas/Q_net exact identity); docs/opt_gap.md §2-3
 
-\paragraph{What the anatomy rules out.} The exchange rate between the two terms forbids
-trading the occupied band: on the anchor $624$ of the $2{,}016$ steps have at least one
-occupant, and a uniform $1$\,K shortfall there costs $0.6\times(1/5)\times624\approx75$ reward
-units, while one kelvin of building temperature is $0.57$\,MWh of gas $\approx1.9$ units---an
-$\approx\!39{:}1$ ratio (measured: holding the schedule's own setpoint instead of $0.12$\,K
-above it costs $1.53$ units). What is left is the band nobody occupies: the night is
-free---and CtrlW, like the family it comes from, heats it anyway.
+\paragraph{What the anatomy rules out.} The exchange rate between the two terms rules out
+trading comfort in occupied hours for energy. On the anchor $624$ of the $2{,}016$ steps have
+someone in the building, and a uniform $1$\,K shortfall in those steps costs
+$0.6\times(1/5)\times624\approx75$ units, while lowering the whole building by one kelvin saves
+about $0.57$\,MWh of gas, or $1.9$ units: a ratio of about $39{:}1$. What remains is the time
+nobody is there. The night costs nothing in comfort, yet CtrlW, like the family it comes from,
+heats it.
 % src: docs/control_gap.md §3; docs/opt_gap.md §6; docs/energy_flow.md "By time bucket"
