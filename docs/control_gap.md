@@ -431,8 +431,9 @@ steps, same recorder:
 
 The curve is steep at the top and flat at the bottom: giving up the last two
 kelvin of protection (282 → 280 K) buys 3.5 units, and 280 → 278 buys another
-2.9 at the price of letting the coldest room dip to 4.66 °C. **Zero freezing
-everywhere is reached at 278 K**; **"no room below 5 °C" needs 280 K.**
+2.9 at the price of letting the coldest room dip to 4.66 °C. **On the anchor no room
+freezes from 274 K up** (+0.63 °C at 274 K); 278 K is the floor that also keeps the three
+cold 30-day scenarios above +4.5 °C (below), and **"no room below 5 °C" needs 280 K.**
 
 On the three cold 30-day scenarios the same floor gives min 4.56/4.66/4.68 °C and
 **zero room-hours below freezing**, at a set cost of ~3.4 % of CtrlW's score

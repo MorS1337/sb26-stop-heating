@@ -219,7 +219,7 @@ reimplementing it:
 | `num_floors`, `morning_start_hour`, `evening_start_hour`, `comfort_temp_window`, `eco_temp_window`, `time_zone`, `holidays` | schedule, fully known a priori |
 | `observation_normalization_metadata`, `action_normalization_metadata` | mean/var per field; native min/max per action |
 
-Observation per step is exactly **`6V + 15K + 34`** (283 = 180+45+7+24+24+3 for train_8, 703 = 510+135+… for
+Observation per step is exactly **`6V + 15K + 58`** (283 = 180+45+7+24+24+3 for train_8, 703 = 510+135+… for
 train_2): 6 fields per VAV (damper %, reheat %, supply-air flow setpoint, zone heating setpoint sensor, zone
 cooling setpoint sensor, zone air temperature) + 15 per AHU (`ahu_N_*`: supply-air temperature and
 setpoint, static pressure and setpoint, supply/outside air flows, supply/discharge fan speeds, supply/exhaust

@@ -1,0 +1,534 @@
+{
+  "tag": "arx_sz_sm05_dev30_corrected",
+  "policy": "policies.ctrl_x_v9:CtrlX",
+  "policy_labels": [
+    "policies.ctrl_x_v9:CtrlX"
+  ],
+  "params": {
+    "size_margin_power": 0.5
+  },
+  "sim": "corrected",
+  "steps": 8641,
+  "start_offset_days": 0,
+  "occupancy_seed": null,
+  "oracle": [],
+  "oracle_horizon": null,
+  "oracle_file": null,
+  "oracle_record": null,
+  "components_mode": "hook",
+  "cenv_components": [
+    "fused"
+  ],
+  "fast": true,
+  "out_dir": "/home/mors1337/sb26/results/arx_sz_sm05_dev30_corrected",
+  "leaderboard_score": 0.006839981980329794,
+  "mean_abs_total_reward_per_step": 0.006839981980329794,
+  "mean_total_reward": -59.10428429202975,
+  "mean_per_step_reward": -0.006839981980329794,
+  "n_scenarios": 30,
+  "n_failed": 0,
+  "sum_comfort_all": -17.838901382343757,
+  "sum_energy_all": -922.4518236324021,
+  "sum_carbon_all": -832.8378306306539,
+  "by_weather": {
+    "atlanta_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004070273860164232,
+      "mean_total_reward": -35.171236425679126,
+      "mean_per_step_reward": -0.004070273860164232
+    },
+    "atlanta_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.002744297472692191,
+      "mean_total_reward": -23.713474461533224,
+      "mean_per_step_reward": -0.002744297472692191
+    },
+    "atlanta_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0027446331690111963,
+      "mean_total_reward": -23.71637521342575,
+      "mean_per_step_reward": -0.0027446331690111963
+    },
+    "atlanta_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006256285109154908,
+      "mean_total_reward": -54.06055962820756,
+      "mean_per_step_reward": -0.006256285109154908
+    },
+    "atlanta_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004017758696789448,
+      "mean_total_reward": -34.71745289895762,
+      "mean_per_step_reward": -0.004017758696789448
+    },
+    "atlanta_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006068498809516174,
+      "mean_total_reward": -52.43789821302926,
+      "mean_per_step_reward": -0.006068498809516174
+    },
+    "denver_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004772847246118329,
+      "mean_total_reward": -41.242173053708484,
+      "mean_per_step_reward": -0.004772847246118329
+    },
+    "denver_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.003474687258984981,
+      "mean_total_reward": -30.024772604889222,
+      "mean_per_step_reward": -0.003474687258984981
+    },
+    "denver_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.004247695641990114,
+      "mean_total_reward": -36.704338042436575,
+      "mean_per_step_reward": -0.004247695641990114
+    },
+    "denver_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0030125140947996334,
+      "mean_total_reward": -26.031134293163632,
+      "mean_per_step_reward": -0.0030125140947996334
+    },
+    "denver_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0015863795465244235,
+      "mean_total_reward": -13.707905661517543,
+      "mean_per_step_reward": -0.0015863795465244235
+    },
+    "denver_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0035897892450815383,
+      "mean_total_reward": -31.019368866749573,
+      "mean_per_step_reward": -0.0035897892450815383
+    },
+    "fairbanks_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.04329110363840796,
+      "mean_total_reward": -374.0784265394832,
+      "mean_per_step_reward": -0.04329110363840796
+    },
+    "fairbanks_2": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.01099647475191408,
+      "mean_total_reward": -95.02053833128957,
+      "mean_per_step_reward": -0.01099647475191408
+    },
+    "fairbanks_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0011258410817046993,
+      "mean_total_reward": -9.728392787010307,
+      "mean_per_step_reward": -0.0011258410817046993
+    },
+    "fairbanks_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0013730268937221404,
+      "mean_total_reward": -11.864325388653015,
+      "mean_per_step_reward": -0.0013730268937221404
+    },
+    "fairbanks_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.007313027332705083,
+      "mean_total_reward": -63.19186918190462,
+      "mean_per_step_reward": -0.007313027332705083
+    },
+    "fairbanks_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.021811109799889723,
+      "mean_total_reward": -188.4697997808471,
+      "mean_per_step_reward": -0.021811109799889723
+    },
+    "phoenix_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0020105271314195,
+      "mean_total_reward": -17.3729649425959,
+      "mean_per_step_reward": -0.0020105271314195
+    },
+    "phoenix_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005451581597507481,
+      "mean_total_reward": -47.10711658406214,
+      "mean_per_step_reward": -0.005451581597507481
+    },
+    "phoenix_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0094578643258796,
+      "mean_total_reward": -81.72540563992561,
+      "mean_per_step_reward": -0.0094578643258796
+    },
+    "phoenix_5": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.014160825276188765,
+      "mean_total_reward": -122.36369121154712,
+      "mean_per_step_reward": -0.014160825276188765
+    },
+    "phoenix_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.00713364757363408,
+      "mean_total_reward": -61.64184868377209,
+      "mean_per_step_reward": -0.00713364757363408
+    },
+    "phoenix_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.0012458887433596379,
+      "mean_total_reward": -10.765724631370631,
+      "mean_per_step_reward": -0.0012458887433596379
+    },
+    "singapore_1": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.00461688147238483,
+      "mean_total_reward": -39.89447280287732,
+      "mean_per_step_reward": -0.00461688147238483
+    },
+    "singapore_3": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006523510244807497,
+      "mean_total_reward": -56.36965202538158,
+      "mean_per_step_reward": -0.006523510244807497
+    },
+    "singapore_4": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005247646936124357,
+      "mean_total_reward": -45.34491717505057,
+      "mean_per_step_reward": -0.005247646936124357
+    },
+    "singapore_6": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005536642687454553,
+      "mean_total_reward": -47.84212946229479,
+      "mean_per_step_reward": -0.005536642687454553
+    },
+    "singapore_7": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.005191786691398706,
+      "mean_total_reward": -44.862228800376215,
+      "mean_per_step_reward": -0.005191786691398706
+    },
+    "singapore_8": {
+      "n_scenarios": 1,
+      "leaderboard_score": 0.006126413080563949,
+      "mean_total_reward": -52.938335429153085,
+      "mean_per_step_reward": -0.006126413080563949
+    }
+  },
+  "by_building": {
+    "building_train_1": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.013581803802875459,
+      "mean_total_reward": -117.36036666064683,
+      "mean_per_step_reward": -0.013581803802875459
+    },
+    "building_train_2": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.0058162852424051455,
+      "mean_total_reward": -50.258520779622856,
+      "mean_per_step_reward": -0.0058162852424051455
+    },
+    "building_train_4": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.003984874485029015,
+      "mean_total_reward": -34.43330042513571,
+      "mean_per_step_reward": -0.003984874485029015
+    },
+    "building_train_5": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.0032247293834080856,
+      "mean_total_reward": -27.864886602029266,
+      "mean_per_step_reward": -0.0032247293834080856
+    },
+    "building_train_7": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.005723489213834681,
+      "mean_total_reward": -49.45667029674548,
+      "mean_per_step_reward": -0.005723489213834681
+    },
+    "building_train_8": {
+      "n_scenarios": 5,
+      "leaderboard_score": 0.00870870975442638,
+      "mean_total_reward": -75.25196098799833,
+      "mean_per_step_reward": -0.00870870975442638
+    }
+  },
+  "timing": {
+    "wall_seconds_total": 2230.878362417221,
+    "cpu_seconds_total": 12989.25933347,
+    "wall_seconds_sum_scenarios": 12990.484818458557,
+    "mean_cpu_seconds_per_scenario": 432.97531111566667,
+    "steps_per_second_cpu": 19.957258019480033,
+    "steps_per_second_step_cpu": 22.08006754457324
+  },
+  "scenarios": [
+    {
+      "scenario": "building_train_1/atlanta_2",
+      "steps": 8641,
+      "total_reward": -23.713474461533224,
+      "mean_per_step_reward": -0.002744297472692191,
+      "cpu_seconds": 381.72409903,
+      "wall_seconds": 381.72782802581787,
+      "steps_per_second_cpu": 22.636768341212058
+    },
+    {
+      "scenario": "building_train_1/denver_7",
+      "steps": 8641,
+      "total_reward": -13.707905661517543,
+      "mean_per_step_reward": -0.0015863795465244235,
+      "cpu_seconds": 380.174145396,
+      "wall_seconds": 380.1989006996155,
+      "steps_per_second_cpu": 22.72905747180491
+    },
+    {
+      "scenario": "building_train_1/fairbanks_1",
+      "steps": 8641,
+      "total_reward": -374.0784265394832,
+      "mean_per_step_reward": -0.04329110363840796,
+      "cpu_seconds": 382.86895403,
+      "wall_seconds": 382.9382417201996,
+      "steps_per_second_cpu": 22.569079861520784
+    },
+    {
+      "scenario": "building_train_1/phoenix_5",
+      "steps": 8641,
+      "total_reward": -122.36369121154712,
+      "mean_per_step_reward": -0.014160825276188765,
+      "cpu_seconds": 380.79317359,
+      "wall_seconds": 380.79561614990234,
+      "steps_per_second_cpu": 22.692108470683262
+    },
+    {
+      "scenario": "building_train_1/singapore_8",
+      "steps": 8641,
+      "total_reward": -52.938335429153085,
+      "mean_per_step_reward": -0.006126413080563949,
+      "cpu_seconds": 383.42761473999997,
+      "wall_seconds": 383.4440903663635,
+      "steps_per_second_cpu": 22.536196319243757
+    },
+    {
+      "scenario": "building_train_2/atlanta_3",
+      "steps": 8641,
+      "total_reward": -23.71637521342575,
+      "mean_per_step_reward": -0.0027446331690111963,
+      "cpu_seconds": 790.825417225,
+      "wall_seconds": 790.8489928245544,
+      "steps_per_second_cpu": 10.926558266578228
+    },
+    {
+      "scenario": "building_train_2/denver_8",
+      "steps": 8641,
+      "total_reward": -31.019368866749573,
+      "mean_per_step_reward": -0.0035897892450815383,
+      "cpu_seconds": 767.673741405,
+      "wall_seconds": 767.7027497291565,
+      "steps_per_second_cpu": 11.256083846485621
+    },
+    {
+      "scenario": "building_train_2/fairbanks_2",
+      "steps": 8641,
+      "total_reward": -95.02053833128957,
+      "mean_per_step_reward": -0.01099647475191408,
+      "cpu_seconds": 770.957394437,
+      "wall_seconds": 770.9907891750336,
+      "steps_per_second_cpu": 11.208142061222702
+    },
+    {
+      "scenario": "building_train_2/phoenix_6",
+      "steps": 8641,
+      "total_reward": -61.64184868377209,
+      "mean_per_step_reward": -0.00713364757363408,
+      "cpu_seconds": 775.657628089,
+      "wall_seconds": 775.697761297226,
+      "steps_per_second_cpu": 11.140224355543268
+    },
+    {
+      "scenario": "building_train_2/singapore_1",
+      "steps": 8641,
+      "total_reward": -39.89447280287732,
+      "mean_per_step_reward": -0.00461688147238483,
+      "cpu_seconds": 770.56374569,
+      "wall_seconds": 770.6484687328339,
+      "steps_per_second_cpu": 11.213867831612596
+    },
+    {
+      "scenario": "building_train_4/atlanta_5",
+      "steps": 8641,
+      "total_reward": -54.06055962820756,
+      "mean_per_step_reward": -0.006256285109154908,
+      "cpu_seconds": 577.793629923,
+      "wall_seconds": 577.8529107570648,
+      "steps_per_second_cpu": 14.955166607066172
+    },
+    {
+      "scenario": "building_train_4/denver_2",
+      "steps": 8641,
+      "total_reward": -41.242173053708484,
+      "mean_per_step_reward": -0.004772847246118329,
+      "cpu_seconds": 568.907029163,
+      "wall_seconds": 569.0054652690887,
+      "steps_per_second_cpu": 15.188773485033229
+    },
+    {
+      "scenario": "building_train_4/fairbanks_4",
+      "steps": 8641,
+      "total_reward": -9.728392787010307,
+      "mean_per_step_reward": -0.0011258410817046993,
+      "cpu_seconds": 560.920241819,
+      "wall_seconds": 560.9868309497833,
+      "steps_per_second_cpu": 15.405042207031482
+    },
+    {
+      "scenario": "building_train_4/phoenix_8",
+      "steps": 8641,
+      "total_reward": -10.765724631370631,
+      "mean_per_step_reward": -0.0012458887433596379,
+      "cpu_seconds": 557.13899338,
+      "wall_seconds": 557.146101474762,
+      "steps_per_second_cpu": 15.509594737890396
+    },
+    {
+      "scenario": "building_train_4/singapore_3",
+      "steps": 8641,
+      "total_reward": -56.36965202538158,
+      "mean_per_step_reward": -0.006523510244807497,
+      "cpu_seconds": 547.4931962420001,
+      "wall_seconds": 547.5644369125366,
+      "steps_per_second_cpu": 15.782844534529248
+    },
+    {
+      "scenario": "building_train_5/atlanta_6",
+      "steps": 8641,
+      "total_reward": -34.71745289895762,
+      "mean_per_step_reward": -0.004017758696789448,
+      "cpu_seconds": 496.27831618199997,
+      "wall_seconds": 496.40895533561707,
+      "steps_per_second_cpu": 17.411600946979696
+    },
+    {
+      "scenario": "building_train_5/denver_3",
+      "steps": 8641,
+      "total_reward": -30.024772604889222,
+      "mean_per_step_reward": -0.003474687258984981,
+      "cpu_seconds": 498.926420312,
+      "wall_seconds": 498.95837450027466,
+      "steps_per_second_cpu": 17.319187054869563
+    },
+    {
+      "scenario": "building_train_5/fairbanks_5",
+      "steps": 8641,
+      "total_reward": -11.864325388653015,
+      "mean_per_step_reward": -0.0013730268937221404,
+      "cpu_seconds": 495.898296802,
+      "wall_seconds": 495.9230806827545,
+      "steps_per_second_cpu": 17.424943896208095
+    },
+    {
+      "scenario": "building_train_5/phoenix_1",
+      "steps": 8641,
+      "total_reward": -17.3729649425959,
+      "mean_per_step_reward": -0.0020105271314195,
+      "cpu_seconds": 472.117689285,
+      "wall_seconds": 472.206259727478,
+      "steps_per_second_cpu": 18.302639778412853
+    },
+    {
+      "scenario": "building_train_5/singapore_4",
+      "steps": 8641,
+      "total_reward": -45.34491717505057,
+      "mean_per_step_reward": -0.005247646936124357,
+      "cpu_seconds": 475.78790582700003,
+      "wall_seconds": 475.9585003852844,
+      "steps_per_second_cpu": 18.161453652295926
+    },
+    {
+      "scenario": "building_train_7/atlanta_8",
+      "steps": 8641,
+      "total_reward": -52.43789821302926,
+      "mean_per_step_reward": -0.006068498809516174,
+      "cpu_seconds": 248.625168458,
+      "wall_seconds": 248.62420654296875,
+      "steps_per_second_cpu": 34.75512979475252
+    },
+    {
+      "scenario": "building_train_7/denver_5",
+      "steps": 8641,
+      "total_reward": -36.704338042436575,
+      "mean_per_step_reward": -0.004247695641990114,
+      "cpu_seconds": 260.150340634,
+      "wall_seconds": 260.1494629383087,
+      "steps_per_second_cpu": 33.21540913204815
+    },
+    {
+      "scenario": "building_train_7/fairbanks_7",
+      "steps": 8641,
+      "total_reward": -63.19186918190462,
+      "mean_per_step_reward": -0.007313027332705083,
+      "cpu_seconds": 248.708413316,
+      "wall_seconds": 248.70864748954773,
+      "steps_per_second_cpu": 34.74349695207558
+    },
+    {
+      "scenario": "building_train_7/phoenix_3",
+      "steps": 8641,
+      "total_reward": -47.10711658406214,
+      "mean_per_step_reward": -0.005451581597507481,
+      "cpu_seconds": 243.374459103,
+      "wall_seconds": 243.3892855644226,
+      "steps_per_second_cpu": 35.50495821068467
+    },
+    {
+      "scenario": "building_train_7/singapore_6",
+      "steps": 8641,
+      "total_reward": -47.84212946229479,
+      "mean_per_step_reward": -0.005536642687454553,
+      "cpu_seconds": 236.79329327399998,
+      "wall_seconds": 236.86046719551086,
+      "steps_per_second_cpu": 36.49174299037796
+    },
+    {
+      "scenario": "building_train_8/atlanta_1",
+      "steps": 8641,
+      "total_reward": -35.171236425679126,
+      "mean_per_step_reward": -0.004070273860164232,
+      "cpu_seconds": 172.991171163,
+      "wall_seconds": 172.98578596115112,
+      "steps_per_second_cpu": 49.95052604076577
+    },
+    {
+      "scenario": "building_train_8/denver_6",
+      "steps": 8641,
+      "total_reward": -26.031134293163632,
+      "mean_per_step_reward": -0.0030125140947996334,
+      "cpu_seconds": 168.728577735,
+      "wall_seconds": 168.7348325252533,
+      "steps_per_second_cpu": 51.21242717740022
+    },
+    {
+      "scenario": "building_train_8/fairbanks_8",
+      "steps": 8641,
+      "total_reward": -188.4697997808471,
+      "mean_per_step_reward": -0.021811109799889723,
+      "cpu_seconds": 159.840647664,
+      "wall_seconds": 159.85925316810608,
+      "steps_per_second_cpu": 54.060091261418
+    },
+    {
+      "scenario": "building_train_8/phoenix_4",
+      "steps": 8641,
+      "total_reward": -81.72540563992561,
+      "mean_per_step_reward": -0.0094578643258796,
+      "cpu_seconds": 112.91968428999999,
+      "wall_seconds": 112.94814014434814,
+      "steps_per_second_cpu": 76.52341621685915
+    },
+    {
+      "scenario": "building_train_8/singapore_7",
+      "steps": 8641,
+      "total_reward": -44.862228800376215,
+      "mean_per_step_reward": -0.005191786691398706,
+      "cpu_seconds": 101.199945266,
+      "wall_seconds": 101.22038221359253,
+      "steps_per_second_cpu": 85.38542167475958
+    }
+  ],
+  "failures": []
+}

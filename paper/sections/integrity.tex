@@ -10,59 +10,56 @@
 
 The reward is computed from a simulator whose cost accounting is not closed under the
 policy's action space. Two seams are public and both have a proposed fix: the hot-water
-tank is billed from its setpoint rather than from its burner \citep{stncsn2026pr2}, and
-the return air is mixed by floor area rather than by airflow \citep{stncsn2026pr3}.
+tank is billed from its setpoint rather than from its burner (B1, \citep{stncsn2026pr2}), and
+the return air is mixed by floor area rather than by airflow (B2, \citep{stncsn2026pr3}).
 Neither fix is merged and the leaderboard runs the unfixed tree, so what each seam is
-worth---to whom, and whether it survives correction---is a measurement, taken at the model
-calls by an instrument that leaves every per-step reward bit-identical and reproduces the
-published return-air fix exactly (Appendix~\ref{app:integrity}). % src: docs/integrity_audit.md §2.3-2.4
+worth is a measurement, taken by an instrument that leaves every per-step reward bit-identical
+(Appendix~\ref{app:integrity}). % src: docs/integrity_audit.md §2.3-2.4
 % src: the Kaggle forum digest (not released) B1/B2; docs/integrity_audit.md §2
 
 \emph{B1 is a gift an honest controller does not take.} A probe applying the published
 setpoint recipe on top of CtrlW delivers the same $26.72$\,MWh$_{\text{th}}$ of reheat
-while $11.1$\,MWh of gas stops being billed, comfort does not move ($-0.539$ against
-$-0.541$), and the anchor improves by $+36.93$ units ($+39.7\,\%$)---$3.3$ times the gap
-to the best public score on the same episode. It is pure accounting: on the corrected tree
-the same probe is $0.59$ units \emph{worse} than doing nothing special, because a tank
-that actually cools delivers colder water. Across dev30, gated to the base controller's own
-heating periods, the recipe takes CtrlW5-278 from 0.0071980 to 0.0058864 ($-18.2\,\%$; $-36\,\%$
-on Fairbanks, $0$ in Singapore) and costs $0.46\,\%$ corrected: a fifth of an honest score is
-free to whoever cycles the tank.
+while $11.1$\,MWh of gas stops being billed, comfort does not move, and the anchor improves
+by $+36.93$ units over CtrlW ($+39.7\,\%$), $3.3$ times the gap to the best public score there. It is pure
+accounting: on the corrected tree the same probe is $0.59$ units \emph{worse}. Across dev30,
+gated to the base controller's own heating periods, the recipe takes CtrlW5-278 from 0.0071980
+to 0.0058864 ($-18.2\,\%$; $-36\,\%$ on Fairbanks, $0$ in Singapore) and costs $0.46\,\%$
+corrected: a fifth of an honest score is free to whoever cycles the tank.
 % src: results/q7/b1g_w5f_dev30_{shipped,corrected} (policies/exploit_b1.py:ExploitB1GatedW5, analysis only, never submitted) vs results/ctw5frost_dev30_{shipped,corrected}
-An independent residual-PPO entry found the same
-seam without being told of it: over 30 Fairbanks days its policy drew 914\,kWh more tank heat
-than it was billed for, $39\,\%$ of its gain \citep{alex2026residualppo}.
+A learned policy finds the seam untold: $39\,\%$ of a residual-PPO entry's gain was unbilled
+tank heat \citep{alex2026residualppo}.
 % src: the Kaggle forum update (not released) §4 (alexchilton notebook §4b, 2026-11-06)
 
 \emph{B2 is worth nothing to a controller that moves air well.} The manufactured heat is
 $0.7$--$1.0\,\%$ of the coil heat the three well-scoring controllers buy, and the artifact is worth
-\emph{minus} a fraction of a unit ($-0.34$, $-0.42$, $-0.86$; Table~\ref{tab:integrity}).
-Harvesting it is priced out by the fan and by comfort: the trade clears only above
-$\Delta T\approx P/282$\,K against the $0.12$--$0.59$\,K the field supplies. All
-three controllers improve when the accounting is fixed, and more so on a mild scenario
-($10.4\,\%$ on a full-length Atlanta episode), while the probe reverses there: B1's worth is
-scenario-dependent and the anchor figure is a ceiling.
+\emph{minus} a fraction of a unit ($-0.34$, $-0.42$, $-0.86$; Table~\ref{tab:integrity}):
+harvesting it is priced out by the fan and by comfort. All three controllers improve when the
+accounting is fixed, more so on a mild scenario ($10.4\,\%$ on a full-length Atlanta episode),
+where the B1 probe reverses: its worth is scenario-dependent and the anchor figure is a ceiling.
 % src: docs/integrity_audit.md §3.1-3.2, §4-6
-
-The third public channel is a leak rather than a seam: the occupancy generator uses one seed
-everywhere and the seed is not exposed, so replaying it yields the per-zone schedule, worth the
-foresight number of \S\ref{sec:voi} ($2.79\,\%$). Final verification reseeds, so we never use it.
+The third public channel is a leak rather than a seam: the occupancy generator runs on the kit's
+one default seed, which the observation does not expose, so replaying it would yield the per-zone
+schedule, whose value is the foresight number of \S\ref{sec:voi} ($2.79\,\%$). Final verification reseeds, so we never use it.
 % src: docs/voi_oracle.md §9; the Kaggle forum digest (not released) B7
 
-\paragraph{The anchor gap was a control question, and the answer is sequencing.} On the
-seven-day anchor CtrlW scores $-93.12$ against $-81.9$ for a physically consistent public
-controller \citep{stncsn2026pr2}, $-85.4$ for a twin-plus-LP planner and $-79.1$ for a
-free-action LP bound on the linearised building \citep{alayet2026anchor} (a bound, not a
-controller). Neither information
-(the strongest channel, perfect per-zone foresight, is worth $2.60$ units against the
-$11.22$-unit gap to $-81.9$, so $4.3$ times too little), nor B2 (a fraction of a unit), nor B1 ($-0.3$ units for the PR's own
-controller, $-81.9\to-81.6$, as its author reports) explains it, and an 8\,h receding-horizon
-planner moves $7.6\,\%$ the wrong way. What explains it is \S\ref{sec:ctrlw5}: the family heats
-the empty building at night. Releasing the floor takes the same controller to $-80.31$---1.6
-units better than the best public number we know of, though worse than the free-action bound,
-which is an optimum and not an entry---with the frost-limited version we ship at $-86.68$. We
-therefore report the gap as \emph{closed by scheduling for the controllers we can compute this
-on}, and attribute nothing to other teams beyond their published numbers: the audit bounds what
-these seams can be worth to a controller that respects comfort, not what any particular team
-did.
-% src: docs/control_gap.md §0-1, §5; the Kaggle forum digest (not released) §4
+\paragraph{The same seam overcharges an honest controller, and a no-op measures it.} B1
+cuts both ways. When the base controller idles the loop after two hours without demand, the
+shipped tank falls to 310\,K unbilled, and the first call of the next morning is billed for
+the recharge: in a mild seven-day week CtrlX is billed $1.055$ units of gas per unit of heat its
+coils draw ($1.017$ in a cold one; $1.099$ before the off-peak tank floor), and its shipped dev30
+score is $1.9\,\%$ above its corrected one. The cleanest measurement is a change that does nothing physically. The
+burner raises the tank by at most $2.5$\,K per step in every scenario, so a setpoint capped at
+the observed tank temperature plus $2.5$\,K commands the same trajectory: on the corrected tree
+all ten benchmark scores are identical to the last digit, and on the shipped tree the capped
+controller scores $0.55\,\%$ better. Holding the tank setpoint through the idle branch and at its
+30-hour peak, under that cap, removes the overcharge without ever billing less than the coils
+draw ($1.035$ and $1.004$): the shipped score then meets the corrected one
+(Table~\ref{tab:main}) and the leaderboard entry moves from 0.01002 to 0.00982 (58217787). We
+report that variant apart, because it is a response to the accounting: it costs
+$0.05\,\%$ on the corrected tree and is worth nothing once the fixes land. A
+corollary for reading the public board: the late start of \S\ref{sec:ctrlx} is worth $0.33\,\%$
+on the corrected development set and nothing on the leaderboard ($0.01007\to0.01008$), because
+the unfixed billing charges the later morning call. We attribute nothing to other teams beyond
+their published numbers: the audit bounds what these seams can be worth to a controller that
+respects comfort, not what any particular team did.
+% src: docs/ctrlx_experiments.md 2026-11-10 log (sbx.integrity billed/drawn on denver_2 and fairbanks_1, 7 d, shipped; water_rise_guard_K on wl7 corrected/shipped; arx_v6s_hpk, arx_p7c/p7d); docs/control_gap.md §0-1, §5

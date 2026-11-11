@@ -345,6 +345,8 @@ class _StepRecorder:
                     else None
                 ),
                 "steps_any_occupied_zone_over_5K_out_of_band": int((dmax > 5.0).sum()),
+                # Every step, occupied or not: the frost exposure of the episode.
+                "min_zone_temp_all_steps": float(tmin_all.min()),
                 "max_zone_deviation_K": float(dmax.max()),
                 "n_steps_weekday_occupied": int(occupied.sum()),
             },
@@ -824,6 +826,7 @@ def _run_scenario(task: dict[str, Any]) -> dict[str, Any]:
     obs, _ = env.reset()
 
     step_cpu = 0.0
+    policy_cpu = 0.0
     rewards: list[float] = []
     for _ in range(int(task["steps"])):
         if oracle is not None:
@@ -834,9 +837,11 @@ def _run_scenario(task: dict[str, Any]) -> dict[str, Any]:
             )
             if callable(observe_oracle):
                 observe_oracle(oracle_info)
+        t0 = time.process_time()
         action = evaluate.validate_action(
             evaluate.get_policy_action(policy, obs), action_spec
         )
+        policy_cpu += time.process_time() - t0
         t0 = time.process_time()
         obs, reward, terminated, truncated, _ = env.step(action)
         step_cpu += time.process_time() - t0
@@ -878,6 +883,7 @@ def _run_scenario(task: dict[str, Any]) -> dict[str, Any]:
         "wall_seconds": float(wall),
         "cpu_seconds": float(cpu),
         "step_cpu_seconds": float(step_cpu),
+        "policy_cpu_seconds": float(policy_cpu),
         "steps_per_second_cpu": float(len(rewards) / cpu) if cpu > 0 else None,
         "steps_per_second_step_cpu": (
             float(len(rewards) / step_cpu) if step_cpu > 0 else None

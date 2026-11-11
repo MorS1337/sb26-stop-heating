@@ -60,7 +60,7 @@ def multiplier(t_zone_k: float, t_out_k: float) -> float:
 
 
 def main() -> None:
-    fig, (ax, bx) = plt.subplots(1, 2, figsize=(7.0, 2.1))
+    fig, (ax, bx) = plt.subplots(1, 2, figsize=(5.0, 1.5))
 
     # ---- (a) the law -----------------------------------------------------
     tz_c = np.linspace(-8.0, 24.0, 400)
@@ -71,23 +71,23 @@ def main() -> None:
     ]:
         ax.plot(tz_c, multiplier(tz_k, t_out_c + KELVIN), style, lw=1.3, label=label)
 
-    for t_op_c, txt, dy in [(20.85, "2.00", 0.10), (-3.15, "1.18", 0.10)]:
-        ax.plot([t_op_c], [multiplier(t_op_c + KELVIN, 246.85)], "o", ms=3.5, color="k")
+    for t_op_c, txt, dx, dy in [(20.85, "2.00", -5.2, 0.02), (-3.15, "1.18", 1.2, 0.10)]:
+        ax.plot([t_op_c], [multiplier(t_op_c + KELVIN, 246.85)], "o", ms=3.0, color="k")
         ax.annotate(
             f"{txt}",
             xy=(t_op_c, multiplier(t_op_c + KELVIN, 246.85)),
-            xytext=(t_op_c + 1.2, multiplier(t_op_c + KELVIN, 246.85) + dy),
+            xytext=(t_op_c + dx, multiplier(t_op_c + KELVIN, 246.85) + dy),
             fontsize=7,
         )
 
     ax.set_xlabel("zone temperature ($^\\circ$C)")
-    ax.set_ylabel("gas per unit net heat  $\\mathrm{gas}/Q$")
+    ax.set_ylabel("gas per unit net heat")
     ax.set_title("(a) the bill's ventilation multiplier", loc="left")
     ax.set_ylim(0.9, 2.6)
-    ax.legend(frameon=False, loc="upper right")
+    ax.legend(frameon=False, loc="upper left", bbox_to_anchor=(0.0, 0.80), handlelength=1.6)
     ax.text(
         0.03,
-        0.76,
+        0.86,
         "$\\mathrm{gas}/Q=1+\\frac{0.3\\,(T_z-T_\\mathrm{out})}{T_\\mathrm{dis}-T_z}$,"
         " $T_\\mathrm{dis}=308.15$ K",
         transform=ax.transAxes,
@@ -113,7 +113,7 @@ def main() -> None:
     bx.set_ylabel("anchor loss (reward units)")
     bx.set_title("(b) anchor week by hour block", loc="left")
     bx.set_ylim(0, 50)
-    bx.legend(frameon=False, loc="upper right")
+    bx.legend(frameon=False, loc="upper left")
 
     fig.tight_layout(pad=0.4)
     fig.savefig(OUT)

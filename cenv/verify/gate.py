@@ -43,7 +43,7 @@ import numpy as np
 
 WORKSPACE = Path(__file__).resolve().parents[2]
 
-# (sim, scenario, start_offset_days, steps). The last four are the regression
+# (sim, scenario, start_offset_days, steps). The offset cases are the regression
 # this list exists for: offsets 1 and 2 start the episode at 06:00 on a Monday
 # and a Tuesday, inside the arrival window on a work day.
 SUITE = (
@@ -57,6 +57,11 @@ SUITE = (
     ("corrected", "building_train_8/fairbanks_8", 2, 600),
     ("shipped", "building_gen_001/singapore_g2", 1, 600),
     ("corrected", "building_gen_001/singapore_g2", 1, 600),
+    # a *warm* start offset: the reward's air-handler cooling rate only uses
+    # the recirculation temperature on the steps where the handler actually
+    # cools (`supply < mixed`), which a -36 C fairbanks morning barely reaches.
+    ("shipped", "building_train_1/phoenix_5", 2, 600),
+    ("corrected", "building_train_1/phoenix_5", 2, 600),
 )
 
 def trace(sim: str, scenario: str, steps: int, policy_spec: str,

@@ -7,15 +7,23 @@ a Round-1 paper of the [NeurIPS 2026 Smart Buildings Challenge](https://www.kagg
 The paper (`paper/main.pdf`) adds a supervisory layer to the strongest public controller and finds
 that what is left to fix is the schedule of the plant, not the control law. CtrlW5 stops heating
 the empty building at night and delivers the morning recovery in one burst at the coil's cap.
+CtrlX, the controller the paper ships, adds thirteen mechanisms read from traces: a holiday
+release, a late start gated on the fabric's charge, and comfort margins and arrival leads scaled
+by zone size, among others.
 
 | controller | dev30, shipped | dev30, corrected | Kaggle public |
 |---|---|---|---|
+| Wu et al. (the public base controller) | 0.0075040 | 0.0072641 | 0.01062 |
 | CtrlW | 0.0073694 | 0.0071449 | 0.01051 |
-| CtrlW5-278 (278 K frost floor, the paper's controller) | 0.0071980 | 0.0070409 | 0.01032 |
+| CtrlW5-278 (278 K frost floor) | 0.0071980 | 0.0070409 | 0.01032 |
 | CtrlW5-262 (no frost floor) | 0.0071338 | 0.0069430 | 0.01024 |
+| **CtrlX** (278 K frost floor, the paper's controller) | **0.0069712** | **0.0068387** | **0.01002** |
+| CtrlX + tank hold (responds to the shipped tree's boiler billing; reported apart) | 0.0068269 | 0.0068420 | 0.00982 |
 
 Scores are the challenge score, lower is better. dev30 is the 30 shipped training scenarios with
 30-day episodes. The corrected tree is the shipped simulator plus starter-kit PR #2 and PR #3.
+On the 49 held-out scenarios (corrected tree), CtrlX scores 0.0055822 against CtrlW5-278's
+0.0057936 (−3.65%) and is better on all 49.
 
 ## Layout
 
@@ -37,17 +45,19 @@ More detail on the main directories:
 
 - **`policies/`.**
   - `wu_core.py` is the public base controller (Daniel Wu, Apache-2.0).
-  - `ctrl_w.py` to `ctrl_w7.py` are ours: `ctrl_w5.py` is the paper's controller; `ctrl_w6.py` and `ctrl_w7.py` keep refuted variants reproducible.
+  - `ctrl_w.py` to `ctrl_w7.py` are ours: `ctrl_w5.py` is CtrlW5; `ctrl_w6.py` and `ctrl_w7.py` keep refuted variants reproducible.
+  - `ctrl_x.py` is CtrlX, the paper's controller (a CtrlW5 subclass). Every mechanism is documented in its docstring and has a `PARAMS` switch; the tank-hold options (`water_idle_hold`, `water_peak_hold_hours`, `water_rise_guard_K`) are off by default.
   - `exploit_b1.py`, `exploit_b2.py` and `oracle_*.py` are analysis-only probes and were never submitted.
 - **`sbx/`.**
   - `evalrun.py`: parallel scenario runner;
+  - `arbench.py`: the CtrlX development benchmark (10 scenarios × 7 days, corrected tree, occupancy seed 12345);
   - `scenarios.py`: scenario sets;
   - `make_sims.sh`: builds the shipped and corrected simulator trees;
   - `make_pool.py`: generated buildings;
   - `tune.py`: CMA-ES;
   - `integrity.py`, `energyflow.py`: accounting instruments;
   - `fastpatch.py`: exact pure-Python speed-ups.
-- **`results/`.** Every number in the paper is read from these files; the `% src:` comments in `paper/` name the directories.
+- **`results/`.** Every number in the paper is read from these files; the `% src:` comments in `paper/` name the directories. The CtrlX runs are in `results/ctrlx/` (its `README.md` maps the directories), and `docs/ctrlx_experiments.md` is the CtrlX experiment log.
 
 ## Setup
 
@@ -85,6 +95,20 @@ $PY -m cenv.verify.gate trace --scenario building_train_8/fairbanks_8 --steps 60
 $PY -m cenv.verify.gate compare /tmp/t8_py.npz /tmp/t8_c.npz
 # the leaderboard notebook
 $PY kaggle/build_notebook.py --policy policies/ctrl_w5.py:CtrlW5 --param standby_minimum=278.0 --slug sbx-ctrl-w5f
+
+# CtrlX (Table 1; --sim shipped for the shipped tree)
+$PY -m sbx.evalrun --policy policies.ctrl_x:CtrlX --set dev30 --steps 8641 --sim corrected \
+    --workers 4 --cenv fused --fast --tag ctrlx_dev30_corrected
+$PY -m sbx.evalrun --policy policies.ctrl_x:CtrlX --set gen_hold ext_hold --steps 8641 --sim corrected \
+    --workers 4 --cenv fused --fast --tag ctrlx_holdouts_corrected
+# the tank-hold variant (shipped-accounting response, reported apart)
+$PY -m sbx.evalrun --policy policies.ctrl_x:CtrlX --set dev30 --steps 8641 --sim shipped --workers 4 \
+    --cenv fused --fast --tag ctrlx_tank_dev30_shipped \
+    --params '{"water_idle_hold": true, "water_peak_hold_hours": 30, "water_rise_guard_K": 2.5, "water_offpeak_floor": 0}'
+# the development benchmark CtrlX was built on (prints METRIC lines; scratch/arbench/last/)
+$PY -m sbx.arbench
+# the CtrlX leaderboard notebook
+$PY kaggle/build_notebook.py --policy policies/ctrl_x.py:CtrlX --slug sbx-ctrl-x
 ```
 
 On one machine, `--cenv fused --fast` gives the same per-step rewards as plain Python, including

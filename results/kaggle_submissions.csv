@@ -1,0 +1,17 @@
+ref,date_utc,public_score,description
+58005208,2026-11-05 01:34:17,0.01987,ctrl_v1: per-zone PI + need-based AHU + float/optimal-start (untuned)
+58025908,2026-11-05 14:25:06,0.01051,ctrl_w: Wu adaptive-physics + early preheat 2h + reward-consistent fuel weights + guards (untuned)
+58042236,2026-11-06 02:19:50,0.01049,ctrl_w4: CtrlW + adaptive preheat (trim/extend v4) + fixed 2K pre-dawn night lift (untuned)
+58050174,2026-11-06 07:36:58,0.01024,ctrl_w5: CtrlW4 + no night heating (standby floor 262 K) + hot-water target 336 K (no frost limit)
+58059955,2026-11-06 14:06:55,0.01032,ctrl_w5 frost: CtrlW5 with a 278 K (5 C) night frost floor - paper's main controller
+58111872,2026-11-08 02:25:57,0.01011,"CtrlX: CtrlW5-278 + holiday release, load-driven HW reset, no early precool, arrival lead, model gain 0.80 (0.75 at pump saturation), margin 0.08. dev30 -2.04/-2.28%, holdouts -2.76% (49/49)"
+58122572,2026-11-08 09:29:52,0.01010,"CtrlX v2: + economizer-gated precool, setback-aware night lift. dev30 -2.13/-2.33%, holdouts -2.84% (49/49) vs CtrlW5-278"
+58131000,2026-11-08 14:24:24,0.01007,"CtrlX v3: + per-zone adaptive comfort margin (earned in-window, first-hour settle gate). vs v2: dev30 corr -0.26% (29/30), ship -0.27% (28/30), holdouts PC-paired -0.47% (16/16); vs CtrlW5-278: dev30 -2.38/-2.60%. 49/49 holdouts safe, min zone 4.49 C"
+58172071,2026-11-09 18:11:43,0.01008,"CtrlX v4 (15c58a5): late start keeps Wu's last-hour ramp for warm AHU groups, drops the 2-3 h readiness ramps; free-drift clip -8 K/step. dev30 corrected -0.33% / shipped -0.18% vs v3"
+58173725,2026-11-09 19:36:31,0.00989,"CtrlX v4 + water_idle_hold (tank held at 330 K through the idle branch). Seam-sensitive variant: shipped tree -1.5% on the 7-day workload, corrected +0.4%; honest line stays sbx-ctrl-x v4"
+58197366,2026-11-10 10:38:25,0.01008,"CtrlX v5 (a657fb3): v4 + late-start gate 6 K. Benchmark 0.008707 (-0.15% vs v4), dev30 corrected -0.07%"
+58197370,2026-11-10 10:38:28,0.00983,"CtrlX v5 + seam-neutral tank (6d27f35): idle hold gated to heat demand within 72 h (episode start counts), reset peak held 30 h. 7-day shipped -2.1%, corrected +0.1%"
+58215121,2026-11-10 21:43:39,0.01002,CtrlX v6 honest (9131d83): off-peak hot-water floor
+58215123,2026-11-10 21:43:42,0.00982,"CtrlX v6 + seam-neutral tank (hold, peak hold 30h, rise guard 2.5K, offpeak off)"
+58217472,2026-11-10 23:56:18,0.01002,CtrlX v7 honest (e915e23): size-aware margin and arrival lead
+58217787,2026-11-11 00:01:32,0.00982,"CtrlX v7 + seam-neutral tank (hold, peak hold 30h, rise guard 2.5K, offpeak off)"

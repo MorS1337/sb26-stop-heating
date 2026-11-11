@@ -160,6 +160,15 @@ in Phoenix, +1.88 K in Singapore, +1.68 K in Atlanta).
 
 ## 3. The exchange rate that rules out trading the occupied band
 
+> **Correction (2026-11-11).** The comfort term is an occupancy-weighted *mean* over the
+> occupants present (paper Eq. 1), so one kelvin of uniform shortfall costs
+> 0.6/5 = 0.12 units per *occupied step*, independent of headcount. Phoenix_5 has 3 278
+> occupied steps in 30 days (`n_steps_weekday_occupied`), so a kelvin costs ≈ 393 units per
+> episode and **≈ 92 units per week**, not 1 281 and 298: the figures below multiply by the
+> occupant count where the reward divides by it. The conclusions stand with smaller ratios:
+> ≈ 150 : 1 against relaxing the occupied band, and the 0.12 K margin's comfort cost of
+> 5.47 units (§4.1, measured) means a mean exceedance of ≈ 0.06 K rather than 0.017 K.
+
 Phoenix_5, 30 days: `comfort = −0.187` of a −123.04 total (0.15 %), i.e. the
 controller never violates the occupied band at all. The reward charges
 `0.6 · occupancy · deviation/5 K` per zone-step, so one kelvin of building
