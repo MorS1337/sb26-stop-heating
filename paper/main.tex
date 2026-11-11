@@ -74,8 +74,8 @@ next, and no physics, plant sizes or per-zone occupancy are exposed. A submissio
 learning is therefore expensive (about 107 CPU-hours for $5\times10^6$ PPO steps), and the
 organizers report only single-digit-percent gains from SAC on one building
 \citep{goldfeder2024smart}. Meanwhile the leaderboard is public, so the thing to beat is a
-documented notebook: the strongest we found \citep{wu2026alpha075} scores seven times lower
-(better) than the organizers' \cn{pid\_water} baseline. We port it exactly and ask what is
+documented notebook: the strongest we found \citep{wu2026alpha075} scores 0.0075 against 0.055
+for the organizers' \cn{pid\_water} (lower is better). We port it exactly and ask what is
 left to fix once a strong public controller is in hand.
 
 \paragraph{What the reward implies.} The comfort penalty is averaged over the people present,
@@ -89,7 +89,8 @@ building all night, because its standby floor, held by the coldest zone of each 
 group, keeps the group's plant running until morning. CtrlW adds a readiness ramp and a release
 for days nobody comes; CtrlW5 lowers that floor and cools the hot-water loop, which recovers
 12.8 of the 93.1 units lost on the seven-day \emph{anchor} (\S\ref{sec:setting}), or 6.4 with
-the frost floor we ship. A receding-horizon planner we built did not find this gain, so we
+the frost floor we ship; over the full 30-day episode of the same building the release is worth
+$2.4\,\%$. A receding-horizon planner we built did not find this gain, so we
 present it as a result about supervisory sequencing rather than control quality. CtrlX adds
 thirteen smaller mechanisms found by reading simulation traces, worth another $2.9\,\%$, where
 two evolutionary searches over the same knobs found nothing. The last of them comes from a third
@@ -356,9 +357,12 @@ supervisory layer improves on the one before, and the corrected simulator keeps 
 except that CtrlW4 falls just behind CtrlW. Correcting the billing lowers every score by
 $1.8$--$3.2\,\%$, except the organizer baseline's and the tank hold's, which get worse. On the
 49 held-out scenarios CtrlW5-278 beats CtrlW on 38 and ties on the other 11 (sign test
-$p<10^{-11}$), so its gain is not specific to the training scenarios. The unseen climates score
-about half again worse than the same buildings under familiar weather, so the transfer gap comes
-from the climate. The leaderboard keeps the same order at 1.36--1.44 times the offline scores,
+$p<10^{-11}$), so its gain is not specific to the training scenarios. Every controller in the
+table, the organizer baseline and the PI rule included, scores 1.40--1.52 times higher (worse) on
+the unseen climates (\cn{ext}) than on \cn{gen}: those scenarios are harder, and the gains carry
+over, since against the public controller CtrlW5-278 is $4.4\,\%$ better on \cn{gen} and
+$5.0\,\%$ on \cn{ext}, and CtrlX $8.6\,\%$ and $8.3\,\%$. The leaderboard keeps the same order at
+1.36--1.44 times the offline scores,
 which we use only as a consistency check, and the frost floor costs about as much there as
 offline ($0.8\,\%$ against $0.9\,\%$).
 
