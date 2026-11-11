@@ -6,7 +6,7 @@
 \providecommand{\pending}[1]{\textcolor{red}{[pending: #1]}}
 \providecommand{\e}[1]{\times10^{-#1}}
 
-\section{The reward has a structure}
+\section{Reward anatomy}
 \label{sec:anatomy}
 
 \paragraph{Comfort regret is a per-occupant mean, so arrival dominates.} For zone $v$
@@ -61,7 +61,7 @@ $0.3$; what it can is the temperature at which it delivers the recovery.
 Measured over the episode, gas per net zone watt is $1.975$ for CtrlW and $2.061$ for CtrlW5
 against a cap-limited $1.949$ and $2.045$: the air side has about one unit of slack
 ($1.15$ units, $1.2\,\%$, for CtrlW; $0.58$ for CtrlW5), so \emph{airflow is not where the money is}. The ventilation share is large in the counterfactual sense (coil heat against
-non-ventilation load, a factor $2.24$) but that is a partition of the bill, not a lever.
+non-ventilation load, a factor $2.24$), but that only describes how the bill splits; no controller can move it.
 % src: docs/control_gap.md §2; docs/opt_gap.md §2-3
 
 \paragraph{What the anatomy rules out.} The exchange rate between the two terms forbids

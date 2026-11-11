@@ -11,7 +11,7 @@
 The observation space exposes one occupant count for the whole building, no per-zone
 occupancy and no weather forecast, while comfort is charged per zone. We hand the same
 controller each missing channel in turn (Table~\ref{tab:voi}, Appendix~\ref{app:voi}) and never submit any of them, so
-the deltas bound the value of sensing rather than propose an entry. The oracles are
+the deltas measure what sensing would be worth, and none of them is an entry. The oracles are
 transparent: dropping the payload reproduces an ordinary run to the last digit, and the
 forecast matches the sensor $h$ hours later to $1.4\e{5}$\,K.
 % src: docs/voi_oracle.md §1 "Non-perturbation proof", "Forecast alignment"
@@ -21,8 +21,8 @@ occupants leave, rather than waiting for the whole building to empty, improves d
 0.0073694 to 0.0071585 and the corrected tree from 0.0071449 to 0.0069403 (both
 $-2.86\,\%$); on the ten-scenario subset it is $-2.30\,\%$, better on 10 of 10, recovering
 $23.9$ units of energy plus carbon for $0.16$ of comfort. Raising the release floor from 282
-to 289\,K moves the subset score by $0.09\,\%$: the result is about \emph{which} zones are
-empty, not how cold they get.
+to 289\,K moves the subset score by $0.09\,\%$: what matters is \emph{which} zones are
+empty, and hardly how cold they are kept.
 % src: results/{voi_occ_dev30_shipped,voi_occ_dev30_corrected,voi_occ_mild,voi_occ_dev10_pc}; docs/voi_oracle.md §3
 
 \emph{A perfect forecast is worth nothing on top of a clock rule.} A fixed 2\,K pre-dawn lift,

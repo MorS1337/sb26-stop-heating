@@ -17,7 +17,7 @@ worth is a measurement, taken by an instrument that leaves every per-step reward
 (Appendix~\ref{app:integrity}). % src: docs/integrity_audit.md §2.3-2.4
 % src: the Kaggle forum digest (not released) B1/B2; docs/integrity_audit.md §2
 
-\emph{B1 is a gift an honest controller does not take.} A probe applying the published
+\emph{B1 rewards an exploit.} A probe applying the published
 setpoint recipe on top of CtrlW delivers the same $26.72$\,MWh$_{\text{th}}$ of reheat
 while $11.1$\,MWh of gas stops being billed, comfort does not move, and the anchor improves
 by $+36.93$ units over CtrlW ($+39.7\,\%$), $3.3$ times the gap to the best public score there. It is pure
@@ -30,20 +30,20 @@ A learned policy finds the seam untold: $39\,\%$ of a residual-PPO entry's gain 
 tank heat \citep{alex2026residualppo}.
 % src: the Kaggle forum update (not released) §4 (alexchilton notebook §4b, 2026-11-06)
 
-\emph{B2 is worth nothing to a controller that moves air well.} The manufactured heat is
+\emph{B2 hardly matters to a controller that moves air well.} The manufactured heat is
 $0.7$--$1.0\,\%$ of the coil heat the three well-scoring controllers buy, and the artifact is worth
 \emph{minus} a fraction of a unit ($-0.34$, $-0.42$, $-0.86$; Table~\ref{tab:integrity}):
 harvesting it is priced out by the fan and by comfort. All three controllers improve when the
 accounting is fixed, more so on a mild scenario ($10.4\,\%$ on a full-length Atlanta episode),
 where the B1 probe reverses: its worth is scenario-dependent and the anchor figure is a ceiling.
 % src: docs/integrity_audit.md §3.1-3.2, §4-6
-The third public channel is a leak rather than a seam: the occupancy generator runs on the kit's
+The third public channel is a leak: the occupancy generator runs on the kit's
 one default seed, which the observation does not expose, so replaying it would yield the per-zone
 schedule, whose value is the foresight number of \S\ref{sec:voi} ($2.79\,\%$). Final verification reseeds, so we never use it.
 % src: docs/voi_oracle.md §9; the Kaggle forum digest (not released) B7
 
-\paragraph{The same seam overcharges an honest controller, and a no-op measures it.} B1
-cuts both ways. When the base controller idles the loop after two hours without demand, the
+\paragraph{B1 also overcharges an honest controller.} When the base controller idles the loop
+after two hours without demand, the
 shipped tank falls to 310\,K unbilled, and the first call of the next morning is billed for
 the recharge: in a mild seven-day week CtrlX is billed $1.055$ units of gas per unit of heat its
 coils draw ($1.017$ in a cold one; $1.099$ before the off-peak tank floor), and its shipped dev30
@@ -61,5 +61,5 @@ corollary for reading the public board: the late start of \S\ref{sec:ctrlx} is w
 on the corrected development set and nothing on the leaderboard ($0.01007\to0.01008$), because
 the unfixed billing charges the later morning call. We attribute nothing to other teams beyond
 their published numbers: the audit bounds what these seams can be worth to a controller that
-respects comfort, not what any particular team did.
+respects comfort; it says nothing about what any particular team did.
 % src: docs/ctrlx_experiments.md 2026-11-10 log (sbx.integrity billed/drawn on denver_2 and fairbanks_1, 7 d, shipped; water_rise_guard_K on wl7 corrected/shipped; arx_v6s_hpk, arx_p7c/p7d); docs/control_gap.md §0-1, §5
