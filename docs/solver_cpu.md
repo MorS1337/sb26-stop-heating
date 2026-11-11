@@ -43,7 +43,7 @@ single-step win, it is a throughput win.
 | LL^T, AMD, panels | 2,304,564 | 14.5 | 1.73 | 64 | 4.5e-16 | **PASS** |
 
 (`ms/solve M=1` is the median of interleaved A/B rounds on a Mac M3 while the box
-was loaded by other agents (load average 7–8), so absolute values carry ±10%
+was loaded by other jobs (load average 7–8), so absolute values carry ±10%
 run-to-run spread; the *sign and size of every ratio* here reproduced across
 three measurement sessions and on the PC. Full per-building tables in §2–3,
 end-to-end episode in §6, PC numbers in §7.)
@@ -272,7 +272,7 @@ install(method="metis")        # whole-simulator opt-in: routes
 ## 6. End-to-end
 
 One full 2880-step `CtrlW` episode on `train_8/fairbanks_8`, `env.step` CPU time
-measured inside the trace (process CPU, so other agents' load does not inflate
+measured inside the trace (process CPU, so other processes' load does not inflate
 it), both sides run concurrently so they see the same memory contention.
 
 | side | ms CPU per `env.step` | solve time inside it |

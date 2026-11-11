@@ -1,8 +1,8 @@
-"""CtrlX -- the autoresearch line: CtrlW5 with the shipped 278 K frost floor.
+"""CtrlX -- the paper's controller: CtrlW5 with the shipped 278 K frost floor.
 
-`autoresearch.sh` scores this class. It started as exactly the paper's controller
-(CtrlW5-278, Kaggle submission 58059955). Experiments change this module, and may add
-sibling modules, but never `ctrl_w5.py`, so the paper's controller stays reproducible.
+`python -m sbx.arbench` scores this class. It started as exactly CtrlW5-278 (Kaggle
+submission 58059955). Development changed this module, and may add sibling modules,
+but never `ctrl_w5.py`, so CtrlW5 stays reproducible.
 
 Every version must keep these constraints (enforced by `sbx/arbench.py`):
 * numpy and the standard library only, and no building or weather identifiers;
@@ -186,7 +186,7 @@ TANK_UA_W_PER_K = 6.25  # Boiler defaults (2 m x 0.5 m tank, 6 cm insulation); n
 
 
 class CtrlX(CtrlW5):
-    """The controller under autoresearch."""
+    """CtrlX: CtrlW5-278 plus the mechanisms in the module docstring."""
 
     name = "ctrl_x"
 

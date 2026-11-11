@@ -1,8 +1,8 @@
-"""Autoresearch benchmark for the controller line in ``policies/ctrl_x.py``.
+"""Development benchmark for the controller line in ``policies/ctrl_x.py``.
 
-    starter-kit/.venv/bin/python -m sbx.arbench          (what autoresearch.sh runs)
+    OMP_NUM_THREADS=1 starter-kit/.venv/bin/python -m sbx.arbench
 
-The workload is fixed; change it only together with a new autoresearch segment.
+The workload is fixed; a new workload starts a new, incomparable series of scores.
 
 * **Scenarios.** Ten of them, two per climate station: one shipped building and one
   generated training building each. They span the seasons and 30 to 79 zones.

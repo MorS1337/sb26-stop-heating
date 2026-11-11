@@ -156,7 +156,7 @@ scenarios), so `--fast` off is unchanged.
 Speed, per-step CPU, single process, `policies.ctrl_w:CtrlW`, 300 steps with
 the first 40 dropped. Conditions interleaved (plain → `--fast` → `--cenv all` →
 `--fast --cenv all`, 5 repeats) so machine load hits all of them equally; this
-machine's load average was 7-18 on 8 cores while it ran (several agents), which
+machine's load average was 7-18 on 8 cores while it ran (other jobs), which
 inflates the absolute milliseconds ~2x, so compare ratios within a row:
 
 | scenario | plain | `--fast` | `--cenv all` | `--fast --cenv all` | `--fast` vs plain | `--fast --cenv` vs `--cenv` |
@@ -165,7 +165,7 @@ inflates the absolute milliseconds ~2x, so compare ratios within a row:
 | shipped `building_train_2/phoenix_6` | 77.82 ms | 49.23 ms | 56.65 ms | 56.85 ms | 1.58x | 1.00x |
 | corrected `building_train_2/atlanta_3` (largest) | 91.70 ms | 58.28 ms | 79.00 ms | 59.92 ms | 1.57x | 1.32x |
 
-Quiet machine (5 alternating runs per condition, taken before the other agents
+Quiet machine (5 alternating runs per condition, taken before the other jobs
 started): `building_train_8/fairbanks_8` 13.22 → 7.82 ms (1.69x),
 `building_train_1/atlanta_2` 25.13 → 13.04 ms (1.93x),
 `building_train_2/atlanta_3` 42.39 → 24.64 ms (1.72x).

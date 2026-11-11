@@ -39,10 +39,10 @@ paper/main.log
 fastsim/data/
 cenv/_build/
 
-# Heavy binary artefacts are never committed: the agent host's change tracking
-# hashes every untracked, non-ignored file, and files over 512 MB left 30 GB of
-# git temp packs behind (2026-11-06). Already-tracked files stay tracked; use
-# `git add -f` for a deliberate exception.
+# Heavy binary artefacts are never committed: tools that hash every untracked,
+# non-ignored file choked on files over 512 MB and left 30 GB of git temp packs
+# behind (2026-11-06). Already-tracked files stay tracked; use `git add -f` for a
+# deliberate exception.
 *.npy
 *.npz
 *.pt

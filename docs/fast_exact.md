@@ -82,7 +82,7 @@ dense response is never built).
 Per-step CPU, single process, CtrlW, 300 steps with the first 40 dropped,
 conditions interleaved per repeat (plain → `--fast` → `--cenv all` →
 `--fast --cenv all`), median of 5. `uptime` load average 7 → 18 on 8 cores while
-this ran (other agents), which inflates absolute ms ~2x; ratios are the
+this ran (other jobs), which inflates absolute ms ~2x; ratios are the
 load-robust part. Harness: `scratch/FastExact/bench_ab.py`, log `bench_ab.log`.
 
 | scenario | plain | `--fast` | `--cenv all` | `--fast --cenv all` | fast/plain | fast+cenv / cenv |

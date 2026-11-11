@@ -1,11 +1,11 @@
 # Simulator deep dive — NeurIPS 2026 Smart Buildings (Kaggle)
 
-Agent `SimDeepDive`, 2026-11-05. Machine: Apple M3, 8 cores, 16 GB, macOS 25.5.
+2026-11-05. Machine: Apple M3, 8 cores, 16 GB, macOS 25.5.
 Env: `starter-kit/.venv` (uv, CPython 3.12.8 — 3.13 does **not** work, numba 0.60 has no 3.13 wheel),
 numpy 2.0.2, numba 0.60.0, scipy 1.16.3, protobuf 5.29.5.
 Scripts: `scratch/SimDeepDive/{bench,prof,parallel_scale,solver_anatomy,dump_meta,determinism,zone_uniformity,obs_probe,occ_probe}.py`.
 
-**Measurement caveat.** Four peer agents ran throughout (load average 11–12 on 8 cores), so *wall clock* is
+**Measurement caveat.** Four other heavy jobs ran throughout (load average 11–12 on 8 cores), so *wall clock* is
 inflated 1.3–5×. Everything below reports **process CPU seconds** first; those are stable except for a
 ±25% cache/bandwidth spread on the largest building (`building_train_2` measured 0.102 s and 0.133 s/step
 in two runs). Reproduce any row with `bench.py <building> <weather> <steps>`.
@@ -301,7 +301,7 @@ they lean on the known billing seams (PR #2/#3) — worth knowing before we spen
 | **(a) process parallelism** | **6.0–6.8×** on 8 idle cores (measured 2.35× on 4 *loaded* cores; per-worker CPU +19% at 8) | ~30 LOC + runner, half a day | none; independent processes, **1.04 GB** peak RSS each on train_2 (measured `maximum resident set size`) |
 | **(b) vectorize / numba the scaffolding** | **1.3–1.5×** single core | 150–250 LOC, 1 day | low. Targets: the 3 redundant full-grid zone-mean passes per step (12.9%), `get_zone_temp_stats`' 15,300 fancy-index gathers (12.5%), the 10,200 `apply_thermal_power_zone` calls (3.9%), 25,680 `is_comfort_mode`/timezone conversions (3.3%), and the `reward_info` protobuf round-trip that is immediately re-read (≈6%). One `np.bincount` pass + caching the per-step zone means covers most of it. |
 | **(c) reduced-order thermal model** | removes ~60% of the step → **2.0–2.5×** single core | 300–500 LOC, 2–4 days | medium. The step is *exactly linear* given `h`: `T⁺ = A⁻¹(C/dt·T + q + d)`, inputs are zone-uniform power, ambient (a Dirichlet diagonal term) and rank-k supply-air terms, and the only outputs the reward reads are zone means. Projecting onto a Krylov/POD basis `V` of the reachable set and precomputing `A⁻¹V` once per scenario (m≈150–250 solves, 1.5–2.5 s) turns every step into one small dense matvec: **~0.1 ms instead of 17 ms of triangular solves**, with a per-scenario measurable projection residual. |
-| **(d) batched GPU re-implementation (PyTorch/JAX)** | 100–1000× throughput, hundreds of envs, differentiable | 1,500–2,500 LOC, 5–10 days | high, and not in 8 days at the fidelity the LB needs (boiler tank dynamics, coil effectiveness caps, stochastic convection, reward). Also the user's GPU is a Radeon RX 9060 XT on a Windows box — ROCm is not available there, so it would be PyTorch-DirectML, far slower than CUDA for these tiny kernels and with no sparse LU. |
+| **(d) batched GPU re-implementation (PyTorch/JAX)** | 100–1000× throughput, hundreds of envs, differentiable | 1,500–2,500 LOC, 5–10 days | high, and not in 8 days at the fidelity the LB needs (boiler tank dynamics, coil effectiveness caps, stochastic convection, reward). Also our GPU is a Radeon RX 9060 XT on a Windows box — ROCm is not available there, so it would be PyTorch-DirectML, far slower than CUDA for these tiny kernels and with no sparse LU. |
 | **(e) learned surrogate (fit an RC/linear model on logged rollouts)** | 50–100×/step once fitted, and differentiable | 300–600 LOC + data, 2–3 days | medium-high. The reward is dominated by *worst-zone* excursions, which a mean-fit surrogate smooths away. Usable inside a planner, never for producing the score. |
 
 **A naive "one node per zone" lumped model is not accurate enough** — measured on train_8 over 120 steps:
@@ -433,4 +433,4 @@ unseen buildings × those 5 station-months.
    is impractical in this environment and a structured controller is the right answer — which is the
    argument we want the paper to make.
 8. Do not promise a JAX/PyTorch simulator rewrite as a contribution: 5–10 days, no sparse-LU equivalent, no
-   ROCm on the user's GPU, and its fidelity cannot be validated against the hidden set before 2026-11-13.
+   ROCm on our GPU, and its fidelity cannot be validated against the hidden set before 2026-11-13.

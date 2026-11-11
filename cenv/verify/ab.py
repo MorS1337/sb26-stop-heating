@@ -2,7 +2,7 @@
 
 One interpreter, one environment, alternating blocks of ``--steps`` steps with
 the components installed and removed. Interleaving inside a single process is
-what makes a 2-5% effect visible: the machine is shared with other agents, so two
+what makes a 2-5% effect visible: the machine is shared with other jobs, so two
 separate processes measured minutes apart differ by more than the effect.
 
     starter-kit/.venv/bin/python -m cenv.verify.ab \

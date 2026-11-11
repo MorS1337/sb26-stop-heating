@@ -51,7 +51,7 @@
 #define MODE_PASSIVE_COOL 3
 
 /* Per-phase CPU clock. `clock_gettime(CLOCK_PROCESS_CPUTIME_ID)` on a shared
- * machine: wall time here would report other agents' load, not this kernel's
+ * machine: wall time here would report other processes' load, not this kernel's
  * work. The cost is ~25 ns per call, i.e. well under 1 us per step for the 16
  * marks below -- which is why it is always on rather than behind a flag. */
 #if defined(CLOCK_PROCESS_CPUTIME_ID)
