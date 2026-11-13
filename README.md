@@ -11,6 +11,11 @@ CtrlX, the controller the paper ships, adds thirteen mechanisms read from traces
 release, a late start gated on the fabric's charge, and comfort margins and arrival leads scaled
 by zone size, among others.
 
+The same files are in the Kaggle dataset
+[`mors1337/sb26-stop-heating`](https://www.kaggle.com/datasets/mors1337/sb26-stop-heating),
+announced on the competition forum, as the competition's Public Code Sharing rule asks of code
+shared while the competition runs.
+
 | controller | dev30, shipped | dev30, corrected | Kaggle public |
 |---|---|---|---|
 | Wu et al. (the public base controller) | 0.0075040 | 0.0072641 | 0.01062 |
